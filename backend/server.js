@@ -8,7 +8,28 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || "yiga-secret-key";
 
-app.use(cors());
+// Enhanced CORS for production - allow all Vercel domains
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        
+        // Allow all Vercel app domains and local development
+        const allowedPatterns = [
+            /\.vercel\.app$/,
+            /localhost/,
+            /127\.0\.0\.1/
+        ];
+        
+        if (allowedPatterns.some(pattern => pattern.test(origin))) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+}));
+
 app.use(express.json());
 
 const db = new sqlite3.Database(":memory:");
