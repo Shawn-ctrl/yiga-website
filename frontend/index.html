@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -115,7 +115,50 @@
         .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; }
         @media (max-width: 992px) { .about-content, .vm-container { grid-template-columns: 1fr; } .org-level { flex-direction: column; align-items: center; } .org-member { margin-bottom: 20px; } }
         @media (max-width: 768px) { nav { display: none; position: absolute; top: 70px; left: 0; width: 100%; background-color: white; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); } nav.active { display: block; } nav ul { flex-direction: column; padding: 20px; } nav ul li { margin: 0 0 15px 0; } .mobile-menu { display: block; } .hero h2 { font-size: 2rem; } .hero p { font-size: 1rem; } .applications-table { display: block; overflow-x: auto; } }
-    </style>
+    
+/* FIX: Ensure form fields are accessible */
+.form-control, input, select, textarea, button {
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+
+/* Remove any overlays blocking interaction */
+.overlay, .modal-backdrop, [class*="overlay"] {
+    pointer-events: none !important;
+}
+
+/* Ensure form containers are accessible */
+.form-container, .application-form, [class*="form"] {
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+/* FIX: Make navigation clickable */
+nav, .nav, .navbar, [class*="nav"] {
+    position: relative !important;
+    z-index: 1000 !important;
+    pointer-events: auto !important;
+}
+
+/* Remove any overlays blocking navigation */
+.overlay, .modal-backdrop, [class*="overlay"] {
+    display: none !important;
+}
+
+/* Ensure all links are clickable */
+a, button, [onclick] {
+    position: relative !important;
+    z-index: 1001 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Fix for any full-page overlays */
+body::before, body::after {
+    display: none !important;
+}
+</style>
 </head>
 <body>
     <!-- Admin Panel -->
@@ -263,7 +306,7 @@
                     <h3>Our Story</h3>
                     <p>Youth in Global Affairs (YIGA) is a youth-led civil society organization that champions meaningful youth engagement with the world's most critical global challenges.</p>
                     <p>We empower young people to think, act, and lead through evidence-based research, capacity-building trainings, dynamic workshops, intellectual dialogues, and conferences. By equipping the youth with the skills, knowledge, and platforms they need to contribute to policy and public discourse, YIGA fosters a generation of informed, innovative, and responsible global actors.</p>
-                    <p>We are guided by the conviction that youth—who have long stood at the forefront of social and political transformation—must be intentionally equipped to sustain and amplify that impact.</p>
+                    <p>We are guided by the conviction that youthâ€”who have long stood at the forefront of social and political transformationâ€”must be intentionally equipped to sustain and amplify that impact.</p>
                 </div>
                 <div class="about-img">
                     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1482&q=80" alt="YIGA Team">
@@ -637,7 +680,7 @@
 
     <script>
         // Base API URL - dynamic for development/production
-        const API_BASE = window.location.hostname === 'localhost' 
+        const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : 'https://yiga-backend-c7e0ssy7s-shawns-projects-3c3454ff.vercel.app/api'; 
             ? 'http://localhost:5000/api' 
             : 'https://yiga-backend.vercel.app/api';
 
@@ -830,3 +873,8 @@
     </script>
 </body>
 </html>
+
+
+
+
+
