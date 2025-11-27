@@ -835,22 +835,39 @@ let currentAdmin = null;
             }
         }
 
-        async function viewDashboard() {
-            // Show admin dashboard
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById('admin-dashboard').classList.add('active');
-            
-            document.querySelectorAll('.nav-link').forEach(navLink => {
-                navLink.classList.remove('active');
-            });
-            
-            alert('Admin dashboard will show applications when backend is connected.');
+        async async function viewDashboard() {
+    try {
+        if (!currentAuthToken) {
+            alert("Please log in first");
+            showLoginModal();
+            return;
         }
 
-        function refreshApplications() {
-            alert('Application data will refresh when backend is connected.');
+        // Show admin dashboard
+        document.querySelectorAll('.page-content').forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById('admin-dashboard').classList.add('active');
+
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        // Show super admin features if applicable
+        if (currentAdmin.role === "superadmin") {
+            document.getElementById('adminManagementSection').style.display = 'block';
+        }
+
+        // Load applications from backend
+        await refreshApplications();
+        
+    } catch (error) {
+        console.error('Dashboard error:', error);
+        alert('Error loading dashboard');
+    }
+}
+
+async 
         }
 
         // Test backend connection on page load
@@ -873,6 +890,7 @@ let currentAdmin = null;
     </script>
 </body>
 </html>
+
 
 
 
