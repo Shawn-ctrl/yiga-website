@@ -680,13 +680,13 @@ body::before, body::after {
 
     <script>
         // Base API URL - dynamic for development/production
-        const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : 'https://yiga-backend-c7e0ssy7s-shawns-projects-3c3454ff.vercel.app/api'; 
-            ? 'http://localhost:5000/api' 
-            : 'https://yiga-backend.vercel.app/api';
+const API_BASE = window.location.hostname === 'localhost' 
+    ? 'http://localhost:5000/api' 
+    : 'https://yiga-backend-c7e0ssy7s-shawns-projects-3c3454ff.vercel.app/api';
 
-        // Current admin token
-        let currentAuthToken = null;
-        let currentAdmin = null;
+// Current admin token
+let currentAuthToken = null;
+let currentAdmin = null;
 
         // Page Navigation
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -873,6 +873,7 @@ body::before, body::after {
     </script>
 </body>
 </html>
+
 
 
 
