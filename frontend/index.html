@@ -617,11 +617,77 @@ body::before, body::after {
                 </table>
 
                 <!-- Admin Management Section -->
-                <div class="admin-management" id="adminManagementSection" style="display: none; margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                    <div class="dashboard-header">
-                        <h3>Admin User Management</h3>
-                        <button class="btn btn-small btn-success" onclick="showAddAdminModal()">Add New Admin</button>
-                    </div>
+                <!-- Admin Management Section -->
+<!-- Admin Management Section -->
+<div class="admin-management" id="adminManagementSection" style="display: none; margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+    <div class="dashboard-header">
+        <h3>Admin User Management</h3>
+        <button class="btn btn-small btn-success" onclick="showAddAdminModal()">Add New Admin</button>
+    </div>
+    <div class="admin-list" id="adminList">
+        <p style="text-align: center;">Loading admins...</p>
+    </div>
+</div>
+
+<!-- Add Admin Modal -->
+<div class="modal" id="addAdminModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add New Admin</h3>
+            <button class="close-modal" onclick="closeAddAdminModal()">&times;</button>
+        </div>
+        <form id="addAdminForm">
+            <div class="form-group">
+                <label for="newAdminUsername">Username</label>
+                <input type="text" id="newAdminUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newAdminPassword">Password</label>
+                <input type="password" id="newAdminPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="newAdminRole">Role</label>
+                <select id="newAdminRole" required>
+                    <option value="admin">Admin</option>
+                    <option value="superadmin">Super Admin</option>
+                </select>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Create Admin</button>
+        </form>
+    </div>
+</div>
+    <div class="admin-list" id="adminList">
+        <p style="text-align: center;">Loading admins...</p>
+    </div>
+</div>
+
+<!-- Add Admin Modal -->
+<div class="modal" id="addAdminModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add New Admin</h3>
+            <button class="close-modal" onclick="closeAddAdminModal()">&times;</button>
+        </div>
+        <form id="addAdminForm">
+            <div class="form-group">
+                <label for="newAdminUsername">Username</label>
+                <input type="text" id="newAdminUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newAdminPassword">Password</label>
+                <input type="password" id="newAdminPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="newAdminRole">Role</label>
+                <select id="newAdminRole" required>
+                    <option value="admin">Admin</option>
+                    <option value="superadmin">Super Admin</option>
+                </select>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Create Admin</button>
+        </form>
+    </div>
+</div>
                     <div class="admin-list" id="adminList">
                         <p style="text-align: center;">Admin management features will be available when backend is connected.</p>
                     </div>
@@ -686,7 +752,281 @@ const API_BASE = window.location.hostname === 'localhost'
 
 // Current admin token
 let currentAuthToken = null;
-let currentAdmin = null;
+let currentAdmin = null;\n\n// Admin Management Functions
+function showAddAdminModal() {
+    document.getElementById('addAdminModal').classList.add('active');
+}
+
+function closeAddAdminModal() {
+    document.getElementById('addAdminModal').classList.remove('active');
+    document.getElementById('addAdminForm').reset();
+}
+
+async function loadAdmins() {
+    try {
+        const response = await fetch(`${API_BASE}/admins`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${currentAuthToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            const admins = await response.json();
+            displayAdmins(admins);
+        } else {
+            document.getElementById('adminList').innerHTML = '<p style="text-align: center; color: red;">Error loading admins</p>';
+        }
+    } catch (error) {
+        console.error('Error loading admins:', error);
+        document.getElementById('adminList').innerHTML = '<p style="text-align: center; color: red;">Failed to load admins</p>';
+    }
+}
+
+function displayAdmins(admins) {
+    const adminList = document.getElementById('adminList');
+    
+    if (admins.length === 0) {
+        adminList.innerHTML = '<p style="text-align: center;">No admins found.</p>';
+        return;
+    }
+
+    adminList.innerHTML = `
+        <table class="applications-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Created By</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${admins.map(admin => `
+                    <tr>
+                        <td>${admin.username}</td>
+                        <td><span class="status-${admin.role}">${admin.role}</span></td>
+                        <td>${admin.created_by || 'system'}</td>
+                        <td>${new Date(admin.created_at).toLocaleDateString()}</td>
+                        <td>
+                            ${admin.username !== 'superadmin' && admin.id !== currentAdmin.id ? 
+                                `<button class="btn btn-small btn-danger" onclick="deleteAdmin(${admin.id})">Delete</button>` : 
+                                `<span style="color: #666;">Protected</span>`
+                            }
+                        </td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
+}
+
+async function deleteAdmin(adminId) {
+    if (!confirm('Are you sure you want to delete this admin?')) return;
+
+    try {
+        const response = await fetch(`${API_BASE}/admins/${adminId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${currentAuthToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            await loadAdmins();
+            alert('Admin deleted successfully!');
+        } else {
+            const error = await response.json();
+            alert('Error: ' + (error.error || 'Failed to delete admin'));
+        }
+    } catch (error) {
+        console.error('Error deleting admin:', error);
+        alert('Failed to delete admin');
+    }
+}
+
+document.getElementById('addAdminForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = {
+        username: document.getElementById('newAdminUsername').value,
+        password: document.getElementById('newAdminPassword').value,
+        role: document.getElementById('newAdminRole').value
+    };
+
+    try {
+        const response = await fetch(`${API_BASE}/admins`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${currentAuthToken}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            closeAddAdminModal();
+            await loadAdmins();
+            alert('Admin created successfully!');
+        } else {
+            const error = await response.json();
+            alert('Error: ' + (error.error || 'Failed to create admin'));
+        }
+    } catch (error) {
+        console.error('Error creating admin:', error);
+        alert('Failed to create admin');
+    }
+});
+
+// Update viewDashboard to load admins for superadmin
+const originalViewDashboard = window.viewDashboard;
+window.viewDashboard = async function() {
+    await originalViewDashboard();
+    if (currentAdmin.role === "superadmin") {
+        document.getElementById('adminManagementSection').style.display = 'block';
+        await loadAdmins();
+    }
+};\n\n// Admin Management Functions
+function showAddAdminModal() {
+    document.getElementById('addAdminModal').classList.add('active');
+}
+
+function closeAddAdminModal() {
+    document.getElementById('addAdminModal').classList.remove('active');
+    document.getElementById('addAdminForm').reset();
+}
+
+async function loadAdmins() {
+    try {
+        const response = await fetch(`${API_BASE}/admins`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${currentAuthToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            const admins = await response.json();
+            displayAdmins(admins);
+        } else {
+            document.getElementById('adminList').innerHTML = '<p style="text-align: center; color: red;">Error loading admins</p>';
+        }
+    } catch (error) {
+        console.error('Error loading admins:', error);
+        document.getElementById('adminList').innerHTML = '<p style="text-align: center; color: red;">Failed to load admins</p>';
+    }
+}
+
+function displayAdmins(admins) {
+    const adminList = document.getElementById('adminList');
+    
+    if (admins.length === 0) {
+        adminList.innerHTML = '<p style="text-align: center;">No admins found.</p>';
+        return;
+    }
+
+    adminList.innerHTML = `
+        <table class="applications-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Created By</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${admins.map(admin => `
+                    <tr>
+                        <td>${admin.username}</td>
+                        <td><span class="status-${admin.role}">${admin.role}</span></td>
+                        <td>${admin.created_by || 'system'}</td>
+                        <td>${new Date(admin.created_at).toLocaleDateString()}</td>
+                        <td>
+                            ${admin.username !== 'superadmin' && admin.id !== currentAdmin.id ? 
+                                `<button class="btn btn-small btn-danger" onclick="deleteAdmin(${admin.id})">Delete</button>` : 
+                                `<span style="color: #666;">Protected</span>`
+                            }
+                        </td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
+}
+
+async function deleteAdmin(adminId) {
+    if (!confirm('Are you sure you want to delete this admin?')) return;
+
+    try {
+        const response = await fetch(`${API_BASE}/admins/${adminId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${currentAuthToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            await loadAdmins();
+            alert('Admin deleted successfully!');
+        } else {
+            const error = await response.json();
+            alert('Error: ' + (error.error || 'Failed to delete admin'));
+        }
+    } catch (error) {
+        console.error('Error deleting admin:', error);
+        alert('Failed to delete admin');
+    }
+}
+
+document.getElementById('addAdminForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = {
+        username: document.getElementById('newAdminUsername').value,
+        password: document.getElementById('newAdminPassword').value,
+        role: document.getElementById('newAdminRole').value
+    };
+
+    try {
+        const response = await fetch(`${API_BASE}/admins`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${currentAuthToken}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            closeAddAdminModal();
+            await loadAdmins();
+            alert('Admin created successfully!');
+        } else {
+            const error = await response.json();
+            alert('Error: ' + (error.error || 'Failed to create admin'));
+        }
+    } catch (error) {
+        console.error('Error creating admin:', error);
+        alert('Failed to create admin');
+    }
+});
+
+// Update viewDashboard to load admins for superadmin
+const originalViewDashboard = window.viewDashboard;
+window.viewDashboard = async function() {
+    await originalViewDashboard();
+    if (currentAdmin.role === "superadmin") {
+        document.getElementById('adminManagementSection').style.display = 'block';
+        await loadAdmins();
+    }
+};
 
         // Page Navigation
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -890,6 +1230,8 @@ async
     </script>
 </body>
 </html>
+
+
 
 
 
