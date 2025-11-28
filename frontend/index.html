@@ -410,26 +410,7 @@
         </div>
     </footer>
 
-    <script>
-// Missing functions fix
-function showLoginModal() {
-    document.getElementById('loginModal').classList.add('active');
-}
-
-function closeLoginModal() {
-    document.getElementById('loginModal').classList.remove('active');
-}
-
-function showAddAdminModal() {
-    document.getElementById('addAdminModal').classList.add('active');
-}
-
-function closeAddAdminModal() {
-    document.getElementById('addAdminModal').classList.remove('active');
-    document.getElementById('addAdminForm').reset();
-}
-
-// Base API URL - dynamic for development/production
+    <script>// Base API URL - dynamic for development/production
         const API_BASE = window.location.hostname === 'localhost'
             ? 'http://localhost:5000/api'
             : 'https://yiga-backend-99s1bb3kh-shawns-projects-3c3454ff.vercel.app/api';
@@ -862,4 +843,5 @@ function closeAddAdminModal() {
     </script>
 </body>
 </html>
+
 
