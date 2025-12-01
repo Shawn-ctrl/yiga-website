@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, TrendingUp, Leaf, Building, Calendar, ArrowRight, ChevronRight } from 'lucide-react';
 
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_BASE = process.env.REACT_APP_API_URL || 'https://yiga-backend-production.up.railway.app/api';
 
 // Featured Articles Data
 const featuredArticles = [
