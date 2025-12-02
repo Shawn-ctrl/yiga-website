@@ -409,15 +409,17 @@ function App() {
         {currentPage === 'home' && (
           <div>
             {/* Hero Section with Image */}
-            <div className="relative h-[600px] bg-gradient-to-r from-black via-gray-900 to-red-900 overflow-hidden">
-              <div 
-                className="absolute inset-0 opacity-40"
-                style={{
-                  backgroundImage: 'url(https://i.postimg.cc/xTvXLista/IMG-20241116-WA0011.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              ></div>
+           {/* Hero Section with Image */}
+<div className="relative h-[600px] bg-gradient-to-r from-black via-gray-900 to-red-900 overflow-hidden">
+  <div 
+    className="absolute inset-0 opacity-40"
+    style={{
+      backgroundImage: 'url(/images/hero.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}
+  >
+</div>
               <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
                 <div className="max-w-3xl text-white">
                   <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
