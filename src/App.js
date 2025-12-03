@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+iimport React, { useState, useEffect } from 'react';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download } from 'lucide-react';
 
 const API_BASE = 'https://yiga-backend-production.up.railway.app/api';
 
-// REPLACE THESE WITH YOUR IMGUR URLS AFTER UPLOADING
 const teamPhotos = {
   heroImage: '/images/hero.jpg',
   aboutImage: '/images/about.jpg',
@@ -17,6 +16,21 @@ const teamPhotos = {
     '/images/gallery4.jpg',
     '/images/gallery5.jpg',
     '/images/gallery6.jpg'
+  ]
+};
+
+const teamMembers = {
+  executive: [
+    { name: "Executive Director", role: "Strategic Leadership", bio: "Leading YIGA's vision and mission" },
+    { name: "Deputy Executive Director", role: "Operations", bio: "Managing day-to-day operations" },
+    { name: "Director of Research", role: "Research & Analysis", bio: "Coordinating research initiatives" },
+    { name: "Director of Communications", role: "Communications", bio: "Managing public relations" },
+    { name: "Director of Events", role: "Events Management", bio: "Organizing conferences and workshops" },
+    { name: "Director of Programs", role: "Programs & Partnerships", bio: "Building strategic partnerships" },
+    { name: "Director of Finance", role: "Financial Management", bio: "Overseeing financial operations" }
+  ],
+  advisory: [
+    { name: "Advisory Council", role: "Strategic Guidance", bio: "Experienced professionals providing technical support" }
   ]
 };
 
@@ -419,7 +433,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -457,7 +471,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -665,6 +679,13 @@ function App() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 py-16">
+              <div className="mb-16">
+                <h3 className="text-3xl font-bold text-black mb-6 text-center">Who We Are</h3>
+                <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center">
+                  Youth in Global Affairs (YIGA) is a youth-led civil society organization that champions meaningful youth engagement with the world's most critical global challenges. We empower young people to think, act, and lead through evidence-based research, capacity-building trainings, dynamic workshops, intellectual dialogues, and conferences.
+                </p>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-12 mb-16">
                 <div className="bg-white p-8 rounded-lg shadow-xl border-l-4 border-red-600">
                   <h3 className="text-3xl font-bold mb-4 text-black">Our Vision</h3>
@@ -687,9 +708,7 @@ function App() {
                     "Encourage and support the production of high-quality, youth-driven research on critical global challenges",
                     "Organize trainings, workshops, and conferences to equip young people with knowledge and skills",
                     "Advance meaningful youth involvement in foreign policy processes and international relations",
-                    "Create inclusive spaces for thoughtful discourse, idea-sharing, and collaboration",
-                    "Foster Pan-African collaboration among young professionals",
-                    "Support research and policy analysis on critical African issues"
+                    "Create inclusive spaces for thoughtful discourse, idea-sharing, and collaboration"
                   ].map((objective, idx) => (
                     <div key={idx} className="flex items-start space-x-3">
                       <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
@@ -698,47 +717,123 @@ function App() {
                   ))}
                 </div>
               </div>
+
+              <div className="bg-white p-12 rounded-lg shadow-xl">
+                <h3 className="text-3xl font-bold text-black mb-8 text-center">Focus Areas</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {[
+                    { name: "Foreign Policy", icon: Globe },
+                    { name: "Good Governance", icon: Scale },
+                    { name: "Climate Change", icon: Award },
+                    { name: "Peace & Security", icon: Shield },
+                    { name: "Culture & Heritage", icon: BookOpen }
+                  ].map((area, idx) => (
+                    <div key={idx} className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition">
+                      <area.icon className="w-12 h-12 mx-auto text-red-600 mb-3" />
+                      <h4 className="font-bold text-lg text-black">{area.name}</h4>
+</div>
+))}
+</div>
+</div>
+</div>
+</div>
+)}{currentPage === 'team' && (
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Team</h2>
+        
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-black mb-8 text-center">Organizational Structure</h3>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-gradient-to-br from-red-600 to-red-700 text-white p-8 rounded-lg shadow-xl text-center">
+              <Users className="w-16 h-16 mx-auto mb-4" />
+              <h4 className="text-2xl font-bold mb-2">Executive Council</h4>
+              <p className="text-red-100">Strategic leadership and policy direction</p>
+            </div>
+            <div className="bg-gradient-to-br from-black to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
+              <Shield className="w-16 h-16 mx-auto mb-4" />
+              <h4 className="text-2xl font-bold mb-2">Advisory Council</h4>
+              <p className="text-gray-300">Strategic guidance and technical support</p>
+            </div>
+            <div className="bg-gradient-to-br from-gray-700 to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
+              <BookOpen className="w-16 h-16 mx-auto mb-4" />
+              <h4 className="text-2xl font-bold mb-2">Student Wing (IRSAK)</h4>
+              <p className="text-gray-300">Student mobilization and grassroots engagement</p>
             </div>
           </div>
-        )}
+        </div>
 
-        {currentPage === 'gallery' && (
-          <div className="max-w-7xl mx-auto px-4 py-16">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center">Photo Gallery</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {teamPhotos.galleryImages.map((photo, idx) => (
-                <div key={idx} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition">
-                  <img 
-                    src={photo} 
-                    alt={`YIGA Event ${idx + 1}`}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition flex items-center justify-center">
-                    <ImageIcon className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition" />
-                  </div>
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-black mb-8 text-center">Directorate</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {teamMembers.executive.map((member, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
+                <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mx-auto mb-4">
+                  <Users className="w-8 h-8 text-red-600" />
                 </div>
-              ))}
-            </div>
+                <h4 className="text-xl font-bold text-black text-center mb-2">{member.name}</h4>
+                <p className="text-red-600 font-semibold text-center mb-2">{member.role}</p>
+                <p className="text-gray-600 text-center text-sm">{member.bio}</p>
+              </div>
+            ))}
           </div>
-        )}
+        </div>
 
-        {currentPage === 'newsletter' && (
-          <div className="max-w-4xl mx-auto px-4 py-16">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center">Newsletter</h2>
+        <div className="bg-gradient-to-r from-red-600 to-black text-white py-16 rounded-lg">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <h3 className="text-3xl font-bold mb-6">Join Our Team</h3>
+            <p className="text-xl mb-8 text-gray-200">
+              Interested in becoming part of YIGA? We're always looking for passionate young professionals to join our mission.
+            </p>
+            <button
+              onClick={() => setCurrentPage('join')}
+              className="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition shadow-xl"
+            >
+              Apply Now
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {currentPage === 'gallery' && (
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-black mb-12 text-center">Photo Gallery</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {teamPhotos.galleryImages.map((photo, idx) => (
+            <div key={idx} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition">
+              <img 
+                src={photo} 
+                alt={`YIGA Event ${idx + 1}`}
+                className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition flex items-center justify-center">
+                <ImageIcon className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {currentPage === 'newsletter' && (
+      <div className="max-w-4xl mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-black mb-12 text-center">Newsletter</h2>
+        
+        <div className="bg-white p-8 rounded-lg shadow-xl mb-12">
+          <h3 className="text-2xl font-bold text-black mb-6">Subscribe with Preferences</h3>
+          <form onSubmit={handleNewsletterPreferencesSubmit}>
+            <div className="mb-6">
+              <label className="block text-gray-700 font-semibold mb-2">Email Address</label>
+              <input
+                type="email"
+                value={newsletterPreferences.email}
+                onChange={(e) => setNewsletterPreferences({...newsletterPreferences, email: e.target.value})}
+                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
+                required
+              />
+            </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-xl mb-12">
-              <h3 className="text-2xl font-bold text-black mb-6">Subscribe with Preferences</h3>
-              <form onSubmit={handleNewsletterPreferencesSubmit}>
-                <div className="mb-6">
-                  <label className="block text-gray-700 font-semibold mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    value={newsletterPreferences.email}
-                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, email: e.target.value})}
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
-required
-/>
-</div><div className="mb-6">
+            <div className="mb-6">
               <label className="block text-gray-700 font-semibold mb-2">Frequency</label>
               <select
                 value={newsletterPreferences.frequency}
@@ -1158,7 +1253,7 @@ required
       </div>
     )}
   </div>
-</div>
+</div>          
 );
 }
-export default App;            
+export default App;
