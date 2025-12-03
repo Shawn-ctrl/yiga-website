@@ -21,13 +21,48 @@ const teamPhotos = {
 
 const teamMembers = {
   executive: [
-    { name: "Executive Director", role: "Strategic Leadership", bio: "Leading YIGA's vision and mission" },
-    { name: "Deputy Executive Director", role: "Operations", bio: "Managing day-to-day operations" },
-    { name: "Director of Research", role: "Research & Analysis", bio: "Coordinating research initiatives" },
-    { name: "Director of Communications", role: "Communications", bio: "Managing public relations" },
-    { name: "Director of Events", role: "Events Management", bio: "Organizing conferences and workshops" },
-    { name: "Director of Programs", role: "Programs & Partnerships", bio: "Building strategic partnerships" },
-    { name: "Director of Finance", role: "Financial Management", bio: "Overseeing financial operations" }
+    { 
+      name: "Jeremy Oronje", 
+      role: "Executive Director", 
+      bio: "Leading YIGA's vision and strategic direction in youth empowerment and international affairs",
+      photo: "/images/team/jeremy-oronje.jpg"
+    },
+    { 
+      name: "Abel Omenge", 
+      role: "Director of Finance", 
+      bio: "Managing financial operations and ensuring fiscal responsibility across all programs",
+      photo: "/images/team/abel-omenge.jpg"
+    },
+    { 
+      name: "Hilda Koipano", 
+      role: "Director of Communications", 
+      bio: "Leading communication strategies and managing public relations for YIGA",
+      photo: "/images/team/hilda-koipano.jpg"
+    },
+    { 
+      name: "Phoebe Monari", 
+      role: "Director of Programs and Partnership", 
+      bio: "Building strategic partnerships and coordinating program implementation",
+      photo: "/images/team/phoebe-monari.jpg"
+    },
+    { 
+      name: "Beldine Mukami Maina", 
+      role: "Assistant Communications Director", 
+      bio: "Supporting communication initiatives and managing media engagement",
+      photo: "/images/team/beldine-mukami.jpg"
+    },
+    { 
+      name: "Catherine Mbilo", 
+      role: "Program Coordinator", 
+      bio: "Coordinating program activities and supporting partnership development",
+      photo: "/images/team/catherine-mbilo.jpg"
+    },
+    { 
+      name: "Programs Assistant Director", 
+      role: "Assistant Director of Programs and Partnership", 
+      bio: "Supporting program coordination and partnership management",
+      photo: "/images/team/assistant-director-programs.jpg"
+    }
   ],
   advisory: [
     { name: "Advisory Council", role: "Strategic Guidance", bio: "Experienced professionals providing technical support" }
@@ -767,9 +802,17 @@ function App() {
           <div className="grid md:grid-cols-3 gap-6">
             {teamMembers.executive.map((member, idx) => (
               <div key={idx} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
-                <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mx-auto mb-4">
-                  <Users className="w-8 h-8 text-red-600" />
-                </div>
+                {member.photo ? (
+                  <img 
+                    src={member.photo} 
+                    alt={member.name}
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg"
+                  />
+                ) : (
+                  <div className="flex items-center justify-center w-32 h-32 bg-red-100 rounded-full mx-auto mb-4">
+                    <Users className="w-16 h-16 text-red-600" />
+                  </div>
+                )}
                 <h4 className="text-xl font-bold text-black text-center mb-2">{member.name}</h4>
                 <p className="text-red-600 font-semibold text-center mb-2">{member.role}</p>
                 <p className="text-gray-600 text-center text-sm">{member.bio}</p>
