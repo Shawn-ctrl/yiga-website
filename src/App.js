@@ -468,7 +468,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -506,7 +506,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -834,26 +834,6 @@ function App() {
               Apply Now
             </button>
           </div>
-        </div>
-      </div>
-    )}
-
-    {currentPage === 'gallery' && (
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-black mb-12 text-center">Photo Gallery</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {teamPhotos.galleryImages.map((photo, idx) => (
-            <div key={idx} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition">
-              <img 
-                src={photo} 
-                alt={`YIGA Event ${idx + 1}`}
-                className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition flex items-center justify-center">
-                <ImageIcon className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition" />
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     )}
@@ -1300,3 +1280,4 @@ function App() {
 );
 }
 export default App;
+
