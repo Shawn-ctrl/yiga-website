@@ -5,18 +5,18 @@ const API_BASE = 'https://yiga-backend-production.up.railway.app/api';
 
 // REPLACE THESE WITH YOUR IMGUR URLS AFTER UPLOADING
 const teamPhotos = {
-  heroImage: 'YOUR_IMGUR_URL_HERE',
-  aboutImage: 'YOUR_IMGUR_URL_HERE',
-  meetingImage: 'YOUR_IMGUR_URL_HERE',
-  eventImage: 'YOUR_IMGUR_URL_HERE',
-  workshopImage: 'YOUR_IMGUR_URL_HERE',
+  heroImage: '/images/hero.jpg',
+  aboutImage: '/images/about.jpg',
+  meetingImage: '/images/meeting.jpg',
+  eventImage: '/images/event.jpg',
+  workshopImage: '/images/workshop.jpg',
   galleryImages: [
-    'YOUR_IMGUR_URL_HERE',
-    'YOUR_IMGUR_URL_HERE',
-    'YOUR_IMGUR_URL_HERE',
-    'YOUR_IMGUR_URL_HERE',
-    'YOUR_IMGUR_URL_HERE',
-    'YOUR_IMGUR_URL_HERE'
+    '/images/gallery1.jpg',
+    '/images/gallery2.jpg',
+    '/images/gallery3.jpg',
+    '/images/gallery4.jpg',
+    '/images/gallery5.jpg',
+    '/images/gallery6.jpg'
   ]
 };
 
