@@ -1,4 +1,4 @@
-iimport React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download } from 'lucide-react';
 
 const API_BASE = 'https://yiga-backend-production.up.railway.app/api';
