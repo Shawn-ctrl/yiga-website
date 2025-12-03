@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, TrendingUp, Leaf, Building, Calendar, ArrowRight, ChevronRight } from 'lucide-react';
+import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download } from 'lucide-react';
 
-const API_BASE = process.env.REACT_APP_API_URL || 'https://yiga-backend-production.up.railway.app/api';
+const API_BASE = 'https://yiga-backend-production.up.railway.app/api';
 
-// Featured Articles Data
+// REPLACE THESE WITH YOUR IMGUR URLS AFTER UPLOADING
+const teamPhotos = {
+  heroImage: 'YOUR_IMGUR_URL_HERE',
+  aboutImage: 'YOUR_IMGUR_URL_HERE',
+  meetingImage: 'YOUR_IMGUR_URL_HERE',
+  eventImage: 'YOUR_IMGUR_URL_HERE',
+  workshopImage: 'YOUR_IMGUR_URL_HERE',
+  galleryImages: [
+    'YOUR_IMGUR_URL_HERE',
+    'YOUR_IMGUR_URL_HERE',
+    'YOUR_IMGUR_URL_HERE',
+    'YOUR_IMGUR_URL_HERE',
+    'YOUR_IMGUR_URL_HERE',
+    'YOUR_IMGUR_URL_HERE'
+  ]
+};
+
 const featuredArticles = [
   {
     id: 1,
@@ -34,27 +50,24 @@ const featuredArticles = [
   }
 ];
 
-// Recent Insights
-const recentInsights = [
+const newsletterArchives = [
   {
-    title: "African Union's 2025 Agenda: What Young Professionals Need to Know",
-    date: "November 28, 2025",
-    category: "Foreign Policy"
+    id: 1,
+    title: "November 2025 - Youth Voices in Climate Action",
+    date: "November 30, 2025",
+    excerpt: "This month's highlights on youth-led climate initiatives across Africa"
   },
   {
-    title: "Cultural Diplomacy: Africa's Soft Power Strategy",
-    date: "November 22, 2025",
-    category: "Culture & Heritage"
+    id: 2,
+    title: "October 2025 - Peace and Security Roundup",
+    date: "October 31, 2025",
+    excerpt: "Key developments in African peace processes and youth involvement"
   },
   {
-    title: "Trade Relations and Economic Integration in East Africa",
-    date: "November 18, 2025",
-    category: "Foreign Policy"
-  },
-  {
-    title: "Youth Participation in Electoral Processes Across Africa",
-    date: "November 10, 2025",
-    category: "Good Governance"
+    id: 3,
+    title: "September 2025 - Governance Reforms Update",
+    date: "September 30, 2025",
+    excerpt: "Latest insights on democratic reforms and youth participation"
   }
 ];
 
@@ -62,6 +75,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [authToken, setAuthToken] = useState('');
   const [username, setUsername] = useState('');
   const [userRole, setUserRole] = useState('');
   const [applications, setApplications] = useState([]);
@@ -71,6 +85,13 @@ function App() {
   const [adminError, setAdminError] = useState('');
   const [adminSuccess, setAdminSuccess] = useState('');
   const [submitStatus, setSubmitStatus] = useState('');
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState('');
+  const [newsletterPreferences, setNewsletterPreferences] = useState({
+    email: '',
+    frequency: 'monthly',
+    topics: []
+  });
 
   const [formData, setFormData] = useState({
     full_name: '',
@@ -93,17 +114,6 @@ function App() {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const savedUsername = localStorage.getItem('username');
-    const savedRole = localStorage.getItem('role');
-    if (token && savedUsername && savedRole) {
-      setIsLoggedIn(true);
-      setUsername(savedUsername);
-      setUserRole(savedRole);
-    }
-  }, []);
-
-  useEffect(() => {
     if (isLoggedIn && currentPage === 'admin') {
       fetchApplications();
       if (userRole === 'superadmin') {
@@ -115,17 +125,21 @@ function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoginError('');
+    setLoading(true);
     try {
       const response = await fetch(`${API_BASE}/auth/login`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(loginData)
       });
+      
       const data = await response.json();
+      
       if (response.ok) {
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('username', data.username);
-        localStorage.setItem('role', data.role);
+        setAuthToken(data.token);
         setIsLoggedIn(true);
         setUsername(data.username);
         setUserRole(data.role);
@@ -134,14 +148,15 @@ function App() {
         setLoginError(data.message || 'Login failed');
       }
     } catch (error) {
-      setLoginError('Connection error. Please try again.');
+      setLoginError('Connection error: ' + error.message);
+      console.error('Login error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
-    localStorage.removeItem('role');
+    setAuthToken('');
     setIsLoggedIn(false);
     setUsername('');
     setUserRole('');
@@ -151,9 +166,11 @@ function App() {
   const fetchApplications = async () => {
     setLoading(true);
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_BASE}/applications`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 
+          'Authorization': `Bearer ${authToken}`,
+          'Accept': 'application/json'
+        }
       });
       const data = await response.json();
       if (response.ok) {
@@ -161,15 +178,18 @@ function App() {
       }
     } catch (error) {
       console.error('Error fetching applications:', error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const fetchAdmins = async () => {
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_BASE}/auth/admins`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 
+          'Authorization': `Bearer ${authToken}`,
+          'Accept': 'application/json'
+        }
       });
       const data = await response.json();
       if (response.ok) {
@@ -186,9 +206,13 @@ function App() {
     try {
       const response = await fetch(`${API_BASE}/applications`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(formData)
       });
+      
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({
@@ -199,25 +223,81 @@ function App() {
           program: '',
           motivation: ''
         });
-        setTimeout(() => setSubmitStatus(''), 3000);
+        setTimeout(() => setSubmitStatus(''), 5000);
       } else {
         setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus(''), 3000);
+        setTimeout(() => setSubmitStatus(''), 5000);
       }
     } catch (error) {
+      console.error('Submit error:', error);
       setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus(''), 3000);
+      setTimeout(() => setSubmitStatus(''), 5000);
+    }
+  };
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setNewsletterStatus('submitting');
+    try {
+      const response = await fetch(`${API_BASE}/newsletter`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email: newsletterEmail })
+      });
+      
+      if (response.ok) {
+        setNewsletterStatus('success');
+        setNewsletterEmail('');
+        setTimeout(() => setNewsletterStatus(''), 5000);
+      } else {
+        setNewsletterStatus('error');
+        setTimeout(() => setNewsletterStatus(''), 5000);
+      }
+    } catch (error) {
+      console.error('Newsletter error:', error);
+      setNewsletterStatus('error');
+      setTimeout(() => setNewsletterStatus(''), 5000);
+    }
+  };
+
+  const handleNewsletterPreferencesSubmit = async (e) => {
+    e.preventDefault();
+    setNewsletterStatus('submitting');
+    try {
+      const response = await fetch(`${API_BASE}/newsletter/preferences`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(newsletterPreferences)
+      });
+      
+      if (response.ok) {
+        setNewsletterStatus('success');
+        setNewsletterPreferences({ email: '', frequency: 'monthly', topics: [] });
+        setTimeout(() => setNewsletterStatus(''), 5000);
+      } else {
+        setNewsletterStatus('error');
+        setTimeout(() => setNewsletterStatus(''), 5000);
+      }
+    } catch (error) {
+      setNewsletterStatus('error');
+      setTimeout(() => setNewsletterStatus(''), 5000);
     }
   };
 
   const updateApplicationStatus = async (id, status) => {
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_BASE}/applications/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${authToken}`,
+          'Accept': 'application/json'
         },
         body: JSON.stringify({ status })
       });
@@ -232,10 +312,12 @@ function App() {
   const deleteApplication = async (id) => {
     if (!window.confirm('Are you sure you want to delete this application?')) return;
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_BASE}/applications/${id}`, {
         method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 
+          'Authorization': `Bearer ${authToken}`,
+          'Accept': 'application/json'
+        }
       });
       if (response.ok) {
         fetchApplications();
@@ -250,12 +332,12 @@ function App() {
     setAdminError('');
     setAdminSuccess('');
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_BASE}/auth/create-admin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${authToken}`,
+          'Accept': 'application/json'
         },
         body: JSON.stringify(newAdmin)
       });
@@ -275,12 +357,12 @@ function App() {
 
   const updateAdminRole = async (id, role) => {
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_BASE}/auth/admins/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${authToken}`,
+          'Accept': 'application/json'
         },
         body: JSON.stringify({ role })
       });
@@ -295,10 +377,12 @@ function App() {
   const deleteAdmin = async (id) => {
     if (!window.confirm('Are you sure you want to delete this admin?')) return;
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_BASE}/auth/admins/${id}`, {
         method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 
+          'Authorization': `Bearer ${authToken}`,
+          'Accept': 'application/json'
+        }
       });
       if (response.ok) {
         fetchAdmins();
@@ -308,14 +392,21 @@ function App() {
     }
   };
 
+  const toggleNewsletterTopic = (topic) => {
+    setNewsletterPreferences(prev => ({
+      ...prev,
+      topics: prev.topics.includes(topic)
+        ? prev.topics.filter(t => t !== topic)
+        : [...prev.topics, topic]
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Top Banner */}
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm font-semibold">
         🌍 Join Africa's Leading Youth in International Affairs • Applications Open
       </div>
 
-      {/* Navigation */}
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20">
@@ -327,9 +418,8 @@ function App() {
               </div>
             </div>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'insights', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -339,12 +429,7 @@ function App() {
                       : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
                   }`}
                 >
-                  {page === 'home' ? 'Home' :
-                   page === 'about' ? 'About' :
-                   page === 'team' ? 'Team' :
-                   page === 'insights' ? 'Insights' :
-                   page === 'programs' ? 'Programs' :
-                   page === 'join' ? 'Join Us' : 'Admin'}
+                  {page.charAt(0).toUpperCase() + page.slice(1)}
                 </button>
               ))}
               {isLoggedIn && (
@@ -358,7 +443,6 @@ function App() {
               )}
             </div>
 
-            {/* Mobile menu button */}
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -370,11 +454,10 @@ function App() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'insights', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'gallery', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -403,23 +486,18 @@ function App() {
         )}
       </nav>
 
-      {/* Main Content */}
       <div>
-        {/* Home Page */}
         {currentPage === 'home' && (
           <div>
-            {/* Hero Section with Image */}
-           {/* Hero Section with Image */}
-<div className="relative h-[600px] bg-gradient-to-r from-black via-gray-900 to-red-900 overflow-hidden">
-  <div 
-    className="absolute inset-0 opacity-40"
-    style={{
-      backgroundImage: 'url(/images/hero.jpg)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}
-  >
-</div>
+            <div className="relative h-[600px] bg-gradient-to-r from-black via-gray-900 to-red-900 overflow-hidden">
+              <div 
+                className="absolute inset-0 opacity-40"
+                style={{
+                  backgroundImage: `url(${teamPhotos.heroImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              ></div>
               <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
                 <div className="max-w-3xl text-white">
                   <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -447,7 +525,6 @@ function App() {
               </div>
             </div>
 
-            {/* Stats Bar */}
             <div className="bg-gray-900 text-white py-12">
               <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
@@ -469,7 +546,6 @@ function App() {
               </div>
             </div>
 
-            {/* Featured Articles */}
             <div className="max-w-7xl mx-auto px-4 py-16">
               <div className="mb-12">
                 <h2 className="text-4xl font-bold text-black mb-4">Latest Insights</h2>
@@ -513,48 +589,45 @@ function App() {
               </div>
             </div>
 
-            {/* Recent Insights Sidebar */}
-            <div className="bg-gray-50 py-16">
-              <div className="max-w-7xl mx-auto px-4">
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="md:col-span-2">
-                    <h3 className="text-3xl font-bold text-black mb-8">Our Focus Areas</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {[
-                        { icon: Globe, title: "Foreign Policy & Diplomacy", desc: "Analyzing Africa's role in global affairs" },
-                        { icon: Scale, title: "Good Governance", desc: "Promoting accountability and transparency" },
-                        { icon: Leaf, title: "Climate Change", desc: "Addressing environmental challenges" },
-                        { icon: Shield, title: "Peace & Security", desc: "Conflict prevention and resolution" }
-                      ].map((area, idx) => (
-                        <div key={idx} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-                          <area.icon className="w-12 h-12 text-red-600 mb-4" />
-                          <h4 className="text-xl font-bold text-black mb-2">{area.title}</h4>
-                          <p className="text-gray-600">{area.desc}</p>
-                        </div>
-                      ))}
-                    </div>
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-16">
+              <div className="max-w-4xl mx-auto px-4 text-center">
+                <Mail className="w-16 h-16 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+                <p className="text-xl mb-8 text-gray-200">
+                  Stay updated with the latest insights, events, and opportunities in African international affairs
+                </p>
+                <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
+                  <div className="flex gap-3">
+                    <input
+                      type="email"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="flex-1 px-6 py-4 rounded-lg text-black focus:ring-2 focus:ring-white"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      disabled={newsletterStatus === 'submitting'}
+                      className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-2xl disabled:bg-gray-300"
+                    >
+                      {newsletterStatus === 'submitting' ? 'Subscribing...' : 'Subscribe'}
+                    </button>
                   </div>
-                  
-                  <div>
-                    <h3 className="text-2xl font-bold text-black mb-6">Recent Updates</h3>
-                    <div className="space-y-4">
-                      {recentInsights.map((insight, idx) => (
-                        <div key={idx} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition cursor-pointer">
-                          <div className="text-xs text-red-600 font-semibold mb-2">{insight.category}</div>
-                          <h4 className="font-bold text-black mb-2 hover:text-red-600 transition">{insight.title}</h4>
-                          <div className="text-sm text-gray-500 flex items-center">
-                            <Calendar className="w-3 h-3 mr-1" />
-                            {insight.date}
-                          </div>
-                        </div>
-                      ))}
+                  {newsletterStatus === 'success' && (
+                    <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
+                      ✅ Successfully subscribed!
                     </div>
-                  </div>
-                </div>
+                  )}
+                  {newsletterStatus === 'error' && (
+                    <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
+                      ❌ Subscription failed. Please try again.
+                    </div>
+                  )}
+                </form>
               </div>
             </div>
 
-            {/* Call to Action */}
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
               <div className="max-w-4xl mx-auto px-4 text-center">
                 <h2 className="text-4xl font-bold mb-6">Ready to Make an Impact?</h2>
@@ -572,14 +645,13 @@ function App() {
           </div>
         )}
 
-        {/* About Page */}
         {currentPage === 'about' && (
           <div>
             <div className="relative h-96 bg-gradient-to-r from-black to-red-900">
               <div 
                 className="absolute inset-0 opacity-30"
                 style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&h=600&fit=crop)',
+                  backgroundImage: `url(${teamPhotos.aboutImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -626,318 +698,112 @@ function App() {
                   ))}
                 </div>
               </div>
-
-              <div className="text-center mb-16">
-                <h3 className="text-3xl font-bold text-black mb-4">Our Impact</h3>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  YIGA is building a movement of young professionals across Africa, creating platforms for research, dialogue, and engagement that shape the continent's future in global affairs.
-                </p>
-              </div>
             </div>
           </div>
         )}
 
-        {/* Team Page */}
-        {currentPage === 'team' && (
-          <div>
-            <div className="relative h-96 bg-gradient-to-r from-black to-red-900">
-              <div 
-                className="absolute inset-0 opacity-30"
-                style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=600&fit=crop)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              ></div>
-              <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-                <div className="text-white max-w-3xl">
-                  <h1 className="text-5xl font-bold mb-4">Our Team</h1>
-                  <p className="text-xl text-gray-200">Meet the leaders driving YIGA's mission across Africa</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 py-16">
-              {/* Organizational Structure Overview */}
-              <div className="bg-gradient-to-r from-red-50 to-gray-50 p-8 rounded-lg mb-16">
-                <h2 className="text-3xl font-bold text-black mb-6 text-center">Organizational Structure</h2>
-                <div className="grid md:grid-cols-4 gap-6 text-center">
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <Users className="w-12 h-12 text-red-600 mx-auto mb-3" />
-                    <h3 className="font-bold text-lg text-black mb-2">Executive Council</h3>
-                    <p className="text-sm text-gray-600">Strategic Leadership & Oversight</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <Award className="w-12 h-12 text-black mx-auto mb-3" />
-                    <h3 className="font-bold text-lg text-black mb-2">Advisory Council</h3>
-                    <p className="text-sm text-gray-600">Expert Guidance & Support</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <Building className="w-12 h-12 text-red-600 mx-auto mb-3" />
-                    <h3 className="font-bold text-lg text-black mb-2">Directorate</h3>
-                    <p className="text-sm text-gray-600">Operations & Programs</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <BookOpen className="w-12 h-12 text-black mx-auto mb-3" />
-                    <h3 className="font-bold text-lg text-black mb-2">Student Wing</h3>
-                    <p className="text-sm text-gray-600">IRSAK - Grassroots Engagement</p>
+        {currentPage === 'gallery' && (
+          <div className="max-w-7xl mx-auto px-4 py-16">
+            <h2 className="text-4xl font-bold text-black mb-12 text-center">Photo Gallery</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {teamPhotos.galleryImages.map((photo, idx) => (
+                <div key={idx} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition">
+                  <img 
+                    src={photo} 
+                    alt={`YIGA Event ${idx + 1}`}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition flex items-center justify-center">
+                    <ImageIcon className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition" />
                   </div>
                 </div>
-              </div>
-
-              {/* Executive Council */}
-              <div className="mb-16">
-                <div className="bg-red-600 text-white p-6 rounded-t-lg">
-                  <h2 className="text-3xl font-bold flex items-center">
-<Users className="w-8 h-8 mr-3" />
-Executive Council
-</h2>
-<p className="text-red-100 mt-2">The highest decision-making body, responsible for strategic leadership, policy direction, and institutional oversight.</p>
-</div>
-<div className="bg-white p-8 rounded-b-lg shadow-xl">
-<div className="text-center text-gray-600 py-8">
-<p className="text-lg">Executive Council members to be announced</p>
-<p className="text-sm mt-2">Positions include strategic leaders from across Africa</p>
-</div>
-</div>
-</div>{/* Advisory Council */}
-          <div className="mb-16">
-            <div className="bg-black text-white p-6 rounded-t-lg">
-              <h2 className="text-3xl font-bold flex items-center">
-                <Award className="w-8 h-8 mr-3" />
-                Advisory Council
-              </h2>
-              <p className="text-gray-300 mt-2">Experienced professionals and subject-matter experts offering strategic guidance and technical support.</p>
-            </div>
-            <div className="bg-white p-8 rounded-b-lg shadow-xl">
-              <div className="text-center text-gray-600 py-8">
-                <p className="text-lg">Advisory Council members to be announced</p>
-                <p className="text-sm mt-2">Distinguished experts in foreign policy, governance, and international relations</p>
-              </div>
+              ))}
             </div>
           </div>
+        )}
 
-          {/* Directorate */}
-          <div className="mb-16">
-            <div className="bg-red-600 text-white p-6 rounded-t-lg">
-              <h2 className="text-3xl font-bold flex items-center">
-                <Building className="w-8 h-8 mr-3" />
-                Directorate
-              </h2>
-              <p className="text-red-100 mt-2">Handles day-to-day operations and execution of programs.</p>
+        {currentPage === 'newsletter' && (
+          <div className="max-w-4xl mx-auto px-4 py-16">
+            <h2 className="text-4xl font-bold text-black mb-12 text-center">Newsletter</h2>
+            
+            <div className="bg-white p-8 rounded-lg shadow-xl mb-12">
+              <h3 className="text-2xl font-bold text-black mb-6">Subscribe with Preferences</h3>
+              <form onSubmit={handleNewsletterPreferencesSubmit}>
+                <div className="mb-6">
+                  <label className="block text-gray-700 font-semibold mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    value={newsletterPreferences.email}
+                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, email: e.target.value})}
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
+required
+/>
+</div><div className="mb-6">
+              <label className="block text-gray-700 font-semibold mb-2">Frequency</label>
+              <select
+                value={newsletterPreferences.frequency}
+                onChange={(e) => setNewsletterPreferences({...newsletterPreferences, frequency: e.target.value})}
+                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
+              >
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="quarterly">Quarterly</option>
+              </select>
             </div>
-            <div className="bg-white p-8 rounded-b-lg shadow-xl">
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  { title: "Executive Director", desc: "Overall leadership and organizational management" },
-                  { title: "Deputy Executive Director", desc: "Supports the Executive Director in all functions" },
-                  { title: "Director of Research", desc: "Oversees research initiatives and publications" },
-                  { title: "Director of Communications", desc: "Manages public relations and media strategy" },
-                  { title: "Director of Events", desc: "Plans and executes conferences and workshops" },
-                  { title: "Director of Programs and Partnerships", desc: "Develops programs and strategic partnerships" },
-                  { title: "Director of Finance", desc: "Financial management and resource allocation" }
-                ].map((position, idx) => (
-                  <div key={idx} className="border-2 border-gray-200 rounded-lg p-6 hover:border-red-600 hover:shadow-lg transition">
-                    <h3 className="font-bold text-xl text-black mb-2">{position.title}</h3>
-                    <p className="text-gray-600">{position.desc}</p>
-                    <p className="text-sm text-gray-500 mt-3 italic">Position open for applications</p>
-                  </div>
+
+            <div className="mb-6">
+              <label className="block text-gray-700 font-semibold mb-3">Topics of Interest</label>
+              <div className="grid md:grid-cols-2 gap-3">
+                {['Foreign Policy', 'Climate Change', 'Peace & Security', 'Good Governance', 'Youth Leadership', 'Economic Development'].map((topic) => (
+                  <label key={topic} className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={newsletterPreferences.topics.includes(topic)}
+                      onChange={() => toggleNewsletterTopic(topic)}
+                      className="w-5 h-5 text-red-600"
+                    />
+                    <span className="text-gray-700">{topic}</span>
+                  </label>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Student Wing - IRSAK */}
-          <div className="mb-16">
-            <div className="bg-black text-white p-6 rounded-t-lg">
-              <h2 className="text-3xl font-bold flex items-center">
-                <BookOpen className="w-8 h-8 mr-3" />
-                Student Wing - IRSAK
-              </h2>
-              <p className="text-gray-300 mt-2">International Relations Students Association of Kenya serves as the student mobilization and grassroots engagement wing of YIGA.</p>
-            </div>
-            <div className="bg-white p-8 rounded-b-lg shadow-xl">
-              <div className="bg-gradient-to-r from-red-50 to-gray-50 p-8 rounded-lg text-center">
-                <h3 className="text-2xl font-bold text-black mb-4">IRSAK Leadership</h3>
-                <p className="text-gray-700 mb-6">Focusing on student involvement in global affairs discourse and activities across Kenya</p>
-                <div className="text-center text-gray-600 py-4">
-                  <p className="text-lg">Student leadership team to be announced</p>
-                  <p className="text-sm mt-2">Actively recruiting student leaders from Kenyan universities</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Join the Team CTA */}
-          <div className="bg-gradient-to-r from-red-600 to-black text-white p-12 rounded-lg text-center">
-            <h2 className="text-3xl font-bold mb-4">Join Our Team</h2>
-            <p className="text-xl text-gray-200 mb-6">
-              We're building Africa's premier youth-led organization for international affairs. Be part of our founding team.
-            </p>
             <button
-              onClick={() => setCurrentPage('join')}
-              className="bg-white text-red-600 px-10 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition shadow-2xl"
+              type="submit"
+              disabled={newsletterStatus === 'submitting'}
+              className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
             >
-              Apply Now
+              {newsletterStatus === 'submitting' ? 'Subscribing...' : 'Subscribe Now'}
             </button>
-          </div>
-        </div>
-      </div>
-    )}
 
-    {/* Insights Page */}
-    {currentPage === 'insights' && (
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="mb-12">
-          <h1 className="text-5xl font-bold text-black mb-4">Insights & Analysis</h1>
-          <p className="text-xl text-gray-600">In-depth perspectives on Africa's role in global affairs</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredArticles.map((article) => (
-            <div key={article.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition group">
-              <div className="relative h-56 overflow-hidden">
-                <img 
-                  src={article.image} 
-                  alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {article.category}
-                  </span>
-                </div>
+            {newsletterStatus === 'success' && (
+              <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
+                ✅ Successfully subscribed with your preferences!
               </div>
-              <div className="p-6">
-                <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                  <span className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {article.date}
-                  </span>
-                  <span>• {article.readTime}</span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
-                  {article.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{article.excerpt}</p>
-                <button className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all">
-                  <span>Read Full Article</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+            )}
+            {newsletterStatus === 'error' && (
+              <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
+                ❌ Subscription failed. Please try again.
               </div>
-            </div>
-          ))}
-          
-          {[4, 5, 6].map((i) => (
-            <div key={i} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition group">
-              <div className="relative h-56 overflow-hidden bg-gray-200">
-                <img 
-                  src={`https://images.unsplash.com/photo-${1517245386807 + i}?w=800&h=500&fit=crop`}
-                  alt="Article"
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-black text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Analysis
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                  <span className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    November 2025
-                  </span>
-                  <span>• 5 min read</span>
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
-                  Understanding Regional Integration Efforts in Africa
-                </h3>
-                <p className="text-gray-600 mb-4">Examining the progress and challenges of economic cooperation across African regions.</p>
-                <button className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all">
-                  <span>Read Full Article</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    )}
-
-    {/* Programs Page */}
-    {currentPage === 'programs' && (
-      <div>
-        <div className="relative h-96 bg-gradient-to-r from-black to-red-900">
-          <div 
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1600&h=600&fit=crop)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          ></div>
-          <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-            <div className="text-white max-w-3xl">
-              <h1 className="text-5xl font-bold mb-4">Our Programs</h1>
-              <p className="text-xl text-gray-200">Building capacity across five critical areas of international affairs</p>
-            </div>
-          </div>
+            )}
+          </form>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: Globe,
-                title: "Foreign Policy & Diplomacy",
-                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
-                description: "Training young professionals in diplomatic protocols, international negotiations, and policy analysis to represent African interests on the global stage."
-              },
-              {
-                icon: Scale,
-                title: "Good Governance",
-                image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=500&fit=crop",
-                description: "Promoting transparency, accountability, and effective public administration through youth-led initiatives and advocacy programs."
-              },
-              {
-                icon: Leaf,
-                title: "Climate Change & Environment",
-                image: "https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=800&h=500&fit=crop",
-                description: "Mobilizing young leaders to address environmental challenges and advance Africa's climate agenda in international forums."
-              },
-              {
-                icon: Shield,
-                title: "Peace & Security",
-                image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
-                description: "Equipping youth with conflict resolution skills and peacebuilding strategies to foster stability across the continent."
-              },
-              {
-                icon: BookOpen,
-                title: "Culture & Heritage",
-                image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop",
-                description: "Leveraging Africa's rich cultural diversity as a tool for soft power and international cultural diplomacy."
-              }
-            ].map((program, idx) => (
-              <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition group">
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <program.icon className="w-10 h-10 mb-3" />
-                    <h3 className="text-2xl font-bold">{program.title}</h3>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-700 leading-relaxed mb-4">{program.description}</p>
-                  <button className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all">
-                    <span>Learn More</span>
-                    <ChevronRight className="w-4 h-4" />
+        <div className="bg-gray-50 p-8 rounded-lg">
+          <h3 className="text-2xl font-bold text-black mb-6">Newsletter Archives</h3>
+          <div className="space-y-4">
+            {newsletterArchives.map((archive) => (
+              <div key={archive.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                <div className="flex justify-between items-start mb-3">
+                  <h4 className="text-xl font-bold text-black">{archive.title}</h4>
+                  <button className="text-red-600 hover:text-red-800">
+                    <Download className="w-5 h-5" />
                   </button>
+                </div>
+                <p className="text-gray-600 mb-2">{archive.excerpt}</p>
+                <div className="text-sm text-gray-500 flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  {archive.date}
                 </div>
               </div>
             ))}
@@ -946,322 +812,344 @@ Executive Council
       </div>
     )}
 
-    {/* Join Us Page */}
-    {currentPage === 'join' && (
-      <div>
-        <div className="relative h-96 bg-gradient-to-r from-red-600 to-black">
-          <div 
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600&h=600&fit=crop)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          ></div>
-          <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-            <div className="text-white max-w-3xl">
-              <h1 className="text-5xl font-bold mb-4">Join YIGA</h1>
-              <p className="text-xl text-gray-200">Be part of Africa's leading network of young professionals in international affairs</p>
+    {currentPage === 'insights' && (
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-black mb-12 text-center">Latest Insights</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {featuredArticles.map((article) => (
+            <div key={article.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+              <img src={article.image} alt={article.title} className="w-full h-64 object-cover" />
+              <div className="p-6">
+                <span className="text-red-600 font-semibold text-sm">{article.category}</span>
+                <h3 className="text-2xl font-bold text-black mt-2 mb-3">{article.title}</h3>
+                <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  {article.date} • {article.readTime}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
+      </div>
+    )}
 
-        <div className="max-w-4xl mx-auto px-4 py-16">
-          <div className="bg-white p-8 md:p-12 rounded-lg shadow-2xl">
-            <h2 className="text-3xl font-bold text-black mb-6">Application Form</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+    {currentPage === 'programs' && (
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Programs</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {[
+            { title: "Research Fellowship", desc: "Conduct research on critical African issues", icon: BookOpen },
+            { title: "Policy Analysis", desc: "Analyze and contribute to policy development", icon: Scale },
+            { title: "Youth Leadership", desc: "Develop leadership skills for global engagement", icon: Award },
+            { title: "Networking Events", desc: "Connect with professionals across Africa", icon: Users }
+          ].map((program, idx) => (
+            <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+              <program.icon className="w-16 h-16 text-red-600 mb-4" />
+              <h3 className="text-2xl font-bold text-black mb-3">{program.title}</h3>
+              <p className="text-gray-600 text-lg">{program.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {currentPage === 'join' && (
+      <div className="max-w-3xl mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold text-black mb-8 text-center">Join YIGA</h2>
+        <div className="bg-white p-8 rounded-lg shadow-xl">
+          {submitStatus === 'success' && (
+            <div className="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+              ✅ Application submitted successfully!
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+              ❌ Submission failed. Please try again.
+            </div>
+          )}
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-2">Full Name</label>
               <input
                 type="text"
-                placeholder="Full Name"
                 value={formData.full_name}
                 onChange={(e) => setFormData({...formData, full_name: e.target.value})}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                 required
               />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-2">Email</label>
               <input
                 type="email"
-                placeholder="Email Address"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                 required
               />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-2">Phone</label>
               <input
                 type="tel"
-                placeholder="Phone Number"
                 value={formData.phone}
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                 required
               />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-2">Country</label>
               <input
                 type="text"
-                placeholder="Country"
                 value={formData.country}
                 onChange={(e) => setFormData({...formData, country: e.target.value})}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                 required
               />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-2">Program</label>
               <select
                 value={formData.program}
                 onChange={(e) => setFormData({...formData, program: e.target.value})}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                 required
               >
-                <option value="">Select Focus Area</option>
-                <option value="Foreign Policy">Foreign Policy & Diplomacy</option>
-                <option value="Good Governance">Good Governance</option>
-                <option value="Climate Change">Climate Change & Environment</option>
-                <option value="Peace and Security">Peace & Security</option>
-                <option value="Culture and Heritage">Culture & Heritage</option>
+                <option value="">Select a program</option>
+                <option value="Research Fellowship">Research Fellowship</option>
+                <option value="Policy Analysis">Policy Analysis</option>
+                <option value="Youth Leadership">Youth Leadership</option>
+                <option value="General Membership">General Membership</option>
               </select>
+            </div>
+            <div className="mb-6">
+              <label className="block text-gray-700 font-semibold mb-2">Motivation</label>
               <textarea
-                placeholder="Why do you want to join YIGA? Share your motivation and interest in international affairs."
                 value={formData.motivation}
                 onChange={(e) => setFormData({...formData, motivation: e.target.value})}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600 h-32"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                rows="5"
                 required
-              />
-              <button
-                type="submit"
-                disabled={submitStatus === 'submitting'}
-                className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 disabled:bg-gray-400 transition shadow-lg"
-              >
-                {submitStatus === 'submitting' ? 'Submitting...' : 'Submit Application'}
-              </button>
-              {submitStatus === 'success' && (
-                <div className="bg-green-100 border-2 border-green-600 text-green-800 p-4 rounded-lg text-center font-bold">
-                  ✅ Application submitted successfully!
-                </div>
-              )}
-              {submitStatus === 'error' && (
-                <div className="bg-red-100 border-2 border-red-600 text-red-800 p-4 rounded-lg text-center font-bold">
-                  ❌ Submission failed. Please try again.
-                </div>
-              )}
-            </form>
-          </div>
-        </div>
-      </div>
-    )}
-
-    {/* Admin Page */}
-    {currentPage === 'admin' && !isLoggedIn && (
-      <div className="max-w-md mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold mb-6 text-center">
-          <span className="text-black">Admin </span>
-          <span className="text-red-600">Login</span>
-        </h2>
-        <div className="bg-white p-8 rounded-lg shadow-xl border-t-4 border-red-600">
-          <form onSubmit={handleLogin} className="space-y-4">
-            <input
-              type="text"
-              placeholder="Username"
-              value={loginData.username}
-              onChange={(e) => setLoginData({...loginData, username: e.target.value})}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={loginData.password}
-              onChange={(e) => setLoginData({...loginData, password: e.target.value})}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
-              required
-            />
+              ></textarea>
+            </div>
             <button
               type="submit"
-              className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition shadow-lg"
+              disabled={submitStatus === 'submitting'}
+              className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
             >
-              Login
+              {submitStatus === 'submitting' ? 'Submitting...' : 'Submit Application'}
             </button>
-            {loginError && (
-              <div className="bg-red-100 border-2 border-red-600 text-red-800 p-3 rounded-lg text-center">
-                {loginError}
-              </div>
-            )}
           </form>
-          <div className="mt-6 text-sm text-gray-600 text-center bg-gray-50 p-4 rounded">
-            <p className="font-bold mb-2">Default credentials:</p>
-            <p>Username: superadmin / Password: superadmin123</p>
-            <p>Username: admin / Password: admin123</p>
-          </div>
         </div>
       </div>
     )}
 
-    {currentPage === 'admin' && isLoggedIn && (
+    {currentPage === 'admin' && (
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-4xl font-bold">
-            <span className="text-black">Admin </span>
-            <span className="text-red-600">Dashboard</span>
-          </h2>
-          <div className="text-right">
-            <p className="text-sm text-gray-600">Logged in as</p>
-            <p className="font-bold text-black">{username} <span className="text-red-600">({userRole})</span></p>
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow-xl mb-8 border-t-4 border-red-600">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-2xl font-bold text-black">Applications</h3>
-            <button
-              onClick={fetchApplications}
-              className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 font-bold transition shadow"
-            >
-              Refresh
-            </button>
-          </div>
-
-          {loading ? (
-            <p className="text-center py-8 text-gray-600">Loading...</p>
-          ) : applications.length === 0 ? (
-            <p className="text-center py-8 text-gray-600">No applications yet</p>
-          ) : (
-            <div className="space-y-4">
-              {applications.map((app) => (
-                <div key={app.id} className="border-2 border-gray-200 rounded-lg p-4 hover:shadow-lg transition">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <h4 className="font-bold text-lg text-black">{app.full_name}</h4>
-                      <p className="text-sm text-gray-600">{app.email} • {app.phone}</p>
-                      <p className="text-sm text-gray-600">{app.country} • {app.program}</p>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      {app.status === 'pending' && <Clock className="w-5 h-5 text-yellow-600" />}
-                      {app.status === 'approved' && <CheckCircle className="w-5 h-5 text-green-600" />}
-                      {app.status === 'rejected' && <XCircle className="w-5 h-5 text-red-600" />}
-                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                        app.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                        app.status === 'approved' ? 'bg-green-100 text-green-800' :
-                        'bg-red-100 text-red-800'
-                      }`}>
-                        {app.status.toUpperCase()}
-                      </span>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-3">{app.motivation}</p>
-                  <div className="flex space-x-2">
-                    {app.status !== 'approved' && (
-                      <button
-                        onClick={() => updateApplicationStatus(app.id, 'approved')}
-                        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center space-x-1 font-bold transition"
-                      >
-                        <CheckCircle className="w-4 h-4" />
-                        <span>Approve</span>
-                      </button>
-                    )}
-                    {app.status !== 'rejected' && (
-                      <button
-                        onClick={() => updateApplicationStatus(app.id, 'rejected')}
-                        className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 flex items-center space-x-1 font-bold transition"
-                      >
-                        <XCircle className="w-4 h-4" />
-                        <span>Reject</span>
-                      </button>
-                    )}
-                    <button
-                      onClick={() => deleteApplication(app.id)}
-                      className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 flex items-center space-x-1 font-bold transition"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                      <span>Delete</span>
-                    </button>
-                  </div>
+        {!isLoggedIn ? (
+          <div className="max-w-md mx-auto">
+            <h2 className="text-3xl font-bold text-black mb-8 text-center">Admin Login</h2>
+            <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-xl">
+              {loginError && (
+                <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  {loginError}
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {userRole === 'superadmin' && (
-          <div className="bg-white p-6 rounded-lg shadow-xl border-t-4 border-black">
-            <h3 className="text-2xl font-bold mb-6 text-black">Admin Management</h3>
-
-            <div className="mb-8 p-4 bg-red-50 rounded-lg border-2 border-red-200">
-              <h4 className="font-bold text-lg mb-4 flex items-center text-black">
-                <UserPlus className="w-5 h-5 mr-2 text-red-600" />
-                Create New Admin
-              </h4>
-              <form onSubmit={createAdmin} className="space-y-3">
+              )}
+              <div className="mb-4">
+                <label className="block text-gray-700 font-semibold mb-2">Username</label>
                 <input
                   type="text"
-                  placeholder="Username"
-                  value={newAdmin.username}
-                  onChange={(e) => setNewAdmin({...newAdmin, username: e.target.value})}
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                  value={loginData.username}
+                  onChange={(e) => setLoginData({...loginData, username: e.target.value})}
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                   required
                 />
+              </div>
+              <div className="mb-6">
+                <label className="block text-gray-700 font-semibold mb-2">Password</label>
                 <input
                   type="password"
-                  placeholder="Password (min 6 characters)"
-                  value={newAdmin.password}
-                  onChange={(e) => setNewAdmin({...newAdmin, password: e.target.value})}
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                  value={loginData.password}
+                  onChange={(e) => setLoginData({...loginData, password: e.target.value})}
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                   required
-                  minLength={6}
                 />
-                <select
-                  value={newAdmin.role}
-                  onChange={(e) => setNewAdmin({...newAdmin, role: e.target.value})}
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
-                >
-                  <option value="admin">Admin</option>
-                  <option value="superadmin">SuperAdmin</option>
-                </select>
-                <button
-                  type="submit"
-                  className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 font-bold transition shadow"
-                >
-                  Create Admin
-                </button>
-                {adminError && (
-                  <div className="bg-red-100 border-2 border-red-600 text-red-800 p-3 rounded-lg">{adminError}</div>
-                )}
-                {adminSuccess && (
-                  <div className="bg-green-100 border-2 border-green-600 text-green-800 p-3 rounded-lg">{adminSuccess}</div>
-                )}
-              </form>
+              </div>
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
+              >
+                {loading ? 'Logging in...' : 'Login'}
+              </button>
+            </form>
+          </div>
+        ) : (
+          <div>
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-black mb-2">Admin Dashboard</h2>
+              <p className="text-gray-600">Welcome, {username} ({userRole})</p>
             </div>
 
-            <div>
-              <h4 className="font-bold text-lg mb-4 text-black">Existing Admins</h4>
-              {admins.length === 0 ? (
-                <p className="text-center py-8 text-gray-600">No admins found</p>
+            {userRole === 'superadmin' && (
+              <div className="mb-12 bg-white p-8 rounded-lg shadow-xl">
+                <h3 className="text-2xl font-bold text-black mb-6">Create New Admin</h3>
+                {adminError && (
+                  <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    {adminError}
+                  </div>
+                )}
+                {adminSuccess && (
+                  <div className="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                    {adminSuccess}
+                  </div>
+                )}
+                <form onSubmit={createAdmin} className="grid md:grid-cols-4 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    value={newAdmin.username}
+                    onChange={(e) => setNewAdmin({...newAdmin, username: e.target.value})}
+                    className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    required
+                  />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={newAdmin.password}
+                    onChange={(e) => setNewAdmin({...newAdmin, password: e.target.value})}
+                    className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    required
+                  />
+                  <select
+                    value={newAdmin.role}
+                    onChange={(e) => setNewAdmin({...newAdmin, role: e.target.value})}
+                    className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                  >
+                    <option value="admin">Admin</option>
+                    <option value="superadmin">Superadmin</option>
+                  </select>
+                  <button
+                    type="submit"
+                    className="bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition flex items-center justify-center"
+                  >
+                    <UserPlus className="w-4 h-4 mr-2" />
+                    Create
+                  </button>
+                </form>
+
+                <div className="mt-8">
+                  <h4 className="text-xl font-bold text-black mb-4">Manage Admins</h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead className="bg-gray-100">
+                        <tr>
+                          <th className="px-4 py-3 text-left">Username</th>
+                          <th className="px-4 py-3 text-left">Role</th>
+                          <th className="px-4 py-3 text-left">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {admins.map((admin) => (
+                          <tr key={admin.id} className="border-b">
+                            <td className="px-4 py-3">{admin.username}</td>
+                            <td className="px-4 py-3">
+                              <select
+                                value={admin.role}
+                                onChange={(e) => updateAdminRole(admin.id, e.target.value)}
+                                className="px-3 py-1 border rounded"
+                                disabled={admin.username === username}
+                              >
+                                <option value="admin">Admin</option>
+                                <option value="superadmin">Superadmin</option>
+                              </select>
+                            </td>
+                            <td className="px-4 py-3">
+                              {admin.username !== username && (
+                                <button
+                                  onClick={() => deleteAdmin(admin.id)}
+                                  className="text-red-600 hover:text-red-800"
+                                >
+                                  <Trash2 className="w-5 h-5" />
+                                </button>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div className="bg-white p-8 rounded-lg shadow-xl">
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-2xl font-bold text-black">Applications</h3>
+                <button
+                  onClick={fetchApplications}
+                  className="bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700 transition"
+                >
+                  Refresh
+                </button>
+              </div>
+
+              {loading ? (
+                <div className="text-center py-8">
+                  <Clock className="w-12 h-12 mx-auto text-gray-400 animate-spin" />
+                  <p className="mt-4 text-gray-600">Loading applications...</p>
+                </div>
+              ) : applications.length === 0 ? (
+                <p className="text-gray-600 text-center py-8">No applications yet.</p>
               ) : (
-                <div className="space-y-3">
-                  {admins.map((admin) => (
-                    <div key={admin.id} className="border-2 border-gray-200 rounded-lg p-4 flex justify-between items-center hover:shadow-lg transition">
-                      <div>
-                        <p className="font-bold text-black">{admin.username}</p>
-                        <p className="text-sm text-gray-600">
-                          Role: <span className="text-red-600">{admin.role}</span> • Created: {new Date(admin.created_at).toLocaleDateString()}
-                        </p>
-                      </div>
-                      <div className="flex space-x-2">
-                        {admin.username !== 'superadmin' && (
-                          <>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-gray-100">
+                      <tr>
+                        <th className="px-4 py-3 text-left">Name</th>
+                        <th className="px-4 py-3 text-left">Email</th>
+                        <th className="px-4 py-3 text-left">Country</th>
+                        <th className="px-4 py-3 text-left">Program</th>
+                        <th className="px-4 py-3 text-left">Status</th>
+                        <th className="px-4 py-3 text-left">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {applications.map((app) => (
+                        <tr key={app.id} className="border-b hover:bg-gray-50">
+                          <td className="px-4 py-3">{app.full_name}</td>
+                          <td className="px-4 py-3">{app.email}</td>
+                          <td className="px-4 py-3">{app.country}</td>
+                          <td className="px-4 py-3">{app.program}</td>
+                          <td className="px-4 py-3">
                             <select
-                              value={admin.role}onChange={(e) => updateAdminRole(admin.id, e.target.value)}
-                              className="px-3 py-1 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600"
+                              value={app.status}
+                              onChange={(e) => updateApplicationStatus(app.id, e.target.value)}
+                              className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                                app.status === 'approved' ? 'bg-green-100 text-green-800' :
+                                app.status === 'rejected' ? 'bg-red-100 text-red-800' :
+                                'bg-yellow-100 text-yellow-800'
+                              }`}
                             >
-                              <option value="admin">Admin</option>
-                              <option value="superadmin">SuperAdmin</option>
+                              <option value="pending">Pending</option>
+                              <option value="approved">Approved</option>
+                              <option value="rejected">Rejected</option>
                             </select>
+                          </td>
+                          <td className="px-4 py-3">
                             <button
-                              onClick={() => deleteAdmin(admin.id)}
-                              className="bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-700 flex items-center space-x-1 font-bold transition"
+                              onClick={() => deleteApplication(app.id)}
+                              className="text-red-600 hover:text-red-800"
                             >
-                              <Trash2 className="w-4 h-4" />
-                              <span>Delete</span>
+                              <Trash2 className="w-5 h-5" />
                             </button>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               )}
             </div>
@@ -1270,7 +1158,7 @@ Executive Council
       </div>
     )}
   </div>
-</div>)
-;
+</div>
+);
 }
-export default App;             
+export default App;            
