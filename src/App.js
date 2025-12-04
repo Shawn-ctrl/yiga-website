@@ -468,7 +468,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -518,7 +518,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -1307,6 +1307,7 @@ function App() {
 );
 }
 export default App;
+
 
 
 
