@@ -53,8 +53,8 @@ const teamMembers = {
     },
     { 
       name: "Catherine Mbilo", 
-      role: "Program Coordinator", 
-      bio: "Coordinating program activities and supporting partnership development",
+      role: "Secretary General", 
+      bio: "Managing organizational operations and coordinating executive functions",
       photo: "/images/team/catherine-mbilo.jpg"
     },
     { 
@@ -1280,5 +1280,6 @@ function App() {
 );
 }
 export default App;
+
 
 
