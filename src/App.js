@@ -199,8 +199,8 @@ function App() {
       if (response.ok) {
         setAuthToken(data.token);
         setIsLoggedIn(true);
-            fetchApplications();
-            fetchAdmins();
+            fetchApplications(data.token);
+            fetchAdmins(data.token);
         setUsername(data.username);
         setUserRole(data.role);
         setLoginData({ username: '', password: '' });
@@ -223,7 +223,7 @@ function App() {
     setCurrentPage('home');
   };
 
-  const fetchApplications = async () => {
+  const fetchApplications = async (token = authToken) => {
     setLoading(true);
     try {
       const response = await fetch(`${API_BASE}/applications`, {
@@ -243,9 +243,9 @@ function App() {
     }
   };
 
-  const fetchAdmins = async () => {
+  const fetchAdmins = async (token = authToken) => {
     try {
-      const response = await fetch(`${API_BASE}/auth/admins`, {
+      const response = await fetch(`${API_BASE}/admins`, {
         headers: { 
           'Authorization': `Bearer ${authToken}`,
           'Accept': 'application/json'
@@ -417,7 +417,7 @@ function App() {
 
   const updateAdminRole = async (id, role) => {
     try {
-      const response = await fetch(`${API_BASE}/auth/admins/${id}`, {
+      const response = await fetch(`${API_BASE}/admins/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -437,7 +437,7 @@ function App() {
   const deleteAdmin = async (id) => {
     if (!window.confirm('Are you sure you want to delete this admin?')) return;
     try {
-      const response = await fetch(`${API_BASE}/auth/admins/${id}`, {
+      const response = await fetch(`${API_BASE}/admins/${id}`, {
         method: 'DELETE',
         headers: { 
           'Authorization': `Bearer ${authToken}`,
