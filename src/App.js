@@ -122,6 +122,15 @@ const newsletterArchives = [
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Handle URL parameters for direct page access
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page');
+    if (page) {
+      setCurrentPage(page);
+    }
+  }, []);
   const [currentPage, setCurrentPage] = useState('home');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authToken, setAuthToken] = useState('');
@@ -468,7 +477,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -518,7 +527,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -1307,6 +1316,7 @@ function App() {
 );
 }
 export default App;
+
 
 
 
