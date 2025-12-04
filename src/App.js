@@ -58,7 +58,7 @@ const teamMembers = {
       photo: "/images/team/catherine-mbilo.jpg"
     },
     { 
-      name: "Programs Assistant Director", 
+      name: "Kemunto J.O", 
       role: "Assistant Director of Programs and Partnership", 
       bio: "Supporting program coordination and partnership management",
       photo: "/images/team/assistant-director-programs.jpg"
@@ -468,7 +468,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -506,7 +506,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join', 'admin'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -1280,4 +1280,5 @@ function App() {
 );
 }
 export default App;
+
 
