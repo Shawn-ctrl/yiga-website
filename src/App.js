@@ -199,6 +199,8 @@ function App() {
       if (response.ok) {
         setAuthToken(data.token);
         setIsLoggedIn(true);
+            fetchApplications();
+            fetchAdmins();
         setUsername(data.username);
         setUserRole(data.role);
         setLoginData({ username: '', password: '' });
