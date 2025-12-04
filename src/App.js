@@ -482,13 +482,25 @@ function App() {
                 </button>
               ))}
               {isLoggedIn && (
-                <button
-                  onClick={handleLogout}
-                  className="ml-4 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 flex items-center space-x-2 transition"
-                >
-                  <LogOut className="w-4 h-4" />
-                  <span>Logout</span>
-                </button>
+                <>
+                  <button
+                    onClick={() => setCurrentPage('admin')}
+                    className={`px-4 py-2 rounded-lg font-semibold transition ${
+                      currentPage === 'admin'
+                        ? 'text-red-600 bg-red-50'
+                        : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    Admin
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="ml-4 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 flex items-center space-x-2 transition"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span>Logout</span>
+                  </button>
+                </>
               )}
             </div>
 
@@ -523,12 +535,27 @@ function App() {
                 </button>
               ))}
               {isLoggedIn && (
-                <button
-                  onClick={handleLogout}
-                  className="block w-full text-left px-3 py-2 rounded-lg bg-black text-white hover:bg-gray-800"
-                >
-                  Logout
-                </button>
+                <>
+                  <button
+                    onClick={() => {
+                      setCurrentPage('admin');
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 rounded-lg font-semibold ${
+                      currentPage === 'admin'
+                        ? 'bg-red-600 text-white'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    Admin
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full text-left px-3 py-2 rounded-lg bg-black text-white hover:bg-gray-800"
+                  >
+                    Logout
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -1280,6 +1307,7 @@ function App() {
 );
 }
 export default App;
+
 
 
 
