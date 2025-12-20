@@ -228,7 +228,7 @@ function App() {
     try {
       const response = await fetch(`${API_BASE}/applications`, {
         headers: { 
-          'Authorization': `Bearer ${authToken}`,
+          'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
         }
       });
@@ -247,7 +247,7 @@ function App() {
     try {
       const response = await fetch(`${API_BASE}/admins`, {
         headers: { 
-          'Authorization': `Bearer ${authToken}`,
+          'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
         }
       });
