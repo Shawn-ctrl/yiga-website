@@ -197,13 +197,19 @@ function App() {
       const data = await response.json();
       
       if (response.ok) {
+        // Set auth state FIRST
         setAuthToken(data.token);
         setIsLoggedIn(true);
-            fetchApplications(data.token);
-            fetchAdmins(data.token);
         setUsername(data.username);
         setUserRole(data.role);
         setLoginData({ username: '', password: '' });
+        
+        // CRITICAL FIX: Fetch data AFTER setting state
+        // Pass the token directly since state hasn't updated yet
+        await fetchApplications(data.token);
+        if (data.role === 'superadmin') {
+          await fetchAdmins(data.token);
+        }
       } else {
         setLoginError(data.message || 'Login failed');
       }
@@ -804,523 +810,520 @@ function App() {
                     <div key={idx} className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition">
                       <area.icon className="w-12 h-12 mx-auto text-red-600 mb-3" />
                       <h4 className="font-bold text-lg text-black">{area.name}</h4>
-</div>
-))}
-</div>
-</div>
-</div>
-</div>
-)}{currentPage === 'team' && (
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Team</h2>
-        
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-black mb-8 text-center">Organizational Structure</h3>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-red-600 to-red-700 text-white p-8 rounded-lg shadow-xl text-center">
-              <Users className="w-16 h-16 mx-auto mb-4" />
-              <h4 className="text-2xl font-bold mb-2">Executive Council</h4>
-              <p className="text-red-100">Strategic leadership and policy direction</p>
-            </div>
-            <div className="bg-gradient-to-br from-black to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
-              <Shield className="w-16 h-16 mx-auto mb-4" />
-              <h4 className="text-2xl font-bold mb-2">Advisory Council</h4>
-              <p className="text-gray-300">Strategic guidance and technical support</p>
-            </div>
-            <div className="bg-gradient-to-br from-gray-700 to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
-              <BookOpen className="w-16 h-16 mx-auto mb-4" />
-              <h4 className="text-2xl font-bold mb-2">Student Wing (IRSAK)</h4>
-              <p className="text-gray-300">Student mobilization and grassroots engagement</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-black mb-8 text-center">Directorate</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {teamMembers.executive.map((member, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
-                {member.photo ? (
-                  <img 
-                    src={member.photo} 
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg"
-                  />
-                ) : (
-                  <div className="flex items-center justify-center w-32 h-32 bg-red-100 rounded-full mx-auto mb-4">
-                    <Users className="w-16 h-16 text-red-600" />
-                  </div>
-                )}
-                <h4 className="text-xl font-bold text-black text-center mb-2">{member.name}</h4>
-                <p className="text-red-600 font-semibold text-center mb-2">{member.role}</p>
-                <p className="text-gray-600 text-center text-sm">{member.bio}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-red-600 to-black text-white py-16 rounded-lg">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h3 className="text-3xl font-bold mb-6">Join Our Team</h3>
-            <p className="text-xl mb-8 text-gray-200">
-              Interested in becoming part of YIGA? We're always looking for passionate young professionals to join our mission.
-            </p>
-            <button
-              onClick={() => setCurrentPage('join')}
-              className="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition shadow-xl"
-            >
-              Apply Now
-            </button>
-          </div>
-        </div>
-      </div>
-    )}
-
-    {currentPage === 'newsletter' && (
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-black mb-12 text-center">Newsletter</h2>
-        
-        <div className="bg-white p-8 rounded-lg shadow-xl mb-12">
-          <h3 className="text-2xl font-bold text-black mb-6">Subscribe with Preferences</h3>
-          <form onSubmit={handleNewsletterPreferencesSubmit}>
-            <div className="mb-6">
-              <label className="block text-gray-700 font-semibold mb-2">Email Address</label>
-              <input
-                type="email"
-                value={newsletterPreferences.email}
-                onChange={(e) => setNewsletterPreferences({...newsletterPreferences, email: e.target.value})}
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
-                required
-              />
             </div>
+          </div>
+        )}
+
+        {currentPage === 'team' && (
+          <div className="max-w-7xl mx-auto px-4 py-16">
+            <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Team</h2>
             
-            <div className="mb-6">
-              <label className="block text-gray-700 font-semibold mb-2">Frequency</label>
-              <select
-                value={newsletterPreferences.frequency}
-                onChange={(e) => setNewsletterPreferences({...newsletterPreferences, frequency: e.target.value})}
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
-              >
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-                <option value="quarterly">Quarterly</option>
-              </select>
+            <div className="mb-16">
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Organizational Structure</h3>
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="bg-gradient-to-br from-red-600 to-red-700 text-white p-8 rounded-lg shadow-xl text-center">
+                  <Users className="w-16 h-16 mx-auto mb-4" />
+                  <h4 className="text-2xl font-bold mb-2">Executive Council</h4>
+                  <p className="text-red-100">Strategic leadership and policy direction</p>
+                </div>
+                <div className="bg-gradient-to-br from-black to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
+                  <Shield className="w-16 h-16 mx-auto mb-4" />
+                  <h4 className="text-2xl font-bold mb-2">Advisory Council</h4>
+                  <p className="text-gray-300">Strategic guidance and technical support</p>
+                </div>
+                <div className="bg-gradient-to-br from-gray-700 to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
+                  <BookOpen className="w-16 h-16 mx-auto mb-4" />
+                  <h4 className="text-2xl font-bold mb-2">Student Wing (IRSAK)</h4>
+                  <p className="text-gray-300">Student mobilization and grassroots engagement</p>
+                </div>
+              </div>
             </div>
 
-            <div className="mb-6">
-              <label className="block text-gray-700 font-semibold mb-3">Topics of Interest</label>
-              <div className="grid md:grid-cols-2 gap-3">
-                {['Foreign Policy', 'Climate Change', 'Peace & Security', 'Good Governance', 'Youth Leadership', 'Economic Development'].map((topic) => (
-                  <label key={topic} className="flex items-center space-x-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={newsletterPreferences.topics.includes(topic)}
-                      onChange={() => toggleNewsletterTopic(topic)}
-                      className="w-5 h-5 text-red-600"
-                    />
-                    <span className="text-gray-700">{topic}</span>
-                  </label>
+            <div className="mb-16">
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Directorate</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {teamMembers.executive.map((member, idx) => (
+                  <div key={idx} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
+                    {member.photo ? (
+                      <img 
+                        src={member.photo} 
+                        alt={member.name}
+                        className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center w-32 h-32 bg-red-100 rounded-full mx-auto mb-4">
+                        <Users className="w-16 h-16 text-red-600" />
+                      </div>
+                    )}
+                    <h4 className="text-xl font-bold text-black text-center mb-2">{member.name}</h4>
+                    <p className="text-red-600 font-semibold text-center mb-2">{member.role}</p>
+                    <p className="text-gray-600 text-center text-sm">{member.bio}</p>
+                  </div>
                 ))}
               </div>
             </div>
 
-            <button
-              type="submit"
-              disabled={newsletterStatus === 'submitting'}
-              className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
-            >
-              {newsletterStatus === 'submitting' ? 'Subscribing...' : 'Subscribe Now'}
-            </button>
-
-            {newsletterStatus === 'success' && (
-              <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
-                ✅ Successfully subscribed with your preferences!
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-16 rounded-lg">
+              <div className="max-w-4xl mx-auto px-4 text-center">
+                <h3 className="text-3xl font-bold mb-6">Join Our Team</h3>
+                <p className="text-xl mb-8 text-gray-200">
+                  Interested in becoming part of YIGA? We're always looking for passionate young professionals to join our mission.
+                </p>
+                <button
+                  onClick={() => setCurrentPage('join')}
+                  className="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition shadow-xl"
+                >
+                  Apply Now
+                </button>
               </div>
-            )}
-            {newsletterStatus === 'error' && (
-              <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
-                ❌ Subscription failed. Please try again.
-              </div>
-            )}
-          </form>
-        </div>
-
-        <div className="bg-gray-50 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-black mb-6">Newsletter Archives</h3>
-          <div className="space-y-4">
-            {newsletterArchives.map((archive) => (
-              <div key={archive.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                <div className="flex justify-between items-start mb-3">
-                  <h4 className="text-xl font-bold text-black">{archive.title}</h4>
-                  <button className="text-red-600 hover:text-red-800">
-                    <Download className="w-5 h-5" />
-                  </button>
-                </div>
-                <p className="text-gray-600 mb-2">{archive.excerpt}</p>
-                <div className="text-sm text-gray-500 flex items-center">
-                  <Calendar className="w-4 h-4 mr-1" />
-                  {archive.date}
-                </div>
-              </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </div>
-    )}
+        )}
 
-    {currentPage === 'insights' && (
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-black mb-12 text-center">Latest Insights</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {featuredArticles.map((article) => (
-            <div key={article.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
-              <img src={article.image} alt={article.title} className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <span className="text-red-600 font-semibold text-sm">{article.category}</span>
-                <h3 className="text-2xl font-bold text-black mt-2 mb-3">{article.title}</h3>
-                <p className="text-gray-600 mb-4">{article.excerpt}</p>
-                <div className="flex items-center text-sm text-gray-500">
-                  <Calendar className="w-4 h-4 mr-1" />
-                  {article.date} • {article.readTime}
+        {currentPage === 'newsletter' && (
+          <div className="max-w-4xl mx-auto px-4 py-16">
+            <h2 className="text-4xl font-bold text-black mb-12 text-center">Newsletter</h2>
+            
+            <div className="bg-white p-8 rounded-lg shadow-xl mb-12">
+              <h3 className="text-2xl font-bold text-black mb-6">Subscribe with Preferences</h3>
+              <form onSubmit={handleNewsletterPreferencesSubmit}>
+                <div className="mb-6">
+                  <label className="block text-gray-700 font-semibold mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    value={newsletterPreferences.email}
+                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, email: e.target.value})}
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    required
+                  />
                 </div>
+                
+                <div className="mb-6">
+                  <label className="block text-gray-700 font-semibold mb-2">Frequency</label>
+                  <select
+                    value={newsletterPreferences.frequency}
+                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, frequency: e.target.value})}
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
+                  >
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                  </select>
+                </div>
+
+                <div className="mb-6">
+                  <label className="block text-gray-700 font-semibold mb-3">Topics of Interest</label>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {['Foreign Policy', 'Climate Change', 'Peace & Security', 'Good Governance', 'Youth Leadership', 'Economic Development'].map((topic) => (
+                      <label key={topic} className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={newsletterPreferences.topics.includes(topic)}
+                          onChange={() => toggleNewsletterTopic(topic)}
+                          className="w-5 h-5 text-red-600"
+                        />
+                        <span className="text-gray-700">{topic}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={newsletterStatus === 'submitting'}
+                  className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
+                >
+                  {newsletterStatus === 'submitting' ? 'Subscribing...' : 'Subscribe Now'}
+                </button>
+
+                {newsletterStatus === 'success' && (
+                  <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
+                    ✅ Successfully subscribed with your preferences!
+                  </div>
+                )}
+                {newsletterStatus === 'error' && (
+                  <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
+                    ❌ Subscription failed. Please try again.
+                  </div>
+                )}
+              </form>
+            </div>
+
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-black mb-6">Newsletter Archives</h3>
+              <div className="space-y-4">
+                {newsletterArchives.map((archive) => (
+                  <div key={archive.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div className="flex justify-between items-start mb-3">
+                      <h4 className="text-xl font-bold text-black">{archive.title}</h4>
+                      <button className="text-red-600 hover:text-red-800">
+                        <Download className="w-5 h-5" />
+                      </button>
+                    </div>
+                    <p className="text-gray-600 mb-2">{archive.excerpt}</p>
+                    <div className="text-sm text-gray-500 flex items-center">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {archive.date}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    )}
+          </div>
+        )}
 
-    {currentPage === 'programs' && (
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Programs</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {[
-            { title: "Research Fellowship", desc: "Conduct research on critical African issues", icon: BookOpen },
-            { title: "Policy Analysis", desc: "Analyze and contribute to policy development", icon: Scale },
-            { title: "Youth Leadership", desc: "Develop leadership skills for global engagement", icon: Award },
-            { title: "Networking Events", desc: "Connect with professionals across Africa", icon: Users }
-          ].map((program, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
-              <program.icon className="w-16 h-16 text-red-600 mb-4" />
-              <h3 className="text-2xl font-bold text-black mb-3">{program.title}</h3>
-              <p className="text-gray-600 text-lg">{program.desc}</p>
+        {currentPage === 'insights' && (
+          <div className="max-w-7xl mx-auto px-4 py-16">
+            <h2 className="text-4xl font-bold text-black mb-12 text-center">Latest Insights</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {featuredArticles.map((article) => (
+                <div key={article.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+                  <img src={article.image} alt={article.title} className="w-full h-64 object-cover" />
+                  <div className="p-6">
+                    <span className="text-red-600 font-semibold text-sm">{article.category}</span>
+                    <h3 className="text-2xl font-bold text-black mt-2 mb-3">{article.title}</h3>
+                    <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {article.date} • {article.readTime}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    )}
+          </div>
+        )}
 
-    {currentPage === 'join' && (
-      <div className="max-w-3xl mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-black mb-8 text-center">Join YIGA</h2>
-        <div className="bg-white p-8 rounded-lg shadow-xl">
-          {submitStatus === 'success' && (
-            <div className="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-              ✅ Application submitted successfully!
+        {currentPage === 'programs' && (
+          <div className="max-w-7xl mx-auto px-4 py-16">
+            <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Programs</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                { title: "Research Fellowship", desc: "Conduct research on critical African issues", icon: BookOpen },
+                { title: "Policy Analysis", desc: "Analyze and contribute to policy development", icon: Scale },
+                { title: "Youth Leadership", desc: "Develop leadership skills for global engagement", icon: Award },
+                { title: "Networking Events", desc: "Connect with professionals across Africa", icon: Users }
+              ].map((program, idx) => (
+                <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                  <program.icon className="w-16 h-16 text-red-600 mb-4" />
+                  <h3 className="text-2xl font-bold text-black mb-3">{program.title}</h3>
+                  <p className="text-gray-600 text-lg">{program.desc}</p>
+                </div>
+              ))}
             </div>
-          )}
-          {submitStatus === 'error' && (
-            <div className="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-              ❌ Submission failed. Please try again.
-            </div>
-          )}
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-semibold mb-2">Full Name</label>
-              <input
-                type="text"
-                value={formData.full_name}
-                onChange={(e) => setFormData({...formData, full_name: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-semibold mb-2">Email</label>
-              <input
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-semibold mb-2">Phone</label>
-              <input
-                type="tel"
-                value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-semibold mb-2">Country</label>
-              <input
-                type="text"
-                value={formData.country}
-                onChange={(e) => setFormData({...formData, country: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-semibold mb-2">Program</label>
-              <select
-                value={formData.program}
-                onChange={(e) => setFormData({...formData, program: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                required
-              >
-                <option value="">Select a program</option>
-                <option value="Research Fellowship">Research Fellowship</option>
-                <option value="Policy Analysis">Policy Analysis</option>
-                <option value="Youth Leadership">Youth Leadership</option>
-                <option value="General Membership">General Membership</option>
-              </select>
-            </div>
-            <div className="mb-6">
-              <label className="block text-gray-700 font-semibold mb-2">Motivation</label>
-              <textarea
-                value={formData.motivation}
-                onChange={(e) => setFormData({...formData, motivation: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                rows="5"
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              disabled={submitStatus === 'submitting'}
-              className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
-            >
-              {submitStatus === 'submitting' ? 'Submitting...' : 'Submit Application'}
-            </button>
-          </form>
-        </div>
-      </div>
-    )}
+          </div>
+        )}
 
-    {currentPage === 'admin' && (
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        {!isLoggedIn ? (
-          <div className="max-w-md mx-auto">
-            <h2 className="text-3xl font-bold text-black mb-8 text-center">Admin Login</h2>
-            <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-xl">
-              {loginError && (
-                <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                  {loginError}
+        {currentPage === 'join' && (
+          <div className="max-w-3xl mx-auto px-4 py-16">
+            <h2 className="text-4xl font-bold text-black mb-8 text-center">Join YIGA</h2>
+            <div className="bg-white p-8 rounded-lg shadow-xl">
+              {submitStatus === 'success' && (
+                <div className="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                  ✅ Application submitted successfully!
                 </div>
               )}
-              <div className="mb-4">
-                <label className="block text-gray-700 font-semibold mb-2">Username</label>
-                <input
-                  type="text"
-                  value={loginData.username}
-                  onChange={(e) => setLoginData({...loginData, username: e.target.value})}
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                  required
-                />
-              </div>
-              <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-2">Password</label>
-                <input
-                  type="password"
-                  value={loginData.password}
-                  onChange={(e) => setLoginData({...loginData, password: e.target.value})}
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
-              >
-                {loading ? 'Logging in...' : 'Login'}
-              </button>
-            </form>
-          </div>
-        ) : (
-          <div>
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-black mb-2">Admin Dashboard</h2>
-              <p className="text-gray-600">Welcome, {username} ({userRole})</p>
-            </div>
-
-            {userRole === 'superadmin' && (
-              <div className="mb-12 bg-white p-8 rounded-lg shadow-xl">
-                <h3 className="text-2xl font-bold text-black mb-6">Create New Admin</h3>
-                {adminError && (
-                  <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                    {adminError}
-                  </div>
-                )}
-                {adminSuccess && (
-                  <div className="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                    {adminSuccess}
-                  </div>
-                )}
-                <form onSubmit={createAdmin} className="grid md:grid-cols-4 gap-4">
+              {submitStatus === 'error' && (
+                <div className="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  ❌ Submission failed. Please try again.
+                </div>
+              )}
+              <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">Full Name</label>
                   <input
                     type="text"
-                    placeholder="Username"
-                    value={newAdmin.username}
-                    onChange={(e) => setNewAdmin({...newAdmin, username: e.target.value})}
-                    className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    value={formData.full_name}
+                    onChange={(e) => setFormData({...formData, full_name: e.target.value})}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">Email</label>
                   <input
-                    type="password"
-                    placeholder="Password"
-                    value={newAdmin.password}
-                    onChange={(e) => setNewAdmin({...newAdmin, password: e.target.value})}
-                    className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">Phone</label>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">Country</label>
+                  <input
+                    type="text"
+                    value={formData.country}
+                    onChange={(e) => setFormData({...formData, country: e.target.value})}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-700 font-semibold mb-2">Program</label>
                   <select
-                    value={newAdmin.role}
-                    onChange={(e) => setNewAdmin({...newAdmin, role: e.target.value})}
-                    className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    value={formData.program}
+                    onChange={(e) => setFormData({...formData, program: e.target.value})}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    required
                   >
-                    <option value="admin">Admin</option>
-                    <option value="superadmin">Superadmin</option>
+                    <option value="">Select a program</option>
+                    <option value="Research Fellowship">Research Fellowship</option>
+                    <option value="Policy Analysis">Policy Analysis</option>
+                    <option value="Youth Leadership">Youth Leadership</option>
+                    <option value="General Membership">General Membership</option>
                   </select>
+                </div>
+                <div className="mb-6">
+                  <label className="block text-gray-700 font-semibold mb-2">Motivation</label>
+                  <textarea
+                    value={formData.motivation}
+                    onChange={(e) => setFormData({...formData, motivation: e.target.value})}
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  disabled={submitStatus === 'submitting'}
+                  className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
+                >
+                  {submitStatus === 'submitting' ? 'Submitting...' : 'Submit Application'}
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {currentPage === 'admin' && (
+          <div className="max-w-7xl mx-auto px-4 py-16">
+            {!isLoggedIn ? (
+              <div className="max-w-md mx-auto">
+                <h2 className="text-3xl font-bold text-black mb-8 text-center">Admin Login</h2>
+                <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-xl">
+                  {loginError && (
+                    <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                      {loginError}
+                    </div>
+                  )}
+                  <div className="mb-4">
+                    <label className="block text-gray-700 font-semibold mb-2">Username</label>
+                    <input
+                      type="text"
+                      value={loginData.username}
+                      onChange={(e) => setLoginData({...loginData, username: e.target.value})}
+                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                      required
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <label className="block text-gray-700 font-semibold mb-2">Password</label>
+                    <input
+                      type="password"
+                      value={loginData.password}
+                      onChange={(e) => setLoginData({...loginData, password: e.target.value})}
+                      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                      required
+                    />
+                  </div>
                   <button
                     type="submit"
-                    className="bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition flex items-center justify-center"
+                    disabled={loading}
+                    className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
                   >
-                    <UserPlus className="w-4 h-4 mr-2" />
-                    Create
+                    {loading ? 'Logging in...' : 'Login'}
                   </button>
                 </form>
+              </div>
+            ) : (
+              <div>
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold text-black mb-2">Admin Dashboard</h2>
+                  <p className="text-gray-600">Welcome, {username} ({userRole})</p>
+                </div>
 
-                <div className="mt-8">
-                  <h4 className="text-xl font-bold text-black mb-4">Manage Admins</h4>
-                  <div className="overflow-x-auto">
-                    <table className="w-full">
-                      <thead className="bg-gray-100">
-                        <tr>
-                          <th className="px-4 py-3 text-left">Username</th>
-                          <th className="px-4 py-3 text-left">Role</th>
-                          <th className="px-4 py-3 text-left">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {admins.map((admin) => (
-                          <tr key={admin.id} className="border-b">
-                            <td className="px-4 py-3">{admin.username}</td>
-                            <td className="px-4 py-3">
-                              <select
-                                value={admin.role}
-                                onChange={(e) => updateAdminRole(admin.id, e.target.value)}
-                                className="px-3 py-1 border rounded"
-                                disabled={admin.username === username}
-                              >
-                                <option value="admin">Admin</option>
-                                <option value="superadmin">Superadmin</option>
-                              </select>
-                            </td>
-                            <td className="px-4 py-3">
-                              {admin.username !== username && (
+                {userRole === 'superadmin' && (
+                  <div className="mb-12 bg-white p-8 rounded-lg shadow-xl">
+                    <h3 className="text-2xl font-bold text-black mb-6">Create New Admin</h3>
+                    {adminError && (
+                      <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                        {adminError}
+                      </div>
+                    )}
+                    {adminSuccess && (
+                      <div className="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                        {adminSuccess}
+                      </div>
+                    )}
+                    <form onSubmit={createAdmin} className="grid md:grid-cols-4 gap-4">
+                      <input
+                        type="text"
+                        placeholder="Username"
+                        value={newAdmin.username}
+                        onChange={(e) => setNewAdmin({...newAdmin, username: e.target.value})}
+                        className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                        required
+                      />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        value={newAdmin.password}
+                        onChange={(e) => setNewAdmin({...newAdmin, password: e.target.value})}
+                        className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                        required
+                      />
+                      <select
+                        value={newAdmin.role}
+                        onChange={(e) => setNewAdmin({...newAdmin, role: e.target.value})}
+                        className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
+                      >
+                        <option value="admin">Admin</option>
+                        <option value="superadmin">Superadmin</option>
+                      </select>
+                      <button
+                        type="submit"
+                        className="bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition flex items-center justify-center"
+                      >
+                        <UserPlus className="w-4 h-4 mr-2" />
+                        Create
+                      </button>
+                    </form>
+
+                    <div className="mt-8">
+                      <h4 className="text-xl font-bold text-black mb-4">Manage Admins</h4>
+                      <div className="overflow-x-auto">
+                        <table className="w-full">
+                          <thead className="bg-gray-100">
+                            <tr>
+                              <th className="px-4 py-3 text-left">Username</th>
+                              <th className="px-4 py-3 text-left">Role</th>
+                              <th className="px-4 py-3 text-left">Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {admins.map((admin) => (
+                              <tr key={admin.id} className="border-b">
+                                <td className="px-4 py-3">{admin.username}</td>
+                                <td className="px-4 py-3">
+                                  <select
+                                    value={admin.role}
+                                    onChange={(e) => updateAdminRole(admin.id, e.target.value)}
+                                    className="px-3 py-1 border rounded"
+                                    disabled={admin.username === username}
+                                  >
+                                    <option value="admin">Admin</option>
+                                    <option value="superadmin">Superadmin</option>
+                                  </select>
+                                </td>
+                                <td className="px-4 py-3">
+                                  {admin.username !== username && (
+                                    <button
+                                      onClick={() => deleteAdmin(admin.id)}
+                                      className="text-red-600 hover:text-red-800"
+                                    >
+                                      <Trash2 className="w-5 h-5" />
+                                    </button>
+                                  )}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="bg-white p-8 rounded-lg shadow-xl">
+                  <div className="flex justify-between items-center mb-6">
+                    <h3 className="text-2xl font-bold text-black">Applications</h3>
+                    <button
+                      onClick={fetchApplications}
+                      className="bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700 transition"
+                    >
+                      Refresh
+                    </button>
+                  </div>
+
+                  {loading ? (
+                    <div className="text-center py-8">
+                      <Clock className="w-12 h-12 mx-auto text-gray-400 animate-spin" />
+                      <p className="mt-4 text-gray-600">Loading applications...</p>
+                    </div>
+                  ) : applications.length === 0 ? (
+                    <p className="text-gray-600 text-center py-8">No applications yet.</p>
+                  ) : (
+                    <div className="overflow-x-auto">
+                      <table className="w-full">
+                        <thead className="bg-gray-100">
+                          <tr>
+                            <th className="px-4 py-3 text-left">Name</th>
+                            <th className="px-4 py-3 text-left">Email</th>
+                            <th className="px-4 py-3 text-left">Country</th>
+                            <th className="px-4 py-3 text-left">Program</th>
+                            <th className="px-4 py-3 text-left">Status</th>
+                            <th className="px-4 py-3 text-left">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {applications.map((app) => (
+                            <tr key={app.id} className="border-b hover:bg-gray-50">
+                              <td className="px-4 py-3">{app.full_name}</td>
+                              <td className="px-4 py-3">{app.email}</td>
+                              <td className="px-4 py-3">{app.country}</td>
+                              <td className="px-4 py-3">{app.program}</td>
+                              <td className="px-4 py-3">
+                                <select
+                                  value={app.status}
+                                  onChange={(e) => updateApplicationStatus(app.id, e.target.value)}
+                                  className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                                    app.status === 'approved' ? 'bg-green-100 text-green-800' :
+                                    app.status === 'rejected' ? 'bg-red-100 text-red-800' :
+                                    'bg-yellow-100 text-yellow-800'
+                                  }`}
+                                >
+                                  <option value="pending">Pending</option>
+                                  <option value="approved">Approved</option>
+                                  <option value="rejected">Rejected</option>
+                                </select>
+                              </td>
+                              <td className="px-4 py-3">
                                 <button
-                                  onClick={() => deleteAdmin(admin.id)}
+                                  onClick={() => deleteApplication(app.id)}
                                   className="text-red-600 hover:text-red-800"
                                 >
                                   <Trash2 className="w-5 h-5" />
                                 </button>
-                              )}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
-
-            <div className="bg-white p-8 rounded-lg shadow-xl">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-black">Applications</h3>
-                <button
-                  onClick={fetchApplications}
-                  className="bg-red-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-700 transition"
-                >
-                  Refresh
-                </button>
-              </div>
-
-              {loading ? (
-                <div className="text-center py-8">
-                  <Clock className="w-12 h-12 mx-auto text-gray-400 animate-spin" />
-                  <p className="mt-4 text-gray-600">Loading applications...</p>
-                </div>
-              ) : applications.length === 0 ? (
-                <p className="text-gray-600 text-center py-8">No applications yet.</p>
-              ) : (
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-gray-100">
-                      <tr>
-                        <th className="px-4 py-3 text-left">Name</th>
-                        <th className="px-4 py-3 text-left">Email</th>
-                        <th className="px-4 py-3 text-left">Country</th>
-                        <th className="px-4 py-3 text-left">Program</th>
-                        <th className="px-4 py-3 text-left">Status</th>
-                        <th className="px-4 py-3 text-left">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {applications.map((app) => (
-                        <tr key={app.id} className="border-b hover:bg-gray-50">
-                          <td className="px-4 py-3">{app.full_name}</td>
-                          <td className="px-4 py-3">{app.email}</td>
-                          <td className="px-4 py-3">{app.country}</td>
-                          <td className="px-4 py-3">{app.program}</td>
-                          <td className="px-4 py-3">
-                            <select
-                              value={app.status}
-                              onChange={(e) => updateApplicationStatus(app.id, e.target.value)}
-                              className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                                app.status === 'approved' ? 'bg-green-100 text-green-800' :
-                                app.status === 'rejected' ? 'bg-red-100 text-red-800' :
-                                'bg-yellow-100 text-yellow-800'
-                              }`}
-                            >
-                              <option value="pending">Pending</option>
-                              <option value="approved">Approved</option>
-                              <option value="rejected">Rejected</option>
-                            </select>
-                          </td>
-                          <td className="px-4 py-3">
-                            <button
-                              onClick={() => deleteApplication(app.id)}
-                              className="text-red-600 hover:text-red-800"
-                            >
-                              <Trash2 className="w-5 h-5" />
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </div>
           </div>
         )}
       </div>
-    )}
-  </div>
-</div>          
-);
+    </div>          
+  );
 }
+
 export default App;
-
-
-
-
-
-
