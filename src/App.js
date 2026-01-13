@@ -241,7 +241,7 @@ function App() {
       });
       const data = await response.json();
       if (response.ok) {
-        setApplications(Array.isArray(data) ? data : []);
+        setApplications(Array.isArray(data.applications) ? data.applications : []);
       }
     } catch (error) {
       console.error('Error fetching applications:', error);
