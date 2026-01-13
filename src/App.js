@@ -199,6 +199,7 @@ function App() {
       if (response.ok) {
         // Set auth state FIRST
         setAuthToken(data.token);
+        localStorage.setItem('adminToken', data.token);
         setIsLoggedIn(true);
         setUsername(data.username);
         setUserRole(data.role);
