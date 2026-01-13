@@ -219,16 +219,16 @@ function App() {
         setAuthToken(data.token);
         localStorage.setItem('adminToken', data.token);
         setIsLoggedIn(true);
-        setUsername(data.username);
-        localStorage.setItem('username', data.username);
-        setUserRole(data.role);
-        localStorage.setItem('userRole', data.role);
+        setUsername(data.user.username);
+        localStorage.setItem('username', data.user.username);
+        setUserRole(data.user.role);
+        localStorage.setItem('userRole', data.user.role);
         setLoginData({ username: '', password: '' });
         
         // CRITICAL FIX: Fetch data AFTER setting state
         // Pass the token directly since state hasn't updated yet
         await fetchApplications(data.token);
-        if (data.role === 'superadmin') {
+        if (data.user.role === 'superadmin') {
           await fetchAdmins(data.token);
         }
       } else {
