@@ -131,24 +131,6 @@ function App() {
       setCurrentPage(page);
     }
   }, []);
-
-  // Restore login state from localStorage on page load
-  useEffect(() => {
-    const token = localStorage.getItem('adminToken');
-    const savedRole = localStorage.getItem('userRole');
-    const savedUsername = localStorage.getItem('username');
-    
-    if (token && savedRole && savedUsername) {
-      setAuthToken(token);
-      setUserRole(savedRole);
-      setUsername(savedUsername);
-      setIsLoggedIn(true);
-      // Fetch data with restored token
-      fetchApplications(token);
-      if (savedRole === 'superadmin') {
-        fetchAdmins(token);
-      }
-    }
   const [currentPage, setCurrentPage] = useState('home');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authToken, setAuthToken] = useState('');
