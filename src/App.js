@@ -20,46 +20,105 @@ const teamPhotos = {
 };
 
 const teamMembers = {
+    // Executive Leadership
+  executiveLeadership: {
+    name: "Jeremy Oronje",
+    role: "Executive Director",
+    bio: "Leading YIGA's vision and strategic direction in youth empowerment and international affairs",
+    photo: "/images/team/jeremy-oronje.jpg"
+  },
+
+  // Department Heads with Deputies
+  departments: [
+    {
+      head: {
+        name: "Phoebe Monari",
+        role: "Director of Programs and Partnership",
+        bio: "Building strategic partnerships and coordinating program implementation",
+        photo: "/images/team/phoebe-monari.jpg"
+      },
+      deputy: {
+        name: "Kemunto J.O",
+        role: "Assistant Director of Programs and Partnership",
+        bio: "Supporting program coordination and partnership management",
+        photo: "/images/team/assistant-director-programs.jpg"
+      }
+    },
+    {
+      head: {
+        name: "Hilda Koipano",
+        role: "Director of Communications",
+        bio: "Leading communication strategies and managing public relations for YIGA",
+        photo: "/images/team/hilda-koipano.jpg"
+      },
+      deputy: {
+        name: "Beldine Mukami Maina",
+        role: "Assistant Communications Director",
+        bio: "Supporting communication initiatives and managing media engagement",
+        photo: "/images/team/beldine-mukami.jpg"
+      }
+    },
+    {
+      head: {
+        name: "Abel Omenge",
+        role: "Director of Finance",
+        bio: "Managing financial operations and ensuring fiscal responsibility across all programs",
+        photo: "/images/team/abel-omenge.jpg"
+      },
+      deputy: null
+    },
+    {
+      head: {
+        name: "Catherine Mbilo",
+        role: "Secretary General",
+        bio: "Managing organizational operations and coordinating executive functions",
+        photo: "/images/team/catherine-mbilo.jpg"
+      },
+      deputy: null
+    }
+  ],
+
+  // Keep old structure for backward compatibility during transition
   executive: [
-    { 
-      name: "Jeremy Oronje", 
-      role: "Executive Director", 
+    {
+      name: "Jeremy Oronje",
+      role: "Executive Director",
       bio: "Leading YIGA's vision and strategic direction in youth empowerment and international affairs",
       photo: "/images/team/jeremy-oronje.jpg"
     },
-    { 
-      name: "Abel Omenge", 
-      role: "Director of Finance", 
+    {
+      name: "Abel Omenge",
+      role: "Director of Finance",
       bio: "Managing financial operations and ensuring fiscal responsibility across all programs",
       photo: "/images/team/abel-omenge.jpg"
     },
-    { 
-      name: "Hilda Koipano", 
-      role: "Director of Communications", 
+    {
+      name: "Hilda Koipano",
+      role: "Director of Communications",
       bio: "Leading communication strategies and managing public relations for YIGA",
       photo: "/images/team/hilda-koipano.jpg"
     },
-    { 
-      name: "Phoebe Monari", 
-      role: "Director of Programs and Partnership", 
+    {
+      name: "Phoebe Monari",
+      role: "Director of Programs and Partnership",
       bio: "Building strategic partnerships and coordinating program implementation",
       photo: "/images/team/phoebe-monari.jpg"
     },
-    { 
-      name: "Beldine Mukami Maina", 
-      role: "Assistant Communications Director", 
+    {
+      name: "Beldine Mukami Maina",
+      role: "Assistant Communications Director",
       bio: "Supporting communication initiatives and managing media engagement",
       photo: "/images/team/beldine-mukami.jpg"
     },
-    { 
-      name: "Catherine Mbilo", 
-      role: "Secretary General", 
+    {
+      name: "Catherine Mbilo",
+      role: "Secretary General",
       bio: "Managing organizational operations and coordinating executive functions",
       photo: "/images/team/catherine-mbilo.jpg"
     },
-    { 
-      name: "Kemunto J.O", 
-      role: "Assistant Director of Programs and Partnership", 
+    {
+      name: "Kemunto J.O",
+      role: "Assistant Director of Programs and Partnership",
       bio: "Supporting program coordination and partnership management",
       photo: "/images/team/assistant-director-programs.jpg"
     }
@@ -821,10 +880,11 @@ function App() {
           </div>
         )}
 
-        {currentPage === 'team' && (
+                {currentPage === 'team' && (
           <div className="max-w-7xl mx-auto px-4 py-16">
             <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Team</h2>
             
+            {/* Organizational Structure Overview */}
             <div className="mb-16">
               <h3 className="text-3xl font-bold text-black mb-8 text-center">Organizational Structure</h3>
               <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -846,134 +906,108 @@ function App() {
               </div>
             </div>
 
+            {/* Executive Director */}
             <div className="mb-16">
-              <h3 className="text-3xl font-bold text-black mb-8 text-center">Directorate</h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                {teamMembers.executive.map((member, idx) => (
-                  <div key={idx} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
-                    {member.photo ? (
-                      <img 
-                        src={member.photo} 
-                        alt={member.name}
-                        className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg"
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Executive Leadership</h3>
+              <div className="max-w-2xl mx-auto">
+                <div className="bg-gradient-to-br from-red-600 to-red-700 p-8 rounded-lg shadow-2xl text-white">
+                  <div className="flex flex-col md:flex-row items-center gap-6">
+                    {teamMembers.executiveLeadership.photo ? (
+                      <img
+                        src={teamMembers.executiveLeadership.photo}
+                        alt={teamMembers.executiveLeadership.name}
+                        className="w-40 h-40 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0"
                       />
                     ) : (
-                      <div className="flex items-center justify-center w-32 h-32 bg-red-100 rounded-full mx-auto mb-4">
-                        <Users className="w-16 h-16 text-red-600" />
+                      <div className="flex items-center justify-center w-40 h-40 bg-white rounded-full border-4 border-white shadow-lg flex-shrink-0">
+                        <Users className="w-20 h-20 text-red-600" />
                       </div>
                     )}
-                    <h4 className="text-xl font-bold text-black text-center mb-2">{member.name}</h4>
-                    <p className="text-red-600 font-semibold text-center mb-2">{member.role}</p>
-                    <p className="text-gray-600 text-center text-sm">{member.bio}</p>
+                    <div className="text-center md:text-left">
+                      <h4 className="text-3xl font-bold mb-2">{teamMembers.executiveLeadership.name}</h4>
+                      <p className="text-xl font-semibold mb-3 text-red-100">{teamMembers.executiveLeadership.role}</p>
+                      <p className="text-white/90">{teamMembers.executiveLeadership.bio}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Department Heads with Deputies */}
+            <div className="mb-16">
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Directorate</h3>
+              <div className="space-y-8">
+                {teamMembers.departments.map((dept, idx) => (
+                  <div key={idx} className="bg-white rounded-lg shadow-xl overflow-hidden border-t-4 border-red-600">
+                    <div className="grid md:grid-cols-2 gap-6 p-8">
+                      {/* Department Head */}
+                      <div className="flex flex-col items-center text-center">
+                        <div className="mb-4">
+                          <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                            Department Head
+                          </span>
+                        </div>
+                        {dept.head.photo ? (
+                          <img
+                            src={dept.head.photo}
+                            alt={dept.head.name}
+                            className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg mb-4"
+                          />
+                        ) : (
+                          <div className="flex items-center justify-center w-32 h-32 bg-red-100 rounded-full border-4 border-red-600 shadow-lg mb-4">
+                            <Users className="w-16 h-16 text-red-600" />
+                          </div>
+                        )}
+                        <h4 className="text-xl font-bold text-black mb-2">{dept.head.name}</h4>
+                        <p className="text-red-600 font-semibold mb-3">{dept.head.role}</p>
+                        <p className="text-gray-600 text-sm">{dept.head.bio}</p>
+                      </div>
+
+                      {/* Deputy (if exists) */}
+                      {dept.deputy ? (
+                        <div className="flex flex-col items-center text-center border-l-2 border-gray-200 pl-6">
+                          <div className="mb-4">
+                            <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                              Deputy
+                            </span>
+                          </div>
+                          {dept.deputy.photo ? (
+                            <img
+                              src={dept.deputy.photo}
+                              alt={dept.deputy.name}
+                              className="w-32 h-32 rounded-full object-cover border-4 border-gray-600 shadow-lg mb-4"
+                            />
+                          ) : (
+                            <div className="flex items-center justify-center w-32 h-32 bg-gray-100 rounded-full border-4 border-gray-600 shadow-lg mb-4">
+                              <Users className="w-16 h-16 text-gray-600" />
+                            </div>
+                          )}
+                          <h4 className="text-xl font-bold text-black mb-2">{dept.deputy.name}</h4>
+                          <p className="text-gray-600 font-semibold mb-3">{dept.deputy.role}</p>
+                          <p className="text-gray-600 text-sm">{dept.deputy.bio}</p>
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center border-l-2 border-gray-200 pl-6">
+                          <p className="text-gray-400 italic">No deputy assigned</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
+            {/* Call to Action */}
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-16 rounded-lg">
               <div className="max-w-4xl mx-auto px-4 text-center">
                 <h3 className="text-3xl font-bold mb-6">Join Our Team</h3>
-                <p className="text-xl mb-8 text-gray-200">
-                  Interested in becoming part of YIGA? We're always looking for passionate young professionals to join our mission.
-                </p>
-                <button
+                <p className="text-xl mb-8">Passionate about youth empowerment and international affairs? We're always looking for dedicated individuals.</p>
+                <button 
                   onClick={() => setCurrentPage('join')}
-                  className="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition shadow-xl"
+                  className="bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition"
                 >
                   Apply Now
                 </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {currentPage === 'newsletter' && (
-          <div className="max-w-4xl mx-auto px-4 py-16">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center">Newsletter</h2>
-            
-            <div className="bg-white p-8 rounded-lg shadow-xl mb-12">
-              <h3 className="text-2xl font-bold text-black mb-6">Subscribe with Preferences</h3>
-              <form onSubmit={handleNewsletterPreferencesSubmit}>
-                <div className="mb-6">
-                  <label className="block text-gray-700 font-semibold mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    value={newsletterPreferences.email}
-                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, email: e.target.value})}
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
-                    required
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <label className="block text-gray-700 font-semibold mb-2">Frequency</label>
-                  <select
-                    value={newsletterPreferences.frequency}
-                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, frequency: e.target.value})}
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
-                  >
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="quarterly">Quarterly</option>
-                  </select>
-                </div>
-
-                <div className="mb-6">
-                  <label className="block text-gray-700 font-semibold mb-3">Topics of Interest</label>
-                  <div className="grid md:grid-cols-2 gap-3">
-                    {['Foreign Policy', 'Climate Change', 'Peace & Security', 'Good Governance', 'Youth Leadership', 'Economic Development'].map((topic) => (
-                      <label key={topic} className="flex items-center space-x-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={newsletterPreferences.topics.includes(topic)}
-                          onChange={() => toggleNewsletterTopic(topic)}
-                          className="w-5 h-5 text-red-600"
-                        />
-                        <span className="text-gray-700">{topic}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={newsletterStatus === 'submitting'}
-                  className="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition disabled:bg-gray-400"
-                >
-                  {newsletterStatus === 'submitting' ? 'Subscribing...' : 'Subscribe Now'}
-                </button>
-
-                {newsletterStatus === 'success' && (
-                  <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
-                    ✅ Successfully subscribed with your preferences!
-                  </div>
-                )}
-                {newsletterStatus === 'error' && (
-                  <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
-                    ❌ Subscription failed. Please try again.
-                  </div>
-                )}
-              </form>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-black mb-6">Newsletter Archives</h3>
-              <div className="space-y-4">
-                {newsletterArchives.map((archive) => (
-                  <div key={archive.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                    <div className="flex justify-between items-start mb-3">
-                      <h4 className="text-xl font-bold text-black">{archive.title}</h4>
-                      <button className="text-red-600 hover:text-red-800">
-                        <Download className="w-5 h-5" />
-                      </button>
-                    </div>
-                    <p className="text-gray-600 mb-2">{archive.excerpt}</p>
-                    <div className="text-sm text-gray-500 flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {archive.date}
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -1526,4 +1560,6 @@ function App() {
 }
 
 export default App;
+
+
 
