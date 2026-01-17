@@ -69,36 +69,6 @@ const teamMembers = {
   ]
 };
 
-
-const upcomingEvents = [
-  {
-    id: 1,
-    title: "African Youth Leadership Summit 2026",
-    date: "March 15-17, 2026",
-    time: "9:00 AM - 5:00 PM EAT",
-    location: "Nairobi, Kenya",
-    type: "Conference",
-    description: "A three-day summit bringing together 500+ young leaders from across Africa to discuss governance, policy, and international affairs.",
-    highlights: ["Keynote speakers from AU and UN", "Leadership workshops", "Networking sessions", "Certificate of participation"],
-    registration: "Open",
-    capacity: "500 participants",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop"
-  }
-];
-
-const pastEvents = [
-  {
-    id: 1,
-    title: "Youth Governance Forum 2025",
-    date: "November 20, 2025",
-    location: "Nairobi, Kenya",
-    type: "Forum",
-    description: "Successfully hosted 250+ young leaders discussing democratic governance.",
-    attendees: "250+",
-    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=500&fit=crop"
-  }
-];
-
 const featuredArticles = [
   {
     id: 1,
