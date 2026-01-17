@@ -20,6 +20,28 @@ const teamPhotos = {
 };
 
 const teamMembers = {
+  executiveLeadership: {
+    head: {
+      name: "Jeremy Oronje",
+      role: "Executive Director",
+      bio: "Leading YIGA's vision and strategic direction",
+      photo: "/images/team/jeremy-oronje.jpg"
+    },
+    deputy: {
+      name: "Galdicia Wambui Gacihi",
+      role: "Deputy Executive Director",
+      bio: "Supporting executive leadership",
+      photo: "/images/team/galdicia-gacihi.jpg"
+    }
+  },
+  departments: [
+    { head: { name: "Ashley Munyasia", role: "Director of Research", bio: "Leading research initiatives", photo: "/images/team/ashley-munyasia.jpg" }, deputy: null },
+    { head: { name: "Neema", role: "Director of Events", bio: "Managing YIGA events", photo: "/images/team/neema.jpg" }, deputy: null },
+    { head: { name: "Phoebe Monari", role: "Director of Programs", bio: "Building partnerships", photo: "/images/team/phoebe-monari.jpg" }, deputy: { name: "Kemunto J.O", role: "Assistant Director", bio: "Supporting programs", photo: "/images/team/assistant-director-programs.jpg" } },
+    { head: { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communications", photo: "/images/team/hilda-koipano.jpg" }, deputy: { name: "Beldine Mukami", role: "Assistant Director", bio: "Supporting communications", photo: "/images/team/beldine-mukami.jpg" } },
+    { head: { name: "Abel Omenge", role: "Director of Finance", bio: "Managing finances", photo: "/images/team/abel-omenge.jpg" }, deputy: null },
+    { head: { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing operations", photo: "/images/team/catherine-mbilo.jpg" }, deputy: null }
+  ],
   executive: [
     { 
       name: "Jeremy Oronje", 
