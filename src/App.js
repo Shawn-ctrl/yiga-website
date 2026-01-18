@@ -871,12 +871,12 @@ function App() {
             <div className="mb-16">
               <h3 className="text-3xl font-bold text-black mb-8 text-center">Directorate</h3>
               <div className="grid md:grid-cols-3 gap-6">
-                {teamMembers.executive.map((member, idx) => (
+                {teamMembers.departments.map((dept, idx) => (
                   <div key={idx} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
-                    {member.photo ? (
+                    {dept.head.photo ? (
                       <img 
-                        src={member.photo} 
-                        alt={member.name}
+                        src={dept.head.photo} 
+                        alt={dept.head.name}
                         className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg"
                       />
                     ) : (
@@ -884,9 +884,9 @@ function App() {
                         <Users className="w-16 h-16 text-red-600" />
                       </div>
                     )}
-                    <h4 className="text-xl font-bold text-black text-center mb-2">{member.name}</h4>
-                    <p className="text-red-600 font-semibold text-center mb-2">{member.role}</p>
-                    <p className="text-gray-600 text-center text-sm">{member.bio}</p>
+                    <h4 className="text-xl font-bold text-black text-center mb-2">{dept.head.name}</h4>
+                    <p className="text-red-600 font-semibold text-center mb-2">{dept.head.role}</p>
+                    <p className="text-gray-600 text-center text-sm">{dept.head.bio}</p>
                   </div>
                 ))}
               </div>
@@ -1548,6 +1548,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
