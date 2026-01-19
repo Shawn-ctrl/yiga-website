@@ -846,64 +846,69 @@ function App() {
         {currentPage === 'team' && (
           <div className="max-w-7xl mx-auto px-4 py-16">
             <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Team</h2>
-            
+
+            {/* Executive Leadership */}
             <div className="mb-16">
-              <h3 className="text-3xl font-bold text-black mb-8 text-center">Organizational Structure</h3>
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div className="bg-gradient-to-br from-red-600 to-red-700 text-white p-8 rounded-lg shadow-xl text-center">
-                  <Users className="w-16 h-16 mx-auto mb-4" />
-                  <h4 className="text-2xl font-bold mb-2">Executive Council</h4>
-                  <p className="text-red-100">Strategic leadership and policy direction</p>
-                </div>
-                <div className="bg-gradient-to-br from-black to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
-                  <Shield className="w-16 h-16 mx-auto mb-4" />
-                  <h4 className="text-2xl font-bold mb-2">Advisory Council</h4>
-                  <p className="text-gray-300">Strategic guidance and technical support</p>
-                </div>
-                <div className="bg-gradient-to-br from-gray-700 to-gray-800 text-white p-8 rounded-lg shadow-xl text-center">
-                  <BookOpen className="w-16 h-16 mx-auto mb-4" />
-                  <h4 className="text-2xl font-bold mb-2">Student Wing (IRSAK)</h4>
-                  <p className="text-gray-300">Student mobilization and grassroots engagement</p>
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Executive Leadership</h3>
+              <div className="bg-gradient-to-br from-red-600 to-red-700 p-8 rounded-lg shadow-2xl">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="text-center text-white">
+                    <span className="bg-white text-red-600 px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">Executive Director</span>
+                    <img src={teamMembers.executiveLeadership.head.photo} alt={teamMembers.executiveLeadership.head.name} className="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg" />
+                    <h4 className="text-2xl font-bold mb-2">{teamMembers.executiveLeadership.head.name}</h4>
+                    <p className="text-red-100 font-semibold mb-3">{teamMembers.executiveLeadership.head.role}</p>
+                    <p className="text-white/90 text-sm">{teamMembers.executiveLeadership.head.bio}</p>
+                  </div>
+                  <div className="text-center text-white border-l-2 border-white/30">
+                    <span className="bg-white text-red-600 px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">Deputy Executive Director</span>
+                    <img src={teamMembers.executiveLeadership.deputy.photo} alt={teamMembers.executiveLeadership.deputy.name} className="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg" />
+                    <h4 className="text-2xl font-bold mb-2">{teamMembers.executiveLeadership.deputy.name}</h4>
+                    <p className="text-red-100 font-semibold mb-3">{teamMembers.executiveLeadership.deputy.role}</p>
+                    <p className="text-white/90 text-sm">{teamMembers.executiveLeadership.deputy.bio}</p>
+                  </div>
                 </div>
               </div>
             </div>
 
+            {/* Departments */}
             <div className="mb-16">
               <h3 className="text-3xl font-bold text-black mb-8 text-center">Directorate</h3>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="space-y-6">
                 {teamMembers.departments.map((dept, idx) => (
-                  <div key={idx} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition border-t-4 border-red-600">
-                    {dept.head.photo ? (
-                      <img 
-                        src={dept.head.photo} 
-                        alt={dept.head.name}
-                        className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg"
-                      />
-                    ) : (
-                      <div className="flex items-center justify-center w-32 h-32 bg-red-100 rounded-full mx-auto mb-4">
-                        <Users className="w-16 h-16 text-red-600" />
+                  <div key={idx} className="bg-white rounded-lg shadow-xl border-l-4 border-red-600 overflow-hidden">
+                    <div className="grid md:grid-cols-2 gap-8 p-8">
+                      <div className="text-center">
+                        <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">DEPARTMENT HEAD</span>
+                        <img src={dept.head.photo} alt={dept.head.name} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg" />
+                        <h4 className="text-xl font-bold text-black mb-2">{dept.head.name}</h4>
+                        <p className="text-red-600 font-semibold mb-3">{dept.head.role}</p>
+                        <p className="text-gray-600 text-sm">{dept.head.bio}</p>
                       </div>
-                    )}
-                    <h4 className="text-xl font-bold text-black text-center mb-2">{dept.head.name}</h4>
-                    <p className="text-red-600 font-semibold text-center mb-2">{dept.head.role}</p>
-                    <p className="text-gray-600 text-center text-sm">{dept.head.bio}</p>
+                      {dept.deputy ? (
+                        <div className="text-center border-l-2 border-gray-200">
+                          <span className="bg-gray-600 text-white px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">DEPUTY</span>
+                          <img src={dept.deputy.photo} alt={dept.deputy.name} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-gray-600 shadow-lg" />
+                          <h4 className="text-xl font-bold text-black mb-2">{dept.deputy.name}</h4>
+                          <p className="text-gray-600 font-semibold mb-3">{dept.deputy.role}</p>
+                          <p className="text-gray-600 text-sm">{dept.deputy.bio}</p>
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center border-l-2 border-gray-200">
+                          <p className="text-gray-400 italic">No deputy assigned</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
+            {/* Call to Action */}
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-16 rounded-lg">
               <div className="max-w-4xl mx-auto px-4 text-center">
                 <h3 className="text-3xl font-bold mb-6">Join Our Team</h3>
-                <p className="text-xl mb-8 text-gray-200">
-                  Interested in becoming part of YIGA? We're always looking for passionate young professionals to join our mission.
-                </p>
-                <button
-                  onClick={() => setCurrentPage('join')}
-                  className="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition shadow-xl"
-                >
-                  Apply Now
-                </button>
+                <p className="text-xl mb-8">Passionate about youth empowerment and international affairs?</p>
+                <button onClick={() => setCurrentPage('join')} className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">Apply Now</button>
               </div>
             </div>
           </div>
