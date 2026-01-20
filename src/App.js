@@ -198,7 +198,7 @@ function App() {
   });
 
   const [formData, setFormData] = useState({
-    full_name: '',
+    fullName: '',
     email: '',
     phone: '',
     country: '',
@@ -334,7 +334,7 @@ function App() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({
-          full_name: '',
+          fullName: '',
           email: '',
           phone: '',
           country: '',
@@ -1250,8 +1250,8 @@ function App() {
                   <label className="block text-gray-700 font-semibold mb-2">Full Name</label>
                   <input
                     type="text"
-                    value={formData.full_name}
-                    onChange={(e) => setFormData({...formData, full_name: e.target.value})}
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
@@ -1540,6 +1540,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
