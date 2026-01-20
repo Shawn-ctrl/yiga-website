@@ -43,47 +43,71 @@ const teamMembers = {
     { head: { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing operations", photo: "/images/team/catherine-mbilo.jpg" }, deputy: null }
   ],
   executive: [
-    { 
-      name: "Jeremy Oronje", 
-      role: "Executive Director", 
-      bio: "Leading YIGA's vision and strategic direction in youth empowerment and international affairs",
+    {
+      name: "Jeremy Oronje",
+      role: "Executive Director",
+      bio: "Leading YIGA's vision and strategic direction",
       photo: "/images/team/jeremy-oronje.jpg"
     },
-    { 
-      name: "Abel Omenge", 
-      role: "Director of Finance", 
-      bio: "Managing financial operations and ensuring fiscal responsibility across all programs",
-      photo: "/images/team/abel-omenge.jpg"
+    {
+      name: "Galdicia Wambui Gacihi",
+      role: "Deputy Executive Director",
+      bio: "Supporting executive leadership",
+      photo: "/images/team/galdicia-gacihi.jpg"
     },
-    { 
-      name: "Hilda Koipano", 
-      role: "Director of Communications", 
-      bio: "Leading communication strategies and managing public relations for YIGA",
-      photo: "/images/team/hilda-koipano.jpg"
+    {
+      name: "Ashley Munyasia",
+      role: "Director of Research",
+      bio: "Leading research initiatives",
+      photo: "/images/team/ashley-munyasia.jpg"
     },
-    { 
-      name: "Phoebe Monari", 
-      role: "Director of Programs and Partnership", 
-      bio: "Building strategic partnerships and coordinating program implementation",
+    {
+      name: "Neema Toto",
+      role: "Director of Events",
+      bio: "Managing YIGA events",
+      photo: "/images/team/neema-toto.jpg"
+    },
+    {
+      name: "Neema Wanjiku",
+      role: "Assistant Director of Events",
+      bio: "Supporting event coordination",
+      photo: "/images/team/neema-wanjiku.jpg"
+    },
+    {
+      name: "Phoebe Monari",
+      role: "Director of Programs and Partnership",
+      bio: "Building strategic partnerships",
       photo: "/images/team/phoebe-monari.jpg"
     },
-    { 
-      name: "Beldine Mukami Maina", 
-      role: "Assistant Communications Director", 
-      bio: "Supporting communication initiatives and managing media engagement",
+    {
+      name: "Kemunto J.O",
+      role: "Assistant Director of Programs",
+      bio: "Supporting program coordination",
+      photo: "/images/team/kemunto.jpg"
+    },
+    {
+      name: "Hilda Koipano",
+      role: "Director of Communications",
+      bio: "Leading communication strategies",
+      photo: "/images/team/hilda-koipano.jpg"
+    },
+    {
+      name: "Beldine Mukami",
+      role: "Assistant Communications Director",
+      bio: "Supporting communication initiatives",
       photo: "/images/team/beldine-mukami.jpg"
     },
-    { 
-      name: "Catherine Mbilo", 
-      role: "Secretary General", 
-      bio: "Managing organizational operations and coordinating executive functions",
-      photo: "/images/team/catherine-mbilo.jpg"
+    {
+      name: "Abel Omenge",
+      role: "Director of Finance",
+      bio: "Managing financial operations",
+      photo: "/images/team/abel-omenge.jpg"
     },
-    { 
-      name: "Kemunto J.O", 
-      role: "Assistant Director of Programs and Partnership", 
-      bio: "Supporting program coordination and partnership management",
-      photo: "/images/team/assistant-director-programs.jpg"
+    {
+      name: "Catherine Mbilo",
+      role: "Secretary General",
+      bio: "Managing organizational operations",
+      photo: "/images/team/catherine-mbilo.jpg"
     }
   ],
   advisory: [
