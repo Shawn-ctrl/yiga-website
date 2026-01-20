@@ -178,8 +178,11 @@ function App() {
     email: '',
     phone: '',
     country: '',
-    program: '',
-    motivation: ''
+    city: '',
+    institution: '',
+    program: 'General Membership',
+    motivation: '',
+    experience: ''
   });
 
   const [loginData, setLoginData] = useState({
@@ -311,8 +314,11 @@ function App() {
           email: '',
           phone: '',
           country: '',
-          program: '',
-          motivation: ''
+          city: '',
+          institution: '',
+          program: 'General Membership',
+          motivation: '',
+          experience: ''
         });
         setTimeout(() => setSubmitStatus(''), 5000);
       } else {
@@ -1553,6 +1559,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
