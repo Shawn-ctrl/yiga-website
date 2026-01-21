@@ -206,7 +206,8 @@ function App() {
     institution: '',
     program: 'General Membership',
     motivation: '',
-    experience: ''
+    experience: '',
+    acceptedTerms: false
   });
 
   const [loginData, setLoginData] = useState({
@@ -342,7 +343,8 @@ function App() {
           institution: '',
           program: 'General Membership',
           motivation: '',
-          experience: ''
+          experience: '',
+    acceptedTerms: false
         });
         setTimeout(() => setSubmitStatus(''), 5000);
       } else {
@@ -1540,6 +1542,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
