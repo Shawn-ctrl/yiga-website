@@ -1305,21 +1305,6 @@ function App() {
                     required
                   />
                 </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700 font-semibold mb-2">Program</label>
-                  <select
-                    value={formData.program}
-                    onChange={(e) => setFormData({...formData, program: e.target.value})}
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
-                    required
-                  >
-                    <option value="">Select a program</option>
-                    <option value="Research Fellowship">Research Fellowship</option>
-                    <option value="Policy Analysis">Policy Analysis</option>
-                    <option value="Youth Leadership">Youth Leadership</option>
-                    <option value="General Membership">General Membership</option>
-                  </select>
-                </div>
                 <div className="mb-6">
                   <label className="block text-gray-700 font-semibold mb-2">Motivation</label>
                   <textarea
