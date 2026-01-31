@@ -19,77 +19,13 @@ const teamPhotos = {
   ]
 };
 
-const teamMembers = {
-  executiveLeadership: {
-    head: {
-      name: "Jeremy Oronje",
-      role: "Executive Director",
-      bio: "Leading YIGA's vision and strategic direction",
-      photo: "/images/team/jeremy-oronje.jpg"
-    },
-    deputy: {
-      name: "Galdicia Wambui Gacihi",
-      role: "Deputy Executive Director",
-      bio: "Supporting executive leadership",
-      photo: "/images/team/galdicia-gacihi.jpg"
-    }
-  },
-  departments: [
-    { head: { name: "Ashley Munyasia", role: "Director of Research", bio: "Leading research initiatives", photo: "/images/team/ashley-munyasia.jpg" }, deputy: null },
-    { head: { name: "Neema", role: "Director of Events", bio: "Managing YIGA events", photo: "/images/team/neema.jpg" }, deputy: null },
-    { head: { name: "Phoebe Monari", role: "Director of Programs", bio: "Building partnerships", photo: "/images/team/phoebe-monari.jpg" }, deputy: { name: "Kemunto J.O", role: "Assistant Director", bio: "Supporting programs", photo: "/images/team/assistant-director-programs.jpg" } },
-    { head: { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communications", photo: "/images/team/hilda-koipano.jpg" }, deputy: { name: "Beldine Mukami", role: "Assistant Director", bio: "Supporting communications", photo: "/images/team/beldine-mukami.jpg" } },
-    { head: { name: "Abel Omenge", role: "Director of Finance", bio: "Managing finances", photo: "/images/team/abel-omenge.jpg" }, deputy: null },
-    { head: { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing operations", photo: "/images/team/catherine-mbilo.jpg" }, deputy: null }
-  ],
-  executive: [
-    { 
-      name: "Jeremy Oronje", 
-      role: "Executive Director", 
-      bio: "Leading YIGA's vision and strategic direction in youth empowerment and international affairs",
-      photo: "/images/team/jeremy-oronje.jpg"
-    },
-    { 
-      name: "Abel Omenge", 
-      role: "Director of Finance", 
-      bio: "Managing financial operations and ensuring fiscal responsibility across all programs",
-      photo: "/images/team/abel-omenge.jpg"
-    },
-    { 
-      name: "Hilda Koipano", 
-      role: "Director of Communications", 
-      bio: "Leading communication strategies and managing public relations for YIGA",
-      photo: "/images/team/hilda-koipano.jpg"
-    },
-    { 
-      name: "Phoebe Monari", 
-      role: "Director of Programs and Partnership", 
-      bio: "Building strategic partnerships and coordinating program implementation",
-      photo: "/images/team/phoebe-monari.jpg"
-    },
-    { 
-      name: "Beldine Mukami Maina", 
-      role: "Assistant Communications Director", 
-      bio: "Supporting communication initiatives and managing media engagement",
-      photo: "/images/team/beldine-mukami.jpg"
-    },
-    { 
-      name: "Catherine Mbilo", 
-      role: "Secretary General", 
-      bio: "Managing organizational operations and coordinating executive functions",
-      photo: "/images/team/catherine-mbilo.jpg"
-    },
-    { 
-      name: "Kemunto J.O", 
-      role: "Assistant Director of Programs and Partnership", 
-      bio: "Supporting program coordination and partnership management",
-      photo: "/images/team/assistant-director-programs.jpg"
-    }
-  ],
-  advisory: [
-    { name: "Advisory Council", role: "Strategic Guidance", bio: "Experienced professionals providing technical support" }
-  ]
-};
+const teamMembers = [
+  { name: "Jeremy Oronje", role: "Executive Director", bio: "Leading YIGA's vision", photo: "/images/team/jeremy-oronje.jpg" },
+  { name: "Abel Omenge", role: "Director of Finance", bio: "Managing finances", photo: "/images/team/abel-omenge.jpg" },
+  { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communications", photo: "/images/team/hilda-koipano.jpg" },
+  { name: "Phoebe Monari", role: "Director of Programs", bio: "Building partnerships", photo: "/images/team/phoebe-monari.jpg" },
+  { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing operations", photo: "/images/team/catherine-mbilo.jpg" }
+];
 
 const featuredArticles = [
   {
@@ -1566,6 +1502,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
