@@ -36,30 +36,32 @@ const teamMembers = [
 const featuredArticles = [
   {
     id: 1,
-    title: "Africa's Role in Global Climate Diplomacy",
-    excerpt: "As African nations lead the charge on climate action, YIGA explores the continent's growing influence in international environmental negotiations.",
+    title: "BRICS Summit 2025: A Turning Point for Global South Cooperation",
+    excerpt: "The 17th BRICS Summit in Rio de Janeiro marked a significant milestone in South-South collaboration, as member states reinforced their commitment to a more inclusive, multipolar international order amid geopolitical tensions.",
     image: "https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=800&h=500&fit=crop",
-    category: "Climate Change",
-    date: "November 25, 2025",
-    readTime: "5 min read"
+    category: "International Relations",
+    date: "January 26, 2026",
+    author: "Ashley Munyasia",
+    readTime: "8 min read"
   },
   {
     id: 2,
-    title: "Youth Leadership in Peace and Security",
-    excerpt: "Young African leaders are reshaping peace negotiations across the continent, bringing fresh perspectives to conflict resolution.",
-    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
-    category: "Peace & Security",
-    date: "November 20, 2025",
-    readTime: "4 min read"
+    title: "Political Participation Among University Students in Kenya",
+    excerpt: "A comprehensive study examining the current status of political awareness and participation among Kenyan university students, identifying barriers to engagement and proposing pathways to meaningful democratic inclusion.",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=500&fit=crop",
+    category: "Youth & Governance",
+    date: "October 2025",
+    author: "IRSAK Research Team",
+    readTime: "15 min read"
   },
   {
     id: 3,
-    title: "Strengthening Good Governance Through Youth Engagement",
-    excerpt: "How youth-led initiatives are transforming governance structures and promoting accountability across African institutions.",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=500&fit=crop",
-    category: "Good Governance",
-    date: "November 15, 2025",
-    readTime: "6 min read"
+    title: "Cracks in the CRINK: Analyzing Contemporary International Dynamics",
+    excerpt: "An in-depth analysis of emerging fractures and realignments in contemporary international relations, examining how shifting power dynamics are reshaping global governance structures.",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=500&fit=crop",
+    category: "International Relations",
+    date: "January 2026",
+    readTime: "10 min read"
   }
 ];
 
