@@ -20,11 +20,17 @@ const teamPhotos = {
 };
 
 const teamMembers = [
-  { name: "Jeremy Oronje", role: "Executive Director", bio: "Leading YIGA's vision", photo: "/images/team/jeremy-oronje.jpg" },
-  { name: "Abel Omenge", role: "Director of Finance", bio: "Managing finances", photo: "/images/team/abel-omenge.jpg" },
-  { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communications", photo: "/images/team/hilda-koipano.jpg" },
-  { name: "Phoebe Monari", role: "Director of Programs", bio: "Building partnerships", photo: "/images/team/phoebe-monari.jpg" },
-  { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing operations", photo: "/images/team/catherine-mbilo.jpg" }
+  { name: "Jeremy Oronje", role: "Executive Director", bio: "Leading YIGA's vision and strategic direction", photo: "/images/Jeremy Oronje -Executive Director.jpeg" },
+  { name: "Galdicia Wambui Gacihi", role: "Deputy Executive Director", bio: "Supporting executive leadership", photo: "/images/Deputy Executive Director.jpeg" },
+  { name: "Ashley Munyasia", role: "Director of Research", bio: "Leading research initiatives", photo: "/images/Ashley Munyasia-Director of Research.jpeg" },
+  { name: "Neema Toto", role: "Director of Events", bio: "Managing YIGA events", photo: "/images/Neema Toto-Director of Events.jpeg" },
+  { name: "Neema Wanjiku", role: "Assistant Director of Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
+  { name: "Phoebe Monari", role: "Director of Programs and Partnership", bio: "Building strategic partnerships", photo: "/images/Phebe Monari-Director of Programs and Partnerships.jpeg" },
+  { name: "Kemunto J.O", role: "Assistant Director of Programs and Partnership", bio: "Supporting program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
+  { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communication strategies", photo: "/images/Hilda-Director of Communication.jpeg" },
+  { name: "Beldine Mukami", role: "Assistant Communications Director", bio: "Supporting communication initiatives", photo: "/images/Beldine Mukami -Assistant Communications Director.jpeg" },
+  { name: "Abel Omenge", role: "Director of Finance", bio: "Managing financial operations", photo: "/images/Abel Omenge-Director of Finance.jpeg" },
+  { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing organizational operations", photo: "/images/Catherine Mbilo-Secretary General.jpeg" }
 ];
 
 const featuredArticles = [
