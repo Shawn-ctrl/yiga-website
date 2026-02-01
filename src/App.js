@@ -38,11 +38,38 @@ const featuredArticles = [
     id: 1,
     title: "BRICS Summit 2025: A Turning Point for Global South Cooperation",
     excerpt: "The 17th BRICS Summit in Rio de Janeiro marked a significant milestone in South-South collaboration, as member states reinforced their commitment to a more inclusive, multipolar international order amid geopolitical tensions.",
-    image: "https://images.unsplash.com/photo-1569163139394-de4798aa62b5?w=800&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
     category: "International Relations",
     date: "January 26, 2026",
     author: "Ashley Munyasia",
-    readTime: "8 min read"
+    readTime: "8 min read",
+    fullContent: `
+      <h2>A Milestone in South-South Collaboration</h2>
+      <p>A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. Summit held together Brazil, Russia, India, China, South Africa and newly admitted member states amidst a setback of increasing geopolitical rivalry, economic disintegration and dissatisfaction with Western dominated multilateral corporations.</p>
+      
+      <p>The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order which would better represent the political and economic mass of the Global South.</p>
+
+      <h3>The Rio de Janeiro Declaration</h3>
+      <p>The main result of the summit was the declaration of Rio de Janeiro that encompassed a wide range of commitments in the areas of governance, economic cooperation, technology, climate change, and social development. The statement addressed the significance of multilateralism and respect of international law, at the same time, demanding structural reforms of major world institutions, such as the United Nations, the International Monetary Fund, and the World Bank.</p>
+
+      <p>According to BRICS leaders, such institutions still fail to fully reflect the developing countries and emerging economies to limit the participation of the developing countries in global decision-making. Against this backdrop, the declaration also condemned the use of unilateral and protectionist economic policies which have been destabilizing the world trade and development.</p>
+
+      <h3>Economic and Financial Cooperation</h3>
+      <p>There was a high level of economic and financial cooperation in the deliberations of the summits. Member states reaffirmed their desire to intensify intra-BRICS trade and investment, with the increased utilization of local currencies in cross-border deals being given special emphasis on the same.</p>
+
+      <p>This was seen as a policy of decreasing exposure to external financial shocks and as much as possible reducing reliance on the international monetary system which is centred on the US dollar. The New Development Bank was reiterated as a major institutional tool of aiding development of infrastructure, climate-based initiatives and sustainable development in the BRICS nations and other developing states.</p>
+
+      <h3>Artificial Intelligence and Digital Governance</h3>
+      <p>The 2025 summit was also characterized by an extension of the BRICS agenda into new spheres of global governance, with artificial intelligence and digital technologies being the most prominent ones. It became the first time that the topic of AI governance was recognized as a central concern, and leaders demanded to build inclusive and multilateral systems that will make the utilization of artificial intelligence ethical, responsible, and developmental.</p>
+
+      <h3>Climate Change and Sustainable Development</h3>
+      <p>Green building was also concerned with climate change and sustainable development as a two-fold issue. The BRICS leaders made, among other things, the need to increase climate financing and invest more in renewable energy, and to safeguard vital ecosystems. These deliberations highlighted the stance of the bloc that climate action be geared towards development requirements especially to the emerging economies that remain vulnerable to climatic changes.</p>
+
+      <h3>Challenges and Future Outlook</h3>
+      <p>Although the results of the summit are ambitious in scope, ongoing internal issues can still be seen through the BRICS framework. Mismatched national interests, varied perceptions on speed of expansion and the deficiency in institutionalization are still making collective action a beggar.</p>
+
+      <p>Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role of the bloc in global relations and its desire to also transform world governance according to the priorities of the Global South. Although it is still constrained by structural and political factors, the summit showed that emerging economies are more and more engaged in an effort to shape global norms, diversify economic cooperation, and problem existing power asymmetry in the international system.</p>
+    `
   },
   {
     id: 2,
@@ -52,7 +79,58 @@ const featuredArticles = [
     category: "Youth & Governance",
     date: "October 2025",
     author: "IRSAK Research Team",
-    readTime: "15 min read"
+    readTime: "15 min read",
+    fullContent: `
+      <h2>Executive Summary</h2>
+      <p>Youth participation in politics is a cornerstone of democratic development and effective governance. In Kenya, university students represent a vital segment of the youth population with the potential to influence political discourse, policy direction, and leadership renewal. However, evidence suggests a persistent pattern of political disengagement among this group.</p>
+
+      <h3>Key Findings</h3>
+      <ul>
+        <li>A sizeable proportion of university students demonstrate moderate levels of political awareness, particularly regarding their elected leaders and the manifestos of major political parties.</li>
+        <li>A majority of university students exhibit low levels of active political participation, especially in areas such as voting and political party membership.</li>
+        <li>Despite limited participation and prevailing skepticism, most university students express a willingness to vote in future elections, even though they have low levels of trust in the Independent Electoral and Boundaries Commission (IEBC).</li>
+        <li>The study reveals a widespread distrust of politicians and key political institutions, including the IEBC and political parties, among university students.</li>
+        <li>Social media platforms play an increasingly significant role in shaping political awareness, disseminating information, and facilitating mobilization and civic education among university students.</li>
+      </ul>
+
+      <h3>Historical Context</h3>
+      <p>Historically, university students have been powerful agents of change across governance and other spheres of society. One of the most active periods of university student involvement in politics was between the 1960s and the 1990s, when student movements across the world became powerful forces for reform and resistance.</p>
+
+      <p>In Kenya, university students, alongside civil society groups, religious leaders, and opposition politicians, played a central role in pushing for political liberalization in the 1990s. The Students of Nairobi University (SONU) functioned as a radical political pressure group that consistently confronted state authoritarianism.</p>
+
+      <h3>Current Status of Political Participation</h3>
+      <p>When examining the level of political participation, the study reveals generally low engagement across all indicators:</p>
+      <ul>
+        <li>Only 21% of respondents reported being registered voters as of 2025</li>
+        <li>Just 12% stated that they voted in the previous general election</li>
+        <li>Only 5% were registered members of political parties</li>
+        <li>However, 42.9% reported taking part in protest activities, particularly the anti-Finance Bill demonstrations</li>
+      </ul>
+
+      <h3>Barriers to Participation</h3>
+      <h4>Lack of Trust in Politicians and Institutions</h4>
+      <p>Nearly 70% of respondents identified distrust in political leaders as a major reason for their limited engagement. An alarming 80% indicated that politicians do not care about the youth. Students perceive political parties primarily as vehicles for individual politicians to ascend to power, rather than as ideologically grounded institutions.</p>
+
+      <h4>Security Concerns</h4>
+      <p>The extrajudicial killings and enforced disappearance cases were 159 in 2024 in Kenya. Of these, 65% were police related killings and 55% were enforced disappearances. Female students reported higher levels of physical violation and harassment especially in crowded political events.</p>
+
+      <h4>Information Inaccessibility</h4>
+      <p>Students reported uncertainty about where to get credible political information or how to join political parties or participate in public consultation forums. Although 83% rely on social media as their primary source of information, algorithmic structures restrict civic content exposure.</p>
+
+      <h3>The Role of Social Media</h3>
+      <p>Social media has emerged as a primary medium of communication. Among those who took part in the anti-Finance Bill protests, 69% indicated that they first received information about the demonstrations online. When asked about their preferred platform for civic education initiatives, 70% expressed social media as their preferred avenue.</p>
+
+      <h3>Recommendations</h3>
+      <ul>
+        <li>Strengthen trust between young people and both political leaders and institutions through intergenerational dialogues</li>
+        <li>IEBC should implement targeted trust-building and engagement initiatives, especially in the lead-up to elections</li>
+        <li>Political parties should develop youth-friendly, digestible content that summarizes their manifestos and policies</li>
+        <li>Integrate civic education and social media literacy into university curricula</li>
+        <li>Deliberately involve young people in public participation processes at all levels of governance</li>
+      </ul>
+
+      <p><em>This study was conducted by the International Relations Students Association of Kenya (IRSAK) across 28 universities in Kenya.</em></p>
+    `
   },
   {
     id: 3,
@@ -61,7 +139,32 @@ const featuredArticles = [
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=500&fit=crop",
     category: "International Relations",
     date: "January 2026",
-    readTime: "10 min read"
+    readTime: "10 min read",
+    fullContent: `
+      <h2>Understanding the CRINK Framework</h2>
+      <p>The contemporary international system is experiencing significant shifts in power dynamics and alliance structures. This analysis examines the emerging cracks in what has been termed the "CRINK" configuration - representing key actors and relationships in modern global governance.</p>
+
+      <h3>Emerging Fault Lines</h3>
+      <p>Recent developments in international relations have revealed deepening fractures within previously stable alliance systems. These cracks manifest in various dimensions:</p>
+
+      <ul>
+        <li>Economic competition and trade tensions between major powers</li>
+        <li>Diverging approaches to global governance and multilateral institutions</li>
+        <li>Competing visions for regional security architecture</li>
+        <li>Disagreements over technological standards and digital governance</li>
+      </ul>
+
+      <h3>Implications for Global Governance</h3>
+      <p>The fragmentation of international cooperation frameworks has significant implications for addressing transnational challenges such as climate change, pandemics, and economic stability. As traditional alliances face internal pressures, new configurations are emerging that may reshape the global order.</p>
+
+      <h3>Regional Perspectives</h3>
+      <p>From an African perspective, these global realignments present both opportunities and challenges. The continent's growing economic and demographic weight positions it as an increasingly important player in shaping future international dynamics. However, African states must navigate carefully between competing power blocs while advancing their own interests.</p>
+
+      <h3>Looking Forward</h3>
+      <p>The evolution of international relations in the coming years will likely be characterized by increased multipolarity, more complex alliance structures, and greater competition over the rules and norms governing global governance. Understanding these dynamics is crucial for policymakers, diplomats, and scholars seeking to navigate an increasingly complex international landscape.</p>
+
+      <p>As these cracks in the international system continue to widen, the need for innovative diplomatic approaches and flexible institutional arrangements becomes ever more apparent. The future of global governance will depend on the ability of states and international organizations to adapt to these new realities while maintaining cooperation on critical global challenges.</p>
+    `
   }
 ];
 
@@ -1472,6 +1575,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
