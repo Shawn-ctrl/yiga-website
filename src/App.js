@@ -934,6 +934,10 @@ function App() {
                     <h3 className="text-2xl font-bold text-black mt-2 mb-3">{article.title}</h3>
                     <p className="text-gray-600 mb-4">{article.excerpt}</p>{expandedArticle === article.id && (<div className="mt-4 text-gray-700 leading-relaxed border-t pt-4">{article.fullContent}</div>)}
                     <div className="flex items-center text-sm text-gray-500">
+                    <button onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer mt-4">
+                      <span>{expandedArticle === article.id ? "Show Less" : "Read More"}</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
                       <Calendar className="w-4 h-4 mr-1" />
                       {article.date} • {article.readTime}
                     </div>
