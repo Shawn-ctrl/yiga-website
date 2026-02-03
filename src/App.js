@@ -100,7 +100,8 @@ function App() {
       setCurrentPage(page);
     }
   }, []);
-  const [currentPage, setCurrentPage] = useState('home');
+    const [currentPage, setCurrentPage] = useState('home');
+  const [selectedArticle, setSelectedArticle] = useState(null);
   const [expandedArticle, setExpandedArticle] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authToken, setAuthToken] = useState('');
@@ -923,31 +924,146 @@ function App() {
         )}
 
         {currentPage === 'insights' && (
-          <div className="max-w-7xl mx-auto px-4 py-16">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center">Latest Insights</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {featuredArticles.map((article) => (
-                <div key={article.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
-                  <img src={article.image} alt={article.title} className="w-full h-64 object-cover" />
-                  <div className="p-6">
-                    <span className="text-red-600 font-semibold text-sm">{article.category}</span>
-                    <h3 className="text-2xl font-bold text-black mt-2 mb-3">{article.title}</h3>
-                    <p className="text-gray-600 mb-4">{article.excerpt}</p>{expandedArticle === article.id && (<div className="mt-4 text-gray-700 leading-relaxed border-t pt-4">{article.fullContent}</div>)}
-                    <div className="flex items-center text-sm text-gray-500">
-                    <button onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer mt-4">
-                      <span>{expandedArticle === article.id ? "Show Less" : "Read More"}</span>
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {article.date} • {article.readTime}
+          <div className="min-h-screen bg-gray-50">
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
+              <div className="max-w-6xl mx-auto px-4">
+                <h1 className="text-5xl font-bold mb-6">Insights</h1>
+                <p className="text-xl max-w-3xl">Research, analysis, and commentary on governance, international affairs, and youth empowerment</p>
+              </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto px-4 py-16">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredArticles.map((article) => (
+                  <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
+                    <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+                    <div className="p-6">
+                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">
+                        {article.category}
+                      </span>
+                      <h3 className="text-xl font-bold text-black mt-4 mb-3">{article.title}</h3>
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">{article.excerpt}</p>
+                      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                        <span>{article.author}</span>
+                        <span>{article.readTime}</span>
+                      </div>
+                      <button 
+                        onClick={() => setSelectedArticle(article)}
+                        className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2"
+                      >
+                        Read More <ArrowRight className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         )}
 
+        {/* PDF-like Article Viewer */}
+        {selectedArticle && (
+          <div className="fixed inset-0 bg-gray-900 z-50 overflow-y-auto">
+            <div className="min-h-screen bg-white">
+              {/* Close button */}
+              <div className="sticky top-0 bg-white border-b border-gray-200 shadow-sm z-10">
+                <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+                  <button 
+                    onClick={() => setSelectedArticle(null)}
+                    className="flex items-center gap-2 text-gray-600 hover:text-red-600 font-semibold transition"
+                  >
+                    <X className="w-5 h-5" />
+                    Close
+                  </button>
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm text-gray-500">{selectedArticle.readTime}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* PDF-like Document */}
+              <div className="max-w-4xl mx-auto px-8 py-12 bg-white shadow-2xl my-8">
+                {/* Header */}
+                <div className="border-b-4 border-red-600 pb-8 mb-8">
+                  <div className="mb-4">
+                    <span className="bg-red-600 text-white px-4 py-2 rounded text-sm font-semibold uppercase tracking-wide">
+                      {selectedArticle.category}
+                    </span>
+                  </div>
+                  <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-6">
+                    {selectedArticle.title}
+                  </h1>
+                  <div className="flex flex-wrap items-center gap-6 text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                        <Users className="w-5 h-5 text-red-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-500">Author</p>
+                        <p className="font-semibold text-black">{selectedArticle.author}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                        <Calendar className="w-5 h-5 text-red-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-500">Published</p>
+                        <p className="font-semibold text-black">{selectedArticle.date}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Featured Image */}
+                {selectedArticle.image && (
+                  <div className="mb-10">
+                    <img 
+                      src={selectedArticle.image} 
+                      alt={selectedArticle.title}
+                      className="w-full h-96 object-cover rounded-lg shadow-lg"
+                    />
+                  </div>
+                )}
+
+                {/* Abstract/Excerpt */}
+                <div className="bg-gray-50 border-l-4 border-red-600 p-6 mb-10">
+                  <h2 className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">Abstract</h2>
+                  <p className="text-gray-700 leading-relaxed">{selectedArticle.excerpt}</p>
+                </div>
+
+                {/* Main Content */}
+                <div className="prose prose-lg max-w-none">
+                  <div className="text-gray-800 leading-relaxed text-justify space-y-6">
+                    {selectedArticle.fullContent.split('\n\n').map((paragraph, idx) => (
+                      <p key={idx} className="text-lg leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Footer */}
+                <div className="mt-16 pt-8 border-t-2 border-gray-200">
+                  <div className="bg-gray-50 rounded-lg p-6">
+                    <h3 className="font-semibold text-black mb-2">About the Author</h3>
+                    <p className="text-gray-600">{selectedArticle.author}</p>
+                  </div>
+                </div>
+
+                {/* Close button at bottom */}
+                <div className="mt-12 text-center">
+                  <button 
+                    onClick={() => setSelectedArticle(null)}
+                    className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition font-semibold shadow-lg"
+                  >
+                    Back to Insights
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         {currentPage === 'programs' && (
           <div className="max-w-7xl mx-auto px-4 py-16">
             <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Programs</h2>
@@ -1480,6 +1596,9 @@ function App() {
 }
 
 export default App;
+
+
+
 
 
 
