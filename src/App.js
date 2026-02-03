@@ -1097,89 +1097,91 @@ function App() {
             <div className="max-w-6xl mx-auto px-4 py-16">
               
               {/* Research Fellowship */}
+              {/* Safe Space Program */}
               <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
                 <div className="flex items-start gap-6">
-                  <BookOpen className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <Mail className="w-16 h-16 text-red-600 flex-shrink-0" />
                   <div className="flex-grow">
-                    <h2 className="text-3xl font-bold text-black mb-4">Research Fellowship Program</h2>
+                    <h2 className="text-3xl font-bold text-black mb-4">Safe Space Program</h2>
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
                         <p className="text-gray-700">
-                          Our flagship program enables young researchers to conduct in-depth studies on critical issues affecting African governance, policy development, and international relations. Fellows work alongside experienced mentors to produce impactful research that informs policy decisions.
+                          Safe Space is a virtual, dialogue-driven initiative by Youth in Global Affairs (YIGA) that provides young people with an inclusive and respectful platform to engage on key governance issues at both domestic and international levels. Designed primarily as a safe and moderated environment for open conversation, the program enables participants to critically engage on questions of leadership, public policy, accountability, democratic participation, peace, and global affairs.
                         </p>
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Research funding and resources</li>
-                          <li>• One-on-one mentorship from experts</li>
-                          <li>• Publication opportunities</li>
-                          <li>• Access to research networks</li>
-                          <li>• Presentation at conferences</li>
+                          <li>• Safe and moderated environment for open dialogue</li>
+                          <li>• Critical engagement on leadership and public policy</li>
+                          <li>• Platform to discuss accountability and democracy</li>
+                          <li>• Understanding of peace and global affairs</li>
+                          <li>• Respectful peer-to-peer learning experience</li>
+                          <li>• Virtual accessibility from anywhere</li>
                         </ul>
                       </div>
                     </div>
                     <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
                       <div>
-                        <p className="font-semibold text-sm text-gray-600">Duration</p>
-                        <p className="text-black">6-12 months</p>
+                        <p className="font-semibold text-sm text-gray-600">Format</p>
+                        <p className="text-black">Virtual discussions</p>
                       </div>
                       <div>
                         <p className="font-semibold text-sm text-gray-600">Eligibility</p>
-                        <p className="text-black">University students & recent graduates</p>
+                        <p className="text-black">All young people interested in governance</p>
                       </div>
                       <div>
-                        <p className="font-semibold text-sm text-gray-600">Commitment</p>
-                        <p className="text-black">10-15 hours/week</p>
+                        <p className="font-semibold text-sm text-gray-600">Frequency</p>
+                        <p className="text-black">Monthly sessions</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Policy Analysis */}
+              {/* Roundtable Discussions */}
               <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
                 <div className="flex items-start gap-6">
-                  <Scale className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <Users className="w-16 h-16 text-red-600 flex-shrink-0" />
                   <div className="flex-grow">
-                    <h2 className="text-3xl font-bold text-black mb-4">Policy Analysis & Advocacy</h2>
+                    <h2 className="text-3xl font-bold text-black mb-4">Roundtable Discussions</h2>
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
                         <p className="text-gray-700">
-                          Develop critical policy analysis skills while contributing to real-world policy development processes. This program trains participants in research methodologies, policy writing, stakeholder engagement, and advocacy strategies that drive meaningful change.
+                          Roundtable Discussions are a core convening platform under Youth in Global Affairs (YIGA), bringing together youth leaders, scholars, practitioners, policymakers, and civil society actors for focused, solution-oriented dialogue. These discussions are designed to be interactive and participatory, creating space for in-depth engagement, exchange of perspectives, and collaborative problem-solving. YIGA's roundtables are anchored in the organization's key focus areas, including foreign policy, governance, peace and security, climate change, culture, and sustainable development.
                         </p>
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Policy analysis training</li>
-                          <li>• Advocacy campaign experience</li>
-                          <li>• Stakeholder engagement skills</li>
-                          <li>• Policy brief writing</li>
-                          <li>• Networking with policymakers</li>
+                          <li>• Direct engagement with policymakers and experts</li>
+                          <li>• Solution-oriented collaborative problem-solving</li>
+                          <li>• Contribute to policy briefs and advocacy initiatives</li>
+                          <li>• Participate in knowledge production and research</li>
+                          <li>• Network with scholars and practitioners</li>
+                          <li>• Influence practical ideas with policy-relevant impact</li>
                         </ul>
                       </div>
                     </div>
                     <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
                       <div>
-                        <p className="font-semibold text-sm text-gray-600">Duration</p>
-                        <p className="text-black">3-6 months</p>
+                        <p className="font-semibold text-sm text-gray-600">Format</p>
+                        <p className="text-black">Interactive roundtables</p>
                       </div>
                       <div>
                         <p className="font-semibold text-sm text-gray-600">Eligibility</p>
-                        <p className="text-black">Students in political science, law, public policy</p>
+                        <p className="text-black">Youth leaders, scholars, practitioners</p>
                       </div>
                       <div>
-                        <p className="font-semibold text-sm text-gray-600">Commitment</p>
-                        <p className="text-black">8-12 hours/week</p>
+                        <p className="font-semibold text-sm text-gray-600">Outcome</p>
+                        <p className="text-black">Policy briefs & research outputs</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
               {/* Youth Leadership */}
               <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
                 <div className="flex items-start gap-6">
@@ -1596,6 +1598,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
