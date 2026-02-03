@@ -68,6 +68,140 @@ const featuredArticles = [
   }
 ];
 
+
+// Past Activities Data - REPLACE WITH REAL DATA TOMORROW
+const pastActivities = [
+  {
+    id: 1,
+    title: "Youth Leadership Summit 2024",
+    date: "December 15, 2024",
+    location: "Nairobi, Kenya",
+    description: "A three-day summit bringing together 200+ young leaders from across Africa to discuss governance, policy, and international relations.",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
+    category: "Summit",
+    attendees: "200+ participants",
+    outcomes: [
+      "Policy recommendations on youth inclusion",
+      "Network of 50+ youth organizations established",
+      "3 research partnerships initiated"
+    ]
+  },
+  {
+    id: 2,
+    title: "Policy Dialogue: Climate Action in East Africa",
+    date: "November 8, 2024",
+    location: "Virtual",
+    description: "Interactive roundtable featuring youth activists, government officials, and climate experts discussing climate policy implementation.",
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=500&fit=crop",
+    category: "Roundtable",
+    attendees: "80+ participants",
+    outcomes: [
+      "Youth climate action framework developed",
+      "Collaboration with 5 government agencies",
+      "Policy brief on renewable energy published"
+    ]
+  },
+  {
+    id: 3,
+    title: "Research Workshop: Data-Driven Advocacy",
+    date: "October 20, 2024",
+    location: "Kampala, Uganda",
+    description: "Intensive workshop training young researchers in quantitative and qualitative research methods for policy advocacy.",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=500&fit=crop",
+    category: "Workshop",
+    attendees: "45 researchers",
+    outcomes: [
+      "15 research projects initiated",
+      "Data analysis toolkit distributed",
+      "Mentorship program launched"
+    ]
+  },
+  {
+    id: 4,
+    title: "International Relations Conference",
+    date: "September 5, 2024",
+    location: "Addis Ababa, Ethiopia",
+    description: "Annual conference examining Africa's role in global governance and multilateral institutions.",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=500&fit=crop",
+    category: "Conference",
+    attendees: "150+ participants",
+    outcomes: [
+      "Position paper on AU reforms",
+      "Youth delegation to UN formed",
+      "Regional cooperation framework"
+    ]
+  }
+];
+
+// Articles Data - REPLACE WITH REAL DATA TOMORROW
+const articles = [
+  {
+    id: 1,
+    title: "The Future of Democracy in Africa: Youth Perspectives",
+    author: "YIGA Research Team",
+    date: "January 15, 2026",
+    category: "Governance",
+    excerpt: "An in-depth analysis of how young Africans envision the future of democratic governance on the continent, based on surveys and interviews with 500+ youth leaders.",
+    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
+    readTime: "12 min read",
+    tags: ["Democracy", "Youth Engagement", "Governance"]
+  },
+  {
+    id: 2,
+    title: "Climate Change and Migration: Policy Responses in East Africa",
+    author: "Environmental Policy Team",
+    date: "January 10, 2026",
+    category: "Climate & Development",
+    excerpt: "Examining the intersection of climate-induced displacement and regional migration policies, with recommendations for policymakers.",
+    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=500&fit=crop",
+    readTime: "10 min read",
+    tags: ["Climate Change", "Migration", "Policy"]
+  },
+  {
+    id: 3,
+    title: "Youth Unemployment in Post-Pandemic Africa",
+    author: "Economic Research Division",
+    date: "December 28, 2025",
+    category: "Economy",
+    excerpt: "Statistical analysis and policy recommendations addressing rising youth unemployment rates across African economies.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop",
+    readTime: "8 min read",
+    tags: ["Employment", "Youth", "Economic Policy"]
+  },
+  {
+    id: 4,
+    title: "Digital Governance: Opportunities and Challenges",
+    author: "Technology & Governance Team",
+    date: "December 15, 2025",
+    category: "Technology",
+    excerpt: "Exploring how digital platforms are transforming public service delivery and citizen engagement across Africa.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop",
+    readTime: "15 min read",
+    tags: ["Digital Governance", "Technology", "Innovation"]
+  },
+  {
+    id: 5,
+    title: "Women in Leadership: Breaking Barriers in African Politics",
+    author: "Gender & Governance Unit",
+    date: "November 30, 2025",
+    category: "Gender & Leadership",
+    excerpt: "Documenting the progress and persistent challenges facing women leaders in African political institutions.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=500&fit=crop",
+    readTime: "11 min read",
+    tags: ["Gender Equality", "Leadership", "Politics"]
+  },
+  {
+    id: 6,
+    title: "Regional Integration: Progress on the AfCFTA",
+    author: "Trade & Integration Team",
+    date: "November 20, 2025",
+    category: "International Relations",
+    excerpt: "Assessment of the African Continental Free Trade Area implementation and its impact on youth entrepreneurship.",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=500&fit=crop",
+    readTime: "9 min read",
+    tags: ["Trade", "AfCFTA", "Regional Integration"]
+  }
+];
 const newsletterArchives = [
   {
     id: 1,
@@ -465,7 +599,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'articles', 'activities', 'programs', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -515,7 +649,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'insights', 'newsletter', 'programs', 'join'].map((page) => (
+              {['home', 'about', 'team', 'insights', 'articles', 'activities', 'programs', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -1381,6 +1515,123 @@ function App() {
           </div>
         )}
 
+        {/* Past Activities Page */}
+        {currentPage === 'activities' && (
+          <div className="min-h-screen bg-gray-50">
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
+              <div className="max-w-6xl mx-auto px-4">
+                <h1 className="text-5xl font-bold mb-6">Past Activities</h1>
+                <p className="text-xl max-w-3xl">Highlights from our events, workshops, conferences, and initiatives driving youth engagement in governance and international affairs</p>
+              </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto px-4 py-16">
+              <div className="grid gap-8">
+                {pastActivities.map((activity) => (
+                  <div key={activity.id} className="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                    <div className="grid md:grid-cols-3 gap-6">
+                      <img src={activity.image} alt={activity.title} className="w-full h-64 md:h-full object-cover" />
+                      <div className="md:col-span-2 p-6">
+                        <div className="flex items-center gap-4 mb-4">
+                          <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+                            {activity.category}
+                          </span>
+                          <span className="flex items-center gap-2 text-gray-600">
+                            <Calendar className="w-4 h-4" />
+                            {activity.date}
+                          </span>
+                        </div>
+                        <h2 className="text-3xl font-bold text-black mb-3">{activity.title}</h2>
+                        <p className="text-gray-700 mb-4">{activity.description}</p>
+                        
+                        <div className="grid md:grid-cols-2 gap-4 mb-4">
+                          <div className="flex items-center gap-2 text-gray-600">
+                            <Globe className="w-5 h-5 text-red-600" />
+                            <span className="font-semibold">Location:</span> {activity.location}
+                          </div>
+                          <div className="flex items-center gap-2 text-gray-600">
+                            <Users className="w-5 h-5 text-red-600" />
+                            <span className="font-semibold">Participants:</span> {activity.attendees}
+                          </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-lg p-4">
+                          <h3 className="font-semibold text-black mb-2 flex items-center gap-2">
+                            <CheckCircle className="w-5 h-5 text-green-600" />
+                            Key Outcomes
+                          </h3>
+                          <ul className="space-y-2">
+                            {activity.outcomes.map((outcome, idx) => (
+                              <li key={idx} className="text-gray-700 flex items-start gap-2">
+                                <ArrowRight className="w-4 h-4 text-red-600 mt-1 flex-shrink-0" />
+                                {outcome}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Articles Page */}
+        {currentPage === 'articles' && (
+          <div className="min-h-screen bg-gray-50">
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
+              <div className="max-w-6xl mx-auto px-4">
+                <h1 className="text-5xl font-bold mb-6">Articles</h1>
+                <p className="text-xl max-w-3xl">Research publications, policy briefs, and analytical pieces from our team of experts and fellows</p>
+              </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto px-4 py-16">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {articles.map((article) => (
+                  <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
+                    <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">
+                          {article.category}
+                        </span>
+                        <span className="text-sm text-gray-500">{article.readTime}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">{article.title}</h3>
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">{article.excerpt}</p>
+                      
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                        <Users className="w-4 h-4" />
+                        <span>{article.author}</span>
+                      </div>
+
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                        <Calendar className="w-4 h-4" />
+                        <span>{article.date}</span>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {article.tags.map((tag, idx) => (
+                          <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <button className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
+                        Read Article <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {currentPage === 'admin' && (
           <div className="max-w-7xl mx-auto px-4 py-16">
             {!isLoggedIn ? (
@@ -1598,6 +1849,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
