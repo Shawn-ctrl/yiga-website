@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download } from 'lucide-react';
+import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Twitter, Instagram, Linkedin} from 'lucide-react';
 
 const API_BASE = 'https://yiga-backend-1.onrender.com/api';
 
@@ -1828,12 +1828,65 @@ function App() {
             )}
           </div>
         )}
+      
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Youth in Global Affairs</h3>
+              <p className="text-gray-400">Empowering young voices in international relations and governance.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition">About Us</button></li>
+                <li><button onClick={() => setCurrentPage('programs')} className="hover:text-white transition">Programs</button></li>
+                <li><button onClick={() => setCurrentPage('articles')} className="hover:text-white transition">Articles</button></li>
+                <li><button onClick={() => setCurrentPage('join')} className="hover:text-white transition">Join Us</button></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Connect With Us</h4>
+              <div className="flex space-x-4 flex-wrap">
+                <a href="https://www.facebook.com/IRSAK" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Facebook">
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a href="https://twitter.com/irsa_ke" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Twitter/X">
+                  <Twitter className="w-6 h-6" />
+                </a>
+                <a href="https://www.tiktok.com/@irsa_ke" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="TikTok">
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/_irsakofficial" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Instagram">
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <a href="https://www.linkedin.com/company/international-relations-students-association-of-kenya" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="LinkedIn">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+              </div>
+              <p className="text-gray-400 mt-4 text-sm">
+                Email: info@yiga.org<br />
+                Nairobi, Kenya
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 Youth in Global Affairs. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
       </div>
     </div>          
   );
 }
 
 export default App;
+
+
+
 
 
 
