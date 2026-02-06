@@ -1849,7 +1849,7 @@ function App() {
             <div>
               <h4 className="font-semibold mb-4">Connect With Us</h4>
               <div className="flex space-x-4 flex-wrap">
-                <a href="https://www.facebook.com/IRSAK" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Facebook">
+                <a href="https://www.facebook.com/share/1AaGHcz5AJ/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Facebook">
                   <Facebook className="w-6 h-6" />
                 </a>
                 <a href="https://twitter.com/irsa_ke" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Twitter/X">
@@ -1860,10 +1860,10 @@ function App() {
                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                   </svg>
                 </a>
-                <a href="https://www.instagram.com/_irsakofficial" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Instagram">
+                <a href="https://www.instagram.com/irsakofficial" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Instagram">
                   <Instagram className="w-6 h-6" />
                 </a>
-                <a href="https://www.linkedin.com/company/international-relations-students-association-of-kenya" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/international-relations-students-association-kenya/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="LinkedIn">
                   <Linkedin className="w-6 h-6" />
                 </a>
               </div>
@@ -1884,6 +1884,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
