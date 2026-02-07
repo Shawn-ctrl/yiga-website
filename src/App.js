@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Twitter, Instagram, Linkedin} from 'lucide-react';
+import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download } from 'lucide-react';
 
 const API_BASE = 'https://yiga-backend-1.onrender.com/api';
 
@@ -44,21 +44,7 @@ const articles = [
     author: "Ashley Munyasia",
     readTime: "8 min read",
     tags: ["BRICS", "Global South", "Multilateralism"],
-    fullContent: `A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. Summit held together Brazil, Russia, India, China, South Africa and newly admitted member states amidst a setback of increasing geopolitical rivalry, economic disintegration and dissatisfaction with Western dominated multilateral corporations. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order which would better represent the political and economic mass of the Global South.
-
-The main result of the summit was the declaration of Rio de Janeiro that encompassed a wide range of commitments in the areas of governance, economic cooperation, technology, climate change, and social development. The statement addressed the significance of multilateralism and respect of international law, at the same time, demanding structural reforms of major world institutions, such as the United Nations, the International Monetary Fund, and the World Bank. According to BRICS leaders, such institutions still fail to fully reflect the developing countries and emerging economies to limit the participation of the developing countries in global decision-making. Against this backdrop, the declaration also condemned the use of unilateral and protectionist economic policies which have been destabilizing the world trade and development.
-
-There was a high level of economic and financial cooperation in the deliberations of the summits. Member states reaffirmed their desire to intensify intra-BRICS trade and investment, with the increased utilization of local currencies in cross-border deals being given special emphasis on the same. This was seen as a policy of decreasing exposure to external financial shocks and as much as possible reducing reliance on the international monetary system which is centred on the US dollar. The New Development Bank was reiterated as a major institutional tool of aiding development of infrastructure, climate-based initiatives and sustainable development in the BRICS nations and other developing states.
-
-The 2025 summit was also characterized by an extension of the BRICS agenda into new spheres of global governance, with artificial intelligence and digital technologies being the most prominent ones. It became the first time that the topic of AI governance was recognized as a central concern, and leaders demanded to build inclusive and multilateral systems that will make the utilization of artificial intelligence ethical, responsible, and developmental. This emphasis was a manifestation of the larger issues that current technological standards in the world have the potential to push developing nations aside and increase the digital divide.
-
-Green building was also concerned with climate change and sustainable development as a two-fold issue. The BRICS leaders made, among other things, the need to increase climate financing and invest more in renewable energy, and to safeguard vital ecosystems. These deliberations highlighted the stance of the bloc that climate action be geared towards development requirements especially to the emerging economies that remain vulnerable to climatic changes. Simultaneously, the social development projects, particularly the ones focused on health disparities and socially predetermined diseases, were an indicator of an initiative to expand cooperation to the traditional economical and strategic spheres.
-
-Although the results of the summit are ambitious in the scope, ongoing internal issues can still be seen through the BRICS framework. Mismatched national interests, varied perceptions on speed of expansion and the deficiency in institutionalization are still making collective action a beggar. Such lack of certain prominent leaders also cast doubts on cohesion and coordination in the bloc. In addition, the disjunction between the declarative and practical policy achievements is an issue that is still repeated among commentators.
-
-The overall geopolitical implications of the summit were pointed out by international responses. The encounter was done in a climate of increased tensions between it and the Western powers, especially the United States, which were consolidating the views of BRICS as a future counter-power to the Western power in world governance. Meanwhile, there are still discussions as to whether BRICS is turning into a sensible alternative politics bloc or is still a consultative club with little enforcement ability.
-
-Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role of the bloc in global relations and its desire to also transform world governance according to the priorities of the Global South. Although it is still constrained by structural and political factors, the summit showed that emerging economies are more and more engaged in an effort to shape global norms, diversify economic cooperation, and problem existing power asymmetry in the international system.`
+    fullContent: "A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order. The main result was the Rio de Janeiro declaration encompassing commitments in governance, economic cooperation, technology, climate change, and social development. The declaration addressed the significance of multilateralism while demanding structural reforms of major world institutions such as the UN, IMF, and World Bank. Member states reaffirmed their desire to intensify intra-BRICS trade with increased utilization of local currencies. The summit extended into new spheres including AI governance and digital technologies. The BRICS leaders emphasized climate financing and renewable energy investment. Overall, the summit confirmed the increasing role of the bloc in global relations despite ongoing internal challenges."
   },
   {
     id: 2,
@@ -70,25 +56,7 @@ Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role o
     author: "IRSAK Research Team",
     readTime: "15 min read",
     tags: ["Youth Engagement", "Governance", "Political Participation"],
-    fullContent: `This comprehensive study examined political participation among university students across 28 Kenyan universities. The research reveals critical insights into youth political engagement patterns and barriers.
-
-KEY FINDINGS: University students demonstrate moderate political awareness - governors are most recognized while MCAs are least known. Only 56% know about the National Youth Council. While 58% are aware of party manifestos, their understanding is superficial, limited to slogans like "bottom-up" without grasping actual policies.
-
-PARTICIPATION LEVELS: Active political participation remains alarmingly low. Only 21% are registered voters, just 12% voted in the last election, and merely 5% are political party members. However, 42.9% participated in protests, particularly the anti-Finance Bill demonstrations, showing selective engagement.
-
-MAJOR BARRIERS: Nearly 70% cite distrust of politicians as the primary barrier, with 80% believing politicians don't care about youth. This stems from perceptions of corruption, broken promises, and exclusion from decision-making. Students also distrust the IEBC, citing controversies like Chris Msando's 2017 death and the 2022 commissioner resignations. Political parties are viewed as vehicles for individual advancement rather than ideological institutions.
-
-Security concerns significantly deter participation. In 2024, Kenya witnessed 159 cases of extrajudicial killings and enforced disappearances - 65% police-related, with a 450% increase in disappearances from 2023. Female students fear sexual harassment during protests; male students fear abductions and police brutality. These create self-censorship, producing politically aware but risk-averse "keyboard warriors."
-
-Information inaccessibility compounds the problem. Students don't know where to find credible political information or how to join parties. While 83% rely on social media, algorithmic echo chambers expose them to entertainment over substantive civic content, making them susceptible to misinformation.
-
-SOCIAL MEDIA'S ROLE: 83% use social media as their primary information source, 69% learned about anti-Finance Bill protests online, and 70% prefer it for civic education. Kenya averages 3 hours 43 minutes daily on social media - 1 hour 13 minutes above the global average.
-
-HISTORICAL CONTEXT: This contrasts sharply with the 1960s-1990s when students drove transformative change - from Columbia's 1968 protests against Vietnam War, to Tiananmen Square's 1989 democracy demands, to Kenya's 1990s pro-democracy movements that achieved multipartism. Today, engagement has narrowed from national governance to campus welfare issues.
-
-RECOMMENDATIONS: Building trust through NCIC-facilitated intergenerational dialogues and IEBC transparency initiatives. Integrating civic education and social media literacy into university curricula. Government must systematically include youth in public participation per Article 55 of the Constitution. Students must shift from passive social media consumption to critical engagement with credible sources.
-
-CONCLUSION: Political apathy isn't mere disinterest but a response to systemic exclusion, fear, and disillusionment. Students recognize dysfunction but perceive it as unchangeable. However, this demographic has tremendous transformative potential. By investing in informed, secure, trust-based participation structures, Kenya can shift young citizens from political margins to governance centers, ensuring democratic vitality.`
+    fullContent: "This study examined political participation among university students across 28 Kenyan universities. Key findings reveal that while students demonstrate moderate political awareness of elected leaders and party manifestos, active participation remains low. Only 21% are registered voters, 12% voted in the last election, and just 5% are political party members. However, 42.9% participated in protests, particularly the anti-Finance Bill demonstrations. Major barriers include distrust of politicians (70% cite this), security concerns from police brutality and violence, and information inaccessibility. Nearly 80% believe politicians don't care about youth. Social media emerged as the primary information source (83%) and preferred platform for civic education (70%). The study recommends strengthening trust through intergenerational dialogues, IEBC engagement initiatives, integration of civic education into curricula, and deliberate youth inclusion in public participation processes."
   },
     {
     id: 3,
@@ -104,55 +72,33 @@ CONCLUSION: Political apathy isn't mere disinterest but a response to systemic e
 
 Despite appearances, CRINK is not a unified alliance. It lacks the institutional infrastructure, mutual defense agreements, or shared strategic vision found in established alliances like NATO. What binds these states is not long-term loyalty or ideological harmony, but a shared opposition to Western dominance, a desire for regime survival, and selective cooperation based on short-term advantage.
 
-A BLOC OF DIVERGENT AGENDAS
+A Bloc of Divergent Agendas
 
-Though often grouped together as "anti-Western" actors, the CRINK countries differ significantly in both their regional ambitions and global outlooks.
-
-China envisions a restructured international order that reflects its growing global power but remains economically interdependent with the West. Stability, not chaos, is in Beijing's best interest.
-
-Russia, increasingly isolated after its 2022 invasion of Ukraine, now leans heavily on China for trade and political cover. Yet it continues to act aggressively and unpredictably, seeking to reclaim lost geopolitical influence.
-
-Iran walks a fine line between revolutionary ideology and pragmatic diplomacy. While it actively supports armed proxies and regional militancy, it also seeks economic relief and engagement with Europe and emerging powers.
-
-North Korea, perhaps the most unpredictable member, continues to pursue nuclear brinkmanship. Its leadership appears more focused on regime survival and domestic control than any form of coherent external alliance.
+Though often grouped together as "anti-Western" actors, the CRINK countries differ significantly in both their regional ambitions and global outlooks. China envisions a restructured international order that reflects its growing global power but remains economically interdependent with the West. Stability, not chaos, is in Beijing's best interest. Russia, increasingly isolated after its 2022 invasion of Ukraine, now leans heavily on China for trade and political cover. Yet it continues to act aggressively and unpredictably, seeking to reclaim lost geopolitical influence. Iran walks a fine line between revolutionary ideology and pragmatic diplomacy. While it actively supports armed proxies and regional militancy, it also seeks economic relief and engagement with Europe and emerging powers. North Korea, perhaps the most unpredictable member, continues to pursue nuclear brinkmanship. Its leadership appears more focused on regime survival and domestic control than any form of coherent external alliance.
 
 This lack of strategic unity undermines any serious attempt to view CRINK as a consolidated power bloc.
 
-CHINA: CAUTIOUS LEADER, NOT COMMANDER
+China: Cautious Leader, Not Commander
 
-China's role within CRINK is particularly revealing. It is the most powerful player—economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group.
-
-For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
+China's role within CRINK is particularly revealing. It is the most powerful player—economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
 
 Rather than building an alliance based on loyalty, China appears to be managing a series of fragile dependencies, careful not to overcommit to any partner.
 
-NO REAL ALLIANCE, JUST SHARED CONVENIENCE
+No Real Alliance, Just Shared Convenience
 
-Unlike structured alliances that commit to mutual defense and long-term strategy, CRINK operates more like a network of convenience. There is no CRINK summit, no joint military command, no institutional mechanism for resolving disputes or planning long-term collaboration.
-
-Their cooperation is issue-specific and driven by necessity:
-- Russia turns to Iran for drones
-- North Korea supplies artillery shells to Russian forces in Ukraine
-- China trades with Russia and Iran to secure cheap energy
-- Iran offers military and intelligence support to other authoritarian regimes
+Unlike structured alliances that commit to mutual defense and long-term strategy, CRINK operates more like a network of convenience. There is no CRINK summit, no joint military command, no institutional mechanism for resolving disputes or planning long-term collaboration. Their cooperation is issue-specific and driven by necessity: Russia turns to Iran for drones, North Korea supplies artillery shells to Russian forces in Ukraine, China trades with Russia and Iran to secure cheap energy, and Iran offers military and intelligence support to other authoritarian regimes.
 
 But this does not equate to trust. In fact, mutual suspicion and asymmetry define these relationships. Russia's growing dependence on Chinese technology and trade has led to fears of strategic subordination. Iran, meanwhile, is wary of China's increasing influence over its economy. North Korea continues to act independently, often ignoring Beijing's calls for restraint.
 
-IMPLICATIONS FOR GLOBAL STABILITY
+Implications for Global Stability
 
-The illusion of unity within CRINK has two important implications for international affairs.
+The illusion of unity within CRINK has two important implications for international affairs. First, it shows that Western fears of a coordinated "axis of autocracy" may be overstated. The bloc's internal divisions and lack of strategic coherence limit its ability to act as a united front. This presents an opportunity for diplomatic engagement and wedge strategies that target these divisions.
 
-First, it shows that Western fears of a coordinated "axis of autocracy" may be overstated. The bloc's internal divisions and lack of strategic coherence limit its ability to act as a united front. This presents an opportunity for diplomatic engagement and wedge strategies that target these divisions.
+Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
 
-Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously.
+Conclusion: Fragile Alliances, Not Fatal Threats
 
-The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
-
-CONCLUSION: FRAGILE ALLIANCES, NOT FATAL THREATS
-
-The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated.
-
-For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
+The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
   }
 ];
 
@@ -806,9 +752,9 @@ function App() {
                         {article.title}
                       </h3>
                       <p className="text-gray-600 mb-4">{article.excerpt}</p>{expandedArticle === article.id && (<div className="mt-4 text-gray-700 leading-relaxed border-t pt-4">{article.fullContent}</div>)}
-                      <p className="text-gray-600 mb-4">{article.excerpt}</p>
-                      <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
-                        <span>Read More</span>
+                      <button onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
+                        <span>{expandedArticle === article.id ? "Show Less" : "Read More"}</span>
+                        <ChevronRight className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -1828,69 +1774,12 @@ function App() {
             )}
           </div>
         )}
-      
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Youth in Global Affairs</h3>
-              <p className="text-gray-400">Empowering young voices in international relations and governance.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition">About Us</button></li>
-                <li><button onClick={() => setCurrentPage('programs')} className="hover:text-white transition">Programs</button></li>
-                <li><button onClick={() => setCurrentPage('articles')} className="hover:text-white transition">Articles</button></li>
-                <li><button onClick={() => setCurrentPage('join')} className="hover:text-white transition">Join Us</button></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Connect With Us</h4>
-              <div className="flex space-x-4 flex-wrap">
-                <a href="https://www.facebook.com/share/1AaGHcz5AJ/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Facebook">
-                  <Facebook className="w-6 h-6" />
-                </a>
-                <a href="https://twitter.com/irsa_ke" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Twitter/X">
-                  <Twitter className="w-6 h-6" />
-                </a>
-                <a href="https://www.tiktok.com/@irsa_ke" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="TikTok">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                  </svg>
-                </a>
-                <a href="https://www.instagram.com/irsakofficial" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="Instagram">
-                  <Instagram className="w-6 h-6" />
-                </a>
-                <a href="https://www.linkedin.com/company/international-relations-students-association-kenya/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition" title="LinkedIn">
-                  <Linkedin className="w-6 h-6" />
-                </a>
-              </div>
-              <p className="text-gray-400 mt-4 text-sm">
-                Email: info@yiga.org<br />
-                Nairobi, Kenya
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2025 Youth in Global Affairs. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
       </div>
     </div>          
   );
 }
 
 export default App;
-
-
-
-
-
-
-
 
 
 
