@@ -44,11 +44,26 @@ const articles = [
     author: "Ashley Munyasia",
     readTime: "8 min read",
     tags: ["BRICS", "Global South", "Multilateralism"],
-    fullContent: "A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order. The main result was the Rio de Janeiro declaration encompassing commitments in governance, economic cooperation, technology, climate change, and social development. The declaration addressed the significance of multilateralism while demanding structural reforms of major world institutions such as the UN, IMF, and World Bank. Member states reaffirmed their desire to intensify intra-BRICS trade with increased utilization of local currencies. The summit extended into new spheres including AI governance and digital technologies. The BRICS leaders emphasized climate financing and renewable energy investment. Overall, the summit confirmed the increasing role of the bloc in global relations despite ongoing internal challenges."
+    fullContent: `A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. Summit held together Brazil, Russia, India, China, South Africa and newly admitted member states amidst a setback of increasing geopolitical rivalry, economic disintegration and dissatisfaction with Western dominated multilateral corporations. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order which would better represent the political and economic mass of the Global South.
+
+The main result of the summit was the declaration of Rio de Janeiro that encompassed a wide range of commitments in the areas of governance, economic cooperation, technology, climate change, and social development. The statement addressed the significance of multilateralism and respect of international law, at the same time, demanding structural reforms of major world institutions, such as the United Nations, the International Monetary Fund, and the World Bank. According to BRICS leaders, such institutions still fail to fully reflect the developing countries and emerging economies to limit the participation of the developing countries in global decision-making. Against this backdrop, the declaration also condemned the use of unilateral and protectionist economic policies which have been destabilizing the world trade and development.
+
+There was a high level of economic and financial cooperation in the deliberations of the summits. Member states reaffirmed their desire to intensify intra-BRICS trade and investment, with the increased utilization of local currencies in cross-border deals being given special emphasis on the same. This was seen as a policy of decreasing exposure to external financial shocks and as much as possible reducing reliance on the international monetary system which is centred on the US dollar. The New Development Bank was reiterated as a major institutional tool of aiding development of infrastructure, climate-based initiatives and sustainable development in the BRICS nations and other developing states.
+
+The 2025 summit was also characterized by an extension of the BRICS agenda into new spheres of global governance, with artificial intelligence and digital technologies being the most prominent ones. It became the first time that the topic of AI governance was recognized as a central concern, and leaders demanded to build inclusive and multilateral systems that will make the utilization of artificial intelligence ethical, responsible, and developmental. This emphasis was a manifestation of the larger issues that current technological standards in the world have the potential to push developing nations aside and increase the digital divide.
+
+Green building was also concerned with climate change and sustainable development as a two-fold issue. The BRICS leaders made, among other things, the need to increase climate financing and invest more in renewable energy, and to safeguard vital ecosystems. These deliberations highlighted the stance of the bloc that climate action be geared towards development requirements especially to the emerging economies that remain vulnerable to climatic changes. Simultaneously, the social development projects, particularly the ones focused on health disparities and socially predetermined diseases, were an indicator of an initiative to expand cooperation to the traditional economical and strategic spheres.
+
+Although the results of the summit are ambitious in the scope, ongoing internal issues can still be seen through the BRICS framework. Mismatched national interests, varied perceptions on speed of expansion and the deficiency in institutionalization are still making collective action a beggar. Such lack of certain prominent leaders also cast doubts on cohesion and coordination in the bloc. In addition, the disjunction between the declarative and practical policy achievements is an issue that is still repeated among commentators.
+
+The overall geopolitical implications of the summit were pointed out by international responses. The encounter was done in a climate of increased tensions between it and the Western powers, especially the United States, which were consolidating the views of BRICS as a future counter-power to the Western power in world governance. Meanwhile, there are still discussions as to whether BRICS is turning into a sensible alternative politics bloc or is still a consultative club with little enforcement ability.
+
+Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role of the bloc in global relations and its desire to also transform world governance according to the priorities of the Global South. Although it is still constrained by structural and political factors, the summit showed that emerging economies are more and more engaged in an effort to shape global norms, diversify economic cooperation, and problem existing power asymmetry in the international system.`
   },
   {
     id: 2,
     title: "Political Participation Among University Students in Kenya",
+    downloadPDF: "/documents/Political_Participation_Study_IRSAK_2025.pdf",
     excerpt: "A comprehensive study examining the current status of political awareness and participation among Kenyan university students, identifying barriers to engagement and proposing pathways to meaningful democratic inclusion.",
     image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
     category: "Youth & Governance",
@@ -56,7 +71,25 @@ const articles = [
     author: "IRSAK Research Team",
     readTime: "15 min read",
     tags: ["Youth Engagement", "Governance", "Political Participation"],
-    fullContent: "This study examined political participation among university students across 28 Kenyan universities. Key findings reveal that while students demonstrate moderate political awareness of elected leaders and party manifestos, active participation remains low. Only 21% are registered voters, 12% voted in the last election, and just 5% are political party members. However, 42.9% participated in protests, particularly the anti-Finance Bill demonstrations. Major barriers include distrust of politicians (70% cite this), security concerns from police brutality and violence, and information inaccessibility. Nearly 80% believe politicians don't care about youth. Social media emerged as the primary information source (83%) and preferred platform for civic education (70%). The study recommends strengthening trust through intergenerational dialogues, IEBC engagement initiatives, integration of civic education into curricula, and deliberate youth inclusion in public participation processes."
+    fullContent: `This comprehensive study examined political participation among university students across 28 Kenyan universities. The research reveals critical insights into youth political engagement patterns and barriers.
+
+KEY FINDINGS: University students demonstrate moderate political awareness - governors are most recognized while MCAs are least known. Only 56% know about the National Youth Council. While 58% are aware of party manifestos, their understanding is superficial, limited to slogans like "bottom-up" without grasping actual policies.
+
+PARTICIPATION LEVELS: Active political participation remains alarmingly low. Only 21% are registered voters, just 12% voted in the last election, and merely 5% are political party members. However, 42.9% participated in protests, particularly the anti-Finance Bill demonstrations, showing selective engagement.
+
+MAJOR BARRIERS: Nearly 70% cite distrust of politicians as the primary barrier, with 80% believing politicians don't care about youth. This stems from perceptions of corruption, broken promises, and exclusion from decision-making. Students also distrust the IEBC, citing controversies like Chris Msando's 2017 death and the 2022 commissioner resignations. Political parties are viewed as vehicles for individual advancement rather than ideological institutions.
+
+Security concerns significantly deter participation. In 2024, Kenya witnessed 159 cases of extrajudicial killings and enforced disappearances - 65% police-related, with a 450% increase in disappearances from 2023. Female students fear sexual harassment during protests; male students fear abductions and police brutality. These create self-censorship, producing politically aware but risk-averse "keyboard warriors."
+
+Information inaccessibility compounds the problem. Students don't know where to find credible political information or how to join parties. While 83% rely on social media, algorithmic echo chambers expose them to entertainment over substantive civic content, making them susceptible to misinformation.
+
+SOCIAL MEDIA'S ROLE: 83% use social media as their primary information source, 69% learned about anti-Finance Bill protests online, and 70% prefer it for civic education. Kenya averages 3 hours 43 minutes daily on social media - 1 hour 13 minutes above the global average.
+
+HISTORICAL CONTEXT: This contrasts sharply with the 1960s-1990s when students drove transformative change - from Columbia's 1968 protests against Vietnam War, to Tiananmen Square's 1989 democracy demands, to Kenya's 1990s pro-democracy movements that achieved multipartism. Today, engagement has narrowed from national governance to campus welfare issues.
+
+RECOMMENDATIONS: Building trust through NCIC-facilitated intergenerational dialogues and IEBC transparency initiatives. Integrating civic education and social media literacy into university curricula. Government must systematically include youth in public participation per Article 55 of the Constitution. Students must shift from passive social media consumption to critical engagement with credible sources.
+
+CONCLUSION: Political apathy isn't mere disinterest but a response to systemic exclusion, fear, and disillusionment. Students recognize dysfunction but perceive it as unchangeable. However, this demographic has tremendous transformative potential. By investing in informed, secure, trust-based participation structures, Kenya can shift young citizens from political margins to governance centers, ensuring democratic vitality.`
   },
     {
     id: 3,
@@ -1780,6 +1813,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
