@@ -784,9 +784,9 @@ function App() {
                       <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
                         {article.title}
                       </h3>
-                      <p className="text-gray-600 mb-4">{article.excerpt}</p>{expandedArticle === article.id && (<div className="mt-4 text-gray-700 leading-relaxed border-t pt-4">{article.fullContent}</div>)}
-                      <button onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
-                        <span>{expandedArticle === article.id ? "Show Less" : "Read More"}</span>
+                      <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                      <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
+                        <span>Read More</span>
                         <ChevronRight className="w-4 h-4" />
                       </button>
                     </div>
