@@ -1076,6 +1076,19 @@ function App() {
                 </div>
               </div>
 
+              {/* Download PDF Button */}
+              {selectedArticle.downloadPDF && (
+                <div className="bg-red-50 border-b py-4">
+                  <div className="max-w-4xl mx-auto px-6 flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-600">Complete Research Report with Charts & Data</p>
+                      <p className="font-semibold">Download Full PDF (6.45 MB)</p>
+                    </div>
+                    <a href={selectedArticle.downloadPDF} download className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">Download PDF</a>
+                  </div>
+                </div>
+              )}
+
               {/* PDF-like Document */}
               <div className="max-w-4xl mx-auto px-8 py-12 bg-white shadow-2xl my-8">
                 {/* Header */}
@@ -1813,6 +1826,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
