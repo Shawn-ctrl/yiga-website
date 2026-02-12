@@ -1290,6 +1290,91 @@ function App() {
                   </div>
                 </div>
               </div>
+
+
+              {/* Research Fellowship Program */}
+              <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
+                <div className="flex items-start gap-6">
+                  <BookOpen className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <div className="flex-grow">
+                    <h2 className="text-3xl font-bold text-black mb-4">Research Fellowship Program</h2>
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
+                        <p className="text-gray-700">
+                          Our flagship program enables young researchers to conduct in-depth studies on critical issues affecting African governance, policy development, and international relations. Fellows work alongside experienced mentors to produce impactful research that informs policy decisions.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
+                        <ul className="text-gray-700 space-y-2">
+                          <li>• Research funding and resources</li>
+                          <li>• One-on-one mentorship from experts</li>
+                          <li>• Publication opportunities</li>
+                          <li>• Access to research networks</li>
+                          <li>• Presentation at conferences</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Duration</h4>
+                        <p className="text-black">6-12 months</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Eligibility</h4>
+                        <p className="text-black">University students & recent graduates</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Commitment</h4>
+                        <p className="text-black">10-15 hours/week</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Policy Analysis & Advocacy */}
+              <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
+                <div className="flex items-start gap-6">
+                  <Scale className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <div className="flex-grow">
+                    <h2 className="text-3xl font-bold text-black mb-4">Policy Analysis & Advocacy</h2>
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
+                        <p className="text-gray-700">
+                          Develop critical policy analysis skills while contributing to real-world policy development processes. This program trains participants in research methodologies, policy writing, stakeholder engagement, and advocacy strategies that drive meaningful change.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
+                        <ul className="text-gray-700 space-y-2">
+                          <li>• Policy analysis training</li>
+                          <li>• Advocacy campaign experience</li>
+                          <li>• Stakeholder engagement skills</li>
+                          <li>• Policy brief writing</li>
+                          <li>• Networking with policymakers</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Duration</h4>
+                        <p className="text-black">3-6 months</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Eligibility</h4>
+                        <p className="text-black">Students in political science, law, public policy</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Commitment</h4>
+                        <p className="text-black">8-12 hours/week</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {/* Youth Leadership */}
               <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
                 <div className="flex items-start gap-6">
