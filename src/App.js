@@ -140,62 +140,108 @@ The CRINK bloc is more a geopolitical mirage than a durable axis. What unites Ch
 const pastActivities = [
   {
     id: 1,
-    title: "Youth Leadership Summit 2024",
-    date: "December 15, 2024",
+    title: "Roundtable on Strengthening Youth Participation in Governance and Politics",
+    date: "February 2026",
     location: "Nairobi, Kenya",
-    description: "A three-day summit bringing together 200+ young leaders from across Africa to discuss governance, policy, and international relations.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
-    category: "Summit",
-    attendees: "200+ participants",
+    description: "A high-level roundtable convening civil society leaders, students, and researchers to discuss strategies for enhancing youth engagement in governance and political processes in Kenya.",
+    image: "/images/activities/Roundtable_discussion.jpeg",
+    category: "Roundtable",
+    attendees: "25 civil society representatives, students, and researchers",
     outcomes: [
-      "Policy recommendations on youth inclusion",
-      "Network of 50+ youth organizations established",
-      "3 research partnerships initiated"
+      "Policy brief developed on strengthening youth participation in governance",
+      "Multi-stakeholder recommendations on civic engagement reforms",
+      "Strengthened collaboration between youth-led and civil society organizations"
     ]
   },
   {
     id: 2,
-    title: "Policy Dialogue: Climate Action in East Africa",
-    date: "November 8, 2024",
-    location: "Virtual",
-    description: "Interactive roundtable featuring youth activists, government officials, and climate experts discussing climate policy implementation.",
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=500&fit=crop",
-    category: "Roundtable",
-    attendees: "80+ participants",
+    title: "Research Study Launch: Political Participation Among University Students in Kenya",
+    date: "October 2025",
+    location: "Nairobi, Kenya",
+    description: "Launch of YIGA's research study examining political participation trends among university students in Kenya, convening diverse stakeholders to discuss findings and policy implications.",
+    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
+    category: "Research Launch",
+    attendees: "Students, policymakers, researchers, civil society representatives",
     outcomes: [
-      "Youth climate action framework developed",
-      "Collaboration with 5 government agencies",
-      "Policy brief on renewable energy published"
+      "Official launch of the research report",
+      "Multi-stakeholder dialogue on youth political participation",
+      "Policy and programmatic recommendations",
+      "Strengthened research-to-policy engagement platform"
     ]
   },
   {
     id: 3,
-    title: "Research Workshop: Data-Driven Advocacy",
-    date: "October 20, 2024",
-    location: "Kampala, Uganda",
-    description: "Intensive workshop training young researchers in quantitative and qualitative research methods for policy advocacy.",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=500&fit=crop",
-    category: "Workshop",
-    attendees: "45 researchers",
+    title: "Rwanda Governance and Bilateral Engagement Visit",
+    date: "September 2025",
+    location: "Kigali, Rwanda",
+    description: "Strategic visit to Rwanda involving engagements with key institutions, including discussions with senior government officials and the Kenya High Commission in Kigali.",
+    image: "/images/activities/UNRCO_Kigali.jpeg",
+    category: "Institutional Visit",
+    attendees: "YIGA delegation and government officials",
     outcomes: [
-      "15 research projects initiated",
-      "Data analysis toolkit distributed",
-      "Mentorship program launched"
+      "Comparative insights on governance and public sector efficiency",
+      "Discussions on strengthening Kenya-Rwanda bilateral relations",
+      "Enhanced understanding of diplomatic engagement processes"
     ]
   },
   {
     id: 4,
-    title: "International Relations Conference",
-    date: "September 5, 2024",
-    location: "Addis Ababa, Ethiopia",
-    description: "Annual conference examining Africa's role in global governance and multilateral institutions.",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=500&fit=crop",
-    category: "Conference",
-    attendees: "150+ participants",
+    title: "Engagement with the United Nations Development Programme Rwanda",
+    date: "September 2025",
+    location: "Kigali, Rwanda",
+    description: "High-level discussion with UNDP Rwanda on the 1994 Genocide against the Tutsi and Rwanda's post-conflict recovery journey.",
+    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800",
+    category: "Institutional Engagement",
+    attendees: "YIGA delegation and UNDP officials",
     outcomes: [
-      "Position paper on AU reforms",
-      "Youth delegation to UN formed",
-      "Regional cooperation framework"
+      "Understanding of post-conflict recovery frameworks",
+      "Insights into institutional resilience and development",
+      "Reflections on transitional justice and nation-building"
+    ]
+  },
+  {
+    id: 5,
+    title: "Visit to Never Again Rwanda",
+    date: "September 2025",
+    location: "Kigali, Rwanda",
+    description: "Engagement with Never Again Rwanda, a grassroots peacebuilding organization, to explore the role of youth in peacebuilding.",
+    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800",
+    category: "Peacebuilding Visit",
+    attendees: "YIGA delegation and Never Again Rwanda leadership",
+    outcomes: [
+      "Shared best practices in youth-led peacebuilding",
+      "Reflections on grassroots reconciliation models",
+      "Strategic ideas for adapting initiatives in Kenya"
+    ]
+  },
+  {
+    id: 6,
+    title: "Career and Mentorship Forum for International Relations Students",
+    date: "March 2025",
+    location: "Nairobi, Kenya",
+    description: "Annual national forum convening IR students from across Kenya for structured mentorship, career guidance, and professional development.",
+    image: "/images/activities/Career_and_mentorship_program.jpeg",
+    category: "Annual Forum",
+    attendees: "IR students, practitioners, researchers, and policy professionals",
+    outcomes: [
+      "Mentorship engagement between students and professionals",
+      "Career guidance on diplomacy and governance pathways",
+      "Strengthened national network of emerging IR scholars"
+    ]
+  },
+  {
+    id: 7,
+    title: "Institutional Visit to the East African Community and African Court",
+    date: "October 2024",
+    location: "Arusha, Tanzania",
+    description: "Institutional exposure visit to induct YIGA members into the operations of regional and continental institutions.",
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800",
+    category: "Institutional Visit",
+    attendees: "YIGA delegation and institutional representatives",
+    outcomes: [
+      "Understanding of regional integration mechanisms",
+      "Insights into international legal frameworks",
+      "Strengthened member capacity in institutional engagement"
     ]
   }
 ];
@@ -1911,6 +1957,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
