@@ -73,11 +73,11 @@ Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role o
     tags: ["Youth Engagement", "Governance", "Political Participation"],
     fullContent: `This comprehensive study examined political participation among university students across 28 Kenyan universities. The research reveals critical insights into youth political engagement patterns and barriers.
 
-KEY FINDINGS: University students demonstrate moderate political awareness - governors are most recognized while MCAs are least known. Only 56% know about the National Youth Council. While 58% are aware of party manifestos, their understanding is superficial, limited to slogans like "bottom-up" without grasping actual policies.
+**KEY FINDINGS:** University students demonstrate moderate political awareness - governors are most recognized while MCAs are least known. Only 56% know about the National Youth Council. While 58% are aware of party manifestos, their understanding is superficial, limited to slogans like "bottom-up" without grasping actual policies.
 
 PARTICIPATION LEVELS: Active political participation remains alarmingly low. Only 21% are registered voters, just 12% voted in the last election, and merely 5% are political party members. However, 42.9% participated in protests, particularly the anti-Finance Bill demonstrations, showing selective engagement.
 
-MAJOR BARRIERS: Nearly 70% cite distrust of politicians as the primary barrier, with 80% believing politicians don't care about youth. This stems from perceptions of corruption, broken promises, and exclusion from decision-making. Students also distrust the IEBC, citing controversies like Chris Msando's 2017 death and the 2022 commissioner resignations. Political parties are viewed as vehicles for individual advancement rather than ideological institutions.
+**MAJOR BARRIERS:** Nearly 70% cite distrust of politicians as the primary barrier, with 80% believing politicians don't care about youth. This stems from perceptions of corruption, broken promises, and exclusion from decision-making. Students also distrust the IEBC, citing controversies like Chris Msando's 2017 death and the 2022 commissioner resignations. Political parties are viewed as vehicles for individual advancement rather than ideological institutions.
 
 Security concerns significantly deter participation. In 2024, Kenya witnessed 159 cases of extrajudicial killings and enforced disappearances - 65% police-related, with a 450% increase in disappearances from 2023. Female students fear sexual harassment during protests; male students fear abductions and police brutality. These create self-censorship, producing politically aware but risk-averse "keyboard warriors."
 
@@ -85,11 +85,11 @@ Information inaccessibility compounds the problem. Students don't know where to 
 
 SOCIAL MEDIA'S ROLE: 83% use social media as their primary information source, 69% learned about anti-Finance Bill protests online, and 70% prefer it for civic education. Kenya averages 3 hours 43 minutes daily on social media - 1 hour 13 minutes above the global average.
 
-HISTORICAL CONTEXT: This contrasts sharply with the 1960s-1990s when students drove transformative change - from Columbia's 1968 protests against Vietnam War, to Tiananmen Square's 1989 democracy demands, to Kenya's 1990s pro-democracy movements that achieved multipartism. Today, engagement has narrowed from national governance to campus welfare issues.
+**HISTORICAL CONTEXT:** This contrasts sharply with the 1960s-1990s when students drove transformative change - from Columbia's 1968 protests against Vietnam War, to Tiananmen Square's 1989 democracy demands, to Kenya's 1990s pro-democracy movements that achieved multipartism. Today, engagement has narrowed from national governance to campus welfare issues.
 
-RECOMMENDATIONS: Building trust through NCIC-facilitated intergenerational dialogues and IEBC transparency initiatives. Integrating civic education and social media literacy into university curricula. Government must systematically include youth in public participation per Article 55 of the Constitution. Students must shift from passive social media consumption to critical engagement with credible sources.
+**RECOMMENDATIONS:** Building trust through NCIC-facilitated intergenerational dialogues and IEBC transparency initiatives. Integrating civic education and social media literacy into university curricula. Government must systematically include youth in public participation per Article 55 of the Constitution. Students must shift from passive social media consumption to critical engagement with credible sources.
 
-CONCLUSION: Political apathy isn't mere disinterest but a response to systemic exclusion, fear, and disillusionment. Students recognize dysfunction but perceive it as unchangeable. However, this demographic has tremendous transformative potential. By investing in informed, secure, trust-based participation structures, Kenya can shift young citizens from political margins to governance centers, ensuring democratic vitality.`
+**CONCLUSION:** Political apathy isn't mere disinterest but a response to systemic exclusion, fear, and disillusionment. Students recognize dysfunction but perceive it as unchangeable. However, this demographic has tremendous transformative potential. By investing in informed, secure, trust-based participation structures, Kenya can shift young citizens from political margins to governance centers, ensuring democratic vitality.`
   },
     {
     id: 3,
@@ -129,7 +129,7 @@ The illusion of unity within CRINK has two important implications for internatio
 
 Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
 
-Conclusion: Fragile Alliances, Not Fatal Threats
+**Conclusion:** Fragile Alliances, Not Fatal Threats
 
 The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
   }
@@ -639,7 +639,7 @@ function App() {
               <Globe className="h-12 w-12 text-red-600" />
               <div>
                 <span className="text-2xl font-bold text-black block">YIGA</span>
-                <span className="text-xs text-gray-600">Youth in Governance & International Affairs</span>
+                <span className="text-xs text-gray-600">Youth in Governance and Global Affairs</span>
               </div>
             </div>
 
@@ -825,7 +825,7 @@ function App() {
                           <Calendar className="w-4 h-4 mr-1" />
                           {article.date}
                         </span>
-                        <span>â€¢ {article.readTime}</span>
+                        <span> {article.readTime}</span>
                       </div>
                       <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
                         {article.title}
@@ -1267,12 +1267,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Safe and moderated environment for open dialogue</li>
-                          <li>• Critical engagement on leadership and public policy</li>
-                          <li>• Platform to discuss accountability and democracy</li>
-                          <li>• Understanding of peace and global affairs</li>
-                          <li>• Respectful peer-to-peer learning experience</li>
-                          <li>• Virtual accessibility from anywhere</li>
+                          <li> Safe and moderated environment for open dialogue</li>
+                          <li> Critical engagement on leadership and public policy</li>
+                          <li> Platform to discuss accountability and democracy</li>
+                          <li> Understanding of peace and global affairs</li>
+                          <li> Respectful peer-to-peer learning experience</li>
+                          <li> Virtual accessibility from anywhere</li>
                         </ul>
                       </div>
                     </div>
@@ -1310,12 +1310,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Direct engagement with policymakers and experts</li>
-                          <li>• Solution-oriented collaborative problem-solving</li>
-                          <li>• Contribute to policy briefs and advocacy initiatives</li>
-                          <li>• Participate in knowledge production and research</li>
-                          <li>• Network with scholars and practitioners</li>
-                          <li>• Influence practical ideas with policy-relevant impact</li>
+                          <li> Direct engagement with policymakers and experts</li>
+                          <li> Solution-oriented collaborative problem-solving</li>
+                          <li> Contribute to policy briefs and advocacy initiatives</li>
+                          <li> Participate in knowledge production and research</li>
+                          <li> Network with scholars and practitioners</li>
+                          <li> Influence practical ideas with policy-relevant impact</li>
                         </ul>
                       </div>
                     </div>
@@ -1354,11 +1354,11 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Research funding and resources</li>
-                          <li>• One-on-one mentorship from experts</li>
-                          <li>• Publication opportunities</li>
-                          <li>• Access to research networks</li>
-                          <li>• Presentation at conferences</li>
+                          <li> Research funding and resources</li>
+                          <li> One-on-one mentorship from experts</li>
+                          <li> Publication opportunities</li>
+                          <li> Access to research networks</li>
+                          <li> Presentation at conferences</li>
                         </ul>
                       </div>
                     </div>
@@ -1396,11 +1396,11 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Policy analysis training</li>
-                          <li>• Advocacy campaign experience</li>
-                          <li>• Stakeholder engagement skills</li>
-                          <li>• Policy brief writing</li>
-                          <li>• Networking with policymakers</li>
+                          <li> Policy analysis training</li>
+                          <li> Advocacy campaign experience</li>
+                          <li> Stakeholder engagement skills</li>
+                          <li> Policy brief writing</li>
+                          <li> Networking with policymakers</li>
                         </ul>
                       </div>
                     </div>
@@ -1437,11 +1437,11 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Leadership certification</li>
-                          <li>• Public speaking skills</li>
-                          <li>• Team management training</li>
-                          <li>• International exposure</li>
-                          <li>• Mentorship from leaders</li>
+                          <li> Leadership certification</li>
+                          <li> Public speaking skills</li>
+                          <li> Team management training</li>
+                          <li> International exposure</li>
+                          <li> Mentorship from leaders</li>
                         </ul>
                       </div>
                     </div>
@@ -1479,11 +1479,11 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• International partnerships</li>
-                          <li>• Diplomatic protocol training</li>
-                          <li>• Conference participation</li>
-                          <li>• Global networking</li>
-                          <li>• Cultural exchange opportunities</li>
+                          <li> International partnerships</li>
+                          <li> Diplomatic protocol training</li>
+                          <li> Conference participation</li>
+                          <li> Global networking</li>
+                          <li> Cultural exchange opportunities</li>
                         </ul>
                       </div>
                     </div>
@@ -1598,7 +1598,7 @@ function App() {
                       I agree to the{' '}
                       <a
                         href="#terms"
-                        onClick={(e) => {e.preventDefault(); alert('Terms:\n\n• Respect YIGA code of conduct\n• Active participation required\n• Annual fee: KSH 1,000\n• Professional conduct expected\n• Communications consent');}}
+                        onClick={(e) => {e.preventDefault(); alert('Terms:\n\n Respect YIGA code of conduct\n Active participation required\n Annual fee: KSH 1,000\n Professional conduct expected\n Communications consent');}}
                         className="text-red-600 underline hover:text-red-700"
                       >
                         Terms & Conditions
@@ -1961,7 +1961,7 @@ function App() {
             <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-xl font-bold mb-4">YIGA</h3>
-                <p className="text-gray-400">Youth in Governance & International Affairs</p>
+                <p className="text-gray-400">Youth in Governance and Global Affairs</p>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
@@ -1984,6 +1984,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
