@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+// YIGA Website - Updated 2026-02-18 20:54
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const API_BASE = 'https://yiga-backend-1.onrender.com/api';
