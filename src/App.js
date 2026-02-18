@@ -1,4 +1,4 @@
-// YIGA Website - Updated 2026-02-18 20:54
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const API_BASE = 'https://yiga-backend-1.onrender.com/api';
@@ -780,19 +780,19 @@ function App() {
             <div className="bg-gray-900 text-white py-12">
               <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">500+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">1000+</div>
                   <div className="text-gray-300">Active Members</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">15+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">3</div>
                   <div className="text-gray-300">Countries</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">200+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">15</div>
                   <div className="text-gray-300">Events Hosted</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">50+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">10+</div>
                   <div className="text-gray-300">Partner Organizations</div>
                 </div>
               </div>
