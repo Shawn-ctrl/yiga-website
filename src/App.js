@@ -70,26 +70,17 @@ Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role o
     date: "October 2025",
     author: "IRSAK Research Team",
     readTime: "15 min read",
-    tags: ["Youth Engagement", "Governance", "Political Participation"],
-    fullContent: `This comprehensive study examined political participation among university students across 28 Kenyan universities. The research reveals critical insights into youth political engagement patterns and barriers.
+    fullContent: `**OVERVIEW:** This study examined political participation among university students across 28 Kenyan universities.
 
-**KEY FINDINGS:** University students demonstrate moderate political awareness - governors are most recognized while MCAs are least known. Only 56% know about the National Youth Council. While 58% are aware of party manifestos, their understanding is superficial, limited to slogans like "bottom-up" without grasping actual policies.
+**KEY FINDINGS:** Students show moderate political awareness but minimal active participation. Only 21% are registered voters, 12% voted in the last election, and 5% are party members. However, 42.9% participated in protests, especially anti-Finance Bill demonstrations.
 
-PARTICIPATION LEVELS: Active political participation remains alarmingly low. Only 21% are registered voters, just 12% voted in the last election, and merely 5% are political party members. However, 42.9% participated in protests, particularly the anti-Finance Bill demonstrations, showing selective engagement.
+**MAJOR BARRIERS:** 70% cite distrust of politicians, with 80% believing politicians don't care about youth. Security concerns are significant - Kenya witnessed 159 extrajudicial killings in 2024 (65% police-related). Information inaccessibility compounds the problem.
 
-**MAJOR BARRIERS:** Nearly 70% cite distrust of politicians as the primary barrier, with 80% believing politicians don't care about youth. This stems from perceptions of corruption, broken promises, and exclusion from decision-making. Students also distrust the IEBC, citing controversies like Chris Msando's 2017 death and the 2022 commissioner resignations. Political parties are viewed as vehicles for individual advancement rather than ideological institutions.
+**SOCIAL MEDIA'S ROLE:** 83% use social media as their primary source, but algorithmic echo chambers expose them to entertainment over substantive content.
 
-Security concerns significantly deter participation. In 2024, Kenya witnessed 159 cases of extrajudicial killings and enforced disappearances - 65% police-related, with a 450% increase in disappearances from 2023. Female students fear sexual harassment during protests; male students fear abductions and police brutality. These create self-censorship, producing politically aware but risk-averse "keyboard warriors."
+**RECOMMENDATIONS:** Build trust through intergenerational dialogues, integrate civic education into curricula, and ensure systematic youth inclusion in governance per Article 55.
 
-Information inaccessibility compounds the problem. Students don't know where to find credible political information or how to join parties. While 83% rely on social media, algorithmic echo chambers expose them to entertainment over substantive civic content, making them susceptible to misinformation.
-
-SOCIAL MEDIA'S ROLE: 83% use social media as their primary information source, 69% learned about anti-Finance Bill protests online, and 70% prefer it for civic education. Kenya averages 3 hours 43 minutes daily on social media - 1 hour 13 minutes above the global average.
-
-**HISTORICAL CONTEXT:** This contrasts sharply with the 1960s-1990s when students drove transformative change - from Columbia's 1968 protests against Vietnam War, to Tiananmen Square's 1989 democracy demands, to Kenya's 1990s pro-democracy movements that achieved multipartism. Today, engagement has narrowed from national governance to campus welfare issues.
-
-**RECOMMENDATIONS:** Building trust through NCIC-facilitated intergenerational dialogues and IEBC transparency initiatives. Integrating civic education and social media literacy into university curricula. Government must systematically include youth in public participation per Article 55 of the Constitution. Students must shift from passive social media consumption to critical engagement with credible sources.
-
-**CONCLUSION:** Political apathy isn't mere disinterest but a response to systemic exclusion, fear, and disillusionment. Students recognize dysfunction but perceive it as unchangeable. However, this demographic has tremendous transformative potential. By investing in informed, secure, trust-based participation structures, Kenya can shift young citizens from political margins to governance centers, ensuring democratic vitality.`
+**Download the full PDF below for complete research data, charts, and detailed policy recommendations.**`
   },
     {
     id: 3,
