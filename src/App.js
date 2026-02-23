@@ -4,12 +4,12 @@ import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCir
 const API_BASE = 'https://yiga-backend-1.onrender.com/api';
 
 const teamPhotos = {
-  heroImage: '/images/hero.jpg',
-  aboutImage: '/images/about.jpg',
-  meetingImage: '/images/meeting.jpg',
-  eventImage: '/images/event.jpg',
-  workshopImage: '/images/workshop.jpg',
-  galleryImages: [
+  **heroImage:** '/images/hero.jpg',
+  **aboutImage:** '/images/about.jpg',
+  **meetingImage:** '/images/meeting.jpg',
+  **eventImage:** '/images/event.jpg',
+  **workshopImage:** '/images/workshop.jpg',
+  **galleryImages:** [
     '/images/gallery1.jpg',
     '/images/gallery2.jpg',
     '/images/gallery3.jpg',
@@ -20,31 +20,31 @@ const teamPhotos = {
 };
 
 const teamMembers = [
-  { name: "Jeremy Oronje", role: "Executive Director", bio: "Leading YIGA's vision and strategic direction", photo: "/images/Jeremy Oronje -Executive Director.jpeg" },
-  { name: "Galdicia Wambui Gacihi", role: "Deputy Executive Director", bio: "Supporting executive leadership", photo: "/images/Deputy Executive Director.jpeg" },
-  { name: "Ashley Munyasia", role: "Director of Research", bio: "Leading research initiatives", photo: "/images/Ashley Munyasia-Director of Research.jpeg" },
-  { name: "Neema Toto", role: "Director of Events", bio: "Managing YIGA events", photo: "/images/Neema Toto-Director of Events.jpeg" },
-  { name: "Neema Wanjiku", role: "Assistant Director of Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
-  { name: "Phoebe Monari", role: "Director of Programs and Partnership", bio: "Building strategic partnerships", photo: "/images/Phebe Monari-Director of Programs and Partnerships.jpeg" },
-  { name: "Kemunto J.O", role: "Assistant Director of Programs and Partnership", bio: "Supporting program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
-  { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communication strategies", photo: "/images/Hilda-Director of Communication.jpeg" },
-  { name: "Beldine Mukami", role: "Assistant Communications Director", bio: "Supporting communication initiatives", photo: "/images/Beldine Mukami -Assistant Communications Director.jpeg" },
-  { name: "Abel Omenge", role: "Director of Finance", bio: "Managing financial operations", photo: "/images/Abel Omenge-Director of Finance.jpeg" },
-  { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing organizational operations", photo: "/images/Catherine Mbilo-Secretary General.jpeg" }
+  { **name:** "Jeremy Oronje", **role:** "Executive Director", **bio:** "Leading YIGA's vision and strategic direction", **photo:** "/images/Jeremy Oronje -Executive Director.jpeg" },
+  { **name:** "Galdicia Wambui Gacihi", **role:** "Deputy Executive Director", **bio:** "Supporting executive leadership", **photo:** "/images/Deputy Executive Director.jpeg" },
+  { **name:** "Ashley Munyasia", **role:** "Director of Research", **bio:** "Leading research initiatives", **photo:** "/images/Ashley Munyasia-Director of Research.jpeg" },
+  { **name:** "Neema Toto", **role:** "Director of Events", **bio:** "Managing YIGA events", **photo:** "/images/Neema Toto-Director of Events.jpeg" },
+  { **name:** "Neema Wanjiku", **role:** "Assistant Director of Events", **bio:** "Supporting events coordination", **photo:** "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
+  { **name:** "Phoebe Monari", **role:** "Director of Programs and Partnership", **bio:** "Building strategic partnerships", **photo:** "/images/Phebe Monari-Director of Programs and Partnerships.jpeg" },
+  { **name:** "Kemunto J.O", **role:** "Assistant Director of Programs and Partnership", **bio:** "Supporting program coordination", **photo:** "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
+  { **name:** "Hilda Koipano", **role:** "Director of Communications", **bio:** "Leading communication strategies", **photo:** "/images/Hilda-Director of Communication.jpeg" },
+  { **name:** "Beldine Mukami", **role:** "Assistant Communications Director", **bio:** "Supporting communication initiatives", **photo:** "/images/Beldine Mukami -Assistant Communications Director.jpeg" },
+  { **name:** "Abel Omenge", **role:** "Director of Finance", **bio:** "Managing financial operations", **photo:** "/images/Abel Omenge-Director of Finance.jpeg" },
+  { **name:** "Catherine Mbilo", **role:** "Secretary General", **bio:** "Managing organizational operations", **photo:** "/images/Catherine Mbilo-Secretary General.jpeg" }
 ];
 
 const articles = [
   {
-    id: 1,
-    title: "BRICS Summit 2025: A Turning Point for Global South Cooperation",
-    excerpt: "The 17th BRICS Summit in Rio de Janeiro marked a significant milestone in South-South collaboration, as member states reinforced their commitment to a more inclusive, multipolar international order amid geopolitical tensions.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
-    category: "International Relations",
-    date: "January 26, 2026",
-    author: "Ashley Munyasia",
-    readTime: "8 min read",
-    tags: ["BRICS", "Global South", "Multilateralism"],
-    fullContent: `A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. Summit held together Brazil, Russia, India, China, South Africa and newly admitted member states amidst a setback of increasing geopolitical rivalry, economic disintegration and dissatisfaction with Western dominated multilateral corporations. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order which would better represent the political and economic mass of the Global South.
+    **id:** 1,
+    **title:** "BRICS Summit 2025: A Turning Point for Global South Cooperation",
+    **excerpt:** "The 17th BRICS Summit in Rio de Janeiro marked a significant milestone in South-South collaboration, as member states reinforced their commitment to a more inclusive, multipolar international order amid geopolitical tensions.",
+    **image:** "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
+    **category:** "International Relations",
+    **date:** "January 26, 2026",
+    **author:** "Ashley Munyasia",
+    **readTime:** "8 min read",
+    **tags:** ["BRICS", "Global South", "Multilateralism"],
+    **fullContent:** `A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. Summit held together Brazil, Russia, India, China, South Africa and newly admitted member states amidst a setback of increasing geopolitical rivalry, economic disintegration and dissatisfaction with Western dominated multilateral corporations. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order which would better represent the political and economic mass of the Global South.
 
 The main result of the summit was the declaration of Rio de Janeiro that encompassed a wide range of commitments in the areas of governance, economic cooperation, technology, climate change, and social development. The statement addressed the significance of multilateralism and respect of international law, at the same time, demanding structural reforms of major world institutions, such as the United Nations, the International Monetary Fund, and the World Bank. According to BRICS leaders, such institutions still fail to fully reflect the developing countries and emerging economies to limit the participation of the developing countries in global decision-making. Against this backdrop, the declaration also condemned the use of unilateral and protectionist economic policies which have been destabilizing the world trade and development.
 
@@ -61,38 +61,38 @@ The overall geopolitical implications of the summit were pointed out by internat
 Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role of the bloc in global relations and its desire to also transform world governance according to the priorities of the Global South. Although it is still constrained by structural and political factors, the summit showed that emerging economies are more and more engaged in an effort to shape global norms, diversify economic cooperation, and problem existing power asymmetry in the international system.`
   },
   {
-    id: 2,
-    title: "Political Participation Among University Students in Kenya",
-    downloadPDF: "/documents/Political_Participation_Study_IRSAK_2025.pdf",
-    excerpt: "A comprehensive study examining the current status of political awareness and participation among Kenyan university students, identifying barriers to engagement and proposing pathways to meaningful democratic inclusion.",
-    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
-    category: "Youth & Governance",
-    date: "October 2025",
-    author: "IRSAK Research Team",
-    readTime: "15 min read",
-    fullContent: `**OVERVIEW:** This study examined political participation among university students across 28 Kenyan universities.
+    **id:** 2,
+    **title:** "Political Participation Among University Students in Kenya",
+    **downloadPDF:** "/documents/Political_Participation_Study_IRSAK_2025.pdf",
+    **excerpt:** "A comprehensive study examining the current status of political awareness and participation among Kenyan university students, identifying barriers to engagement and proposing pathways to meaningful democratic inclusion.",
+    **image:** "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
+    **category:** "Youth & Governance",
+    **date:** "October 2025",
+    **author:** "IRSAK Research Team",
+    **readTime:** "15 min read",
+    **fullContent:** `**OVERVIEW:** This study examined political participation among university students across 28 Kenyan universities.
 
 **KEY FINDINGS:** Students show moderate political awareness but minimal active participation. Only 21% are registered voters, 12% voted in the last election, and 5% are party members. However, 42.9% participated in protests, especially anti-Finance Bill demonstrations.
 
 **MAJOR BARRIERS:** 70% cite distrust of politicians, with 80% believing politicians don't care about youth. Security concerns are significant - Kenya witnessed 159 extrajudicial killings in 2024 (65% police-related). Information inaccessibility compounds the problem.
 
-******SOCIAL MEDIA'S ROLE:****** 83% use social media as their primary source, but algorithmic echo chambers expose them to entertainment over substantive content.
+****SOCIAL MEDIA'S ROLE:**** 83% use social media as their primary source, but algorithmic echo chambers expose them to entertainment over substantive content.
 
 **RECOMMENDATIONS:** Build trust through intergenerational dialogues, integrate civic education into curricula, and ensure systematic youth inclusion in governance per Article 55.
 
 **Download the full PDF below for complete research data, charts, and detailed policy recommendations.**`
   },
     {
-    id: 3,
-    title: "Cracks in the CRINK: Illusions of an Autocratic Alliance",
-    excerpt: "An in-depth analysis of the fragile coalition between China, Russia, Iran, and North Korea, examining how divergent agendas and internal contradictions undermine the notion of a unified autocratic axis.",
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=500&fit=crop",
-    category: "International Relations",
-    date: "January 2026",
-    author: "Caroline Nyagaki",
-    readTime: "10 min read",
-    tags: ["CRINK", "Geopolitics", "International Relations"],
-    fullContent: `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"—a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
+    **id:** 3,
+    **title:** "**Cracks in the CRINK:** Illusions of an Autocratic Alliance",
+    **excerpt:** "An in-depth analysis of the fragile coalition between China, Russia, Iran, and North Korea, examining how divergent agendas and internal contradictions undermine the notion of a unified autocratic axis.",
+    **image:** "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=500&fit=crop",
+    **category:** "International Relations",
+    **date:** "January 2026",
+    **author:** "Caroline Nyagaki",
+    **readTime:** "10 min read",
+    **tags:** ["CRINK", "Geopolitics", "International Relations"],
+    **fullContent:** `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"—a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
 
 Despite appearances, CRINK is not a unified alliance. It lacks the institutional infrastructure, mutual defense agreements, or shared strategic vision found in established alliances like NATO. What binds these states is not long-term loyalty or ideological harmony, but a shared opposition to Western dominance, a desire for regime survival, and selective cooperation based on short-term advantage.
 
@@ -102,7 +102,7 @@ Though often grouped together as "anti-Western" actors, the CRINK countries diff
 
 This lack of strategic unity undermines any serious attempt to view CRINK as a consolidated power bloc.
 
-China: Cautious Leader, Not Commander
+**China:** Cautious Leader, Not Commander
 
 China's role within CRINK is particularly revealing. It is the most powerful player—economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
 
@@ -110,7 +110,7 @@ Rather than building an alliance based on loyalty, China appears to be managing 
 
 No Real Alliance, Just Shared Convenience
 
-Unlike structured alliances that commit to mutual defense and long-term strategy, CRINK operates more like a network of convenience. There is no CRINK summit, no joint military command, no institutional mechanism for resolving disputes or planning long-term collaboration. Their cooperation is issue-specific and driven by necessity: Russia turns to Iran for drones, North Korea supplies artillery shells to Russian forces in Ukraine, China trades with Russia and Iran to secure cheap energy, and Iran offers military and intelligence support to other authoritarian regimes.
+Unlike structured alliances that commit to mutual defense and long-term strategy, CRINK operates more like a network of convenience. There is no CRINK summit, no joint military command, no institutional mechanism for resolving disputes or planning long-term collaboration. Their cooperation is issue-**specific and driven by necessity:** Russia turns to Iran for drones, North Korea supplies artillery shells to Russian forces in Ukraine, China trades with Russia and Iran to secure cheap energy, and Iran offers military and intelligence support to other authoritarian regimes.
 
 But this does not equate to trust. In fact, mutual suspicion and asymmetry define these relationships. Russia's growing dependence on Chinese technology and trade has led to fears of strategic subordination. Iran, meanwhile, is wary of China's increasing influence over its economy. North Korea continues to act independently, often ignoring Beijing's calls for restraint.
 
@@ -118,7 +118,7 @@ Implications for Global Stability
 
 The illusion of unity within CRINK has two important implications for international affairs. First, it shows that Western fears of a coordinated "axis of autocracy" may be overstated. The bloc's internal divisions and lack of strategic coherence limit its ability to act as a united front. This presents an opportunity for diplomatic engagement and wedge strategies that target these divisions.
 
-Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
+Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, **but to the conditions that enable them to act:** instability, broken diplomacy, and economic fragmentation.
 
 **Conclusion:** Fragile Alliances, Not Fatal Threats
 
@@ -130,30 +130,30 @@ The CRINK bloc is more a geopolitical mirage than a durable axis. What unites Ch
 // Past Activities Data - REPLACE WITH REAL DATA TOMORROW
 const pastActivities = [
   {
-    id: 1,
-    title: "Roundtable on Strengthening Youth Participation in Governance and Politics",
-    date: "February 2026",
-    location: "Nairobi, Kenya",
-    description: "A high-level roundtable convening civil society leaders, students, and researchers to discuss strategies for enhancing youth engagement in governance and political processes in Kenya.",
-    image: "/images/activities/Roundtable_discussion.jpeg",
-    category: "Roundtable",
-    attendees: "25 civil society representatives, students, and researchers",
-    outcomes: [
+    **id:** 1,
+    **title:** "Roundtable on Strengthening Youth Participation in Governance and Politics",
+    **date:** "February 2026",
+    **location:** "Nairobi, Kenya",
+    **description:** "A high-level roundtable convening civil society leaders, students, and researchers to discuss strategies for enhancing youth engagement in governance and political processes in Kenya.",
+    **image:** "/images/activities/Roundtable_discussion.jpeg",
+    **category:** "Roundtable",
+    **attendees:** "25 civil society representatives, students, and researchers",
+    **outcomes:** [
       "Policy brief developed on strengthening youth participation in governance",
       "Multi-stakeholder recommendations on civic engagement reforms",
       "Strengthened collaboration between youth-led and civil society organizations"
     ]
   },
   {
-    id: 2,
-    title: "Research Study Launch: Political Participation Among University Students in Kenya",
-    date: "October 2025",
-    location: "Nairobi, Kenya",
-    description: "Launch of YIGA's research study examining political participation trends among university students in Kenya, convening diverse stakeholders to discuss findings and policy implications.",
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
-    category: "Research Launch",
-    attendees: "Students, policymakers, researchers, civil society representatives",
-    outcomes: [
+    **id:** 2,
+    **title:** "**Research Study Launch:** Political Participation Among University Students in Kenya",
+    **date:** "October 2025",
+    **location:** "Nairobi, Kenya",
+    **description:** "Launch of YIGA's research study examining political participation trends among university students in Kenya, convening diverse stakeholders to discuss findings and policy implications.",
+    **image:** "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
+    **category:** "Research Launch",
+    **attendees:** "Students, policymakers, researchers, civil society representatives",
+    **outcomes:** [
       "Official launch of the research report",
       "Multi-stakeholder dialogue on youth political participation",
       "Policy and programmatic recommendations",
@@ -161,75 +161,75 @@ const pastActivities = [
     ]
   },
   {
-    id: 3,
-    title: "Rwanda Governance and Bilateral Engagement Visit",
-    date: "September 2025",
-    location: "Kigali, Rwanda",
-    description: "Strategic visit to Rwanda involving engagements with key institutions, including discussions with senior government officials and the Kenya High Commission in Kigali.",
-    image: "/images/activities/UNRCO_Kigali.jpeg",
-    category: "Institutional Visit",
-    attendees: "YIGA delegation and government officials",
-    outcomes: [
+    **id:** 3,
+    **title:** "Rwanda Governance and Bilateral Engagement Visit",
+    **date:** "September 2025",
+    **location:** "Kigali, Rwanda",
+    **description:** "Strategic visit to Rwanda involving engagements with key institutions, including discussions with senior government officials and the Kenya High Commission in Kigali.",
+    **image:** "/images/activities/UNRCO_Kigali.jpeg",
+    **category:** "Institutional Visit",
+    **attendees:** "YIGA delegation and government officials",
+    **outcomes:** [
       "Comparative insights on governance and public sector efficiency",
       "Discussions on strengthening Kenya-Rwanda bilateral relations",
       "Enhanced understanding of diplomatic engagement processes"
     ]
   },
   {
-    id: 4,
-    title: "Engagement with the United Nations Development Programme Rwanda",
-    date: "September 2025",
-    location: "Kigali, Rwanda",
-    description: "High-level discussion with UNDP Rwanda on the 1994 Genocide against the Tutsi and Rwanda's post-conflict recovery journey.",
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800",
-    category: "Institutional Engagement",
-    attendees: "YIGA delegation and UNDP officials",
-    outcomes: [
+    **id:** 4,
+    **title:** "Engagement with the United Nations Development Programme Rwanda",
+    **date:** "September 2025",
+    **location:** "Kigali, Rwanda",
+    **description:** "High-level discussion with UNDP Rwanda on the 1994 Genocide against the Tutsi and Rwanda's post-conflict recovery journey.",
+    **image:** "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800",
+    **category:** "Institutional Engagement",
+    **attendees:** "YIGA delegation and UNDP officials",
+    **outcomes:** [
       "Understanding of post-conflict recovery frameworks",
       "Insights into institutional resilience and development",
       "Reflections on transitional justice and nation-building"
     ]
   },
   {
-    id: 5,
-    title: "Visit to Never Again Rwanda",
-    date: "September 2025",
-    location: "Kigali, Rwanda",
-    description: "Engagement with Never Again Rwanda, a grassroots peacebuilding organization, to explore the role of youth in peacebuilding.",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800",
-    category: "Peacebuilding Visit",
-    attendees: "YIGA delegation and Never Again Rwanda leadership",
-    outcomes: [
+    **id:** 5,
+    **title:** "Visit to Never Again Rwanda",
+    **date:** "September 2025",
+    **location:** "Kigali, Rwanda",
+    **description:** "Engagement with Never Again Rwanda, a grassroots peacebuilding organization, to explore the role of youth in peacebuilding.",
+    **image:** "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800",
+    **category:** "Peacebuilding Visit",
+    **attendees:** "YIGA delegation and Never Again Rwanda leadership",
+    **outcomes:** [
       "Shared best practices in youth-led peacebuilding",
       "Reflections on grassroots reconciliation models",
       "Strategic ideas for adapting initiatives in Kenya"
     ]
   },
   {
-    id: 6,
-    title: "Career and Mentorship Forum for International Relations Students",
-    date: "March 2025",
-    location: "Nairobi, Kenya",
-    description: "Annual national forum convening IR students from across Kenya for structured mentorship, career guidance, and professional development.",
-    image: "/images/activities/Career_and_mentorship_program.jpeg",
-    category: "Annual Forum",
-    attendees: "IR students, practitioners, researchers, and policy professionals",
-    outcomes: [
+    **id:** 6,
+    **title:** "Career and Mentorship Forum for International Relations Students",
+    **date:** "March 2025",
+    **location:** "Nairobi, Kenya",
+    **description:** "Annual national forum convening IR students from across Kenya for structured mentorship, career guidance, and professional development.",
+    **image:** "/images/activities/Career_and_mentorship_program.jpeg",
+    **category:** "Annual Forum",
+    **attendees:** "IR students, practitioners, researchers, and policy professionals",
+    **outcomes:** [
       "Mentorship engagement between students and professionals",
       "Career guidance on diplomacy and governance pathways",
       "Strengthened national network of emerging IR scholars"
     ]
   },
   {
-    id: 7,
-    title: "Institutional Visit to the East African Community and African Court",
-    date: "October 2024",
-    location: "Arusha, Tanzania",
-    description: "Institutional exposure visit to induct YIGA members into the operations of regional and continental institutions.",
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800",
-    category: "Institutional Visit",
-    attendees: "YIGA delegation and institutional representatives",
-    outcomes: [
+    **id:** 7,
+    **title:** "Institutional Visit to the East African Community and African Court",
+    **date:** "October 2024",
+    **location:** "Arusha, Tanzania",
+    **description:** "Institutional exposure visit to induct YIGA members into the operations of regional and continental institutions.",
+    **image:** "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800",
+    **category:** "Institutional Visit",
+    **attendees:** "YIGA delegation and institutional representatives",
+    **outcomes:** [
       "Understanding of regional integration mechanisms",
       "Insights into international legal frameworks",
       "Strengthened member capacity in institutional engagement"
@@ -240,22 +240,22 @@ const pastActivities = [
 // Real YIGA Articles with full content
 const newsletterArchives = [
   {
-    id: 1,
-    title: "November 2025 - Youth Voices in Climate Action",
-    date: "November 30, 2025",
-    excerpt: "This month's highlights on youth-led climate initiatives across Africa"
+    **id:** 1,
+    **title:** "November 2025 - Youth Voices in Climate Action",
+    **date:** "November 30, 2025",
+    **excerpt:** "This month's highlights on youth-led climate initiatives across Africa"
   },
   {
-    id: 2,
-    title: "October 2025 - Peace and Security Roundup",
-    date: "October 31, 2025",
-    excerpt: "Key developments in African peace processes and youth involvement"
+    **id:** 2,
+    **title:** "October 2025 - Peace and Security Roundup",
+    **date:** "October 31, 2025",
+    **excerpt:** "Key developments in African peace processes and youth involvement"
   },
   {
-    id: 3,
-    title: "September 2025 - Governance Reforms Update",
-    date: "September 30, 2025",
-    excerpt: "Latest insights on democratic reforms and youth participation"
+    **id:** 3,
+    **title:** "September 2025 - Governance Reforms Update",
+    **date:** "September 30, 2025",
+    **excerpt:** "Latest insights on democratic reforms and youth participation"
   }
 ];
 
@@ -287,32 +287,32 @@ function App() {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterStatus, setNewsletterStatus] = useState('');
   const [newsletterPreferences, setNewsletterPreferences] = useState({
-    email: '',
-    frequency: 'monthly',
-    topics: []
+    **email:** '',
+    **frequency:** 'monthly',
+    **topics:** []
   });
 
   const [formData, setFormData] = useState({
-    full_name: '',
-    email: '',
-    phone: '',
-    country: '',
-    city: '',
-    institution: '',
-    program: 'General Membership',
-    motivation: '',
-    experience: ''
+    full_**name:** '',
+    **email:** '',
+    **phone:** '',
+    **country:** '',
+    **city:** '',
+    **institution:** '',
+    **program:** 'General Membership',
+    **motivation:** '',
+    **experience:** ''
   });
 
   const [loginData, setLoginData] = useState({
-    username: '',
-    password: ''
+    **username:** '',
+    **password:** ''
   });
 
   const [newAdmin, setNewAdmin] = useState({
-    username: '',
-    password: '',
-    role: 'admin'
+    **username:** '',
+    **password:** '',
+    **role:** 'admin'
   });
 
   useEffect(() => {
@@ -330,12 +330,12 @@ function App() {
     setLoading(true);
     try {
       const response = await fetch(`${API_BASE}/auth/login`, {
-        method: 'POST',
-        headers: { 
+        **method:** 'POST',
+        **headers:** { 
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(loginData)
+        **body:** JSON.stringify(loginData)
       });
       
       const data = await response.json();
@@ -349,9 +349,9 @@ function App() {
         localStorage.setItem('username', data.user.username);
         setUserRole(data.user.role);
         localStorage.setItem('userRole', data.user.role);
-        setLoginData({ username: '', password: '' });
+        setLoginData({ **username:** '', **password:** '' });
         
-        // CRITICAL FIX: Fetch data AFTER setting state
+        // **CRITICAL FIX:** Fetch data AFTER setting state
         // Pass the token directly since state hasn't updated yet
         await fetchApplications(data.token);
         if (data.user.role === 'superadmin') {
@@ -361,7 +361,7 @@ function App() {
         setLoginError(data.message || 'Login failed');
       }
     } catch (error) {
-      setLoginError('Connection error: ' + error.message);
+      setLoginError('**Connection error:** ' + error.message);
       console.error('Login error:', error);
     } finally {
       setLoading(false);
@@ -380,14 +380,14 @@ function App() {
     setLoading(true);
     try {
       const response = await fetch(`${API_BASE}/applications`, {
-        headers: { 
+        **headers:** { 
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
         }
       });
       const data = await response.json();
       if (response.ok) {
-        setApplications(Array.isArray(data.applications) ? data.applications : []);
+        setApplications(Array.isArray(data.applications) ? data.**applications :** []);
       }
     } catch (error) {
       console.error('Error fetching applications:', error);
@@ -399,14 +399,14 @@ function App() {
   const fetchAdmins = async (token = authToken) => {
     try {
       const response = await fetch(`${API_BASE}/admins`, {
-        headers: { 
+        **headers:** { 
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
         }
       });
       const data = await response.json();
       if (response.ok) {
-        setAdmins(Array.isArray(data) ? data : []);
+        setAdmins(Array.isArray(data) ? **data :** []);
       }
     } catch (error) {
       console.error('Error fetching admins:', error);
@@ -418,26 +418,26 @@ function App() {
     setSubmitStatus('submitting');
     try {
       const response = await fetch(`${API_BASE}/applications`, {
-        method: 'POST',
-        headers: { 
+        **method:** 'POST',
+        **headers:** { 
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        **body:** JSON.stringify(formData)
       });
       
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({
-          full_name: '',
-          email: '',
-          phone: '',
-          country: '',
-          city: '',
-          institution: '',
-          program: 'General Membership',
-          motivation: '',
-          experience: ''
+          full_**name:** '',
+          **email:** '',
+          **phone:** '',
+          **country:** '',
+          **city:** '',
+          **institution:** '',
+          **program:** 'General Membership',
+          **motivation:** '',
+          **experience:** ''
         });
         setTimeout(() => setSubmitStatus(''), 5000);
       } else {
@@ -456,12 +456,12 @@ function App() {
     setNewsletterStatus('submitting');
     try {
       const response = await fetch(`${API_BASE}/newsletter`, {
-        method: 'POST',
-        headers: { 
+        **method:** 'POST',
+        **headers:** { 
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({ email: newsletterEmail })
+        **body:** JSON.stringify({ **email:** newsletterEmail })
       });
       
       if (response.ok) {
@@ -484,17 +484,17 @@ function App() {
     setNewsletterStatus('submitting');
     try {
       const response = await fetch(`${API_BASE}/newsletter/preferences`, {
-        method: 'POST',
-        headers: { 
+        **method:** 'POST',
+        **headers:** { 
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(newsletterPreferences)
+        **body:** JSON.stringify(newsletterPreferences)
       });
       
       if (response.ok) {
         setNewsletterStatus('success');
-        setNewsletterPreferences({ email: '', frequency: 'monthly', topics: [] });
+        setNewsletterPreferences({ **email:** '', **frequency:** 'monthly', **topics:** [] });
         setTimeout(() => setNewsletterStatus(''), 5000);
       } else {
         setNewsletterStatus('error');
@@ -509,13 +509,13 @@ function App() {
   const updateApplicationStatus = async (id, status) => {
     try {
       const response = await fetch(`${API_BASE}/applications/${id}`, {
-        method: 'PUT',
-        headers: {
+        **method:** 'PUT',
+        **headers:** {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${authToken}`,
           'Accept': 'application/json'
         },
-        body: JSON.stringify({ status })
+        **body:** JSON.stringify({ status })
       });
       if (response.ok) {
         fetchApplications();
@@ -529,8 +529,8 @@ function App() {
     if (!window.confirm('Are you sure you want to delete this application?')) return;
     try {
       const response = await fetch(`${API_BASE}/applications/${id}`, {
-        method: 'DELETE',
-        headers: { 
+        **method:** 'DELETE',
+        **headers:** { 
           'Authorization': `Bearer ${authToken}`,
           'Accept': 'application/json'
         }
@@ -549,18 +549,18 @@ function App() {
     setAdminSuccess('');
     try {
       const response = await fetch(`${API_BASE}/auth/create-admin`, {
-        method: 'POST',
-        headers: {
+        **method:** 'POST',
+        **headers:** {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${authToken}`,
           'Accept': 'application/json'
         },
-        body: JSON.stringify(newAdmin)
+        **body:** JSON.stringify(newAdmin)
       });
       const data = await response.json();
       if (response.ok) {
         setAdminSuccess('Admin created successfully!');
-        setNewAdmin({ username: '', password: '', role: 'admin' });
+        setNewAdmin({ **username:** '', **password:** '', **role:** 'admin' });
         fetchAdmins();
         setTimeout(() => setAdminSuccess(''), 3000);
       } else {
@@ -574,13 +574,13 @@ function App() {
   const updateAdminRole = async (id, role) => {
     try {
       const response = await fetch(`${API_BASE}/admins/${id}`, {
-        method: 'PUT',
-        headers: {
+        **method:** 'PUT',
+        **headers:** {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${authToken}`,
           'Accept': 'application/json'
         },
-        body: JSON.stringify({ role })
+        **body:** JSON.stringify({ role })
       });
       if (response.ok) {
         fetchAdmins();
@@ -594,8 +594,8 @@ function App() {
     if (!window.confirm('Are you sure you want to delete this admin?')) return;
     try {
       const response = await fetch(`${API_BASE}/admins/${id}`, {
-        method: 'DELETE',
-        headers: { 
+        **method:** 'DELETE',
+        **headers:** { 
           'Authorization': `Bearer ${authToken}`,
           'Accept': 'application/json'
         }
@@ -611,7 +611,7 @@ function App() {
   const toggleNewsletterTopic = (topic) => {
     setNewsletterPreferences(prev => ({
       ...prev,
-      topics: prev.topics.includes(topic)
+      **topics:** prev.topics.includes(topic)
         ? prev.topics.filter(t => t !== topic)
         : [...prev.topics, topic]
     }));
@@ -736,9 +736,9 @@ function App() {
               <div 
                 className="absolute inset-0 opacity-40"
                 style={{
-                  backgroundImage: `url(${teamPhotos.heroImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  **backgroundImage:** `url(${teamPhotos.heroImage})`,
+                  **backgroundSize:** 'cover',
+                  **backgroundPosition:** 'center'
                 }}
               ></div>
               <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
@@ -894,9 +894,9 @@ function App() {
               <div 
                 className="absolute inset-0 opacity-30"
                 style={{
-                  backgroundImage: `url(${teamPhotos.aboutImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  **backgroundImage:** `url(${teamPhotos.aboutImage})`,
+                  **backgroundSize:** 'cover',
+                  **backgroundPosition:** 'center'
                 }}
               ></div>
               <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
@@ -951,11 +951,11 @@ function App() {
                 <h3 className="text-3xl font-bold text-black mb-8 text-center">Focus Areas</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
-                    { name: "Foreign Policy", icon: Globe },
-                    { name: "Good Governance", icon: Scale },
-                    { name: "Climate Change", icon: Award },
-                    { name: "Peace & Security", icon: Shield },
-                    { name: "Culture & Heritage", icon: BookOpen }
+                    { **name:** "Foreign Policy", **icon:** Globe },
+                    { **name:** "Good Governance", **icon:** Scale },
+                    { **name:** "Climate Change", **icon:** Award },
+                    { **name:** "Peace & Security", **icon:** Shield },
+                    { **name:** "Culture & Heritage", **icon:** BookOpen }
                   ].map((area, idx) => (
                     <div key={idx} className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition">
                       <area.icon className="w-12 h-12 mx-auto text-red-600 mb-3" />
@@ -1013,7 +1013,7 @@ function App() {
                   <input
                     type="email"
                     value={newsletterPreferences.email}
-                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, email: e.target.value})}
+                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, **email:** e.target.value})}
                     className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
@@ -1023,7 +1023,7 @@ function App() {
                   <label className="block text-gray-700 font-semibold mb-2">Frequency</label>
                   <select
                     value={newsletterPreferences.frequency}
-                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, frequency: e.target.value})}
+                    onChange={(e) => setNewsletterPreferences({...newsletterPreferences, **frequency:** e.target.value})}
                     className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600"
                   >
                     <option value="weekly">Weekly</option>
@@ -1214,10 +1214,10 @@ function App() {
             <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Programs</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
-                { title: "Research Fellowship", desc: "Conduct research on critical African issues", icon: BookOpen },
-                { title: "Policy Analysis", desc: "Analyze and contribute to policy development", icon: Scale },
-                { title: "Youth Leadership", desc: "Develop leadership skills for global engagement", icon: Award },
-                { title: "Networking Events", desc: "Connect with professionals across Africa", icon: Users }
+                { **title:** "Research Fellowship", **desc:** "Conduct research on critical African issues", **icon:** BookOpen },
+                { **title:** "Policy Analysis", **desc:** "Analyze and contribute to policy development", **icon:** Scale },
+                { **title:** "Youth Leadership", **desc:** "Develop leadership skills for global engagement", **icon:** Award },
+                { **title:** "Networking Events", **desc:** "Connect with professionals across Africa", **icon:** Users }
               ].map((program, idx) => (
                 <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
                   <program.icon className="w-16 h-16 text-red-600 mb-4" />
@@ -1532,7 +1532,7 @@ function App() {
                   <input
                     type="text"
                     value={formData.full_name}
-                    onChange={(e) => setFormData({...formData, full_name: e.target.value})}
+                    onChange={(e) => setFormData({...formData, full_**name:** e.target.value})}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
@@ -1542,7 +1542,7 @@ function App() {
                   <input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => setFormData({...formData, **email:** e.target.value})}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
@@ -1552,7 +1552,7 @@ function App() {
                   <input
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    onChange={(e) => setFormData({...formData, **phone:** e.target.value})}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
@@ -1562,7 +1562,7 @@ function App() {
                   <input
                     type="text"
                     value={formData.country}
-                    onChange={(e) => setFormData({...formData, country: e.target.value})}
+                    onChange={(e) => setFormData({...formData, **country:** e.target.value})}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     required
                   />
@@ -1571,7 +1571,7 @@ function App() {
                   <label className="block text-gray-700 font-semibold mb-2">Motivation</label>
                   <textarea
                     value={formData.motivation}
-                    onChange={(e) => setFormData({...formData, motivation: e.target.value})}
+                    onChange={(e) => setFormData({...formData, **motivation:** e.target.value})}
                     className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                     rows="5"
                     required
@@ -1589,7 +1589,7 @@ function App() {
                       I agree to the{' '}
                       <a
                         href="#terms"
-                        onClick={(e) => {e.preventDefault(); alert('Terms:\n\n Respect YIGA code of conduct\n Active participation required\n Annual fee: KSH 1,000\n Professional conduct expected\n Communications consent');}}
+                        onClick={(e) => {e.preventDefault(); alert('Terms:\n\n Respect YIGA code of conduct\n Active participation required\**n Annual fee:** KSH 1,000\n Professional conduct expected\n Communications consent');}}
                         className="text-red-600 underline hover:text-red-700"
                       >
                         Terms & Conditions
@@ -1747,7 +1747,7 @@ function App() {
                     <input
                       type="text"
                       value={loginData.username}
-                      onChange={(e) => setLoginData({...loginData, username: e.target.value})}
+                      onChange={(e) => setLoginData({...loginData, **username:** e.target.value})}
                       className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                       required
                     />
@@ -1757,7 +1757,7 @@ function App() {
                     <input
                       type="password"
                       value={loginData.password}
-                      onChange={(e) => setLoginData({...loginData, password: e.target.value})}
+                      onChange={(e) => setLoginData({...loginData, **password:** e.target.value})}
                       className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                       required
                     />
@@ -1796,7 +1796,7 @@ function App() {
                         type="text"
                         placeholder="Username"
                         value={newAdmin.username}
-                        onChange={(e) => setNewAdmin({...newAdmin, username: e.target.value})}
+                        onChange={(e) => setNewAdmin({...newAdmin, **username:** e.target.value})}
                         className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                         required
                       />
@@ -1804,13 +1804,13 @@ function App() {
                         type="password"
                         placeholder="Password"
                         value={newAdmin.password}
-                        onChange={(e) => setNewAdmin({...newAdmin, password: e.target.value})}
+                        onChange={(e) => setNewAdmin({...newAdmin, **password:** e.target.value})}
                         className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                         required
                       />
                       <select
                         value={newAdmin.role}
-                        onChange={(e) => setNewAdmin({...newAdmin, role: e.target.value})}
+                        onChange={(e) => setNewAdmin({...newAdmin, **role:** e.target.value})}
                         className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-600"
                       >
                         <option value="admin">Admin</option>
@@ -1975,6 +1975,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
