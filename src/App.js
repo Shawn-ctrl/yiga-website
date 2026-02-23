@@ -76,7 +76,7 @@ Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role o
 
 **MAJOR BARRIERS:** 70% cite distrust of politicians, with 80% believing politicians don't care about youth. Security concerns are significant - Kenya witnessed 159 extrajudicial killings in 2024 (65% police-related). Information inaccessibility compounds the problem.
 
-**SOCIAL MEDIA'S ROLE:** 83% use social media as their primary source, but algorithmic echo chambers expose them to entertainment over substantive content.
+****SOCIAL MEDIA'S ROLE:**** 83% use social media as their primary source, but algorithmic echo chambers expose them to entertainment over substantive content.
 
 **RECOMMENDATIONS:** Build trust through intergenerational dialogues, integrate civic education into curricula, and ensure systematic youth inclusion in governance per Article 55.
 
@@ -1975,6 +1975,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
