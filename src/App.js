@@ -797,7 +797,7 @@ function App() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-8 mb-12">
-                {articles && articles.map((article) => (
+                {articles && articles.length > 0 ? articles.map((article) => (
                   <div key={article.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition group">
                     <div className="relative h-64 overflow-hidden">
                       <img 
@@ -884,8 +884,13 @@ function App() {
                 >
                   Apply Now
                 </button>
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
 
@@ -964,8 +969,13 @@ function App() {
                     </div>
                   ))}
                 </div>
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
 
@@ -997,8 +1007,13 @@ function App() {
                 <h3 className="text-3xl font-bold mb-6">Join Our Team</h3>
                 <p className="text-xl mb-8">Passionate about youth empowerment and international affairs?</p>
                 <button onClick={() => setCurrentPage('join')} className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">Apply Now</button>
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
 
@@ -1089,8 +1104,13 @@ function App() {
                     </div>
                   </div>
                 ))}
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
 
@@ -1206,8 +1226,13 @@ function App() {
                     Back to Insights
                   </button>
                 </div>
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
         {currentPage === 'programs' && (
@@ -1507,8 +1532,13 @@ function App() {
                 >
                   Apply Now <ArrowRight className="w-5 h-5" />
                 </button>
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
 
@@ -1670,8 +1700,13 @@ function App() {
                     </div>
                   </div>
                 ))}
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
 
@@ -1687,7 +1722,7 @@ function App() {
 
             <div className="max-w-6xl mx-auto px-4 py-16">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {articles && articles.map((article) => (
+                {articles && articles.length > 0 ? articles.map((article) => (
                   <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
                     <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
                     <div className="p-6">
@@ -1727,8 +1762,13 @@ function App() {
                     </div>
                   </div>
                 ))}
-              </div>
+                            </div>
             </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
           </div>
         )}
 
@@ -1866,10 +1906,15 @@ function App() {
                             ))}
                           </tbody>
                         </table>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                                    </div>
+            </div>
+            {(!articles || articles.length === 0) && (
+              <div className="text-center py-16">
+                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
+              </div>
+            )}
+          </div>
+        )}
 
                 <div className="bg-white p-8 rounded-lg shadow-xl">
                   <div className="flex justify-between items-center mb-6">
@@ -1976,6 +2021,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
