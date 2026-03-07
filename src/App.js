@@ -1713,64 +1713,64 @@ function App() {
         {/* Articles Page */}
         {currentPage === 'articles' && (
           <div className="min-h-screen bg-gray-50">
-            <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
-              <div className="max-w-6xl mx-auto px-4">
-                <h1 className="text-5xl font-bold mb-6">Articles</h1>
-                <p className="text-xl max-w-3xl">Research publications, policy briefs, and analytical pieces from our team of experts and fellows</p>
-              </div>
+            <div className="bg-red-600 text-white py-20 text-center">
+              <h1 className="text-5xl font-bold">ARTICLES PAGE TEST</h1>
+              <p className="text-xl mt-4">If you can see this, the page works!</p>
             </div>
-
-            <div className="max-w-6xl mx-auto px-4 py-16">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {articles && articles.length > 0 ? articles.map((article) => (
-                  <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
-                    <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">
-                          {article.category}
-                        </span>
-                        <span className="text-sm text-gray-500">{article.readTime}</span>
-                      </div>
-                      <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">{article.title}</h3>
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">{article.excerpt}</p>
-                      
-                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                        <Users className="w-4 h-4" />
-                        <span>{article.author}</span>
-                      </div>
-
-                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                        <Calendar className="w-4 h-4" />
-                        <span>{article.date}</span>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {article.tags.map((tag, idx) => (
-                          <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <button 
-                        onClick={() => setSelectedArticle(article)}
-                        className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2"
-                      >
-                        Read Article <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
-                            </div>
-            </div>
-            {(!articles || articles.length === 0) && (
-              <div className="text-center py-16">
-                <p className="text-xl text-gray-600">No articles found. Articles array: {articles ? articles.length : 'undefined'}</p>
-              </div>
-            )}
           </div>
         )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {currentPage === 'admin' && (
           <div className="max-w-7xl mx-auto px-4 py-16">
