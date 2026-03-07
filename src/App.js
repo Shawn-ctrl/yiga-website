@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download } from 'lucide-react';
+import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const API_BASE = 'https://yiga-backend-1.onrender.com/api';
 
@@ -44,19 +44,43 @@ const articles = [
     author: "Ashley Munyasia",
     readTime: "8 min read",
     tags: ["BRICS", "Global South", "Multilateralism"],
-    fullContent: "A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order. The main result was the Rio de Janeiro declaration encompassing commitments in governance, economic cooperation, technology, climate change, and social development. The declaration addressed the significance of multilateralism while demanding structural reforms of major world institutions such as the UN, IMF, and World Bank. Member states reaffirmed their desire to intensify intra-BRICS trade with increased utilization of local currencies. The summit extended into new spheres including AI governance and digital technologies. The BRICS leaders emphasized climate financing and renewable energy investment. Overall, the summit confirmed the increasing role of the bloc in global relations despite ongoing internal challenges."
+    fullContent: `A significant milestone on the changing governance landscape of the world and South-South collaboration was the 17th BRICS Summit held in Rio de Janeiro on 6-7 July 2025. Summit held together Brazil, Russia, India, China, South Africa and newly admitted member states amidst a setback of increasing geopolitical rivalry, economic disintegration and dissatisfaction with Western dominated multilateral corporations. The meeting under the chairmanship of Brazil re-asserted the collective vision of BRICS to move towards a more inclusive, multipolar international order which would better represent the political and economic mass of the Global South.
+
+The main result of the summit was the declaration of Rio de Janeiro that encompassed a wide range of commitments in the areas of governance, economic cooperation, technology, climate change, and social development. The statement addressed the significance of multilateralism and respect of international law, at the same time, demanding structural reforms of major world institutions, such as the United Nations, the International Monetary Fund, and the World Bank. According to BRICS leaders, such institutions still fail to fully reflect the developing countries and emerging economies to limit the participation of the developing countries in global decision-making. Against this backdrop, the declaration also condemned the use of unilateral and protectionist economic policies which have been destabilizing the world trade and development.
+
+There was a high level of economic and financial cooperation in the deliberations of the summits. Member states reaffirmed their desire to intensify intra-BRICS trade and investment, with the increased utilization of local currencies in cross-border deals being given special emphasis on the same. This was seen as a policy of decreasing exposure to external financial shocks and as much as possible reducing reliance on the international monetary system which is centred on the US dollar. The New Development Bank was reiterated as a major institutional tool of aiding development of infrastructure, climate-based initiatives and sustainable development in the BRICS nations and other developing states.
+
+The 2025 summit was also characterized by an extension of the BRICS agenda into new spheres of global governance, with artificial intelligence and digital technologies being the most prominent ones. It became the first time that the topic of AI governance was recognized as a central concern, and leaders demanded to build inclusive and multilateral systems that will make the utilization of artificial intelligence ethical, responsible, and developmental. This emphasis was a manifestation of the larger issues that current technological standards in the world have the potential to push developing nations aside and increase the digital divide.
+
+Green building was also concerned with climate change and sustainable development as a two-fold issue. The BRICS leaders made, among other things, the need to increase climate financing and invest more in renewable energy, and to safeguard vital ecosystems. These deliberations highlighted the stance of the bloc that climate action be geared towards development requirements especially to the emerging economies that remain vulnerable to climatic changes. Simultaneously, the social development projects, particularly the ones focused on health disparities and socially predetermined diseases, were an indicator of an initiative to expand cooperation to the traditional economical and strategic spheres.
+
+Although the results of the summit are ambitious in the scope, ongoing internal issues can still be seen through the BRICS framework. Mismatched national interests, varied perceptions on speed of expansion and the deficiency in institutionalization are still making collective action a beggar. Such lack of certain prominent leaders also cast doubts on cohesion and coordination in the bloc. In addition, the disjunction between the declarative and practical policy achievements is an issue that is still repeated among commentators.
+
+The overall geopolitical implications of the summit were pointed out by international responses. The encounter was done in a climate of increased tensions between it and the Western powers, especially the United States, which were consolidating the views of BRICS as a future counter-power to the Western power in world governance. Meanwhile, there are still discussions as to whether BRICS is turning into a sensible alternative politics bloc or is still a consultative club with little enforcement ability.
+
+Overall, the BRICS Summit 2025 in Rio de Janeiro confirmed the increasing role of the bloc in global relations and its desire to also transform world governance according to the priorities of the Global South. Although it is still constrained by structural and political factors, the summit showed that emerging economies are more and more engaged in an effort to shape global norms, diversify economic cooperation, and problem existing power asymmetry in the international system.`
   },
   {
     id: 2,
     title: "Political Participation Among University Students in Kenya",
+    downloadPDF: "/documents/Political_Participation_Study_IRSAK_2025.pdf",
     excerpt: "A comprehensive study examining the current status of political awareness and participation among Kenyan university students, identifying barriers to engagement and proposing pathways to meaningful democratic inclusion.",
     image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
     category: "Youth & Governance",
     date: "October 2025",
     author: "IRSAK Research Team",
     readTime: "15 min read",
-    tags: ["Youth Engagement", "Governance", "Political Participation"],
-    fullContent: "This study examined political participation among university students across 28 Kenyan universities. Key findings reveal that while students demonstrate moderate political awareness of elected leaders and party manifestos, active participation remains low. Only 21% are registered voters, 12% voted in the last election, and just 5% are political party members. However, 42.9% participated in protests, particularly the anti-Finance Bill demonstrations. Major barriers include distrust of politicians (70% cite this), security concerns from police brutality and violence, and information inaccessibility. Nearly 80% believe politicians don't care about youth. Social media emerged as the primary information source (83%) and preferred platform for civic education (70%). The study recommends strengthening trust through intergenerational dialogues, IEBC engagement initiatives, integration of civic education into curricula, and deliberate youth inclusion in public participation processes."
+    fullContent: `**OVERVIEW:** This study examined political participation among university students across 28 Kenyan universities.
+
+**KEY FINDINGS:** Students show moderate political awareness but minimal active participation. Only 21% are registered voters, 12% voted in the last election, and 5% are party members. However, 42.9% participated in protests, especially anti-Finance Bill demonstrations.
+
+**MAJOR BARRIERS:** 70% cite distrust of politicians, with 80% believing politicians don't care about youth. Security concerns are significant - Kenya witnessed 159 extrajudicial killings in 2024 (65% police-related). Information inaccessibility compounds the problem.
+
+**SOCIAL MEDIA'S ROLE:** 83% use social media as their primary source, but algorithmic echo chambers expose them to entertainment over substantive content.
+
+**RECOMMENDATIONS:** Build trust through intergenerational dialogues, integrate civic education into curricula, and ensure systematic youth inclusion in governance per Article 55.
+
+**Download the full PDF below for complete research data, charts, and detailed policy recommendations.**`
   },
     {
     id: 3,
@@ -96,7 +120,7 @@ The illusion of unity within CRINK has two important implications for internatio
 
 Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tacticsósuch as cyberattacks, sanctions evasion, arms transfers, and disinformation campaignsóthese states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
 
-Conclusion: Fragile Alliances, Not Fatal Threats
+**Conclusion:** Fragile Alliances, Not Fatal Threats
 
 The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissedóbut neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared valuesónot just mutual enemies.`
   }
@@ -107,62 +131,108 @@ The CRINK bloc is more a geopolitical mirage than a durable axis. What unites Ch
 const pastActivities = [
   {
     id: 1,
-    title: "Youth Leadership Summit 2024",
-    date: "December 15, 2024",
+    title: "Roundtable on Strengthening Youth Participation in Governance and Politics",
+    date: "February 2026",
     location: "Nairobi, Kenya",
-    description: "A three-day summit bringing together 200+ young leaders from across Africa to discuss governance, policy, and international relations.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
-    category: "Summit",
-    attendees: "200+ participants",
+    description: "A high-level roundtable convening civil society leaders, students, and researchers to discuss strategies for enhancing youth engagement in governance and political processes in Kenya.",
+    image: "/images/activities/Roundtable_discussion.jpeg",
+    category: "Roundtable",
+    attendees: "25 civil society representatives, students, and researchers",
     outcomes: [
-      "Policy recommendations on youth inclusion",
-      "Network of 50+ youth organizations established",
-      "3 research partnerships initiated"
+      "Policy brief developed on strengthening youth participation in governance",
+      "Multi-stakeholder recommendations on civic engagement reforms",
+      "Strengthened collaboration between youth-led and civil society organizations"
     ]
   },
   {
     id: 2,
-    title: "Policy Dialogue: Climate Action in East Africa",
-    date: "November 8, 2024",
-    location: "Virtual",
-    description: "Interactive roundtable featuring youth activists, government officials, and climate experts discussing climate policy implementation.",
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=500&fit=crop",
-    category: "Roundtable",
-    attendees: "80+ participants",
+    title: "Research Study Launch: Political Participation Among University Students in Kenya",
+    date: "October 2025",
+    location: "Nairobi, Kenya",
+    description: "Launch of YIGA's research study examining political participation trends among university students in Kenya, convening diverse stakeholders to discuss findings and policy implications.",
+    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
+    category: "Research Launch",
+    attendees: "Students, policymakers, researchers, civil society representatives",
     outcomes: [
-      "Youth climate action framework developed",
-      "Collaboration with 5 government agencies",
-      "Policy brief on renewable energy published"
+      "Official launch of the research report",
+      "Multi-stakeholder dialogue on youth political participation",
+      "Policy and programmatic recommendations",
+      "Strengthened research-to-policy engagement platform"
     ]
   },
   {
     id: 3,
-    title: "Research Workshop: Data-Driven Advocacy",
-    date: "October 20, 2024",
-    location: "Kampala, Uganda",
-    description: "Intensive workshop training young researchers in quantitative and qualitative research methods for policy advocacy.",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=500&fit=crop",
-    category: "Workshop",
-    attendees: "45 researchers",
+    title: "Rwanda Governance and Bilateral Engagement Visit",
+    date: "September 2025",
+    location: "Kigali, Rwanda",
+    description: "Strategic visit to Rwanda involving engagements with key institutions, including discussions with senior government officials and the Kenya High Commission in Kigali.",
+    image: "/images/activities/UNRCO_Kigali.jpeg",
+    category: "Institutional Visit",
+    attendees: "YIGA delegation and government officials",
     outcomes: [
-      "15 research projects initiated",
-      "Data analysis toolkit distributed",
-      "Mentorship program launched"
+      "Comparative insights on governance and public sector efficiency",
+      "Discussions on strengthening Kenya-Rwanda bilateral relations",
+      "Enhanced understanding of diplomatic engagement processes"
     ]
   },
   {
     id: 4,
-    title: "International Relations Conference",
-    date: "September 5, 2024",
-    location: "Addis Ababa, Ethiopia",
-    description: "Annual conference examining Africa's role in global governance and multilateral institutions.",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=500&fit=crop",
-    category: "Conference",
-    attendees: "150+ participants",
+    title: "Engagement with the United Nations Development Programme Rwanda",
+    date: "September 2025",
+    location: "Kigali, Rwanda",
+    description: "High-level discussion with UNDP Rwanda on the 1994 Genocide against the Tutsi and Rwanda's post-conflict recovery journey.",
+    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800",
+    category: "Institutional Engagement",
+    attendees: "YIGA delegation and UNDP officials",
     outcomes: [
-      "Position paper on AU reforms",
-      "Youth delegation to UN formed",
-      "Regional cooperation framework"
+      "Understanding of post-conflict recovery frameworks",
+      "Insights into institutional resilience and development",
+      "Reflections on transitional justice and nation-building"
+    ]
+  },
+  {
+    id: 5,
+    title: "Visit to Never Again Rwanda",
+    date: "September 2025",
+    location: "Kigali, Rwanda",
+    description: "Engagement with Never Again Rwanda, a grassroots peacebuilding organization, to explore the role of youth in peacebuilding.",
+    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800",
+    category: "Peacebuilding Visit",
+    attendees: "YIGA delegation and Never Again Rwanda leadership",
+    outcomes: [
+      "Shared best practices in youth-led peacebuilding",
+      "Reflections on grassroots reconciliation models",
+      "Strategic ideas for adapting initiatives in Kenya"
+    ]
+  },
+  {
+    id: 6,
+    title: "Career and Mentorship Forum for International Relations Students",
+    date: "March 2025",
+    location: "Nairobi, Kenya",
+    description: "Annual national forum convening IR students from across Kenya for structured mentorship, career guidance, and professional development.",
+    image: "/images/activities/Career_and_mentorship_program.jpeg",
+    category: "Annual Forum",
+    attendees: "IR students, practitioners, researchers, and policy professionals",
+    outcomes: [
+      "Mentorship engagement between students and professionals",
+      "Career guidance on diplomacy and governance pathways",
+      "Strengthened national network of emerging IR scholars"
+    ]
+  },
+  {
+    id: 7,
+    title: "Institutional Visit to the East African Community and African Court",
+    date: "October 2024",
+    location: "Arusha, Tanzania",
+    description: "Institutional exposure visit to induct YIGA members into the operations of regional and continental institutions.",
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800",
+    category: "Institutional Visit",
+    attendees: "YIGA delegation and institutional representatives",
+    outcomes: [
+      "Understanding of regional integration mechanisms",
+      "Insights into international legal frameworks",
+      "Strengthened member capacity in institutional engagement"
     ]
   }
 ];
@@ -550,7 +620,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm font-semibold">
-        üåç Join Africa's Leading Youth in International Affairs ‚Ä¢ Applications Open
+        Join Africa's Leading Youth in International Affairs
       </div>
 
       <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -560,7 +630,7 @@ function App() {
               <Globe className="h-12 w-12 text-red-600" />
               <div>
                 <span className="text-2xl font-bold text-black block">YIGA</span>
-                <span className="text-xs text-gray-600">Youth in Governance & International Affairs</span>
+                <span className="text-xs text-gray-600">Youth in Governance and Global Affairs</span>
               </div>
             </div>
 
@@ -701,19 +771,19 @@ function App() {
             <div className="bg-gray-900 text-white py-12">
               <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">500+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">1000+</div>
                   <div className="text-gray-300">Active Members</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">15+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">3</div>
                   <div className="text-gray-300">Countries</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">200+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">15</div>
                   <div className="text-gray-300">Events Hosted</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">50+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">10+</div>
                   <div className="text-gray-300">Partner Organizations</div>
                 </div>
               </div>
@@ -746,14 +816,14 @@ function App() {
                           <Calendar className="w-4 h-4 mr-1" />
                           {article.date}
                         </span>
-                        <span>‚Ä¢ {article.readTime}</span>
+                        <span> {article.readTime}</span>
                       </div>
                       <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
                         {article.title}
                       </h3>
-                      <p className="text-gray-600 mb-4">{article.excerpt}</p>{expandedArticle === article.id && (<div className="mt-4 text-gray-700 leading-relaxed border-t pt-4">{article.fullContent}</div>)}
-                      <button onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
-                        <span>{expandedArticle === article.id ? "Show Less" : "Read More"}</span>
+                      <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                      <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
+                        <span>Read More</span>
                         <ChevronRight className="w-4 h-4" />
                       </button>
                     </div>
@@ -841,7 +911,7 @@ function App() {
               <div className="mb-16">
                 <h3 className="text-3xl font-bold text-black mb-6 text-center">Who We Are</h3>
                 <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center">
-                  Youth in Global Affairs (YIGA) is a youth-led civil society organization that champions meaningful youth engagement with the world's most critical global challenges. We empower young people to think, act, and lead through evidence-based research, capacity-building trainings, dynamic workshops, intellectual dialogues, and conferences.
+                  Youth in Governance and Global Affairs (YIGA) is a youth-led civil society organization that champions meaningful youth engagement with the world's most critical global challenges. We empower young people to think, act, and lead through evidence-based research, capacity-building trainings, dynamic workshops, intellectual dialogues, and conferences.
                 </p>
               </div>
 
@@ -1043,6 +1113,19 @@ function App() {
                 </div>
               </div>
 
+              {/* Download PDF Button */}
+              {selectedArticle.downloadPDF && (
+                <div className="bg-red-50 border-b py-4">
+                  <div className="max-w-4xl mx-auto px-6 flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-600">Complete Research Report with Charts & Data</p>
+                      <p className="font-semibold">Download Full PDF (6.45 MB)</p>
+                    </div>
+                    <a href={selectedArticle.downloadPDF} download className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">Download PDF</a>
+                  </div>
+                </div>
+              )}
+
               {/* PDF-like Document */}
               <div className="max-w-4xl mx-auto px-8 py-12 bg-white shadow-2xl my-8">
                 {/* Header */}
@@ -1169,18 +1252,18 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
                         <p className="text-gray-700">
-                          Safe Space is a virtual, dialogue-driven initiative by Youth in Global Affairs (YIGA) that provides young people with an inclusive and respectful platform to engage on key governance issues at both domestic and international levels. Designed primarily as a safe and moderated environment for open conversation, the program enables participants to critically engage on questions of leadership, public policy, accountability, democratic participation, peace, and global affairs.
+                          Safe Space is a virtual, dialogue-driven initiative by Youth in Governance and Global Affairs (YIGA) that provides young people with an inclusive and respectful platform to engage on key governance issues at both domestic and international levels. Designed primarily as a safe and moderated environment for open conversation, the program enables participants to critically engage on questions of leadership, public policy, accountability, democratic participation, peace, and global affairs.
                         </p>
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>ï Safe and moderated environment for open dialogue</li>
-                          <li>ï Critical engagement on leadership and public policy</li>
-                          <li>ï Platform to discuss accountability and democracy</li>
-                          <li>ï Understanding of peace and global affairs</li>
-                          <li>ï Respectful peer-to-peer learning experience</li>
-                          <li>ï Virtual accessibility from anywhere</li>
+                          <li> Safe and moderated environment for open dialogue</li>
+                          <li> Critical engagement on leadership and public policy</li>
+                          <li> Platform to discuss accountability and democracy</li>
+                          <li> Understanding of peace and global affairs</li>
+                          <li> Respectful peer-to-peer learning experience</li>
+                          <li> Virtual accessibility from anywhere</li>
                         </ul>
                       </div>
                     </div>
@@ -1212,18 +1295,18 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
                         <p className="text-gray-700">
-                          Roundtable Discussions are a core convening platform under Youth in Global Affairs (YIGA), bringing together youth leaders, scholars, practitioners, policymakers, and civil society actors for focused, solution-oriented dialogue. These discussions are designed to be interactive and participatory, creating space for in-depth engagement, exchange of perspectives, and collaborative problem-solving. YIGA's roundtables are anchored in the organization's key focus areas, including foreign policy, governance, peace and security, climate change, culture, and sustainable development.
+                          Roundtable Discussions are a core convening platform under Youth in Governance and Global Affairs (YIGA), bringing together youth leaders, scholars, practitioners, policymakers, and civil society actors for focused, solution-oriented dialogue. These discussions are designed to be interactive and participatory, creating space for in-depth engagement, exchange of perspectives, and collaborative problem-solving. YIGA's roundtables are anchored in the organization's key focus areas, including foreign policy, governance, peace and security, climate change, culture, and sustainable development.
                         </p>
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>ï Direct engagement with policymakers and experts</li>
-                          <li>ï Solution-oriented collaborative problem-solving</li>
-                          <li>ï Contribute to policy briefs and advocacy initiatives</li>
-                          <li>ï Participate in knowledge production and research</li>
-                          <li>ï Network with scholars and practitioners</li>
-                          <li>ï Influence practical ideas with policy-relevant impact</li>
+                          <li> Direct engagement with policymakers and experts</li>
+                          <li> Solution-oriented collaborative problem-solving</li>
+                          <li> Contribute to policy briefs and advocacy initiatives</li>
+                          <li> Participate in knowledge production and research</li>
+                          <li> Network with scholars and practitioners</li>
+                          <li> Influence practical ideas with policy-relevant impact</li>
                         </ul>
                       </div>
                     </div>
@@ -1239,6 +1322,91 @@ function App() {
                       <div>
                         <p className="font-semibold text-sm text-gray-600">Outcome</p>
                         <p className="text-black">Policy briefs & research outputs</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              {/* Research Fellowship Program */}
+              <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
+                <div className="flex items-start gap-6">
+                  <BookOpen className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <div className="flex-grow">
+                    <h2 className="text-3xl font-bold text-black mb-4">Research Fellowship Program</h2>
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
+                        <p className="text-gray-700">
+                          Our flagship program enables young researchers to conduct in-depth studies on critical issues affecting African governance, policy development, and international relations. Fellows work alongside experienced mentors to produce impactful research that informs policy decisions.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
+                        <ul className="text-gray-700 space-y-2">
+                          <li> Research funding and resources</li>
+                          <li> One-on-one mentorship from experts</li>
+                          <li> Publication opportunities</li>
+                          <li> Access to research networks</li>
+                          <li> Presentation at conferences</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Duration</h4>
+                        <p className="text-black">6-12 months</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Eligibility</h4>
+                        <p className="text-black">University students & recent graduates</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Commitment</h4>
+                        <p className="text-black">10-15 hours/week</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Policy Analysis & Advocacy */}
+              <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
+                <div className="flex items-start gap-6">
+                  <Scale className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <div className="flex-grow">
+                    <h2 className="text-3xl font-bold text-black mb-4">Policy Analysis & Advocacy</h2>
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
+                        <p className="text-gray-700">
+                          Develop critical policy analysis skills while contributing to real-world policy development processes. This program trains participants in research methodologies, policy writing, stakeholder engagement, and advocacy strategies that drive meaningful change.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
+                        <ul className="text-gray-700 space-y-2">
+                          <li> Policy analysis training</li>
+                          <li> Advocacy campaign experience</li>
+                          <li> Stakeholder engagement skills</li>
+                          <li> Policy brief writing</li>
+                          <li> Networking with policymakers</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Duration</h4>
+                        <p className="text-black">3-6 months</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Eligibility</h4>
+                        <p className="text-black">Students in political science, law, public policy</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-gray-600 mb-1">Commitment</h4>
+                        <p className="text-black">8-12 hours/week</p>
                       </div>
                     </div>
                   </div>
@@ -1260,11 +1428,11 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>ï Leadership certification</li>
-                          <li>ï Public speaking skills</li>
-                          <li>ï Team management training</li>
-                          <li>ï International exposure</li>
-                          <li>ï Mentorship from leaders</li>
+                          <li> Leadership certification</li>
+                          <li> Public speaking skills</li>
+                          <li> Team management training</li>
+                          <li> International exposure</li>
+                          <li> Mentorship from leaders</li>
                         </ul>
                       </div>
                     </div>
@@ -1302,11 +1470,11 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>ï International partnerships</li>
-                          <li>ï Diplomatic protocol training</li>
-                          <li>ï Conference participation</li>
-                          <li>ï Global networking</li>
-                          <li>ï Cultural exchange opportunities</li>
+                          <li> International partnerships</li>
+                          <li> Diplomatic protocol training</li>
+                          <li> Conference participation</li>
+                          <li> Global networking</li>
+                          <li> Cultural exchange opportunities</li>
                         </ul>
                       </div>
                     </div>
@@ -1421,7 +1589,7 @@ function App() {
                       I agree to the{' '}
                       <a
                         href="#terms"
-                        onClick={(e) => {e.preventDefault(); alert('Terms:\n\nï Respect YIGA code of conduct\nï Active participation required\nï Annual fee: KSH 1,000\nï Professional conduct expected\nï Communications consent');}}
+                        onClick={(e) => {e.preventDefault(); alert('Terms:\n\n Respect YIGA code of conduct\n Active participation required\n Annual fee: KSH 1,000\n Professional conduct expected\n Communications consent');}}
                         className="text-red-600 underline hover:text-red-700"
                       >
                         Terms & Conditions
@@ -1771,15 +1939,63 @@ function App() {
                   )}
                 </div>
               </div>
+
+
             )}
           </div>
         )}
       </div>
+
+        {/* Social Media Footer */}
+        <footer className="bg-gray-900 text-white py-12">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-xl font-bold mb-4">YIGA</h3>
+                <p className="text-gray-400">Youth in Governance and Global Affairs</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+                <div className="flex space-x-4">
+                  <a href="https://www.facebook.com/share/1AaGHcz5AJ/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><Facebook className="w-6 h-6" /></a>
+                  <a href="https://twitter.com/irsa_ke" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                  <a href="https://www.instagram.com/irsakofficial/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><Instagram className="w-6 h-6" /></a>
+                  <a href="https://www.linkedin.com/company/international-relations-students-association-kenya/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><Linkedin className="w-6 h-6" /></a>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+              <p>&copy; 2025 YIGA. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+
     </div>          
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
