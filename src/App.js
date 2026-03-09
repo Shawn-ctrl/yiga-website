@@ -701,16 +701,16 @@ function App() {
             <div className="bg-gray-900 text-white py-12">
               <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">500+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">1000+</div>
                   <div className="text-gray-300">Active Members</div>
                 </div>
-                <div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">3</div>
                   <div className="text-4xl font-bold text-red-500 mb-2">15+</div>
                   <div className="text-gray-300">Countries</div>
-                </div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">15</div>
                 <div>
                   <div className="text-4xl font-bold text-red-500 mb-2">200+</div>
-                  <div className="text-gray-300">Events Hosted</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">10+</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-red-500 mb-2">50+</div>
@@ -841,7 +841,7 @@ function App() {
               <div className="mb-16">
                 <h3 className="text-3xl font-bold text-black mb-6 text-center">Who We Are</h3>
                 <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center">
-                  Youth in Global Affairs (YIGA) is a youth-led civil society organization that champions meaningful youth engagement with the world's most critical global challenges. We empower young people to think, act, and lead through evidence-based research, capacity-building trainings, dynamic workshops, intellectual dialogues, and conferences.
+                  Youth in Governance and Global Affairs (YIGA) is a youth-led civil society organization that champions meaningful youth engagement with the world's most critical global challenges. We empower young people to think, act, and lead through evidence-based research, capacity-building trainings, dynamic workshops, intellectual dialogues, and conferences.
                 </p>
               </div>
 
@@ -1169,7 +1169,7 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
                         <p className="text-gray-700">
-                          Safe Space is a virtual, dialogue-driven initiative by Youth in Global Affairs (YIGA) that provides young people with an inclusive and respectful platform to engage on key governance issues at both domestic and international levels. Designed primarily as a safe and moderated environment for open conversation, the program enables participants to critically engage on questions of leadership, public policy, accountability, democratic participation, peace, and global affairs.
+                          Safe Space is a virtual, dialogue-driven initiative by Youth in Governance and Global Affairs (YIGA) that provides young people with an inclusive and respectful platform to engage on key governance issues at both domestic and international levels. Designed primarily as a safe and moderated environment for open conversation, the program enables participants to critically engage on questions of leadership, public policy, accountability, democratic participation, peace, and global affairs.
                         </p>
                       </div>
                       <div>
@@ -1212,7 +1212,7 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
                         <p className="text-gray-700">
-                          Roundtable Discussions are a core convening platform under Youth in Global Affairs (YIGA), bringing together youth leaders, scholars, practitioners, policymakers, and civil society actors for focused, solution-oriented dialogue. These discussions are designed to be interactive and participatory, creating space for in-depth engagement, exchange of perspectives, and collaborative problem-solving. YIGA's roundtables are anchored in the organization's key focus areas, including foreign policy, governance, peace and security, climate change, culture, and sustainable development.
+                          Roundtable Discussions are a core convening platform under Youth in Governance and Global Affairs (YIGA), bringing together youth leaders, scholars, practitioners, policymakers, and civil society actors for focused, solution-oriented dialogue. These discussions are designed to be interactive and participatory, creating space for in-depth engagement, exchange of perspectives, and collaborative problem-solving. YIGA's roundtables are anchored in the organization's key focus areas, including foreign policy, governance, peace and security, climate change, culture, and sustainable development.
                         </p>
                       </div>
                       <div>
