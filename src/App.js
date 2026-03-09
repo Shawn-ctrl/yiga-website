@@ -704,16 +704,16 @@ function App() {
                   <div className="text-4xl font-bold text-red-500 mb-2">1000+</div>
                   <div className="text-gray-300">Active Members</div>
                 </div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">3</div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">15+</div>
-                  <div className="text-gray-300">Countries</div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">15</div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">200+</div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">10+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">3</div>
+                  <div className="text-gray-300">Countries</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">50+</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">15</div>
+                  <div className="text-gray-300">Events Hosted</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">10+</div>
                   <div className="text-gray-300">Partner Organizations</div>
                 </div>
               </div>
