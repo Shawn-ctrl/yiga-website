@@ -25,12 +25,12 @@ const teamMembers = [
   { name: "Ashley Munyasia", role: "Director of Research", bio: "Leading research initiatives", photo: "/images/Ashley Munyasia-Director of Research.jpeg" },
   { name: "Neema Toto", role: "Director of Events", bio: "Managing YIGA events", photo: "/images/Neema Toto-Director of Events.jpeg" },
   { name: "Neema Wanjiku", role: "Assistant Director of Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
-  { name: "Phoebe Monari", role: "Director of Programs and Partnership", bio: "Building strategic partnerships", photo: "/images/Phebe Monari-Director of Programs and Partnerships.jpeg" },
-  { name: "Kemunto J.O", role: "Assistant Director of Programs and Partnership", bio: "Supporting program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
+
+  { name: "Kemunto Joylynn", role: "Director for Programs and Partnerships", bio: "Leading program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
   { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communication strategies", photo: "/images/Hilda-Director of Communication.jpeg" },
   { name: "Beldine Mukami", role: "Assistant Director of Communications", bio: "Supporting communication initiatives", photo: "/images/Beldine Mukami -Assistant Director of Communications.jpeg" },
   { name: "Abel Omenge", role: "Director of Finance", bio: "Managing financial operations", photo: "/images/Abel Omenge-Director of Finance.jpeg" },
-  { name: "Catherine Mbilo", role: "Secretary General", bio: "Managing organizational operations", photo: "/images/Catherine Mbilo-Secretary General.jpeg" }
+
 ];
 
 const articles = [
