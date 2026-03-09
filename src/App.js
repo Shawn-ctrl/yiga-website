@@ -674,7 +674,7 @@ function App() {
               <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
                 <div className="max-w-3xl text-white">
                   <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Shaping Africa's Future in <span className="text-red-500">Global Affairs</span>
+
                   </h1>
                   <p className="text-xl md:text-2xl mb-8 text-gray-200">
                     Empowering young professionals to drive meaningful change in international relations, governance, and policy across the African continent.
