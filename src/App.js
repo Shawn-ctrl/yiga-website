@@ -864,10 +864,10 @@ function App() {
                 <h3 className="text-3xl font-bold text-black mb-8 text-center">Core Objectives</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
-                    "Encourage and support the production of high-quality, youth-driven research on critical global challenges",
-                    "Organize trainings, workshops, and conferences to equip young people with knowledge and skills",
-                    "Advance meaningful youth involvement in foreign policy processes and international relations",
-                    "Create inclusive spaces for thoughtful discourse, idea-sharing, and collaboration"
+                    "Promote and support the production of high-quality, youth-led research on pressing governance and global challenges",
+                    "Deliver trainings, workshops, and conferences that equip young people with the knowledge and skills to engage effectively in governance and global affairs",
+                    "Advance meaningful youth participation in foreign policy discourse and international relations processes",
+                    "Foster inclusive spaces for dialogue, knowledge exchange, and collaboration among youth and policy stakeholders"
                   ].map((objective, idx) => (
                     <div key={idx} className="flex items-start space-x-3">
                       <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
@@ -882,10 +882,10 @@ function App() {
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
                     { name: "Foreign Policy", icon: Globe },
-                    { name: "Good Governance", icon: Scale },
-                    { name: "Climate Change", icon: Award },
-                    { name: "Peace & Security", icon: Shield },
-                    { name: "Culture & Heritage", icon: BookOpen }
+                    { name: "Governance & Democratic Participation", icon: Scale },
+                    { name: "Climate Change & Environmental Sustainability", icon: Award },
+                    { name: "Peace & Security", icon: Shield }
+
                   ].map((area, idx) => (
                     <div key={idx} className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition">
                       <area.icon className="w-12 h-12 mx-auto text-red-600 mb-3" />
@@ -1812,6 +1812,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
