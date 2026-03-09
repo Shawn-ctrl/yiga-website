@@ -550,7 +550,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm font-semibold">
-        🌍 Join Africa's Leading Youth in International Affairs • Applications Open
+        🌍 Join Africa's Leading Youth in International Affairs 
       </div>
 
       <nav className="bg-white shadow-md sticky top-0 z-50">
