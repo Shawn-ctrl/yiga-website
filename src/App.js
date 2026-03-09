@@ -28,7 +28,7 @@ const teamMembers = [
 
   { name: "Kemunto Joylynn", role: "Director for Programs and Partnerships", bio: "Leading program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
   { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communication strategies", photo: "/images/Hilda-Director of Communication.jpeg" },
-  { name: "Beldine Mukami", role: "Assistant Director of Communications", bio: "Supporting communication initiatives", photo: "/images/Beldine Mukami -Assistant Director of Communications.jpeg" },
+  { name: "Beldine Mukami", role: "Assistant Director of Communications", bio: "Supporting communication initiatives", photo: "/images/Beldine Mukami -Assistant Communications Director.jpeg" },
   { name: "Abel Omenge", role: "Director of Finance", bio: "Managing financial operations", photo: "/images/Abel Omenge-Director of Finance.jpeg" },
 
 ];
