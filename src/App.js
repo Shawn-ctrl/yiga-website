@@ -1858,10 +1858,18 @@ function App() {
         {/* Social Media Footer */}
         <footer className="bg-gray-900 text-white py-12">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-4 gap-8">
               <div>
                 <h3 className="text-xl font-bold mb-4">YIGA</h3>
                 <p className="text-gray-400">Youth in Governance and Global Affairs</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+                <div className="text-gray-400 space-y-2">
+                  <p>Email: info@yiga.org</p>
+                  <p>Phone: +254 XXX XXX XXX</p>
+                  <p>Location: Nairobi, Kenya</p>
+                </div>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
@@ -1891,6 +1899,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
