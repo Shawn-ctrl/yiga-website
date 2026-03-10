@@ -1648,7 +1648,7 @@ function App() {
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
               <div className="max-w-6xl mx-auto px-4">
                 <h1 className="text-5xl font-bold mb-6">Student Partners</h1>
-                <p className="text-xl">Universities and institutions collaborating with YIGA</p>
+                <p className="text-xl">A national platform dedicated to uniting and empowering young international relations students and professionals through our student partner organizations</p>
               </div>
             </div>
             <div className="max-w-6xl mx-auto px-4 py-16">
