@@ -1488,26 +1488,26 @@ function App() {
                     required
                   ></textarea>
                 </div>
-                {/* Terms & Conditions */}
-                <div className="mb-6 p-4 bg-gray-50 border border-gray-300 rounded">
-                  <label className="flex items-start cursor-pointer">
-                    <input
-                      type="checkbox"
-                      required
-                      className="mt-1 mr-3 h-5 w-5"
-                    />
-                    <span className="text-sm text-gray-700">
-
-                      <a
 
 
-                        className="text-red-600 underline hover:text-red-700"
-                      >
-                        Terms & Conditions
-                      </a>
-                      {' '}including the annual membership fee of KSH 1,000
-                    </span>
-                  </label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
 
                 <button
