@@ -694,7 +694,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'join'].map((page) => (
+              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'partners', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -707,7 +707,7 @@ function App() {
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  {page.charAt(0).toUpperCase() + page.slice(1)}
+                  {page === 'partners' ? 'Student Partners' : page.charAt(0).toUpperCase() + page.slice(1)}
                 </button>
               ))}
               {isLoggedIn && (
