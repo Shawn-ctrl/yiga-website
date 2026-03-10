@@ -1497,10 +1497,10 @@ function App() {
                       className="mt-1 mr-3 h-5 w-5"
                     />
                     <span className="text-sm text-gray-700">
-                      I agree to the{' '}
+
                       <a
-                        href="#terms"
-                        onClick={(e) => {e.preventDefault(); alert('Terms:\n\n• Respect YIGA code of conduct\n• Active participation required\n• Annual fee: KSH 1,000\n• Professional conduct expected\n• Communications consent');}}
+
+
                         className="text-red-600 underline hover:text-red-700"
                       >
                         Terms & Conditions
