@@ -644,7 +644,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'join'].map((page) => (
+              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'partners', 'contact', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
