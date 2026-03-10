@@ -121,7 +121,7 @@ const pastActivities = [
     date: "October 2025",
     location: "Nairobi, Kenya",
     description: "YIGA organized a launch event to officially unveil its study titled Political Participation Among University Students in Kenya. The launch marked the culmination of a six-month research project.",
-    image: "/images/activities/placeholder.jpg",
+    image: "/images/activities/Research Study Launch.jpeg",
     category: "Research Launch",
     outcomes: ["Publication of the research study report", "Dissemination of findings to policymakers, civil society, and youth stakeholders"]
   },
@@ -141,7 +141,7 @@ const pastActivities = [
     date: "September 2025",
     location: "Kigali, Rwanda",
     description: "YIGA met with senior officials from Rwanda Cooperation to discuss governance practices and institutional development.",
-    image: "/images/activities/placeholder.jpg",
+    image: "/images/activities/4.jpeg",
     category: "Institutional Visit",
     outcomes: ["Knowledge exchange on governance and institutional reforms", "Strengthened networks for future collaboration"]
   },
@@ -151,7 +151,7 @@ const pastActivities = [
     date: "September 2025",
     location: "Kigali, Rwanda",
     description: "YIGA visited Never Again Rwanda, a youth-led grassroots organization, for a dialogue on the role of young people in promoting peace, reconciliation, and social cohesion in post-conflict societies.",
-    image: "/images/activities/placeholder.jpg",
+    image: "/images/activities/Roundtable on the Youth in Peace building.jpeg",
     category: "Peacebuilding",
     outcomes: ["Insights into grassroots peacebuilding initiatives", "Strengthened partnerships with youth-led peacebuilding organizations"]
   },
@@ -161,7 +161,7 @@ const pastActivities = [
     date: "September 2025",
     location: "Kigali, Rwanda",
     description: "YIGA representatives participated in activities commemorating the United Nations Day for South-South Cooperation.",
-    image: "/images/activities/placeholder.jpg",
+    image: "/images/activities/UN day for South-South Cooperation.jpeg",
     category: "UN Event",
     outcomes: ["Engagement with diplomatic and policy stakeholders", "Increased awareness of South-South cooperation in development and governance"]
   },
@@ -181,7 +181,7 @@ const pastActivities = [
     date: "October 2023",
     location: "Arusha, Tanzania",
     description: "YIGA, through its student partner International Relations Students Association of Kenya and the Catholic University of Eastern Africa, organized an educational visit to the East African Community and the African Court on Human and Peoples' Rights.",
-    image: "/images/activities/placeholder.jpg",
+    image: "/images/activities/East African Community visit.jpeg",
     category: "Educational Visit",
     outcomes: ["Enhanced student understanding of regional governance institutions", "Practical exposure to regional diplomacy and legal processes"]
   }
