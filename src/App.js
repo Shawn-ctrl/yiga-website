@@ -644,7 +644,7 @@ function App() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'partners', 'contact', 'join'].map((page) => (
+              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'partners', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -654,7 +654,7 @@ function App() {
                       : 'text-gray-700 hover:text-red-600 hover:bg-gray-50'
                   }`}
                 >
-                  {page.charAt(0).toUpperCase() + page.slice(1)}
+                  {page === 'partners' ? 'Student Partners' : page.charAt(0).toUpperCase() + page.slice(1)}
                 </button>
               ))}
               {isLoggedIn && (
@@ -1637,6 +1637,34 @@ function App() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Student Partners Page */}
+        {currentPage === 'partners' && (
+          <div className="min-h-screen bg-gray-50">
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
+              <div className="max-w-6xl mx-auto px-4">
+                <h1 className="text-5xl font-bold mb-6">Student Partners</h1>
+                <p className="text-xl">Universities and institutions collaborating with YIGA</p>
+              </div>
+            </div>
+            <div className="max-w-6xl mx-auto px-4 py-16">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                  <h3 className="text-2xl font-bold mb-4 text-black">Partner University 1</h3>
+                  <p className="text-gray-600">Details coming soon</p>
+                </div>
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                  <h3 className="text-2xl font-bold mb-4 text-black">Partner University 2</h3>
+                  <p className="text-gray-600">Details coming soon</p>
+                </div>
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                  <h3 className="text-2xl font-bold mb-4 text-black">Partner University 3</h3>
+                  <p className="text-gray-600">Details coming soon</p>
+                </div>
               </div>
             </div>
           </div>
