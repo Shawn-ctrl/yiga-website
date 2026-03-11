@@ -1210,11 +1210,11 @@ function App() {
             <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Programs</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
-
-
-
-
-
+                { title: "Research Fellowship", desc: "Conduct research on critical African issues", icon: BookOpen },
+                { title: "Policy Analysis", desc: "Analyze and contribute to policy development", icon: Scale },
+                { title: "Youth Leadership", desc: "Develop leadership skills for global engagement", icon: Award },
+                { title: "Networking Events", desc: "Connect with professionals across Africa", icon: Users }
+              ].map((program, idx) => (
                 <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
                   <program.icon className="w-16 h-16 text-red-600 mb-4" />
                   <h3 className="text-2xl font-bold text-black mb-3">{program.title}</h3>
@@ -1230,7 +1230,7 @@ function App() {
             <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
               <div className="max-w-6xl mx-auto px-4">
                 <h1 className="text-5xl font-bold mb-6">Our Programs</h1>
-                <p className="text-xl max-w-3xl">Empowering African youth through inclusive dialogue and solution-oriented engagement</p>
+                <p className="text-xl max-w-3xl">Empowering African youth through research, policy analysis, leadership development, and international engagement</p>
               </div>
             </div>
 
