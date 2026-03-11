@@ -1230,7 +1230,7 @@ function App() {
             <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
               <div className="max-w-6xl mx-auto px-4">
                 <h1 className="text-5xl font-bold mb-6">Our Programs</h1>
-                <p className="text-xl max-w-3xl">Empowering African youth through inclusive dialogue and solution-oriented engagement</p>
+                <p className="text-xl max-w-3xl">Empowering African youth through research, policy analysis, leadership development, and international engagement</p>
               </div>
             </div>
 
@@ -1323,11 +1323,87 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+              {/* Youth Leadership */}
+              <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
+                <div className="flex items-start gap-6">
+                  <Award className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <div className="flex-grow">
+                    <h2 className="text-3xl font-bold text-black mb-4">Youth Leadership Development</h2>
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
+                        <p className="text-gray-700">
+                          Build essential leadership competencies through workshops, seminars, and practical experiences. Our comprehensive leadership program prepares young Africans to lead with integrity, vision, and impact in their communities and on the global stage.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
+                        <ul className="text-gray-700 space-y-2">
+                          <li>• Leadership certification</li>
+                          <li>• Public speaking skills</li>
+                          <li>• Team management training</li>
+                          <li>• International exposure</li>
+                          <li>• Mentorship from leaders</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
+                      <div>
+                        <p className="font-semibold text-sm text-gray-600">Duration</p>
+                        <p className="text-black">Ongoing workshops</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-gray-600">Eligibility</p>
+                        <p className="text-black">Youth aged 18-35</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-gray-600">Commitment</p>
+                        <p className="text-black">Flexible attendance</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              
+              {/* International Relations */}
+              <div className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition">
+                <div className="flex items-start gap-6">
+                  <Globe className="w-16 h-16 text-red-600 flex-shrink-0" />
+                  <div className="flex-grow">
+                    <h2 className="text-3xl font-bold text-black mb-4">International Relations Track</h2>
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">Overview</h3>
+                        <p className="text-gray-700">
+                          Engage with global affairs through diplomacy, international cooperation, and cross-cultural dialogue. This track provides hands-on experience in international organizations, diplomatic processes, and global governance mechanisms.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
+                        <ul className="text-gray-700 space-y-2">
+                          <li>• International partnerships</li>
+                          <li>• Diplomatic protocol training</li>
+                          <li>• Conference participation</li>
+                          <li>• Global networking</li>
+                          <li>• Cultural exchange opportunities</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded">
+                      <div>
+                        <p className="font-semibold text-sm text-gray-600">Duration</p>
+                        <p className="text-black">4-8 months</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-gray-600">Eligibility</p>
+                        <p className="text-black">Students & young professionals in IR</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-gray-600">Commitment</p>
+                        <p className="text-black">10-15 hours/week</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1851,7 +1927,6 @@ function App() {
 }
 
 export default App;
-
 
 
 
