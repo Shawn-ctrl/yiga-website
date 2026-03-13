@@ -111,7 +111,7 @@ const pastActivities = [
     date: "February 2026",
     location: "Nairobi, Kenya",
     description: "YIGA hosted a roundtable that brought together representatives from civil society, political party youth leagues, government institutions, students, and researchers to discuss strategies for strengthening youth participation in politics and governance.",
-    image: "/images/activities/Roundtable_discussion.jpeg",
+    image: "/images/activities/Rountdtable on Strengthening Youth Participation in Politics And Governance.jpeg",
     category: "Roundtable",
     outcomes: ["Policy brief with actionable recommendations", "Strengthened multi-stakeholder collaboration on youth participation in governance"]
   },
@@ -131,7 +131,7 @@ const pastActivities = [
     date: "September 2025",
     location: "Kigali, Rwanda",
     description: "YIGA, in collaboration with the United Nations Development Programme Rwanda Country Office, held an engagement session exploring the role of youth during and after the Rwandan Genocide.",
-    image: "/images/activities/UNRCO_Kigali.jpeg",
+    image: "/images/activities/Official Visit to UNDP.jpeg",
     category: "International Engagement",
     outcomes: ["Enhanced understanding of youth-led peacebuilding initiatives", "Lessons on post-conflict reconciliation and community rebuilding"]
   },
