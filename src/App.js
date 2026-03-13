@@ -1895,7 +1895,7 @@ function App() {
                 <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                 <div className="text-gray-400 space-y-2">
                   <p>Email: info@yiga.org</p>
-                  <p>Phone: +254 XXX XXX XXX</p>
+                  <p>Phone: +254 794 538 341 / +254 740 278 055</p>
                   <p>Location: Nairobi, Kenya</p>
                 </div>
               </div>
