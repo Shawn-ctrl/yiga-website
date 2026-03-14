@@ -386,25 +386,37 @@ function App() {
     setCurrentPage('home');
   };
 
-  const fetchApplications = async (token = authToken) => {
-    setLoading(true);
+  const fetchApplications = async () => {
     try {
-      const response = await fetch(`${API_BASE}/applications`, {
-        headers: { 
-          'Authorization': `Bearer ${token}`,
-          'Accept': 'application/json'
-        }
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setApplications(Array.isArray(data.applications) ? data.applications : []);
-      }
+      const { data, error } = await supabase
+        .from('applications')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setApplications(data || []);
     } catch (error) {
       console.error('Error fetching applications:', error);
-    } finally {
-      setLoading(false);
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const fetchAdmins = async (token = authToken) => {
     try {
