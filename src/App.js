@@ -439,39 +439,78 @@ function App() {
     e.preventDefault();
     setSubmitStatus('submitting');
     try {
-      const response = await fetch(`${API_BASE}/applications`, {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(formData)
+      const { data, error } = await supabase
+        .from('applications')
+        .insert([
+          {
+            name: formData.full_name,
+            email: formData.email,
+            phone: formData.phone,
+            university: formData.institution || formData.country,
+            year_of_study: formData.program || 'Not specified',
+            area_of_interest: formData.program || 'General Membership',
+            motivation: formData.motivation,
+            status: 'pending'
+          }
+        ]);
+
+      if (error) throw error;
+
+      setSubmitStatus('success');
+      setFormData({
+        full_name: '',
+        email: '',
+        phone: '',
+        country: '',
+        city: '',
+        institution: '',
+        program: 'General Membership',
+        motivation: '',
+        experience: ''
       });
-      
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          full_name: '',
-          email: '',
-          phone: '',
-          country: '',
-          city: '',
-          institution: '',
-          program: 'General Membership',
-          motivation: '',
-          experience: ''
-        });
-        setTimeout(() => setSubmitStatus(''), 5000);
-      } else {
-        setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus(''), 5000);
-      }
+      setTimeout(() => setSubmitStatus(''), 5000);
     } catch (error) {
       console.error('Submit error:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus(''), 5000);
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
