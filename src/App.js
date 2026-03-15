@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import bcrypt from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 import { supabase } from './supabase';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Instagram, Linkedin } from 'lucide-react';
 
@@ -360,6 +361,44 @@ function App() {
       if (passwordMatch) {
         setIsLoggedIn(true);
         setUsername(admins.username);
+        setUserRole(admins.role);
+        localStorage.setItem('username', admins.username);
+        localStorage.setItem('userRole', admins.role);
+        setLoginData({ username: '', password: '' });
+        await fetchApplications();
+      } else {
+        setLoginError('Invalid username or password');
+      }
+    } catch (error) {
+      setLoginError('Login error: ' + error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         setUserRole(admins.role);
         localStorage.setItem('username', admins.username);
         localStorage.setItem('userRole', admins.role);
