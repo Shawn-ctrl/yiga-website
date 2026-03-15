@@ -399,6 +399,20 @@ function App() {
 
 
 
+
+  const fetchApplications = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('application')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setApplications(data || []);
+    } catch (error) {
+      console.error('Error fetching applications:', error);
+    }
+  };
   const handleLogout = () => {
     setAuthToken('');
     setIsLoggedIn(false);
