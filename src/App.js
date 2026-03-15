@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import bcrypt from 'bcryptjs';
 import { supabase } from './supabase';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Instagram, Linkedin } from 'lucide-react';
 
@@ -337,15 +338,32 @@ function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setLoginError('');
+    
     try {
-      if (loginData.username === 'Shawn' && loginData.password === 'Yiga2023') {
+      // Fetch admin from Supabase
+      const { data: admins, error } = await supabase
+        .from('admins')
+        .select('*')
+        .eq('username', loginData.username)
+        .single();
+
+      if (error || !admins) {
+        setLoginError('Invalid username or password');
+        setLoading(false);
+        return;
+      }
+
+      // Verify password
+      const passwordMatch = await bcrypt.compare(loginData.password, admins.password);
+      
+      if (passwordMatch) {
         setIsLoggedIn(true);
-        setUsername('Shawn');
-        setUserRole('superadmin');
-        localStorage.setItem('username', 'Shawn');
-        localStorage.setItem('userRole', 'superadmin');
+        setUsername(admins.username);
+        setUserRole(admins.role);
+        localStorage.setItem('username', admins.username);
+        localStorage.setItem('userRole', admins.role);
         setLoginData({ username: '', password: '' });
-        setLoginError('');
         await fetchApplications();
       } else {
         setLoginError('Invalid username or password');
@@ -356,6 +374,27 @@ function App() {
       setLoading(false);
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
