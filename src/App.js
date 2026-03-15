@@ -466,7 +466,7 @@ function App() {
   const fetchApplications = async () => {
     try {
       const { data, error } = await supabase
-        .from('application')
+        .from('applications')
         .select('*')
         .order('created_at', { ascending: false });
 
@@ -517,7 +517,7 @@ function App() {
     setSubmitStatus('submitting');
     try {
       const { data, error } = await supabase
-        .from('application')
+        .from('applications')
         .insert([
           {
             name: formData.full_name,
