@@ -341,7 +341,24 @@ function App() {
     setLoginError('');
     
     try {
-      // Fetch admin from Supabase
+      // TEMPORARY: Hardcoded admin access
+      if (loginData.username === 'Shawn' && loginData.password === 'Yiga2023') {
+        setIsLoggedIn(true);
+        setUsername('Shawn');
+        setUserRole('superadmin');
+        localStorage.setItem('username', 'Shawn');
+        localStorage.setItem('userRole', 'superadmin');
+        setLoginData({ username: '', password: '' });
+        await fetchApplications();
+        setLoading(false);
+        return;
+      }
+
+
+
+
+
+
       const { data: admins, error } = await supabase
         .from('admins')
         .select('*')
