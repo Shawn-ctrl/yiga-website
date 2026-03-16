@@ -520,16 +520,16 @@ function App() {
         .from('applications')
         .insert([
           {
-            name: formData.full_name,
+            full_name: formData.full_name,
             email: formData.email,
             phone: formData.phone,
-            university: formData.institution || formData.country,
-            year_of_study: formData.program || 'Not specified',
-            area_of_interest: formData.program || 'General Membership',
+            country: formData.institution || formData.country,
             motivation: formData.motivation,
             status: 'pending'
           }
         ]);
+
+
 
       if (error) throw error;
 
