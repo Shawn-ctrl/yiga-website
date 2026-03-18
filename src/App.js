@@ -496,22 +496,30 @@ function App() {
 
 
 
-  const fetchAdmins = async (token = authToken) => {
+  const fetchAdmins = async () => {
     try {
-      const response = await fetch(`${API_BASE}/admins`, {
-        headers: { 
-          'Authorization': `Bearer ${token}`,
-          'Accept': 'application/json'
-        }
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setAdmins(Array.isArray(data) ? data : []);
-      }
+      const { data, error } = await supabase.from('admins').select('*').order('created_at', { ascending: false });
+      if (error) throw error;
+      setAdmins(data || []);
     } catch (error) {
       console.error('Error fetching admins:', error);
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -667,20 +675,31 @@ function App() {
   const deleteApplication = async (id) => {
     if (!window.confirm('Are you sure you want to delete this application?')) return;
     try {
-      const response = await fetch(`${API_BASE}/applications/${id}`, {
-        method: 'DELETE',
-        headers: { 
-          'Authorization': `Bearer ${authToken}`,
-          'Accept': 'application/json'
-        }
-      });
-      if (response.ok) {
-        fetchApplications();
-      }
+      const { error } = await supabase.from('applications').delete().eq('id', id);
+      if (error) throw error;
+      await fetchApplications();
+      alert('Application deleted successfully!');
     } catch (error) {
       console.error('Error deleting application:', error);
+      alert('Failed to delete application');
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const createAdmin = async (e) => {
     e.preventDefault();
