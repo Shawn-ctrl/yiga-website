@@ -1314,6 +1314,20 @@ function App() {
                   </div>
                 </div>
 
+                {/* PDF Download Button */}
+                {selectedArticle.pdfUrl && (
+                  <div className="mt-8">
+                    <a 
+                      href={selectedArticle.pdfUrl} 
+                      download 
+                      className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition"
+                    >
+                      <Download className="w-5 h-5 mr-2" />
+                      Download Full Study (PDF)
+                    </a>
+                  </div>
+                )}
+
                 {/* Footer */}
                 <div className="mt-16 pt-8 border-t-2 border-gray-200">
                   <div className="bg-gray-50 rounded-lg p-6">
