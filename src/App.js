@@ -1987,8 +1987,8 @@ function App() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                   <h3 className="text-2xl font-bold mb-4 text-black">International Relations Students Association of Kenya (IRSAK)</h3>
-                  <p className="text-gray-600">Details coming soon</p>
-                </div>
+                  <h3 className="text-2xl font-bold mb-4 text-black">International Relations Students Association of Kenya (IRSAK)</h3>
+                  <p className="text-gray-600">The International Relations Students Association of Kenya (IRSAK) is a national platform dedicated to uniting and empowering young international relations students and professionals. It serves as a hub for intellectual discourse, mentorship, research, and professional development, bridging the gap between academic knowledge and real-world application.</p>
                 <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                   <h3 className="text-2xl font-bold mb-4 text-black">Partner University 2</h3>
                   <p className="text-gray-600">Details coming soon</p>
