@@ -788,12 +788,12 @@ function App() {
               <Globe className="h-12 w-12 text-red-600" />
               <div>
                 <span className="text-2xl font-bold text-black block">YIGA</span>
-                <span className="text-xs text-gray-600">Youth in Governance & International Affairs</span>
+                <span className="text-xs text-gray-600">Youth in Governance & Global Affairs</span>
               </div>
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'partners', 'join'].map((page) => (
+              {['home', 'about', 'team', 'research', 'activities', 'programs', 'partners', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -843,7 +843,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['home', 'about', 'team', 'articles', 'activities', 'programs', 'partners', 'join'].map((page) => (
+              {['home', 'about', 'team', 'research', 'activities', 'programs', 'partners', 'join'].map((page) => (
                 <button
                   key={page}
                   onClick={() => {
@@ -1749,11 +1749,11 @@ function App() {
         )}
 
         {/* Articles Page */}
-        {currentPage === 'articles' && (
+        {currentPage === 'research' && (
           <div className="min-h-screen bg-gray-50">
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-20">
               <div className="max-w-6xl mx-auto px-4">
-                <h1 className="text-5xl font-bold mb-6">Articles</h1>
+                <h1 className="text-5xl font-bold mb-6">Research Publications</h1>
                 <p className="text-xl max-w-3xl">Research publications, policy briefs, and analytical pieces from our team of experts and fellows</p>
               </div>
             </div>
