@@ -1994,10 +1994,10 @@ function App() {
                   <h3 className="text-2xl font-bold mb-4 text-black">Partner University 2</h3>
                   <p className="text-gray-600">Details coming soon</p>
                 </div>
+                <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
                   <h3 className="text-2xl font-bold mb-4 text-black">Partner University 3</h3>
                   <p className="text-gray-600">Details coming soon</p>
                 </div>
-              </div>
             </div>
 
         )}
