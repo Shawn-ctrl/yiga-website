@@ -1029,9 +1029,9 @@ function App() {
                       <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
                         {article.title}
                       </h3>
-                      <p className="text-gray-600 mb-4">{article.excerpt}</p>{expandedArticle === article.id && (<div className="mt-4 text-gray-700 leading-relaxed border-t pt-4">{article.fullContent}</div>)}
-                      <button onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
-                        <span>{expandedArticle === article.id ? "Show Less" : "Read More"}</span>
+                      <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                      <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
+                        <span>Read More</span>
                         <ChevronRight className="w-4 h-4" />
                       </button>
                     </div>
@@ -1867,7 +1867,7 @@ function App() {
             <div className="max-w-6xl mx-auto px-4 py-16">
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
-                  <h3 className="text-2xl font-bold mb-4 text-black">Partner University 1</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-black">International Relations Students Association of Kenya (IRSAK)</h3>
                   <p className="text-gray-600">Details coming soon</p>
                 </div>
                 <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
@@ -2118,7 +2118,7 @@ function App() {
                   <a href="https://www.facebook.com/share/1AaGHcz5AJ/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                     <Facebook className="w-6 h-6" />
                   </a>
-                  <a href="https://twitter.com/irsa_ke" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                  <a href="https://x.com/irsakofficial" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                   </a>
                   <a href="https://www.instagram.com/irsakofficial/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
