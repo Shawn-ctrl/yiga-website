@@ -657,22 +657,31 @@ function App() {
 
   const updateApplicationStatus = async (id, status) => {
     try {
-      const response = await fetch(`${API_BASE}/applications/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({ status })
-      });
-      if (response.ok) {
-        fetchApplications();
-      }
+      const { error } = await supabase.from('applications').update({ status }).eq('id', id);
+      if (error) throw error;
+      await fetchApplications();
     } catch (error) {
       console.error('Error updating application:', error);
+      alert('Failed to update status');
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const deleteApplication = async (id) => {
     if (!window.confirm('Are you sure you want to delete this application?')) return;
@@ -753,22 +762,31 @@ function App() {
 
   const updateAdminRole = async (id, role) => {
     try {
-      const response = await fetch(`${API_BASE}/admins/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({ role })
-      });
-      if (response.ok) {
-        fetchAdmins();
-      }
+      const { error } = await supabase.from('admins').update({ role }).eq('id', id);
+      if (error) throw error;
+      await fetchAdmins();
     } catch (error) {
       console.error('Error updating admin role:', error);
+      alert('Failed to update role');
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const deleteAdmin = async (id) => {
     if (!window.confirm('Are you sure you want to delete this admin?')) return;
