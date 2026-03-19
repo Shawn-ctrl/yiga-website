@@ -1219,7 +1219,7 @@ function App() {
                   <span>Advisors</span>
                   <span>{expandedSection === 'advisors' ? '?' : '?'}</span>
                 </button>
-                {currentPage === 'team-advisors' && (
+                {expandedSection === 'advisors' && (
                   <div className="text-center py-12 bg-gray-50 rounded-lg mt-6">
                     <p className="text-gray-500 text-lg">Advisor profiles coming soon</p>
                   </div>
@@ -1227,23 +1227,23 @@ function App() {
               </div>
 
             </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Advisors Section */}
-            <div className="mb-16">
-              <h3 className="text-3xl font-bold text-black mb-10 text-center border-b-4 border-red-600 pb-4">Advisors</h3>
-              <div className="text-center py-12 bg-gray-50 rounded-lg">
-                <p className="text-gray-500 text-lg">Advisor profiles coming soon</p>
-              </div>
-            </div>
-            {/* Call to Action */}
-            <div className="bg-gradient-to-r from-red-600 to-black text-white py-16 rounded-lg">
-              <div className="max-w-4xl mx-auto px-4 text-center">
-                <h3 className="text-3xl font-bold mb-6">Join Our Team</h3>
-                <p className="text-xl mb-8">Passionate about youth empowerment and international affairs?</p>
-                <button onClick={() => setCurrentPage('join')} className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">Apply Now</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               </div>
             </div>
           </div>
