@@ -708,26 +708,46 @@ function App() {
     setAdminError('');
     setAdminSuccess('');
     try {
-      const response = await fetch(`${API_BASE}/auth/create-admin`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(newAdmin)
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setAdminSuccess('Admin created successfully!');
-        setNewAdmin({ username: '', password: '', role: 'admin' });
-        fetchAdmins();
-        setTimeout(() => setAdminSuccess(''), 3000);
-      } else {
-        setAdminError(data.message || 'Failed to create admin');
-      }
+      const hashedPassword = await bcrypt.hash(newAdmin.password, 10);
+      const { error } = await supabase.from('admins').insert([{
+        username: newAdmin.username,
+        password: hashedPassword,
+        role: newAdmin.role || 'admin'
+      }]);
+      if (error) throw error;
+      setAdminSuccess('Admin created successfully!');
+      setNewAdmin({ username: '', password: '', role: 'admin' });
+      await fetchAdmins();
+      setTimeout(() => setAdminSuccess(''), 3000);
     } catch (error) {
-      setAdminError('Connection error. Please try again.');
+      console.error('Error creating admin:', error);
+      setAdminError('Failed to create admin: ' + error.message);
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
   };
 
@@ -753,20 +773,30 @@ function App() {
   const deleteAdmin = async (id) => {
     if (!window.confirm('Are you sure you want to delete this admin?')) return;
     try {
-      const response = await fetch(`${API_BASE}/admins/${id}`, {
-        method: 'DELETE',
-        headers: { 
-          'Authorization': `Bearer ${authToken}`,
-          'Accept': 'application/json'
-        }
-      });
-      if (response.ok) {
-        fetchAdmins();
-      }
+      const { error } = await supabase.from('admins').delete().eq('id', id);
+      if (error) throw error;
+      await fetchAdmins();
     } catch (error) {
       console.error('Error deleting admin:', error);
+      alert('Failed to delete admin');
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const toggleNewsletterTopic = (topic) => {
     setNewsletterPreferences(prev => ({
