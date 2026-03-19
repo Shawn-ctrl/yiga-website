@@ -1181,23 +1181,51 @@ function App() {
             <h2 className="text-4xl font-bold text-black mb-4 text-center">Our Team</h2>
 
 
-            {/* Directorate Section */}
+            {/* Team Sections */}
             <div className="mb-16">
-              <h3 className="text-3xl font-bold text-black mb-10 text-center border-b-4 border-red-600 pb-4">Directorate</h3>
-              <div className="grid md:grid-cols-3 gap-8">
-                {teamMembers.map((member, index) => (
-                  <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition group">
-                    <div className="text-center">
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg group-hover:scale-110 transition duration-300"
-                      />
-                      <h4 className="text-xl font-bold text-black mb-2">{member.name}</h4>
-                      <p className="text-red-600 font-semibold mb-3">{member.role}</p>
-                      <p className="text-gray-600 text-sm">{member.bio}</p>
-                    </div>
+
+              {/* Directorate Accordion */}
+              <div className="mb-4">
+                <button
+                  onClick={() => setCurrentPage(currentPage === 'team-directorate' ? 'team' : 'team-directorate')}
+                  className="w-full flex items-center justify-between bg-red-600 text-white px-8 py-5 rounded-lg font-bold text-xl hover:bg-red-700 transition"
+                >
+                  <span>Directorate</span>
+                  <span>{currentPage === 'team-directorate' ? '?' : '?'}</span>
+                </button>
+                {currentPage === 'team-directorate' && (
+                  <div className="grid md:grid-cols-3 gap-8 mt-6">
+                    {teamMembers.map((member, index) => (
+                      <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition group">
+                        <div className="text-center">
+                          <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg group-hover:scale-110 transition duration-300" />
+                          <h4 className="text-xl font-bold text-black mb-2">{member.name}</h4>
+                          <p className="text-red-600 font-semibold mb-3">{member.role}</p>
+                          <p className="text-gray-600 text-sm">{member.bio}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                )}
+              </div>
+
+              {/* Advisors Accordion */}
+              <div className="mb-4">
+                <button
+                  onClick={() => setCurrentPage(currentPage === 'team-advisors' ? 'team' : 'team-advisors')}
+                  className="w-full flex items-center justify-between bg-black text-white px-8 py-5 rounded-lg font-bold text-xl hover:bg-gray-900 transition"
+                >
+                  <span>Advisors</span>
+                  <span>{currentPage === 'team-advisors' ? '?' : '?'}</span>
+                </button>
+                {currentPage === 'team-advisors' && (
+                  <div className="text-center py-12 bg-gray-50 rounded-lg mt-6">
+                    <p className="text-gray-500 text-lg">Advisor profiles coming soon</p>
+                  </div>
+                )}
+              </div>
+
+            </div>
                 ))}
               </div>
             </div>
