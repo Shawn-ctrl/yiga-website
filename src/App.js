@@ -1181,23 +1181,34 @@ function App() {
             <h2 className="text-4xl font-bold text-black mb-4 text-center">Our Team</h2>
 
 
+            {/* Directorate Section */}
+            <div className="mb-16">
+              <h3 className="text-3xl font-bold text-black mb-10 text-center border-b-4 border-red-600 pb-4">Directorate</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                {teamMembers.map((member, index) => (
+                  <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition group">
+                    <div className="text-center">
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg group-hover:scale-110 transition duration-300"
+                      />
+                      <h4 className="text-xl font-bold text-black mb-2">{member.name}</h4>
+                      <p className="text-red-600 font-semibold mb-3">{member.role}</p>
+                      <p className="text-gray-600 text-sm">{member.bio}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            {/* Advisors Section */}
+            <div className="mb-16">
+              <h3 className="text-3xl font-bold text-black mb-10 text-center border-b-4 border-red-600 pb-4">Advisors</h3>
+              <div className="text-center py-12 bg-gray-50 rounded-lg">
+                <p className="text-gray-500 text-lg">Advisor profiles coming soon</p>
+              </div>
+            </div>
             {/* Call to Action */}
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-16 rounded-lg">
               <div className="max-w-4xl mx-auto px-4 text-center">
