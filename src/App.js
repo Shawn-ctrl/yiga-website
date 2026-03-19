@@ -1178,55 +1178,134 @@ function App() {
         )}
 
         {currentPage === 'team' && (
-          <div className="max-w-7xl mx-auto px-4 py-16">
-            <h2 className="text-4xl font-bold text-black mb-4 text-center">Our Team</h2>
+          <div className="min-h-screen bg-gray-50">
 
+            {/* Hero Banner */}
+            <div className="bg-gradient-to-r from-black to-red-900 text-white py-20">
+              <div className="max-w-6xl mx-auto px-4 text-center">
+                <h1 className="text-5xl font-bold mb-4">Meet Our Team</h1>
+                <p className="text-xl text-gray-300 max-w-2xl mx-auto">The passionate individuals driving YIGA's mission of youth empowerment in global governance and international affairs</p>
+              </div>
+            </div>
 
-            {/* Team Sections */}
-            <div className="mb-16">
+            <div className="max-w-6xl mx-auto px-4 py-16">
 
               {/* Directorate Accordion */}
-              <div className="mb-4">
+              <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
                 <button
                   onClick={() => setExpandedSection(expandedSection === 'directorate' ? '' : 'directorate')}
-                  className="w-full flex items-center justify-between bg-red-600 text-white px-8 py-5 rounded-lg font-bold text-xl hover:bg-red-700 transition"
+                  className="w-full flex items-center justify-between bg-red-600 text-white px-8 py-6 font-bold text-2xl hover:bg-red-700 transition"
                 >
-                  <span>Directorate</span>
-                  <span>{expandedSection === 'directorate' ? '?' : '?'}</span>
+                  <div className="flex items-center gap-3">
+                    <Users className="w-7 h-7" />
+                    <span>Directorate</span>
+                    <span className="text-sm font-normal bg-red-700 px-3 py-1 rounded-full">{teamMembers.length} members</span>
+                  </div>
+                  <span className="text-3xl">{expandedSection === 'directorate' ? '-' : '+'}</span>
                 </button>
                 {expandedSection === 'directorate' && (
-                  <div className="grid md:grid-cols-3 gap-8 mt-6">
-                    {teamMembers.map((member, index) => (
-                      <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition group">
-                        <div className="text-center">
-                          <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-red-600 shadow-lg group-hover:scale-110 transition duration-300" />
-                          <h4 className="text-xl font-bold text-black mb-2">{member.name}</h4>
-                          <p className="text-red-600 font-semibold mb-3">{member.role}</p>
-                          <p className="text-gray-600 text-sm">{member.bio}</p>
+                  <div className="bg-white p-8">
+                    <div className="grid md:grid-cols-3 gap-8">
+                      {teamMembers.map((member, index) => (
+                        <div key={index} className="group text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                          <div className="relative inline-block mb-4">
+                            <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg group-hover:border-black transition duration-300" />
+                            <div className="absolute inset-0 rounded-full bg-red-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
+                          </div>
+                          <h4 className="text-lg font-bold text-black mb-1">{member.name}</h4>
+                          <p className="text-red-600 font-semibold text-sm mb-3">{member.role}</p>
+                          <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
+                          <p className="text-gray-500 text-sm">{member.bio}</p>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
 
               {/* Advisors Accordion */}
-              <div className="mb-4">
+              <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
                 <button
                   onClick={() => setExpandedSection(expandedSection === 'advisors' ? '' : 'advisors')}
-                  className="w-full flex items-center justify-between bg-black text-white px-8 py-5 rounded-lg font-bold text-xl hover:bg-gray-900 transition"
+                  className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition"
                 >
-                  <span>Advisors</span>
-                  <span>{expandedSection === 'advisors' ? '?' : '?'}</span>
+                  <div className="flex items-center gap-3">
+                    <Award className="w-7 h-7" />
+                    <span>Advisors</span>
+                  </div>
+                  <span className="text-3xl">{expandedSection === 'advisors' ? '-' : '+'}</span>
                 </button>
                 {expandedSection === 'advisors' && (
-                  <div className="text-center py-12 bg-gray-50 rounded-lg mt-6">
-                    <p className="text-gray-500 text-lg">Advisor profiles coming soon</p>
+                  <div className="bg-white p-12 text-center">
+                    <Award className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-gray-400 mb-2">Advisor Profiles Coming Soon</h3>
+                    <p className="text-gray-400">We are assembling an exceptional advisory board. Check back soon.</p>
                   </div>
                 )}
               </div>
 
             </div>
+
+            {/* Join CTA */}
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-16">
+              <div className="max-w-4xl mx-auto px-4 text-center">
+                <h3 className="text-3xl font-bold mb-4">Want to Join Our Team?</h3>
+                <p className="text-xl mb-8 text-gray-200">Passionate about youth empowerment and global affairs?</p>
+                <button onClick={() => setCurrentPage('join')} className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">Apply Now</button>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
