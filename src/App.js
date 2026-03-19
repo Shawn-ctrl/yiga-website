@@ -351,6 +351,7 @@ function App() {
         localStorage.setItem('userRole', 'superadmin');
         setLoginData({ username: '', password: '' });
         await fetchApplications();
+        if (userRole === 'superadmin' || true) await fetchAdmins();
         setLoading(false);
         return;
       }
@@ -383,6 +384,7 @@ function App() {
         localStorage.setItem('userRole', admins.role);
         setLoginData({ username: '', password: '' });
         await fetchApplications();
+        if (admins.role === 'superadmin') await fetchAdmins();
       } else {
         setLoginError('Invalid username or password');
       }
