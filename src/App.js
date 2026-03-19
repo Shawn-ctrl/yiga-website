@@ -283,6 +283,7 @@ function App() {
     }
   }, []);
     const [currentPage, setCurrentPage] = useState('home');
+  const [expandedSection, setExpandedSection] = useState('');
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [expandedArticle, setExpandedArticle] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -1187,13 +1188,13 @@ function App() {
               {/* Directorate Accordion */}
               <div className="mb-4">
                 <button
-                  onClick={() => setCurrentPage(currentPage === 'team-directorate' ? 'team' : 'team-directorate')}
+                  onClick={() => setExpandedSection(expandedSection === 'directorate' ? '' : 'directorate')}
                   className="w-full flex items-center justify-between bg-red-600 text-white px-8 py-5 rounded-lg font-bold text-xl hover:bg-red-700 transition"
                 >
                   <span>Directorate</span>
-                  <span>{currentPage === 'team-directorate' ? '?' : '?'}</span>
+                  <span>{expandedSection === 'directorate' ? '?' : '?'}</span>
                 </button>
-                {currentPage === 'team-directorate' && (
+                {expandedSection === 'directorate' && (
                   <div className="grid md:grid-cols-3 gap-8 mt-6">
                     {teamMembers.map((member, index) => (
                       <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition group">
@@ -1212,11 +1213,11 @@ function App() {
               {/* Advisors Accordion */}
               <div className="mb-4">
                 <button
-                  onClick={() => setCurrentPage(currentPage === 'team-advisors' ? 'team' : 'team-advisors')}
+                  onClick={() => setExpandedSection(expandedSection === 'advisors' ? '' : 'advisors')}
                   className="w-full flex items-center justify-between bg-black text-white px-8 py-5 rounded-lg font-bold text-xl hover:bg-gray-900 transition"
                 >
                   <span>Advisors</span>
-                  <span>{currentPage === 'team-advisors' ? '?' : '?'}</span>
+                  <span>{expandedSection === 'advisors' ? '?' : '?'}</span>
                 </button>
                 {currentPage === 'team-advisors' && (
                   <div className="text-center py-12 bg-gray-50 rounded-lg mt-6">
