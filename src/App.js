@@ -2213,7 +2213,7 @@ function App() {
             )}
           </div>
         )}
-      </div>
+
 
         {/* Social Media Footer */}
         <footer className="bg-gray-900 text-white py-12">
