@@ -836,10 +836,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20">
             <div className="flex items-center space-x-3">
-              <Globe className="h-12 w-12 text-red-600" />
-              <div>
-                <span className="text-2xl font-bold text-black block">YIGA</span>
-                <span className="text-xs text-gray-600">Youth in Governance & Global Affairs</span>
+              <img src="/images/logo.jpeg" alt="YIGA Logo" className="h-16 w-auto object-contain" />
+
+
+
               </div>
             </div>
 
