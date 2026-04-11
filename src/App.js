@@ -956,7 +956,7 @@ function App() {
 
                   </h1>
                   <p className="text-xl md:text-2xl mb-8 text-gray-200">
-                    Empowering young professionals to drive meaningful change in international relations, governance, and policy across the African continent and beyond
+                    Empowering young professionals to drive meaningful change in international relations, governance, and policy across the Eastern African continent and beyond
                   </p>
                   <div className="flex space-x-4">
                     <button
