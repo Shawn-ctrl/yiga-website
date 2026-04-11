@@ -984,7 +984,7 @@ function App() {
                   <div className="text-gray-300">Active Members</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-500 mb-2">3</div>
+                  <div className="text-4xl font-bold text-red-500 mb-2">10</div>
                   <div className="text-gray-300">Countries</div>
                 </div>
                 <div>
