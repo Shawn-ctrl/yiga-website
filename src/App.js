@@ -40,7 +40,7 @@ const articles = [
     id: 1,
     title: "BRICS versus the West: Weighing the Economic and Political Dividends for Kenya",
     excerpt: "Kenya faces a critical foreign policy choice between its traditional Western allies and the rising BRICS alliance. This analysis weighs the economic and political dividends of each option for Kenya's national interests.",
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&h=500&fit=crop",
+    image: "/images/brics-west-article.png",
     category: "International Relations",
     date: "April 2026",
     author: "Jeremy Oronje",
