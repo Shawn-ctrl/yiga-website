@@ -605,23 +605,16 @@ function App() {
     e.preventDefault();
     setNewsletterStatus('submitting');
     try {
-      const response = await fetch(`${API_BASE}/newsletter`, {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({ email: newsletterEmail })
-      });
-      
-      if (response.ok) {
-        setNewsletterStatus('success');
-        setNewsletterEmail('');
-        setTimeout(() => setNewsletterStatus(''), 5000);
-      } else {
-        setNewsletterStatus('error');
-        setTimeout(() => setNewsletterStatus(''), 5000);
-      }
+      const { error } = await supabase.from('newsletters').insert([{
+        email: newsletterEmail,
+        frequency: 'monthly',
+        topics: [],
+        is_active: true
+      }]);
+      if (error) throw error;
+      setNewsletterStatus('success');
+      setNewsletterEmail('');
+      setTimeout(() => setNewsletterStatus(''), 5000);
     } catch (error) {
       console.error('Newsletter error:', error);
       setNewsletterStatus('error');
@@ -633,28 +626,74 @@ function App() {
     e.preventDefault();
     setNewsletterStatus('submitting');
     try {
-      const response = await fetch(`${API_BASE}/newsletter/preferences`, {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(newsletterPreferences)
-      });
-      
-      if (response.ok) {
-        setNewsletterStatus('success');
-        setNewsletterPreferences({ email: '', frequency: 'monthly', topics: [] });
-        setTimeout(() => setNewsletterStatus(''), 5000);
-      } else {
-        setNewsletterStatus('error');
-        setTimeout(() => setNewsletterStatus(''), 5000);
-      }
+      const { error } = await supabase.from('newsletters').insert([{
+        email: newsletterPreferences.email,
+        frequency: newsletterPreferences.frequency,
+        topics: newsletterPreferences.topics,
+        is_active: true
+      }]);
+      if (error) throw error;
+      setNewsletterStatus('success');
+      setNewsletterPreferences({ email: '', frequency: 'monthly', topics: [] });
+      setTimeout(() => setNewsletterStatus(''), 5000);
     } catch (error) {
       setNewsletterStatus('error');
       setTimeout(() => setNewsletterStatus(''), 5000);
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const updateApplicationStatus = async (id, status) => {
     try {
