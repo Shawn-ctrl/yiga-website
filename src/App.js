@@ -605,7 +605,7 @@ function App() {
     e.preventDefault();
     setNewsletterStatus('submitting');
     try {
-      const { error } = await supabase.from('newsletters').insert([{
+      const { error } = await supabase.from('newsletter_subscribers').insert([{
         email: newsletterEmail,
         frequency: 'monthly',
         topics: [],
@@ -626,7 +626,7 @@ function App() {
     e.preventDefault();
     setNewsletterStatus('submitting');
     try {
-      const { error } = await supabase.from('newsletters').insert([{
+      const { error } = await supabase.from('newsletter_subscribers').insert([{
         email: newsletterPreferences.email,
         frequency: newsletterPreferences.frequency,
         topics: newsletterPreferences.topics,
