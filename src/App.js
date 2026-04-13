@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import bcrypt from 'bcryptjs';
+import emailjs from '@emailjs/browser';
 import { supabase } from './supabase';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download , Facebook, Instagram, Linkedin } from 'lucide-react';
 
@@ -272,6 +272,7 @@ const newsletterArchives = [
 ];
 
 function App() {
+  useEffect(() => { emailjs.init('pcctBpi8SrH0A5b6X'); }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Handle URL parameters for direct page access
@@ -699,6 +700,10 @@ function App() {
     try {
       const { error } = await supabase.from('applications').update({ status }).eq('id', id);
       if (error) throw error;
+      if (status === 'approved') {
+        const app = applications.find(a => a.id === id);
+        if (app) emailjs.send('service_rkhhb36', 'template_o2qqnzc', { name: app.full_name, email: app.email });
+      }
       await fetchApplications();
     } catch (error) {
       console.error('Error updating application:', error);
