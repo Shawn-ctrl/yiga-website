@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import bcrypt from 'bcryptjs';
 import { Menu, X, Users, BookOpen, Globe, Shield, Scale, Award, LogOut, CheckCircle, XCircle, Clock, Trash2, UserPlus, Mail, Calendar, ArrowRight, ChevronRight, Image as ImageIcon, Download, Facebook, Instagram, Linkedin } from 'lucide-react';
-
+import { supabase } from './supabase';
 const API_BASE = 'https://yiga-backend-1.onrender.com/api';
 
 const teamPhotos = {
