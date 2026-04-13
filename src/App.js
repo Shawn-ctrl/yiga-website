@@ -613,10 +613,14 @@ function App() {
         is_active: true
       }]);
       if (error) throw error;
-      setNewsletterStatus('success');
-      setNewsletterEmail('');
-      setTimeout(() => setNewsletterStatus(''), 5000);
-    } catch (error) {
+      if (error) throw error;
+      setNewsletterStatus("success");
+      setNewsletterEmail("");
+      setTimeout(() => setNewsletterStatus(""), 5000);
+      emailjs.send("service_rkhhb36", "template_ouu11zn", { email: newsletterEmail, frequency: "monthly", topics: "General" });
+
+
+
       console.error('Newsletter error:', error);
       setNewsletterStatus('error');
       setTimeout(() => setNewsletterStatus(''), 5000);
