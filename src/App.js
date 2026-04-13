@@ -618,17 +618,17 @@ function App() {
       setNewsletterEmail('');
       setTimeout(() => setNewsletterStatus(''), 5000);
     } catch (error) {
-      console.error('Newsletter error:', error);
-      setNewsletterStatus('error');
-      setTimeout(() => setNewsletterStatus(''), 5000);
+      if (error.code === "23505") {
+        setNewsletterStatus("success");
+        setNewsletterEmail("");
+        setTimeout(() => setNewsletterStatus(""), 5000);
+      } else {
+        console.error("Newsletter error:", error);
+        setNewsletterStatus("error");
+        setTimeout(() => setNewsletterStatus(""), 5000);
+      }
     }
   };
-
-
-
-
-
-
 
 
 
