@@ -1024,7 +1024,7 @@ function App() {
 
                   </h1>
                   <p className="text-xl md:text-2xl mb-8 text-gray-200">
-                    Empowering young professionals to drive meaningful change in international relations, governance, and policy across the Eastern African continent and beyond
+                    Empowering young professionals to drive meaningful change in international relations, governance, and policy across the Eastern Africa and beyond
                   </p>
                   <div className="flex space-x-4">
                     <button
@@ -1188,7 +1188,7 @@ function App() {
               <div className="mb-16">
                 <h3 className="text-3xl font-bold text-black mb-6 text-center">Who We Are</h3>
                 <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center">
-                  Youth in Governance and Global Affairs (YIGA) is a youth-led civil society organization that champions meaningful youth engagement with the world's most critical global challenges. We empower young people to think, act, and lead through evidence-based research, capacity-building trainings, dynamic workshops, intellectual dialogues, and conferences.
+                  The Youth in Global Affairs (YIGA) is a youth-led civil society organization dedicated to advancing meaningful youth engagement in democratic participation, peace and security, foreign policy, and environmental sustainability across Eastern Africa. YIGA works to empower young people to actively participate in shaping policy and public discourse through capacity-building trainings, high-level workshops, and structured dialogue platforms. Grounded in a strong research-driven approach, the organization generates knowledge, fosters critical thinking, and equips youth with the skills necessary to contribute to local, regional, and global decision-making processes.
                 </p>
               </div>
 
