@@ -554,16 +554,16 @@ function App() {
       });
       });
       setFormData({
-        email: '',
-        phone: '',
-        country: '',
-        city: '',
-        institution: '',
-        program: 'General Membership',
-        motivation: '',
-        experience: ''
+        full_name: "",
+        email: "",
+        phone: "",
+        country: "",
+        city: "",
+        institution: "",
+        program: "General Membership",
+        motivation: "",
+        experience: ""
       });
-      setTimeout(() => setSubmitStatus(''), 5000);
     } catch (error) {
       console.error('Submit error:', error);
       setSubmitStatus('error');
