@@ -552,8 +552,8 @@ function App() {
         frequency: "New Member Application",
         topics: formData.full_name + " from " + formData.country + " - Phone: " + formData.phone
       });
-
-        full_name: '',
+      });
+      setFormData({
         email: '',
         phone: '',
         country: '',
