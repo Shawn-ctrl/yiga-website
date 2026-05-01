@@ -538,7 +538,7 @@ function App() {
         status: 'pending'
       }]);
       if (error) throw error;
-      emailjs.send("service_rkhhb36", "template_9klhxmp", {
+      emailjs.send("service_rkhhb36", "template_ouu11zn", {
         email: formData.email,
         frequency: "New Member Application",
         topics: formData.full_name + " from " + formData.country + " - Phone: " + formData.phone
@@ -644,7 +644,7 @@ function App() {
         is_active: true
       }]);
       if (error) throw error;
-      emailjs.send("service_rkhhb36", "template_9klhxmp", { email: newsletterEmail, frequency: "monthly", topics: "General" });
+      emailjs.send("service_rkhhb36", "template_ouu11zn", { email: newsletterEmail, frequency: "monthly", topics: "General" });
       setNewsletterStatus('success');
       setNewsletterEmail('');
       setTimeout(() => setNewsletterStatus(''), 5000);
