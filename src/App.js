@@ -529,47 +529,73 @@ function App() {
     e.preventDefault();
     setSubmitStatus('submitting');
     try {
-      const { data, error } = await supabase
-        .from('applications')
-        .insert([
-          {
-            full_name: formData.full_name,
-            email: formData.email,
-            phone: formData.phone,
-            country: formData.institution || formData.country,
-            motivation: formData.motivation,
-            status: 'pending'
-          }
-        ]);
-
-
-
+      const { error } = await supabase.from('applications').insert([{
+        full_name: formData.full_name,
+        email: formData.email,
+        phone: formData.phone,
+        country: formData.institution || formData.country,
+        motivation: formData.motivation,
+        status: 'pending'
+      }]);
       if (error) throw error;
-
-      setSubmitStatus("success");
       emailjs.send("service_rkhhb36", "template_9klhxmp", {
         email: formData.email,
         frequency: "New Member Application",
         topics: formData.full_name + " from " + formData.country + " - Phone: " + formData.phone
       });
-      });
-      setFormData({
-        full_name: "",
-        email: "",
-        phone: "",
-        country: "",
-        city: "",
-        institution: "",
-        program: "General Membership",
-        motivation: "",
-        experience: ""
-      });
+      setSubmitStatus('success');
+      setFormData({ full_name: '', email: '', phone: '', country: '', city: '', institution: '', program: 'General Membership', motivation: '', experience: '' });
+      setTimeout(() => setSubmitStatus(''), 5000);
     } catch (error) {
       console.error('Submit error:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus(''), 5000);
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
