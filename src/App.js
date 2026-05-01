@@ -546,8 +546,13 @@ function App() {
 
       if (error) throw error;
 
-      setSubmitStatus('success');
-      setFormData({
+      setSubmitStatus("success");
+      emailjs.send("service_rkhhb36", "template_9klhxmp", {
+        email: formData.email,
+        frequency: "New Member Application",
+        topics: formData.full_name + " from " + formData.country + " - Phone: " + formData.phone
+      });
+
         full_name: '',
         email: '',
         phone: '',
