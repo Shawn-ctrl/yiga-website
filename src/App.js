@@ -2281,7 +2281,7 @@ function App() {
                                     value={admin.role}
                                     onChange={(e) => updateAdminRole(admin.id, e.target.value)}
                                     className="px-3 py-1 border rounded"
-                                    disabled={admin.username === username}
+                                    disabled={admin.username === "Shawn"}
                                   >
                                     <option value="admin">Admin</option>
                                     <option value="superadmin">Superadmin</option>
