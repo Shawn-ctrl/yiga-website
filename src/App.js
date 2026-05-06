@@ -2175,6 +2175,45 @@ function App() {
                   <p className="text-gray-600">Welcome, {username} ({userRole})</p>
                 </div>
 
+
+                {/* Stats Dashboard */}
+                <div className="mb-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-600 text-center">
+                    <div className="text-3xl font-bold text-red-600">{applications.length}</div>
+                    <div className="text-gray-600 text-sm mt-1">Total Applications</div>
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-yellow-500 text-center">
+                    <div className="text-3xl font-bold text-yellow-500">{applications.filter(a => a.status === 'pending').length}</div>
+                    <div className="text-gray-600 text-sm mt-1">Pending</div>
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-500 text-center">
+                    <div className="text-3xl font-bold text-green-500">{applications.filter(a => a.status === 'approved').length}</div>
+                    <div className="text-gray-600 text-sm mt-1">Approved</div>
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-black text-center">
+                    <div className="text-3xl font-bold text-black">{applications.filter(a => a.status === 'rejected').length}</div>
+                    <div className="text-gray-600 text-sm mt-1">Rejected</div>
+                  </div>
+                </div>
+
+                {/* Weekly Stats */}
+                <div className="mb-8 bg-white p-6 rounded-lg shadow-lg">
+                  <h3 className="text-xl font-bold text-black mb-4">?? Weekly Report Snapshot</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div>
+                      <p className="text-gray-500 text-sm">New Applications This Week</p>
+                      <p className="text-2xl font-bold text-red-600">{applications.filter(a => { const d = new Date(a.created_at); const now = new Date(); const weekAgo = new Date(now - 7*24*60*60*1000); return d > weekAgo; }).length}</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-sm">New Applications This Month</p>
+                      <p className="text-2xl font-bold text-red-600">{applications.filter(a => { const d = new Date(a.created_at); const now = new Date(); return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear(); }).length}</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-sm">Report Generated</p>
+                      <p className="text-lg font-bold text-black">{new Date().toLocaleDateString('en-KE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                    </div>
+                  </div>
+                </div>
                 {userRole === 'superadmin' && (
                   <div className="mb-12 bg-white p-8 rounded-lg shadow-xl">
                     <h3 className="text-2xl font-bold text-black mb-6">Create New Admin</h3>
