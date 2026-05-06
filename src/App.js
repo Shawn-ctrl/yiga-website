@@ -298,6 +298,7 @@ function App() {
   const [adminError, setAdminError] = useState('');
   const [adminSuccess, setAdminSuccess] = useState('');
   const [submitStatus, setSubmitStatus] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterStatus, setNewsletterStatus] = useState('');
   const [newsletterPreferences, setNewsletterPreferences] = useState({
@@ -2317,6 +2318,26 @@ function App() {
                     </button>
                   </div>
 
+                  {/* Search Box */}
+                  <div className="mb-4">
+                    <input
+                      type="text"
+                      placeholder="?? Search by name, email or country..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600"
+                    />
+                    {searchQuery && (
+                      <p className="text-sm text-gray-500 mt-1">
+                        Showing {applications.filter(app =>
+                          app.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          app.email?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          app.country?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          app.status?.toLowerCase().includes(searchQuery.toLowerCase())
+                        ).length} results for "{searchQuery}"
+                      </p>
+                    )}
+                  </div>
                   {loading ? (
                     <div className="text-center py-8">
                       <Clock className="w-12 h-12 mx-auto text-gray-400 animate-spin" />
@@ -2338,7 +2359,7 @@ function App() {
                           </tr>
                         </thead>
                         <tbody>
-                          {applications.map((app) => (
+                          {applications.filter(app => !searchQuery || app.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) || app.email?.toLowerCase().includes(searchQuery.toLowerCase()) || app.country?.toLowerCase().includes(searchQuery.toLowerCase()) || app.status?.toLowerCase().includes(searchQuery.toLowerCase())).map((app) => (
                             <tr key={app.id} className="border-b hover:bg-gray-50">
                               <td className="px-4 py-3">{app.full_name}</td>
                               <td className="px-4 py-3">{app.email}</td>
