@@ -1335,16 +1335,63 @@ function App() {
                   </div>
                   <span className="text-3xl">{expandedSection === 'advisors' ? '-' : '+'}</span>
                 </button>
-                {expandedSection === 'advisors' && (
-                  <div className="bg-white p-12 text-center">
-                    <Award className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-gray-400 mb-2">Advisor Profiles Coming Soon</h3>
-                    <p className="text-gray-400">We are assembling an exceptional advisory board. Check back soon.</p>
-                  </div>
-                )}
-              </div>
+                  <div className="bg-white p-8">
 
-            </div>
+                    {/* Board of Advisors */}
+                    <h4 className="text-xl font-bold text-black mb-6 border-b-2 border-red-600 pb-2">Board of Advisors</h4>
+                    <div className="grid md:grid-cols-3 gap-8 mb-10">
+                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                        <img src="/images/Ambassador_Haile_Menkerios.png" alt="Ambassador Haile Menkerios" className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg mx-auto mb-4" />
+                        <h4 className="text-lg font-bold text-black mb-1">Ambassador Haile Menkerios</h4>
+                        <p className="text-red-600 font-semibold text-sm mb-3">Board Advisor</p>
+                        <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
+                        <p className="text-gray-500 text-sm">Bio coming soon</p>
+                      </div>
+                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                        <img src="/images/Richard_Kakeeto.jpeg" alt="Richard Kakeeto" className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg mx-auto mb-4" />
+                        <h4 className="text-lg font-bold text-black mb-1">Richard Kakeeto</h4>
+                        <p className="text-red-600 font-semibold text-sm mb-3">Board Advisor</p>
+                        <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
+                        <p className="text-gray-500 text-sm">Bio coming soon</p>
+                      </div>
+                    </div>
+
+                    {/* Board of Trustees */}
+                    <h4 className="text-xl font-bold text-black mb-6 border-b-2 border-black pb-2">Board of Trustees</h4>
+                    <div className="grid md:grid-cols-3 gap-8">
+                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                        <img src="/images/Nixon_Odari.jpeg" alt="Nixon Odari" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
+                        <h4 className="text-lg font-bold text-black mb-1">Nixon Odari</h4>
+                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
+                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
+                        <p className="text-gray-500 text-sm">Bio coming soon</p>
+                      </div>
+                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                        <img src="/images/Jared_Osoro.jpeg" alt="Jared Osoro" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
+                        <h4 className="text-lg font-bold text-black mb-1">Jared Osoro</h4>
+                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
+                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
+                        <p className="text-gray-500 text-sm">Bio coming soon</p>
+                      </div>
+                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                        <img src="/images/Harris_Kukundakwe.jpeg" alt="Harris Kukundakwe" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
+                        <h4 className="text-lg font-bold text-black mb-1">Harris Kukundakwe</h4>
+                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
+                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
+                        <p className="text-gray-500 text-sm">Bio coming soon</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+
+
+
 
             {/* Join CTA */}
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-16">
