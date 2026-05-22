@@ -1323,7 +1323,8 @@ function App() {
                 )}
               </div>
 
-              {/* Advisors Accordion */}
+
+              {/* Board of Advisors Accordion */}
               <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
                 <button
                   onClick={() => setExpandedSection(expandedSection === 'advisors' ? '' : 'advisors')}
@@ -1331,33 +1332,46 @@ function App() {
                 >
                   <div className="flex items-center gap-3">
                     <Award className="w-7 h-7" />
-                    <span>Advisors</span>
+                    <span>Board of Advisors</span>
                   </div>
                   <span className="text-3xl">{expandedSection === 'advisors' ? '-' : '+'}</span>
                 </button>
+                {expandedSection === 'advisors' && (
                   <div className="bg-white p-8">
-
-                    {/* Board of Advisors */}
-                    <h4 className="text-xl font-bold text-black mb-6 border-b-2 border-red-600 pb-2">Board of Advisors</h4>
-                    <div className="grid md:grid-cols-3 gap-8 mb-10">
+                    <div className="grid md:grid-cols-3 gap-8">
                       <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
-                        <img src="/images/Ambassador_Haile_Menkerios.png" alt="Ambassador Haile Menkerios" className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg mx-auto mb-4" />
+                        <img src="/images/Ambassador_Haile_Menkerios.png" alt="Ambassador Haile Menkerios" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
                         <h4 className="text-lg font-bold text-black mb-1">Ambassador Haile Menkerios</h4>
-                        <p className="text-red-600 font-semibold text-sm mb-3">Board Advisor</p>
-                        <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
+                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Advisor</p>
+                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
                         <p className="text-gray-500 text-sm">Bio coming soon</p>
                       </div>
                       <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
-                        <img src="/images/Richard_Kakeeto.jpeg" alt="Richard Kakeeto" className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg mx-auto mb-4" />
+                        <img src="/images/Richard_Kakeeto.jpeg" alt="Richard Kakeeto" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
                         <h4 className="text-lg font-bold text-black mb-1">Richard Kakeeto</h4>
-                        <p className="text-red-600 font-semibold text-sm mb-3">Board Advisor</p>
-                        <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
+                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Advisor</p>
+                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
                         <p className="text-gray-500 text-sm">Bio coming soon</p>
                       </div>
                     </div>
+                  </div>
+                )}
+              </div>
 
-                    {/* Board of Trustees */}
-                    <h4 className="text-xl font-bold text-black mb-6 border-b-2 border-black pb-2">Board of Trustees</h4>
+              {/* Board of Trustees Accordion */}
+              <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
+                <button
+                  onClick={() => setExpandedSection(expandedSection === 'trustees' ? '' : 'trustees')}
+                  className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition"
+                >
+                  <div className="flex items-center gap-3">
+                    <Shield className="w-7 h-7" />
+                    <span>Board of Trustees</span>
+                  </div>
+                  <span className="text-3xl">{expandedSection === 'trustees' ? '-' : '+'}</span>
+                </button>
+                {expandedSection === 'trustees' && (
+                  <div className="bg-white p-8">
                     <div className="grid md:grid-cols-3 gap-8">
                       <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
                         <img src="/images/Nixon_Odari.jpeg" alt="Nixon Odari" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
@@ -1381,19 +1395,79 @@ function App() {
                         <p className="text-gray-500 text-sm">Bio coming soon</p>
                       </div>
                     </div>
-
-
-                </div>
-              )}
-            </div>
-
+                  </div>
+                )}
+              </div>
 
 
 
 
 
 
-            {/* Join CTA */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-16">
               <div className="max-w-4xl mx-auto px-4 text-center">
                 <h3 className="text-3xl font-bold mb-4">Want to Join Our Team?</h3>
