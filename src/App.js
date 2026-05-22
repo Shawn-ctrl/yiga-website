@@ -1284,7 +1284,7 @@ function App() {
             <div className="bg-gradient-to-r from-black to-red-900 text-white py-20">
               <div className="max-w-6xl mx-auto px-4 text-center">
                 <h1 className="text-5xl font-bold mb-4">Meet Our Team</h1>
-                <p className="text-xl text-gray-300 max-w-2xl mx-auto">The passionate individuals driving YIGA's mission of youth empowerment in global governance and international affairs</p>
+                <p className="text-xl text-gray-300 max-w-2xl mx-auto">The passionate individuals driving YIGA mission of youth empowerment in global governance and international affairs</p>
               </div>
             </div>
 
@@ -1292,10 +1292,7 @@ function App() {
 
               {/* Directorate Accordion */}
               <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
-                <button
-                  onClick={() => setExpandedSection(expandedSection === 'directorate' ? '' : 'directorate')}
-                  className="w-full flex items-center justify-between bg-red-600 text-white px-8 py-6 font-bold text-2xl hover:bg-red-700 transition"
-                >
+                <button onClick={() => setExpandedSection(expandedSection === 'directorate' ? '' : 'directorate')} className="w-full flex items-center justify-between bg-red-600 text-white px-8 py-6 font-bold text-2xl hover:bg-red-700 transition">
                   <div className="flex items-center gap-3">
                     <Users className="w-7 h-7" />
                     <span>Directorate</span>
@@ -1323,13 +1320,9 @@ function App() {
                 )}
               </div>
 
-
               {/* Board of Advisors Accordion */}
               <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
-                <button
-                  onClick={() => setExpandedSection(expandedSection === 'advisors' ? '' : 'advisors')}
-                  className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition"
-                >
+                <button onClick={() => setExpandedSection(expandedSection === 'advisors' ? '' : 'advisors')} className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition">
                   <div className="flex items-center gap-3">
                     <Award className="w-7 h-7" />
                     <span>Board of Advisors</span>
@@ -1360,10 +1353,7 @@ function App() {
 
               {/* Board of Trustees Accordion */}
               <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
-                <button
-                  onClick={() => setExpandedSection(expandedSection === 'trustees' ? '' : 'trustees')}
-                  className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition"
-                >
+                <button onClick={() => setExpandedSection(expandedSection === 'trustees' ? '' : 'trustees')} className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition">
                   <div className="flex items-center gap-3">
                     <Shield className="w-7 h-7" />
                     <span>Board of Trustees</span>
@@ -1398,76 +1388,10 @@ function App() {
                   </div>
                 )}
               </div>
-              </div>
 
-            {/* Join CTA */}
-            <div className="bg-gradient-to-r from-red-600 to-black text-white py-16">
-              <div className="max-w-4xl mx-auto px-4 text-center">
-                <h3 className="text-3xl font-bold mb-4">Want to Join Our Team?</h3>
-                <p className="text-xl mb-8 text-gray-200">Passionate about youth empowerment and global affairs?</p>
-                <button onClick={() => setCurrentPage("join")} className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">Apply Now</button>
-              </div>
             </div>
 
-          </div>
-        )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            {/* Join CTA */}
             <div className="bg-gradient-to-r from-red-600 to-black text-white py-16">
               <div className="max-w-4xl mx-auto px-4 text-center">
                 <h3 className="text-3xl font-bold mb-4">Want to Join Our Team?</h3>
@@ -1546,8 +1470,209 @@ function App() {
 
 
 
-          </div>
-        )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {currentPage === 'newsletter' && (
           <div className="max-w-4xl mx-auto px-4 py-16">
