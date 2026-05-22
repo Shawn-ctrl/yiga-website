@@ -1398,19 +1398,19 @@ function App() {
                   </div>
                 )}
               </div>
+              </div>
 
+            {/* Join CTA */}
+            <div className="bg-gradient-to-r from-red-600 to-black text-white py-16">
+              <div className="max-w-4xl mx-auto px-4 text-center">
+                <h3 className="text-3xl font-bold mb-4">Want to Join Our Team?</h3>
+                <p className="text-xl mb-8 text-gray-200">Passionate about youth empowerment and global affairs?</p>
+                <button onClick={() => setCurrentPage("join")} className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">Apply Now</button>
+              </div>
+            </div>
 
-
-
-
-
-
-
-
-
-
-
-
+          </div>
+        )}
 
 
 
