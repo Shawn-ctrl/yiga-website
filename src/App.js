@@ -2686,11 +2686,11 @@ function App() {
             </div>
           </div>
         </footer>
-    </div>          
+        </footer>
+      </div>
+    </div>
   );
 }
-
-export default App;
 
 
 
