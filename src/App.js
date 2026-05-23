@@ -2686,11 +2686,11 @@ function App() {
             </div>
           </div>
         </footer>
-        </footer>
       </div>
     </div>
   );
 }
+
 
 
 
