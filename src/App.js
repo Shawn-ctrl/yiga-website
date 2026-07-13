@@ -835,7 +835,7 @@ function App() {
       if (error) throw error;
       if (status === 'approved') {
         const app = applications.find(a => a.id === id);
-        await emailjs.send('service_rkhhb36', 'template_ptkd39e', { email: app.email, name: app.full_name, pdfLink: 'https://yiga-website.vercel.app/documents/YIGA_Membership_Benefits.pdf' });
+        await emailjs.send('service_rkhhb36', 'template_o2qqnzc', { email: app.email, name: app.full_name, pdfLink: 'https://yiga-website.vercel.app/documents/YIGA_Membership_Benefits.pdf', formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfzgMh6b4qCYeZfwluAsPd7XRecmM-ejw6wmNfYmkB7jIc6kg/viewform' });
       }
       await fetchApplications();
     } catch (error) {
