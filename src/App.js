@@ -105,29 +105,31 @@ Conclusion: Fragile Alliances, Not Fatal Threats
 
 The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
 The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
-  },
-  {
-    id: 4,
-    title: "Policy Brief 001: Strengthening Youth Participation in Politics and Governance in Kenya",
-    excerpt: "This policy brief presents actionable recommendations drawn from a roundtable discussion convened by YIGA in February 2026, building on key findings from a research study on political participation among university students in Kenya.",
-    image: "/images/activities/Roundtable_on_strengthening_Youth_Participation_in_Politics_and_Governance.jpeg",
-    category: "Policy Brief",
-    date: "May 2026",
-    author: "YIGA",
-    readTime: "5 min read",
-    tags: ["Policy Brief", "Youth", "Governance", "Kenya"],
-    pdfUrl: "/documents/YIGA_Policy_Brief_001.pdf"
   }
 ];
 
 
-    id: 4,
-    title: "Policy Brief 001: Strengthening Youth Participation in Politics and Governance in Kenya",
-    excerpt: "This policy brief presents actionable recommendations drawn from a roundtable discussion convened by YIGA in February 2026, building on key findings from a research study on political participation among university students in Kenya.",
-    image: "/images/activities/Roundtable_on_strengthening_Youth_Participation_in_Politics_and_Governance.jpeg",
-    category: "Policy Brief",
-    date: "May 2026",
-    author: "YIGA",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     readTime: "5 min read",
     tags: ["Policy Brief", "Youth", "Governance", "Kenya"],
     pdfUrl: "/documents/YIGA_Policy_Brief_001.pdf"
