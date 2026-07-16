@@ -121,34 +121,6 @@ The CRINK bloc is more a geopolitical mirage than a durable axis. What unites Ch
 ];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    readTime: "5 min read",
-    tags: ["Policy Brief", "Youth", "Governance", "Kenya"],
-    pdfUrl: "/documents/YIGA_Policy_Brief_001.pdf"
-  }
-];
-
-
 // Past Activities Data - REPLACE WITH REAL DATA TOMORROW
 const pastActivities = [
   {
