@@ -2390,49 +2390,122 @@ function App() {
             </div>
 
             <div className="max-w-6xl mx-auto px-4 py-16">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {articles && articles.map((article) => (
+
+              {/* Research Articles Section */}
+              <h2 className="text-3xl font-bold text-black mb-2">Research Articles</h2>
+              <p className="text-gray-500 mb-8">Analytical pieces and studies from our team of experts and fellows</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                {articles && articles.filter(a => a.category !== "Policy Brief").map((article) => (
                   <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
                     <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">
-                          {article.category}
-                        </span>
+                        <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">{article.category}</span>
                         <span className="text-sm text-gray-500">{article.readTime}</span>
                       </div>
                       <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">{article.title}</h3>
                       <p className="text-gray-600 text-sm mb-4 line-clamp-3">{article.excerpt}</p>
-                      
                       <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                         <Users className="w-4 h-4" />
                         <span>{article.author}</span>
                       </div>
-
                       <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                         <Calendar className="w-4 h-4" />
                         <span>{article.date}</span>
                       </div>
-
                       <div className="flex flex-wrap gap-2 mb-4">
                         {article.tags.map((tag, idx) => (
-                          <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-                            {tag}
-                          </span>
+                          <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">{tag}</span>
                         ))}
                       </div>
-
-                      <button 
-                        onClick={() => setSelectedArticle(article)}
-                        className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2"
-                      >
+                      <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
                         Read Article <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+
+              {/* Policy Briefs Section */}
+              <h2 className="text-3xl font-bold text-black mb-2">Policy Briefs</h2>
+              <p className="text-gray-500 mb-8">Evidence-based policy recommendations from YIGA research and roundtables</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {articles && articles.filter(a => a.category === "Policy Brief").map((article) => (
+                  <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
+                    <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="bg-black text-white px-3 py-1 rounded-full text-xs font-semibold">{article.category}</span>
+                        <span className="text-sm text-gray-500">{article.readTime}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">{article.title}</h3>
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">{article.excerpt}</p>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                        <Calendar className="w-4 h-4" />
+                        <span>{article.date}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {article.tags.map((tag, idx) => (
+                          <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">{tag}</span>
+                        ))}
+                      </div>
+                      <div className="flex gap-3">
+                        <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
+                          Read Brief <ArrowRight className="w-4 h-4" />
+                        </button>
+                        {article.pdfUrl && (
+                          <a href={article.pdfUrl} download className="text-black font-semibold hover:text-gray-700 flex items-center gap-2">
+                            <Download className="w-4 h-4" /> PDF
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
         )}
 
