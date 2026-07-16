@@ -73,7 +73,7 @@ const articles = [
     author: "Caroline Nyagaki",
     readTime: "10 min read",
     tags: ["CRINK", "Geopolitics", "International Relations"],
-    fullContent: `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"—a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
+    fullContent: `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"ï¿½a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
 
 Despite appearances, CRINK is not a unified alliance. It lacks the institutional infrastructure, mutual defense agreements, or shared strategic vision found in established alliances like NATO. What binds these states is not long-term loyalty or ideological harmony, but a shared opposition to Western dominance, a desire for regime survival, and selective cooperation based on short-term advantage.
 
@@ -85,7 +85,7 @@ This lack of strategic unity undermines any serious attempt to view CRINK as a c
 
 China: Cautious Leader, Not Commander
 
-China's role within CRINK is particularly revealing. It is the most powerful player—economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
+China's role within CRINK is particularly revealing. It is the most powerful playerï¿½economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
 
 Rather than building an alliance based on loyalty, China appears to be managing a series of fragile dependencies, careful not to overcommit to any partner.
 
@@ -99,12 +99,11 @@ Implications for Global Stability
 
 The illusion of unity within CRINK has two important implications for international affairs. First, it shows that Western fears of a coordinated "axis of autocracy" may be overstated. The bloc's internal divisions and lack of strategic coherence limit its ability to act as a united front. This presents an opportunity for diplomatic engagement and wedge strategies that target these divisions.
 
-Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
+Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tacticsï¿½such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaignsï¿½these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
 
 Conclusion: Fragile Alliances, Not Fatal Threats
 
-The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
-The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
+The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissedï¿½but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared valuesï¿½not just mutual enemies.`
 
 ];
 
@@ -2063,12 +2062,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Safe and moderated environment for open dialogue</li>
-                          <li>• Critical engagement on leadership and public policy</li>
-                          <li>• Platform to discuss accountability and democracy</li>
-                          <li>• Understanding of peace and global affairs</li>
-                          <li>• Respectful peer-to-peer learning experience</li>
-                          <li>• Virtual accessibility from anywhere</li>
+                          <li>ï¿½ Safe and moderated environment for open dialogue</li>
+                          <li>ï¿½ Critical engagement on leadership and public policy</li>
+                          <li>ï¿½ Platform to discuss accountability and democracy</li>
+                          <li>ï¿½ Understanding of peace and global affairs</li>
+                          <li>ï¿½ Respectful peer-to-peer learning experience</li>
+                          <li>ï¿½ Virtual accessibility from anywhere</li>
                         </ul>
                       </div>
                     </div>
@@ -2106,12 +2105,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>• Direct engagement with policymakers and experts</li>
-                          <li>• Solution-oriented collaborative problem-solving</li>
-                          <li>• Contribute to policy briefs and advocacy initiatives</li>
-                          <li>• Participate in knowledge production and research</li>
-                          <li>• Network with scholars and practitioners</li>
-                          <li>• Influence practical ideas with policy-relevant impact</li>
+                          <li>ï¿½ Direct engagement with policymakers and experts</li>
+                          <li>ï¿½ Solution-oriented collaborative problem-solving</li>
+                          <li>ï¿½ Contribute to policy briefs and advocacy initiatives</li>
+                          <li>ï¿½ Participate in knowledge production and research</li>
+                          <li>ï¿½ Network with scholars and practitioners</li>
+                          <li>ï¿½ Influence practical ideas with policy-relevant impact</li>
                         </ul>
                       </div>
                     </div>
