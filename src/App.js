@@ -322,6 +322,7 @@ function App() {
   }, []);
     const [currentPage, setCurrentPage] = useState('home');
   const [expandedSection, setExpandedSection] = useState('');
+  const [teamView, setTeamView] = useState('directorate');
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [articleView, setArticleView] = useState('research');
   const [expandedArticle, setExpandedArticle] = useState(null);
@@ -1382,129 +1383,92 @@ function App() {
 
             <div className="max-w-6xl mx-auto px-4 py-16">
 
-              {/* Directorate Accordion */}
-              <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
-                <button onClick={() => setExpandedSection(expandedSection === 'directorate' ? '' : 'directorate')} className="w-full flex items-center justify-between bg-red-600 text-white px-8 py-6 font-bold text-2xl hover:bg-red-700 transition">
-                  <div className="flex items-center gap-3">
-                    <Users className="w-7 h-7" />
-                    <span>Directorate</span>
-                    <span className="text-sm font-normal bg-red-700 px-3 py-1 rounded-full">{teamMembers.length} members</span>
-                  </div>
-                  <span className="text-3xl">{expandedSection === 'directorate' ? '-' : '+'}</span>
+              {/* Team Category Tabs */}
+              <div className="grid md:grid-cols-3 gap-4 mb-12">
+                <button
+                  onClick={() => setTeamView('directorate')}
+                  className={`flex items-center justify-center gap-3 px-6 py-6 rounded-xl font-bold text-lg shadow-lg transition ${teamView === 'directorate' ? 'bg-red-600 text-white' : 'bg-white text-black hover:shadow-xl'}`}
+                >
+                  <Users className="w-6 h-6" />
+                  Directorate
                 </button>
-                {expandedSection === 'directorate' && (
-                  <div className="bg-white p-8">
-                    <div className="grid md:grid-cols-3 gap-8">
-                      {teamMembers.map((member, index) => (
-                        <div key={index} className="group text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                          <div className="relative inline-block mb-4">
-                            <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg group-hover:border-black transition duration-300" />
-                            <div className="absolute inset-0 rounded-full bg-red-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
-                          </div>
-                          <h4 className="text-lg font-bold text-black mb-1">{member.name}</h4>
-                          <p className="text-red-600 font-semibold text-sm mb-3">{member.role}</p>
-                          <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
-                          <p className="text-gray-500 text-sm">{member.bio}</p>
+                <button
+                  onClick={() => setTeamView('advisors')}
+                  className={`flex items-center justify-center gap-3 px-6 py-6 rounded-xl font-bold text-lg shadow-lg transition ${teamView === 'advisors' ? 'bg-black text-white' : 'bg-white text-black hover:shadow-xl'}`}
+                >
+                  <Award className="w-6 h-6" />
+                  Board of Advisors
+                </button>
+                <button
+                  onClick={() => setTeamView('trustees')}
+                  className={`flex items-center justify-center gap-3 px-6 py-6 rounded-xl font-bold text-lg shadow-lg transition ${teamView === 'trustees' ? 'bg-black text-white' : 'bg-white text-black hover:shadow-xl'}`}
+                >
+                  <Shield className="w-6 h-6" />
+                  Board of Trustees
+                </button>
+              </div>
+
+              {teamView === 'directorate' && (
+                <div className="bg-white p-8 rounded-xl shadow-xl mb-6">
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {teamMembers.map((member, index) => (
+                      <div key={index} className="group text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div className="relative inline-block mb-4">
+                          <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg group-hover:border-black transition duration-300" />
+                          <div className="absolute inset-0 rounded-full bg-red-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Board of Advisors Accordion */}
-              <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
-                <button onClick={() => setExpandedSection(expandedSection === 'advisors' ? '' : 'advisors')} className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition">
-                  <div className="flex items-center gap-3">
-                    <Award className="w-7 h-7" />
-                    <span>Board of Advisors</span>
-                  </div>
-                  <span className="text-3xl">{expandedSection === 'advisors' ? '-' : '+'}</span>
-                </button>
-                {expandedSection === 'advisors' && (
-                  <div className="bg-white p-8">
-                    <div className="grid md:grid-cols-3 gap-8">
-                      {[
-                        { name: "Ambassador Haile Menkerios", photo: "/images/Ambassador_Haile_Menkerios.png", bio: "Bio coming soon" },
-                        { name: "Richard Kakeeto", photo: "/images/Richard_Kakeeto.jpeg", bio: "Bio coming soon" },
-                        { name: "Dr Nicodemus Minde", photo: "/images/Dr_Nicodemus_Minde.jpeg", bio: "Bio coming soon" },
-                        { name: "Amb. Peter Katana Angore", photo: "/images/Ambassador Peter Katana Angore.jpeg", bio: "Former Kenyan Ambassador to Algeria (2019-2024) with 34+ years in the Ministry of Foreign Affairs. Led the technical team negotiating the South Sudan peace agreement (R-ARCSS 2018), awarded the Order of the Golden Warrior (OGW). Served in Khartoum, Pretoria, Juba and Brasilia. MA in International Studies, University of Nairobi." }
-                      ].map((advisor, idx) => (
-                        <AdvisorCard key={idx} advisor={advisor} />
-                      ))}
-                    </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                )}
-              </div>
-
-              {/* Board of Trustees Accordion */}
-              <div className="mb-6 rounded-xl overflow-hidden shadow-xl">
-                <button onClick={() => setExpandedSection(expandedSection === 'trustees' ? '' : 'trustees')} className="w-full flex items-center justify-between bg-black text-white px-8 py-6 font-bold text-2xl hover:bg-gray-900 transition">
-                  <div className="flex items-center gap-3">
-                    <Shield className="w-7 h-7" />
-                    <span>Board of Trustees</span>
-                  </div>
-                  <span className="text-3xl">{expandedSection === 'trustees' ? '-' : '+'}</span>
-                </button>
-                {expandedSection === 'trustees' && (
-                  <div className="bg-white p-8">
-                    <div className="grid md:grid-cols-3 gap-8">
-                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
-                        <img src="/images/Nixon_Odari.jpeg" alt="Nixon Odari" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
-                        <h4 className="text-lg font-bold text-black mb-1">Nixon Odari</h4>
-                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
-                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
-                        <p className="text-gray-500 text-sm">Bio coming soon</p>
+                        <h4 className="text-lg font-bold text-black mb-1">{member.name}</h4>
+                        <p className="text-red-600 font-semibold text-sm mb-3">{member.role}</p>
+                        <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
+                        <p className="text-gray-500 text-sm">{member.bio}</p>
                       </div>
-                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
-                        <img src="/images/Jared_Osoro.jpeg" alt="Jared Osoro" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
-                        <h4 className="text-lg font-bold text-black mb-1">Jared Osoro</h4>
-                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
-                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
-                        <p className="text-gray-500 text-sm">Bio coming soon</p>
-                      </div>
-                      <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
-                        <img src="/images/Harris_Kukundakwe.jpeg" alt="Harris Kukundakwe" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
-                        <h4 className="text-lg font-bold text-black mb-1">Harris Kukundakwe</h4>
-                        <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
-                        <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
-                        <p className="text-gray-500 text-sm">Bio coming soon</p>
-                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {teamView === 'advisors' && (
+                <div className="bg-white p-8 rounded-xl shadow-xl mb-6">
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {[
+                      { name: "Ambassador Haile Menkerios", photo: "/images/Ambassador_Haile_Menkerios.png", bio: "Bio coming soon" },
+                      { name: "Richard Kakeeto", photo: "/images/Richard_Kakeeto.jpeg", bio: "Bio coming soon" },
+                      { name: "Dr Nicodemus Minde", photo: "/images/Dr_Nicodemus_Minde.jpeg", bio: "Bio coming soon" },
+                      { name: "Amb. Peter Katana Angore", photo: "/images/Ambassador Peter Katana Angore.jpeg", bio: "Former Kenyan Ambassador to Algeria (2019-2024) with 34+ years in the Ministry of Foreign Affairs. Led the technical team negotiating the South Sudan peace agreement (R-ARCSS 2018), awarded the Order of the Golden Warrior (OGW). Served in Khartoum, Pretoria, Juba and Brasilia. MA in International Studies, University of Nairobi." }
+                    ].map((advisor, idx) => (
+                      <AdvisorCard key={idx} advisor={advisor} />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {teamView === 'trustees' && (
+                <div className="bg-white p-8 rounded-xl shadow-xl mb-6">
+                  <div className="grid md:grid-cols-3 gap-8">
+                    <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                      <img src="/images/Nixon_Odari.jpeg" alt="Nixon Odari" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
+                      <h4 className="text-lg font-bold text-black mb-1">Nixon Odari</h4>
+                      <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
+                      <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
+                      <p className="text-gray-500 text-sm">Bio coming soon</p>
+                    </div>
+                    <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                      <img src="/images/Jared_Osoro.jpeg" alt="Jared Osoro" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
+                      <h4 className="text-lg font-bold text-black mb-1">Jared Osoro</h4>
+                      <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
+                      <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
+                      <p className="text-gray-500 text-sm">Bio coming soon</p>
+                    </div>
+                    <div className="text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+                      <img src="/images/Harris_Kukundakwe.jpeg" alt="Harris Kukundakwe" className="w-32 h-32 rounded-full object-cover border-4 border-black shadow-lg mx-auto mb-4" />
+                      <h4 className="text-lg font-bold text-black mb-1">Harris Kukundakwe</h4>
+                      <p className="text-gray-700 font-semibold text-sm mb-3">Board Trustee</p>
+                      <div className="w-8 h-0.5 bg-black mx-auto mb-3"></div>
+                      <p className="text-gray-500 text-sm">Bio coming soon</p>
                     </div>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
 
             </div>
 
@@ -1519,278 +1483,6 @@ function App() {
 
           </div>
         )}
-        )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {currentPage === 'newsletter' && (
           <div className="max-w-4xl mx-auto px-4 py-16">
             <h2 className="text-4xl font-bold text-black mb-12 text-center">Newsletter</h2>
