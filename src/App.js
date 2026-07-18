@@ -39,6 +39,7 @@ const teamMembers = [
 
 const articles = [
   {
+    section: "article",
     id: 1,
     title: "BRICS versus the West: Weighing the Economic and Political Dividends for Kenya",
     excerpt: "Kenya faces a critical foreign policy choice between its traditional Western allies and the rising BRICS alliance. This analysis weighs the economic and political dividends of each option for Kenya's national interests.",
@@ -52,6 +53,7 @@ const articles = [
     authorBio: "Jeremy Oronje is a researcher, with over three years of experience in the field of international relations and policy research. His work focuses on armed conflict, geopolitics, and governance in the Horn of Africa and the Great Lakes region."
   },
   {
+    section: "study",
     id: 2,
     title: "Political Participation Among University Students in Kenya",
     image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop",
@@ -64,6 +66,7 @@ const articles = [
     pdfUrl: "/documents/Political_Participation_Study_IRSAK_2025.pdf"
   },
     {
+    section: "article",
     id: 3,
     title: "Cracks in the CRINK: Illusions of an Autocratic Alliance",
     excerpt: "An in-depth analysis of the fragile coalition between China, Russia, Iran, and North Korea, examining how divergent agendas and internal contradictions undermine the notion of a unified autocratic axis.",
@@ -107,6 +110,7 @@ The CRINK bloc is more a geopolitical mirage than a durable axis. What unites Ch
 
   },
   {
+    section: "brief",
     id: 4,
     title: "Policy Brief 001: Strengthening Youth Participation in Politics and Governance in Kenya",
     excerpt: "This policy brief presents actionable recommendations drawn from a roundtable discussion convened by YIGA in February 2026, building on key findings from a research study on political participation among university students in Kenya.",
@@ -346,6 +350,7 @@ function App() {
   const [expandedSection, setExpandedSection] = useState('');
   const [teamView, setTeamView] = useState('directorate');
   const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedActivity, setSelectedActivity] = useState(null);
   const [articleView, setArticleView] = useState('research');
   const [expandedArticle, setExpandedArticle] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -1720,6 +1725,70 @@ function App() {
             </div>
           </div>
         )}
+        {selectedActivity && (
+          <div className="fixed inset-0 bg-gray-900 z-50 overflow-y-auto">
+            <div className="min-h-screen bg-white">
+              <div className="sticky top-0 bg-white border-b border-gray-200 shadow-sm z-10">
+                <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+                  <button
+                    onClick={() => setSelectedActivity(null)}
+                    className="flex items-center gap-2 text-gray-600 hover:text-red-600 font-semibold transition"
+                  >
+                    <X className="w-5 h-5" />
+                    Close
+                  </button>
+                  <span className="text-sm text-gray-500">{selectedActivity.date}</span>
+                </div>
+              </div>
+
+              <div className="max-w-4xl mx-auto px-8 py-12 bg-white shadow-2xl my-8">
+                <img src={selectedActivity.image} alt={selectedActivity.title} className="w-full h-80 object-cover rounded-lg mb-8" />
+                <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">{selectedActivity.category}</span>
+                <h1 className="text-3xl font-bold text-black mt-4 mb-6">{selectedActivity.title}</h1>
+                <p className="text-lg text-gray-700 leading-relaxed mb-8">{selectedActivity.description}</p>
+
+                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Globe className="w-5 h-5 text-red-600" />
+                    <span className="font-semibold">Location:</span> {selectedActivity.location}
+                  </div>
+                  {selectedActivity.attendees && (
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <Users className="w-5 h-5 text-red-600" />
+                      <span className="font-semibold">Participants:</span> {selectedActivity.attendees}
+                    </div>
+                  )}
+                </div>
+
+                {selectedActivity.outcomes && (
+                  <div className="bg-gray-50 rounded-lg p-6 mb-8">
+                    <h3 className="font-semibold text-black mb-3 flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600" />
+                      Key Outcomes
+                    </h3>
+                    <ul className="space-y-2">
+                      {selectedActivity.outcomes.map((outcome, idx) => (
+                        <li key={idx} className="text-gray-700 flex items-start gap-2">
+                          <ArrowRight className="w-4 h-4 text-red-600 mt-1 flex-shrink-0" />
+                          {outcome}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="mt-12 text-center">
+                  <button
+                    onClick={() => setSelectedActivity(null)}
+                    className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition font-semibold shadow-lg"
+                  >
+                    Back to Insights
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         {currentPage === 'programs' && (
           <div className="max-w-7xl mx-auto px-4 py-16">
             <h2 className="text-4xl font-bold text-black mb-12 text-center">Our Programs</h2>
@@ -2113,26 +2182,40 @@ function App() {
             <div className="max-w-6xl mx-auto px-4 py-16">
 
               {/* Article Type Selector */}
-              <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
                 <button
                   onClick={() => setArticleView('research')}
-                  className={`text-left p-8 rounded-lg shadow-lg transition border-2 ${articleView === 'research' ? 'bg-red-600 text-white border-red-600' : 'bg-white text-black border-transparent hover:shadow-2xl'}`}
+                  className={`text-left p-6 rounded-lg shadow-lg transition border-2 ${articleView === 'research' ? 'bg-red-600 text-white border-red-600' : 'bg-white text-black border-transparent hover:shadow-2xl'}`}
                 >
-                  <h2 className="text-2xl font-bold mb-2">Research Articles</h2>
-                  <p className={articleView === 'research' ? 'text-red-100' : 'text-gray-500'}>Analytical pieces and studies from our team of experts and fellows</p>
+                  <h2 className="text-xl font-bold mb-1">Research Articles</h2>
+                  <p className={`text-sm ${articleView === 'research' ? 'text-red-100' : 'text-gray-500'}`}>Analytical pieces from our team of experts and fellows</p>
                 </button>
                 <button
                   onClick={() => setArticleView('briefs')}
-                  className={`text-left p-8 rounded-lg shadow-lg transition border-2 ${articleView === 'briefs' ? 'bg-red-600 text-white border-red-600' : 'bg-white text-black border-transparent hover:shadow-2xl'}`}
+                  className={`text-left p-6 rounded-lg shadow-lg transition border-2 ${articleView === 'briefs' ? 'bg-black text-white border-black' : 'bg-white text-black border-transparent hover:shadow-2xl'}`}
                 >
-                  <h2 className="text-2xl font-bold mb-2">Policy Briefs</h2>
-                  <p className={articleView === 'briefs' ? 'text-red-100' : 'text-gray-500'}>Evidence-based policy recommendations from YIGA research and roundtables</p>
+                  <h2 className="text-xl font-bold mb-1">Policy Briefs</h2>
+                  <p className={`text-sm ${articleView === 'briefs' ? 'text-gray-200' : 'text-gray-500'}`}>Evidence-based recommendations from research and roundtables</p>
+                </button>
+                <button
+                  onClick={() => setArticleView('studies')}
+                  className={`text-left p-6 rounded-lg shadow-lg transition border-2 ${articleView === 'studies' ? 'bg-red-600 text-white border-red-600' : 'bg-white text-black border-transparent hover:shadow-2xl'}`}
+                >
+                  <h2 className="text-xl font-bold mb-1">Research Study Reports</h2>
+                  <p className={`text-sm ${articleView === 'studies' ? 'text-red-100' : 'text-gray-500'}`}>In-depth studies and full research findings</p>
+                </button>
+                <button
+                  onClick={() => setArticleView('activities')}
+                  className={`text-left p-6 rounded-lg shadow-lg transition border-2 ${articleView === 'activities' ? 'bg-black text-white border-black' : 'bg-white text-black border-transparent hover:shadow-2xl'}`}
+                >
+                  <h2 className="text-xl font-bold mb-1">Activity Reports</h2>
+                  <p className={`text-sm ${articleView === 'activities' ? 'text-gray-200' : 'text-gray-500'}`}>Highlights from our events, workshops and initiatives</p>
                 </button>
               </div>
 
               {articleView === 'research' && (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {articles && articles.filter(a => a.category !== "Policy Brief").map((article) => (
+                  {articles && articles.filter(a => a.section === 'article').map((article) => (
                     <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
                       <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
                       <div className="p-6">
@@ -2166,7 +2249,7 @@ function App() {
 
               {articleView === 'briefs' && (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {articles && articles.filter(a => a.category === "Policy Brief").map((article) => (
+                  {articles && articles.filter(a => a.section === 'brief').map((article) => (
                     <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
                       <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
                       <div className="p-6">
@@ -2195,6 +2278,63 @@ function App() {
                             </a>
                           )}
                         </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {articleView === 'studies' && (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {articles && articles.filter(a => a.section === 'study').map((article) => (
+                    <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
+                      <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">{article.category}</span>
+                          <span className="text-sm text-gray-500">{article.readTime}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">{article.title}</h3>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{article.excerpt}</p>
+                        <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                          <Users className="w-4 h-4" />
+                          <span>{article.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                          <Calendar className="w-4 h-4" />
+                          <span>{article.date}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <button onClick={() => openArticle(article)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
+                            Read Report <ArrowRight className="w-4 h-4" />
+                          </button>
+                          {article.pdfUrl && (
+                            <a href={article.pdfUrl} download className="text-black font-semibold hover:text-gray-700 flex items-center gap-2">
+                              <Download className="w-4 h-4" /> PDF
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {articleView === 'activities' && (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {pastActivities.map((activity) => (
+                    <div key={activity.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition">
+                      <img src={activity.image} alt={activity.title} className="w-full h-48 object-cover" />
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">{activity.category}</span>
+                          <span className="text-sm text-gray-500">{activity.date}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">{activity.title}</h3>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{activity.description}</p>
+                        <button onClick={() => setSelectedActivity(activity)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
+                          Read More <ArrowRight className="w-4 h-4" />
+                        </button>
                       </div>
                     </div>
                   ))}
