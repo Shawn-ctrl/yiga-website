@@ -73,37 +73,37 @@ const articles = [
     author: "Caroline Nyagaki",
     readTime: "10 min read",
     tags: ["CRINK", "Geopolitics", "International Relations"],
-    fullContent: `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"�a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
+    fullContent: `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"—a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
 
 Despite appearances, CRINK is not a unified alliance. It lacks the institutional infrastructure, mutual defense agreements, or shared strategic vision found in established alliances like NATO. What binds these states is not long-term loyalty or ideological harmony, but a shared opposition to Western dominance, a desire for regime survival, and selective cooperation based on short-term advantage.
 
-A Bloc of Divergent Agendas
+## A Bloc of Divergent Agendas
 
 Though often grouped together as "anti-Western" actors, the CRINK countries differ significantly in both their regional ambitions and global outlooks. China envisions a restructured international order that reflects its growing global power but remains economically interdependent with the West. Stability, not chaos, is in Beijing's best interest. Russia, increasingly isolated after its 2022 invasion of Ukraine, now leans heavily on China for trade and political cover. Yet it continues to act aggressively and unpredictably, seeking to reclaim lost geopolitical influence. Iran walks a fine line between revolutionary ideology and pragmatic diplomacy. While it actively supports armed proxies and regional militancy, it also seeks economic relief and engagement with Europe and emerging powers. North Korea, perhaps the most unpredictable member, continues to pursue nuclear brinkmanship. Its leadership appears more focused on regime survival and domestic control than any form of coherent external alliance.
 
 This lack of strategic unity undermines any serious attempt to view CRINK as a consolidated power bloc.
 
-China: Cautious Leader, Not Commander
+## China: Cautious Leader, Not Commander
 
-China's role within CRINK is particularly revealing. It is the most powerful player�economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
+China's role within CRINK is particularly revealing. It is the most powerful player—economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
 
 Rather than building an alliance based on loyalty, China appears to be managing a series of fragile dependencies, careful not to overcommit to any partner.
 
-No Real Alliance, Just Shared Convenience
+## No Real Alliance, Just Shared Convenience
 
 Unlike structured alliances that commit to mutual defense and long-term strategy, CRINK operates more like a network of convenience. There is no CRINK summit, no joint military command, no institutional mechanism for resolving disputes or planning long-term collaboration. Their cooperation is issue-specific and driven by necessity: Russia turns to Iran for drones, North Korea supplies artillery shells to Russian forces in Ukraine, China trades with Russia and Iran to secure cheap energy, and Iran offers military and intelligence support to other authoritarian regimes.
 
 But this does not equate to trust. In fact, mutual suspicion and asymmetry define these relationships. Russia's growing dependence on Chinese technology and trade has led to fears of strategic subordination. Iran, meanwhile, is wary of China's increasing influence over its economy. North Korea continues to act independently, often ignoring Beijing's calls for restraint.
 
-Implications for Global Stability
+## Implications for Global Stability
 
 The illusion of unity within CRINK has two important implications for international affairs. First, it shows that Western fears of a coordinated "axis of autocracy" may be overstated. The bloc's internal divisions and lack of strategic coherence limit its ability to act as a united front. This presents an opportunity for diplomatic engagement and wedge strategies that target these divisions.
 
-Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics�such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns�these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
+Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
 
-Conclusion: Fragile Alliances, Not Fatal Threats
+## Conclusion: Fragile Alliances, Not Fatal Threats
 
-The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed�but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values�not just mutual enemies.`
+The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
 
   },
   {
@@ -1044,7 +1044,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm font-semibold">
-        🌍 Join Africa's Leading Youth in International Affairs 
+        ðŸŒ Join Africa's Leading Youth in International Affairs 
       </div>
 
       <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -1240,7 +1240,7 @@ function App() {
                           <Calendar className="w-4 h-4 mr-1" />
                           {article.date}
                         </span>
-                        <span>• {article.readTime}</span>
+                        <span>â€¢ {article.readTime}</span>
                       </div>
                       <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
                         {article.title}
@@ -1283,12 +1283,12 @@ function App() {
                   </div>
                   {newsletterStatus === 'success' && (
                     <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
-                      ✅ Successfully subscribed!
+                      âœ… Successfully subscribed!
                     </div>
                   )}
                   {newsletterStatus === 'error' && (
                     <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
-                      ❌ Subscription failed. Please try again.
+                      âŒ Subscription failed. Please try again.
                     </div>
                   )}
                 </form>
@@ -1563,12 +1563,12 @@ function App() {
 
                 {newsletterStatus === 'success' && (
                   <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
-                    ✅ Successfully subscribed with your preferences!
+                    âœ… Successfully subscribed with your preferences!
                   </div>
                 )}
                 {newsletterStatus === 'error' && (
                   <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
-                    ❌ Subscription failed. Please try again.
+                    âŒ Subscription failed. Please try again.
                   </div>
                 )}
               </form>
@@ -1672,9 +1672,15 @@ function App() {
                 <div className="prose prose-lg max-w-none">
                   <div className="text-gray-800 leading-relaxed text-justify space-y-6">
                     {selectedArticle.fullContent.split('\n\n').map((paragraph, idx) => (
-                      <p key={idx} className="text-lg leading-relaxed">
-                        {paragraph}
-                      </p>
+                      paragraph.trim().startsWith('## ') ? (
+                        <h3 key={idx} className="text-2xl font-bold text-black mt-8 mb-2">
+                          {paragraph.trim().replace('## ', '')}
+                        </h3>
+                      ) : (
+                        <p key={idx} className="text-lg leading-relaxed">
+                          {paragraph}
+                        </p>
+                      )
                     ))}
                   </div>
                 </div>
@@ -1763,12 +1769,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>� Safe and moderated environment for open dialogue</li>
-                          <li>� Critical engagement on leadership and public policy</li>
-                          <li>� Platform to discuss accountability and democracy</li>
-                          <li>� Understanding of peace and global affairs</li>
-                          <li>� Respectful peer-to-peer learning experience</li>
-                          <li>� Virtual accessibility from anywhere</li>
+                          <li>— Safe and moderated environment for open dialogue</li>
+                          <li>— Critical engagement on leadership and public policy</li>
+                          <li>— Platform to discuss accountability and democracy</li>
+                          <li>— Understanding of peace and global affairs</li>
+                          <li>— Respectful peer-to-peer learning experience</li>
+                          <li>— Virtual accessibility from anywhere</li>
                         </ul>
                       </div>
                     </div>
@@ -1806,12 +1812,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>� Direct engagement with policymakers and experts</li>
-                          <li>� Solution-oriented collaborative problem-solving</li>
-                          <li>� Contribute to policy briefs and advocacy initiatives</li>
-                          <li>� Participate in knowledge production and research</li>
-                          <li>� Network with scholars and practitioners</li>
-                          <li>� Influence practical ideas with policy-relevant impact</li>
+                          <li>— Direct engagement with policymakers and experts</li>
+                          <li>— Solution-oriented collaborative problem-solving</li>
+                          <li>— Contribute to policy briefs and advocacy initiatives</li>
+                          <li>— Participate in knowledge production and research</li>
+                          <li>— Network with scholars and practitioners</li>
+                          <li>— Influence practical ideas with policy-relevant impact</li>
                         </ul>
                       </div>
                     </div>
@@ -1938,12 +1944,12 @@ function App() {
             <div className="bg-white p-8 rounded-lg shadow-xl">
               {submitStatus === 'success' && (
                 <div className="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                  ✅ Application submitted successfully!
+                  âœ… Application submitted successfully!
                 </div>
               )}
               {submitStatus === 'error' && (
                 <div className="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                  ❌ Submission failed. Please try again.
+                  âŒ Submission failed. Please try again.
                 </div>
               )}
               <form onSubmit={handleSubmit}>
