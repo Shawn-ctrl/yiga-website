@@ -2672,6 +2672,44 @@ function App() {
                       </table>
                     </div>
                   )}
+                <div className="bg-white rounded-lg shadow-xl p-6 mt-8">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-bold text-black">Newsletter Subscribers ({newsletterSubscribers.length})</h2>
+                    <button
+                      onClick={() => sendNewsletter()}
+                      className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition"
+                    >
+                      Send Newsletter
+                    </button>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left">
+                      <thead>
+                        <tr className="border-b-2 border-gray-200">
+                          <th className="px-4 py-3">Email</th>
+                          <th className="px-4 py-3">Subscribed</th>
+                          <th className="px-4 py-3">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {newsletterSubscribers.map((sub) => (
+                          <tr key={sub.id} className="border-b hover:bg-gray-50">
+                            <td className="px-4 py-3">{sub.email}</td>
+                            <td className="px-4 py-3">{sub.subscribed_at ? new Date(sub.subscribed_at).toLocaleDateString() : ''}</td>
+                            <td className="px-4 py-3">
+                              <button
+                                onClick={() => deleteNewsletterSubscriber(sub.id)}
+                                className="text-red-600 hover:text-red-800"
+                              >
+                                <Trash2 className="w-5 h-5" />
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
                 </div>
               </div>
             )}
