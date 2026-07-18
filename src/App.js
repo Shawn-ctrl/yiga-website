@@ -586,10 +586,12 @@ function App() {
     
     try {
       for (const subscriber of newsletterSubscribers) {
-        await emailjs.send('service_rkhhb36', 'template_o2qqnzc', {
+        await emailjs.send('service_rkhhb36', 'template_ptkd39e', {
           to_email: subscriber.email,
-          subject: subject,
-          message: message
+          email_subject: subject,
+          email_heading: subject,
+          email_body: message,
+          has_button: false
         });
       }
       alert(`Newsletter sent to ${newsletterSubscribers.length} subscribers!`);
@@ -765,7 +767,13 @@ function App() {
         is_active: true
       }]);
       if (error) throw error;
-      emailjs.send("service_rkhhb36", "template_ptkd39e", { email: newsletterEmail, frequency: "monthly", topics: "General" });
+      emailjs.send("service_rkhhb36", "template_ptkd39e", {
+        to_email: newsletterEmail,
+        email_subject: "You are subscribed to the YIGA Newsletter",
+        email_heading: "You are in!",
+        email_body: "Thanks for subscribing to the YIGA Newsletter. You will now receive our regional updates straight to your inbox.",
+        has_button: false
+      });
       setNewsletterStatus('success');
       setNewsletterEmail('');
       setTimeout(() => setNewsletterStatus(''), 5000);
