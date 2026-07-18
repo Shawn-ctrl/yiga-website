@@ -319,7 +319,29 @@ function App() {
     if (page) {
       setCurrentPage(page);
     }
+    const articleId = urlParams.get('article');
+    if (articleId) {
+      const found = articles.find(a => a.id === parseInt(articleId));
+      if (found) {
+        setSelectedArticle(found);
+        setCurrentPage('research');
+      }
+    }
   }, []);
+
+  const openArticle = (article) => {
+    setSelectedArticle(article);
+    const url = new URL(window.location);
+    url.searchParams.set('article', article.id);
+    window.history.pushState({}, '', url);
+  };
+
+  const closeArticle = () => {
+    setSelectedArticle(null);
+    const url = new URL(window.location);
+    url.searchParams.delete('article');
+    window.history.pushState({}, '', url);
+  };
     const [currentPage, setCurrentPage] = useState('home');
   const [expandedSection, setExpandedSection] = useState('');
   const [teamView, setTeamView] = useState('directorate');
@@ -1224,7 +1246,7 @@ function App() {
                         {article.title}
                       </h3>
                       <p className="text-gray-600 mb-4">{article.excerpt}</p>
-                      <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
+                      <button onClick={() => openArticle(article)} className="text-red-600 font-semibold flex items-center space-x-1 hover:space-x-2 transition-all cursor-pointer">
                         <span>Read More</span>
                         <ChevronRight className="w-4 h-4" />
                       </button>
@@ -1583,7 +1605,7 @@ function App() {
               <div className="sticky top-0 bg-white border-b border-gray-200 shadow-sm z-10">
                 <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
                   <button 
-                    onClick={() => setSelectedArticle(null)}
+                    onClick={() => closeArticle()}
                     className="flex items-center gap-2 text-gray-600 hover:text-red-600 font-semibold transition"
                   >
                     <X className="w-5 h-5" />
@@ -1682,7 +1704,7 @@ function App() {
                 {/* Close button at bottom */}
                 <div className="mt-12 text-center">
                   <button 
-                    onClick={() => setSelectedArticle(null)}
+                    onClick={() => closeArticle()}
                     className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition font-semibold shadow-lg"
                   >
                     Back to Insights
@@ -2127,7 +2149,7 @@ function App() {
                             <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">{tag}</span>
                           ))}
                         </div>
-                        <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
+                        <button onClick={() => openArticle(article)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
                           Read Article <ArrowRight className="w-4 h-4" />
                         </button>
                       </div>
@@ -2158,7 +2180,7 @@ function App() {
                           ))}
                         </div>
                         <div className="flex gap-3">
-                          <button onClick={() => setSelectedArticle(article)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
+                          <button onClick={() => openArticle(article)} className="text-red-600 font-semibold hover:text-red-700 flex items-center gap-2">
                             Read Brief <ArrowRight className="w-4 h-4" />
                           </button>
                           {article.pdfUrl && (
