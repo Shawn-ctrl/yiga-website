@@ -399,6 +399,7 @@ function App() {
   useEffect(() => {
     if (isLoggedIn && currentPage === 'admin') {
       fetchApplications();
+      fetchNewsletterSubscribers();
       if (userRole === 'superadmin') {
         fetchAdmins();
       }
@@ -650,9 +651,11 @@ function App() {
       }]);
       if (error) throw error;
       emailjs.send("service_rkhhb36", "template_ptkd39e", {
-        email: formData.email,
-        frequency: "New Member Application",
-        topics: formData.full_name + " from " + formData.country + " - Phone: " + formData.phone
+        to_email: formData.email,
+        email_subject: "We received your application",
+        email_heading: "Thanks for applying, " + formData.full_name + "!",
+        email_body: "We have received your YIGA membership application and our team will review it shortly. You will receive another email once a decision has been made.",
+        has_button: false
       });
 
       fetch("https://script.google.com/macros/s/AKfycbzaqP7Re0UZqnK9wEA7BLhI9vw0wO7CABhiOAjpX3lwc-uZel0hYeNjMVAwNLTqBlJb/exec", {
@@ -668,6 +671,7 @@ function App() {
         })
       });
       setFormData({ full_name: '', email: '', phone: '', country: '', city: '', institution: '', program: 'General Membership', motivation: '', experience: '' });
+      setSubmitStatus('success');
       setTimeout(() => setSubmitStatus(''), 5000);
     } catch (error) {
       console.error('Submit error:', error);
