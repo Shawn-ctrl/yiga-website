@@ -658,18 +658,7 @@ function App() {
         has_button: false
       });
 
-      fetch("https://script.google.com/macros/s/AKfycbzaqP7Re0UZqnK9wEA7BLhI9vw0wO7CABhiOAjpX3lwc-uZel0hYeNjMVAwNLTqBlJb/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          full_name: formData.full_name,
-          email: formData.email,
-          phone: formData.phone,
-          country: formData.institution || formData.country,
-          motivation: formData.motivation
-        })
-      });
+      
       setFormData({ full_name: '', email: '', phone: '', country: '', city: '', institution: '', program: 'General Membership', motivation: '', experience: '' });
       setSubmitStatus('success');
       setTimeout(() => setSubmitStatus(''), 5000);
