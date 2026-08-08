@@ -40,6 +40,64 @@ const teamMembers = [
 const articles = [
   {
     section: "article",
+    id: 5,
+    title: "BATUK: Inside Britain's Military Footprint in Kenya and the Reckoning Reshaping It",
+    excerpt: "For six decades, a British military presence near Nanyuki has trained thousands of soldiers a year on Kenyan soil. That arrangement is now being tested by a parliamentary inquiry, a stalled defence treaty, and a newly adopted foreign policy doctrine centred on sovereignty and accountability.",
+    image: "https://images.unsplash.com/photo-1646159755791-54e741749028?w=800&h=500&fit=crop",
+    category: "Peace & Security",
+    date: "August 2026",
+    author: "Benjamin Matei Kitonga",
+    readTime: "10 min read",
+    tags: ["BATUK", "Kenya-UK Relations", "Sovereignty", "Defence Policy"],
+    fullContent: `For six decades, a British military presence near Nanyuki has trained thousands of soldiers a year on Kenyan soil. Today, that arrangement, long treated as a quiet fixture of the Kenya-UK relationship, is being pulled into the open, tested by a parliamentary inquiry, a stalled defence treaty, and a newly adopted foreign policy doctrine that puts sovereignty and accountability at its centre.
+
+## How BATUK Came to Kenya
+
+BATUK's presence in Kenya did not arrive by accident; it is a direct legacy of the country's transition out of colonial rule. The unit traces its origins to 1964, when a defence arrangement was struck between Britain and Kenya just as the country was gaining full independence, establishing the framework for continued British military training on Kenyan soil.
+
+For its early years, the unit operated out of Nairobi before its operational focus shifted north. Its logistics hub, Kifaru Barracks, remains inside Kahawa Barracks in Nairobi, hosted by the Kenya Army, while its main training headquarters relocated to Nanyuki to be closer to the open terrain at the foothills of Mount Kenya that suits large-scale infantry exercises.
+
+That original arrangement has evolved considerably since. It gave way to the 2015 Defence Cooperation Agreement (DCA), a legally binding treaty setting out the terms under which UK forces operate on Kenyan territory, including training areas, dispute settlement, taxation, vehicle registration, and entry procedures. The 2015 DCA also addressed jurisdictional questions, including Kenyan jurisdiction over criminal offences allegedly committed by UK military personnel while in the country.
+
+The 2015 DCA expired in 2021. A successor agreement was negotiated but has never been formally ratified by Kenya's Parliament, leaving the legal basis for BATUK's presence, by lawmakers' own admission, in limbo for years.
+
+## The Training Base
+
+For decades, BATUK made do with rented land, leasing ground from the Nanyuki Agricultural Society and having to vacate every year for the local agricultural show. That changed with the construction of a purpose-built £70 million headquarters and training facility at Laikipia Air Base East, officially opened in 2021 by then UK Defence Secretary Ben Wallace alongside Kenya's then Cabinet Secretary for Defence, Dr Monica Juma. The new Nyati Barracks gave the unit permanent accommodation and facilities designed to help incoming troops acclimatise before training, replacing the temporary setup that had defined the base for years.
+
+Today, Nyati Barracks houses BATUK's headquarters, accommodation for exercising troops and permanent staff, a joint officers' and sergeants' mess, a cookhouse, stores, vehicle repair facilities, a gymnasium, offices, and aviation facilities including a helipad and refuelling point. It remains a modest permanent presence in personnel terms but a significant seasonal one: thousands of British troops rotate through for exercises each year, making it, according to the British Army, one of its largest overseas training footprints in Africa.
+
+Kenya's terrain offers vast, varied training grounds that support live-fire exercises, armoured manoeuvres, and combat simulations that are difficult to replicate in the UK. In exchange, Britain offers reciprocal training opportunities to the Kenya Defence Forces (KDF) in the UK, alongside joint exercises run from the Nanyuki base itself.
+
+The economic footprint is also significant. Hotels, transport providers, food suppliers, construction firms, and small businesses in and around Nanyuki have long benefited from the steady flow of visiting troops, a fact Kenyan officials cite whenever the partnership comes under strain.
+
+## The Agreement Between London and Nairobi and Why It's Under Strain
+
+The current friction centres on the unratified Defence Cooperation Agreement and a parliamentary inquiry that has turned BATUK from a routine defence footnote into a live political issue.
+
+In November 2025, the National Assembly's Departmental Committee on Defence, Intelligence and Foreign Relations tabled a report following its investigation into BATUK's conduct in Kenya. The findings included allegations of sexual abuse, including rape and assault; concerns about negligence in handling unexploded ordnance, which the committee linked to civilian injuries and deaths; allegations that Kenyan workers hired for debris clearance were sent in without adequate protective equipment; and concerns about environmental damage from improper waste and hazardous-material disposal.
+
+The report also revisited one of the most sensitive unresolved cases tied to the base: the 2012 murder of Agnes Wanjiru, a Kenyan woman whose death has long been linked to a British soldier stationed at BATUK. In September 2025, Kenya's Director of Public Prosecutions determined that a British national should stand trial over her killing, a decision that has kept the case central to the committee's demands for accountability.
+
+Off the back of the inquiry, MPs pushed for substantial changes before any new DCA is ratified: expanding Kenyan courts' jurisdiction over crimes committed by visiting forces; mandatory cooperation with Kenyan criminal investigations and parliamentary summonses; a clearer code of conduct for foreign troops incorporated into the Kenya Defence Forces Act; stronger environmental safeguards; and civilian oversight mechanisms. Tensions boiled over in mid-2025 when BATUK officials failed to appear before the Defence Committee, prompting committee chair Nelson Koech to warn that they could be declared a "hostile witness" and compelled to appear under summons.
+
+By late July 2026, the unresolved legal status of the DCA nearly derailed the relationship entirely. The UK's Ministry of Defence cancelled a planned September 2026 exercise, "Exercise Haraka Storm", after failing to secure the necessary Kenyan licences, a move that triggered public speculation about political interference and even bribery demands. Koech pushed back on those claims, attributing the delay to unresolved questions of jurisdiction, immunity, and accountability rather than any backroom dealing. Within days, the two governments announced a resumption of the training, with Prime Cabinet Secretary Musalia Mudavadi framing the resolution as proof the two countries could work through disagreements via dialogue. The autumn exercise is set to be the last of five planned for 2026, with five more scheduled for 2027, assuming the underlying legal disputes do not resurface.
+
+Civil society has not waited for Parliament to finish the job. In June 2026, a coalition of human rights activists, victims' families, and local leaders held a public meeting in Nanyuki and later petitioned Parliament, government agencies, BATUK, and the UK Ministry of Defence directly, demanding reforms before any new DCA is signed. The group, which includes Free Kenya Movement leader Bob Njagi, has centred its campaign explicitly on Kenyan sovereignty.
+
+## The Sovereignty Test: BATUK and the Sessional Paper No. 1 of 2025
+
+The timing matters. In January 2025, Kenya's Cabinet adopted Sessional Paper No. 1 of 2025 on the Foreign Policy of the Republic of Kenya, the country's first consolidated, legally anchored foreign policy document. It was unveiled by President William Ruto in December 2024 and approved by the National Assembly in April 2025. Prime Cabinet Secretary Mudavadi has described its purpose as shifting Kenya away from opaque, conventional diplomacy towards a citizen-centred, transparent, and accountable approach that puts Kenyan interests first.
+
+The BATUK dispute has effectively become the first serious stress test of that doctrine. A foreign policy paper built around sovereignty and accountability is difficult to reconcile with a six-decade-old military arrangement operating under an expired treaty, credible allegations of unpunished abuse, and a foreign partner that did not appear before its own parliamentary summons. Lawmakers driving the BATUK inquiry have explicitly invoked this tension, arguing that a foreign force cannot be allowed to continue operating in Kenya without proper legal backing and that any renewed partnership must rest on equality and respect for Kenyan law, not just economic convenience or historic goodwill.
+
+Whether the new DCA, expected to be renegotiated through 2026, ends up reflecting the Sessional Paper's stated principles, or whether strategic and economic considerations dilute them, will say a great deal about how much practical weight Kenya's new foreign policy framework actually carries. For now, BATUK remains open, training continues, and the deeper legal reckoning has simply been deferred rather than resolved.
+
+Sources: UK Ministry of Defence / Defence Infrastructure Organisation (insidedio.blog.gov.uk); Eastleigh Voice; Pulse Kenya; Al Jazeera; Citizen Digital; Forces News; The Standard; Breaking Kenya News; The Weekly Vision Media; The Star; allAfrica; Nairobi Wire; Kenya Parliament Hansard records; Kenya Gazette; Ministry of Foreign Affairs Kenya; UK Ministry of Defence written statement to the Kenyan Parliamentary Inquiry into BATUK.`,
+    authorBio: "Benjamin Matei Kitonga is an award-winning researcher, accomplished mooter, and peace and security enthusiast passionate about diplomacy, conflict resolution, and international affairs. He is pursuing a Master's degree in International Relations, with a concentration in Peace and Conflict Studies, at USIU-Africa. Recognized nationally and internationally for excellence in advocacy and alternative dispute resolution, Benjamin actively contributes to research, policy dialogue, and peacebuilding initiatives."
+  },
+  {
+    section: "article",
     id: 1,
     title: "BRICS versus the West: Weighing the Economic and Political Dividends for Kenya",
     excerpt: "Kenya faces a critical foreign policy choice between its traditional Western allies and the rising BRICS alliance. This analysis weighs the economic and political dividends of each option for Kenya's national interests.",
@@ -76,7 +134,7 @@ const articles = [
     author: "Caroline Nyagaki",
     readTime: "10 min read",
     tags: ["CRINK", "Geopolitics", "International Relations"],
-    fullContent: `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"—a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
+    fullContent: `In recent years, geopolitical analysts have increasingly referred to the emerging alignment between China, Russia, Iran, and North Korea as an "autocratic axis"â€”a loose coalition bound by opposition to Western-led global governance. Popularly labeled as the CRINK bloc, this group is often portrayed as a rising challenge to the liberal international order, capable of undermining U.S. and European strategic influence. However, a closer examination reveals that the bloc is far from cohesive. Instead, it is characterized by fragility, transactional interests, and internal contradictions.
 
 Despite appearances, CRINK is not a unified alliance. It lacks the institutional infrastructure, mutual defense agreements, or shared strategic vision found in established alliances like NATO. What binds these states is not long-term loyalty or ideological harmony, but a shared opposition to Western dominance, a desire for regime survival, and selective cooperation based on short-term advantage.
 
@@ -88,7 +146,7 @@ This lack of strategic unity undermines any serious attempt to view CRINK as a c
 
 ## China: Cautious Leader, Not Commander
 
-China's role within CRINK is particularly revealing. It is the most powerful player—economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
+China's role within CRINK is particularly revealing. It is the most powerful playerâ€”economically, diplomatically, and increasingly militarily. Yet Beijing has consistently avoided taking on a leadership role within the group. For instance, although China has provided economic support to Russia amid Western sanctions, it has avoided direct military assistance to avoid triggering secondary sanctions. Similarly, while it maintains close energy and infrastructure ties with Iran, it has not defended Iran's nuclear ambitions on the world stage. As for North Korea, China regards it more as a strategic liability than an asset, frequently urging restraint after provocative missile tests.
 
 Rather than building an alliance based on loyalty, China appears to be managing a series of fragile dependencies, careful not to overcommit to any partner.
 
@@ -102,11 +160,11 @@ But this does not equate to trust. In fact, mutual suspicion and asymmetry defin
 
 The illusion of unity within CRINK has two important implications for international affairs. First, it shows that Western fears of a coordinated "axis of autocracy" may be overstated. The bloc's internal divisions and lack of strategic coherence limit its ability to act as a united front. This presents an opportunity for diplomatic engagement and wedge strategies that target these divisions.
 
-Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tactics—such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaigns—these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
+Second, CRINK's informal cooperation, while fragmented, still poses a challenge. Through asymmetric tacticsâ€”such as cyberattacks, sanctions evasion, arms transfers, and disinformation campaignsâ€”these states can still undermine global norms and distract Western powers by igniting crises on multiple fronts simultaneously. The West, and indeed the Global South, must be alert not just to the actions of CRINK states, but to the conditions that enable them to act: instability, broken diplomacy, and economic fragmentation.
 
 ## Conclusion: Fragile Alliances, Not Fatal Threats
 
-The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissed—but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared values—not just mutual enemies.`
+The CRINK bloc is more a geopolitical mirage than a durable axis. What unites China, Russia, Iran, and North Korea is not a grand design, but shared grievance and opportunism. As such, it should not be dismissedâ€”but neither should it be overestimated. For international relations scholars and emerging policy thinkers, including members of IRSAK, this case highlights the importance of examining alliances beyond surface-level narratives. Real power blocs are built on trust, coordination, and shared valuesâ€”not just mutual enemies.`
 
   },
   {
@@ -1050,7 +1108,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm font-semibold">
-        ðŸŒ Join Africa's Leading Youth in International Affairs 
+        Ã°Å¸Å’Â Join Africa's Leading Youth in International Affairs 
       </div>
 
       <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -1246,7 +1304,7 @@ function App() {
                           <Calendar className="w-4 h-4 mr-1" />
                           {article.date}
                         </span>
-                        <span>â€¢ {article.readTime}</span>
+                        <span>Ã¢â‚¬Â¢ {article.readTime}</span>
                       </div>
                       <h3 className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition">
                         {article.title}
@@ -1289,12 +1347,12 @@ function App() {
                   </div>
                   {newsletterStatus === 'success' && (
                     <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
-                      âœ… Successfully subscribed!
+                      Ã¢Å“â€¦ Successfully subscribed!
                     </div>
                   )}
                   {newsletterStatus === 'error' && (
                     <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
-                      âŒ Subscription failed. Please try again.
+                      Ã¢ÂÅ’ Subscription failed. Please try again.
                     </div>
                   )}
                 </form>
@@ -1569,12 +1627,12 @@ function App() {
 
                 {newsletterStatus === 'success' && (
                   <div className="mt-4 bg-green-100 text-green-800 p-3 rounded-lg font-bold">
-                    âœ… Successfully subscribed with your preferences!
+                    Ã¢Å“â€¦ Successfully subscribed with your preferences!
                   </div>
                 )}
                 {newsletterStatus === 'error' && (
                   <div className="mt-4 bg-red-100 text-red-800 p-3 rounded-lg font-bold">
-                    âŒ Subscription failed. Please try again.
+                    Ã¢ÂÅ’ Subscription failed. Please try again.
                   </div>
                 )}
               </form>
@@ -1839,12 +1897,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>— Safe and moderated environment for open dialogue</li>
-                          <li>— Critical engagement on leadership and public policy</li>
-                          <li>— Platform to discuss accountability and democracy</li>
-                          <li>— Understanding of peace and global affairs</li>
-                          <li>— Respectful peer-to-peer learning experience</li>
-                          <li>— Virtual accessibility from anywhere</li>
+                          <li>â€” Safe and moderated environment for open dialogue</li>
+                          <li>â€” Critical engagement on leadership and public policy</li>
+                          <li>â€” Platform to discuss accountability and democracy</li>
+                          <li>â€” Understanding of peace and global affairs</li>
+                          <li>â€” Respectful peer-to-peer learning experience</li>
+                          <li>â€” Virtual accessibility from anywhere</li>
                         </ul>
                       </div>
                     </div>
@@ -1882,12 +1940,12 @@ function App() {
                       <div>
                         <h3 className="font-semibold text-lg text-red-600 mb-2">What You'll Gain</h3>
                         <ul className="text-gray-700 space-y-2">
-                          <li>— Direct engagement with policymakers and experts</li>
-                          <li>— Solution-oriented collaborative problem-solving</li>
-                          <li>— Contribute to policy briefs and advocacy initiatives</li>
-                          <li>— Participate in knowledge production and research</li>
-                          <li>— Network with scholars and practitioners</li>
-                          <li>— Influence practical ideas with policy-relevant impact</li>
+                          <li>â€” Direct engagement with policymakers and experts</li>
+                          <li>â€” Solution-oriented collaborative problem-solving</li>
+                          <li>â€” Contribute to policy briefs and advocacy initiatives</li>
+                          <li>â€” Participate in knowledge production and research</li>
+                          <li>â€” Network with scholars and practitioners</li>
+                          <li>â€” Influence practical ideas with policy-relevant impact</li>
                         </ul>
                       </div>
                     </div>
@@ -2014,12 +2072,12 @@ function App() {
             <div className="bg-white p-8 rounded-lg shadow-xl">
               {submitStatus === 'success' && (
                 <div className="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                  âœ… Application submitted successfully!
+                  Ã¢Å“â€¦ Application submitted successfully!
                 </div>
               )}
               {submitStatus === 'error' && (
                 <div className="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                  âŒ Submission failed. Please try again.
+                  Ã¢ÂÅ’ Submission failed. Please try again.
                 </div>
               )}
               <form onSubmit={handleSubmit}>
