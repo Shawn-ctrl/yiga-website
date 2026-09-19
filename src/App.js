@@ -31,7 +31,9 @@ const teamMembers = [
   { name: "Neema Wanjiku", role: "Assistant Director of Events", department: "Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
 
   { name: "Kemunto Joylynn", role: "Director for Programs and Partnerships", department: "Programs and Partnerships", bio: "Leading program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
-  { name: "Hilda Koipano", role: "Director of Communications", department: "Communication", bio: "Leading communication strategies", photo: "/images/Hilda-Director of Communication.jpeg" },
+  { name: "Hilda Koipano", role: "Director of Communications", department: "Communication", bio: "Leading communication strategies", photo: "/images/Hilda Koipano-Director of Communications.jpeg" },
+  { name: "Stacy Mwogoi", role: "Assistant Director for Programs and Partnerships", department: "Programs and Partnerships", bio: "Supporting program coordination", photo: "/images/Stacy Mwogoi-Assistant Director of Programs and Partnerships.jpeg" },
+  { name: "Zac Nganga", role: "Programs Assistant", department: "Programs and Partnerships", bio: "Supporting program delivery", photo: "/images/Zac Nganga-Programs Assistant.jpeg" },
 
   { name: "Abel Omenge", role: "Director of Finance", department: "Finance", bio: "Managing financial operations", photo: "/images/Abel Omenge-Director of Finance.jpeg" },
 
