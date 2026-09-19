@@ -24,16 +24,16 @@ const teamPhotos = {
 };
 
 const teamMembers = [
-  { name: "Jeremy Oronje", role: "Executive Director", bio: "Leading YIGA's vision and strategic direction", photo: "/images/Jeremy Oronje -Executive Director.jpeg" },
-  { name: "Galdicia Wambui Gacihi", role: "Deputy Executive Director", bio: "Supporting executive leadership", photo: "/images/Deputy Executive Director.jpeg" },
-  { name: "Ashley Munyasia", role: "Director of Research", bio: "Leading research initiatives", photo: "/images/Ashley Munyasia-Director of Research.jpeg" },
-  { name: "Neema Toto", role: "Director of Events", bio: "Managing YIGA events", photo: "/images/Neema Toto-Director of Events.jpeg" },
-  { name: "Neema Wanjiku", role: "Assistant Director of Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
+  { name: "Jeremy Oronje", role: "Executive Director", department: "Leadership", bio: "Leading YIGA's vision and strategic direction", photo: "/images/Jeremy Oronje -Executive Director.jpeg" },
+  { name: "Galdicia Wambui Gacihi", role: "Deputy Executive Director", department: "Leadership", bio: "Supporting executive leadership", photo: "/images/Deputy Executive Director.jpeg" },
+  { name: "Ashley Munyasia", role: "Director of Research", department: "Research", bio: "Leading research initiatives", photo: "/images/Ashley Munyasia-Director of Research.jpeg" },
+  { name: "Neema Toto", role: "Director of Events", department: "Events", bio: "Managing YIGA events", photo: "/images/Neema Toto-Director of Events.jpeg" },
+  { name: "Neema Wanjiku", role: "Assistant Director of Events", department: "Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
 
-  { name: "Kemunto Joylynn", role: "Director for Programs and Partnerships", bio: "Leading program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
-  { name: "Hilda Koipano", role: "Director of Communications", bio: "Leading communication strategies", photo: "/images/Hilda-Director of Communication.jpeg" },
+  { name: "Kemunto Joylynn", role: "Director for Programs and Partnerships", department: "Programs and Partnerships", bio: "Leading program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
+  { name: "Hilda Koipano", role: "Director of Communications", department: "Communication", bio: "Leading communication strategies", photo: "/images/Hilda-Director of Communication.jpeg" },
 
-  { name: "Abel Omenge", role: "Director of Finance", bio: "Managing financial operations", photo: "/images/Abel Omenge-Director of Finance.jpeg" },
+  { name: "Abel Omenge", role: "Director of Finance", department: "Finance", bio: "Managing financial operations", photo: "/images/Abel Omenge-Director of Finance.jpeg" },
 
 ];
 
@@ -407,6 +407,7 @@ function App() {
     const [currentPage, setCurrentPage] = useState('home');
   const [expandedSection, setExpandedSection] = useState('');
   const [teamView, setTeamView] = useState('directorate');
+  const [secretariatDept, setSecretariatDept] = useState('Finance');
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [articleView, setArticleView] = useState('research');
@@ -1476,7 +1477,7 @@ function App() {
                   className={`flex items-center justify-center gap-3 px-6 py-6 rounded-xl font-bold text-lg shadow-lg transition ${teamView === 'directorate' ? 'bg-red-600 text-white' : 'bg-white text-black hover:shadow-xl'}`}
                 >
                   <Users className="w-6 h-6" />
-                  Directorate
+                  Secretariat
                 </button>
                 <button
                   onClick={() => setTeamView('advisors')}
@@ -1496,8 +1497,37 @@ function App() {
 
               {teamView === 'directorate' && (
                 <div className="bg-white p-8 rounded-xl shadow-xl mb-6">
+                  {/* Leadership - always visible */}
+                  <div className="grid md:grid-cols-2 gap-8 mb-10 pb-10 border-b border-gray-200">
+                    {teamMembers.filter(m => m.department === 'Leadership').map((member, index) => (
+                      <div key={index} className="group text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div className="relative inline-block mb-4">
+                          <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg group-hover:border-black transition duration-300" />
+                          <div className="absolute inset-0 rounded-full bg-red-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
+                        </div>
+                        <h4 className="text-lg font-bold text-black mb-1">{member.name}</h4>
+                        <p className="text-red-600 font-semibold text-sm mb-3">{member.role}</p>
+                        <div className="w-8 h-0.5 bg-red-600 mx-auto mb-3"></div>
+                        <p className="text-gray-500 text-sm">{member.bio}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Department Sub-Tabs */}
+                  <div className="flex flex-wrap gap-3 mb-8 justify-center">
+                    {['Finance', 'Communication', 'Programs and Partnerships', 'Research', 'Events'].map((dept) => (
+                      <button
+                        key={dept}
+                        onClick={() => setSecretariatDept(dept)}
+                        className={`px-5 py-2 rounded-full font-semibold text-sm transition ${secretariatDept === dept ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                      >
+                        {dept}
+                      </button>
+                    ))}
+                  </div>
+
                   <div className="grid md:grid-cols-3 gap-8">
-                    {teamMembers.map((member, index) => (
+                    {teamMembers.filter(m => m.department === secretariatDept).map((member, index) => (
                       <div key={index} className="group text-center bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                         <div className="relative inline-block mb-4">
                           <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg group-hover:border-black transition duration-300" />
