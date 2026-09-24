@@ -27,6 +27,10 @@ const teamMembers = [
   { name: "Jeremy Oronje", role: "Executive Director", department: "Leadership", bio: "Leading YIGA's vision and strategic direction", photo: "/images/Jeremy Oronje -Executive Director.jpeg" },
   { name: "Galdicia Wambui Gacihi", role: "Deputy Executive Director", department: "Leadership", bio: "Supporting executive leadership", photo: "/images/Deputy Executive Director.jpeg" },
   { name: "Ashley Munyasia", role: "Director of Research", department: "Research", bio: "Leading research initiatives", photo: "/images/Ashley Munyasia-Director of Research.jpeg" },
+  { name: "Anne Ngoya", role: "Research Fellow", department: "Research", bio: "Contributing to research initiatives", photo: "/images/Anne Ngoya-Research Fellow.jpeg" },
+  { name: "Benjamin Kitonga", role: "Research Fellow", department: "Research", bio: "Contributing to research initiatives", photo: "/images/Benjamin Kitonga-Research Fellow.jpeg" },
+  { name: "Jared Nyakundi", role: "Research Fellow", department: "Research", bio: "Contributing to research initiatives", photo: "/images/Jared Nyakundi-Research Fellow.jpeg" },
+  { name: "Michael Adiado", role: "Research Fellow", department: "Research", bio: "Contributing to research initiatives", photo: "/images/Michael Adiado-Research Fellow.jpeg" },
   { name: "Neema Toto", role: "Director of Events", department: "Events", bio: "Managing YIGA events", photo: "/images/Neema Toto-Director of Events.jpeg" },
   { name: "Neema Wanjiku", role: "Assistant Director of Events", department: "Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
 
