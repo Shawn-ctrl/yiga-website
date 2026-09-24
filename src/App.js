@@ -33,6 +33,7 @@ const teamMembers = [
   { name: "Michael Adiado", role: "Research Fellow", department: "Research", bio: "Contributing to research initiatives", photo: "/images/Michael Adiado-Research Fellow.jpeg" },
   { name: "Neema Toto", role: "Director of Events", department: "Events", bio: "Managing YIGA events", photo: "/images/Neema Toto-Director of Events.jpeg" },
   { name: "Neema Wanjiku", role: "Assistant Director of Events", department: "Events", bio: "Supporting events coordination", photo: "/images/Neema Wanjiku-Assistant Director Of Events.jpeg" },
+  { name: "Cindy Waweru", role: "Events Assistant", department: "Events", bio: "Supporting events coordination", photo: "/images/Cindy Waweru-Events Assistant.png" },
 
   { name: "Kemunto Joylynn", role: "Director for Programs and Partnerships", department: "Programs and Partnerships", bio: "Leading program coordination", photo: "/images/Joylynne Kemunto -Assistant Director of Programs and Partnership.jpeg" },
   { name: "Hilda Koipano", role: "Director of Communications", department: "Communication", bio: "Leading communication strategies", photo: "/images/Hilda Koipano-Director of Communications.jpeg" },
@@ -1521,7 +1522,7 @@ function App() {
 
                   {/* Department Sub-Tabs */}
                   <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                    {['Finance', 'Communication', 'Programs and Partnerships', 'Research', 'Events'].map((dept) => (
+                    {['Research', 'Programs and Partnerships', 'Events', 'Finance', 'Communication'].map((dept) => (
                       <button
                         key={dept}
                         onClick={() => setSecretariatDept(dept)}
