@@ -193,7 +193,7 @@ The CRINK bloc is more a geopolitical mirage than a durable axis. What unites Ch
     id: 5,
     title: "Kenya's Peace and Security Diplomacy: Gains and Gaps",
     excerpt: "Assessing Sessional Paper No. 1 of 2025 against Kenya's actual mediation and peacekeeping record in Sudan, South Sudan, the eastern DRC, Somalia and Haiti. Drawn from a youth dialogue jointly convened by YIGA, Nala Center and MuemAction Post at the Konrad Adenauer Stiftung Kenya office.",
-    image: "/images/activities/Roundtable_on_strengthening_Youth_Participation_in_Politics_and_Governance.jpeg",
+    image: "/images/activities/Peace_and_Security_Brief_Cover.svg",
     category: "Policy Brief",
     date: "August 2026",
     author: "YIGA, Nala Center & MuemAction Post",
