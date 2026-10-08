@@ -47,6 +47,76 @@ const teamMembers = [
 const articles = [
   {
     section: "article",
+    id: 7,
+    title: "Protecting Kenya's Children Online: The Case for a More Deliberate Approach",
+    excerpt: "For many children, internet-connected devices are now part of everyday life. This article examines the risks of unrestricted access, from harmful content to online gambling, and sets out a more deliberate, age-appropriate approach for Kenya.",
+    image: "https://images.unsplash.com/photo-1517574378266-220e185f7f8c?w=800&h=500&fit=crop",
+    category: "Digital Policy",
+    date: "October 2026",
+    author: "Jared",
+    readTime: "6 min read",
+    tags: ["Child Online Safety", "Kenya", "Digital Policy", "Social Media"],
+    fullContent: `## The case for a more deliberate approach
+
+For many children, internet-connected devices are now part of everyday life. Smartphones and other digital devices can support learning, communication and access to information, but unrestricted access can also expose children to content and behaviours that may be inappropriate or harmful. The question for Kenya is therefore not whether children should benefit from digital technology, but how those benefits can be balanced with age-appropriate safeguards.
+
+The discussion is particularly important for younger children, whose ability to regulate attention, screen use and online behaviour is still developing. Parents and caregivers may also find it difficult to manage access once children become accustomed to using phones as a source of entertainment or distraction. These concerns point to the need for a broader conversation about age limits, parental controls, digital literacy and platform responsibility.
+
+## What research suggests about attention and online exposure
+
+Research cited in the original article points to concerns about the relationship between social-media use and children's attention. A 2026 study associated with Sweden's Karolinska Institutet examined more than 8,000 children aged eight to 14 and reported concerns about the relationship between social-media use and attention. Such findings warrant attention, although they should not be interpreted as establishing that internet or social-media use alone causes declining concentration.
+
+Other research cited by the author has also examined links between online exposure and issues including social anxiety, depression, attention-deficit/hyperactivity disorder (ADHD), sleep difficulties, aggressive behaviour, cyberbullying and sexual exploitation. These risks reinforce the importance of age-appropriate safeguards, particularly where children may encounter harmful content without adequate supervision.
+
+## Children's exposure to harmful content
+
+The risks extend beyond attention and screen time. Children can encounter pornography, violent or otherwise age-inappropriate material, as well as adults or peers who may exploit online platforms. The personal account cited in the original article, published by Parents Africa, illustrates how exposure to pornography can affect more than one child within a household. While an individual account cannot establish the prevalence of the problem, it demonstrates why parents and policy-makers should take online child protection seriously.
+
+Effective protection cannot depend entirely on parents discovering harmful exposure after it has occurred. Age-appropriate content controls, parental supervision, safer platform design and accessible reporting mechanisms can form part of a broader child online-safety framework.
+
+## Online gambling presents another concern
+
+Online gambling is another area where easy access to smartphones can create risks for minors. The original article highlights the experience of a 16-year-old who reportedly used school fees for online betting after having previously engaged in gambling. The example illustrates a wider concern: repeated exposure to betting advertisements and easy access to online gambling platforms can normalise gambling among young people.
+
+The article also cites a Daily Nation report stating that 76% of Kenyan youth aged 18 to 35 participate in gambling, with a substantial proportion occurring through online betting platforms. This statistic requires verification against the original report before publication, particularly because the cited age range begins at 18 and therefore cannot by itself demonstrate that gambling begins before the age of majority.
+
+## Lessons from other countries
+
+Kenya can also examine how other countries are responding to children's use of social media. The original article points to Australia's restrictions on social-media access for people below a specified age and to legislative developments in France. These approaches demonstrate that governments are increasingly considering stronger age-based safeguards for children online.
+
+However, restrictions differ in scope, age thresholds and implementation mechanisms. Kenya should therefore assess the evidence behind these approaches rather than simply replicate them. Key considerations would include age verification, privacy, access to educational content, enforcement responsibilities and the risk of excluding children from legitimate digital services.
+
+## A possible framework for Kenya
+
+A blanket restriction on internet access would have significant implications because children increasingly rely on digital platforms for education, communication and access to public information. A more targeted framework could distinguish between general internet access and access to high-risk services such as social-media platforms, pornography and online gambling.
+
+The original article proposes age-based daily limits similar to restrictions reported in China, alongside a ban on social-media access for children below the age of majority. If Kenya considers such measures, they should be supported by clear evidence, consultation with parents, educators, children's rights experts, technology companies and young people, and safeguards against unintended consequences.
+
+Policy-makers could also consider stronger parental-control tools, default child-safety settings, age assurance for high-risk services, restrictions on targeted advertising to minors, stronger enforcement against child sexual exploitation online, and digital-literacy programmes for parents and children. These measures could complement rather than replace reasonable age restrictions.
+
+## Protecting children without excluding them from opportunity
+
+Kenya's digital transformation is an important opportunity for education, innovation and participation in the global economy. The objective should not be to keep children away from technology altogether, but to create an environment in which access is appropriate to their age and level of maturity.
+
+Stronger safeguards should therefore be considered as part of a wider child online-safety policy. Kenya can learn from international experience while developing measures suited to its own legal, technological and social context. The central question is no longer whether children will use the internet, but whether the systems surrounding them are strong enough to make that use safer.
+
+## References
+
+Karolinska Institutet. 2026. "Using Social Media May Impair Children's Attention." https://news.ki.se/using-social-media-may-impair-childrens-attention
+
+BBC News. 2025. Article on Australia's social-media restrictions for children. https://www.bbc.com/news/articles/cwyp9d3ddqyo
+
+PBS NewsHour. 2026. Article on French lawmakers' social-media restrictions for children. https://www.pbs.org/newshour/world/french-lawmakers-approve-ban-on-social-media-for-kids-under-15
+
+Parents Africa. "One Mum's Experience: A Fight Against Child Pornography." https://parentsafrica.com/one-mums-experience-a-fight-against-child-pornography/
+
+Nature / Humanities and Social Sciences Communications. 2026. Article cited in the original draft on children, internet/social-media exposure and mental-health-related outcomes. https://www.nature.com/articles/s41599-026-06609-1
+
+Daily Nation. Report cited in the original draft stating that 76% of Kenyan youth aged 18-35 participate in gambling. Original report/source details should be confirmed before publication.`,
+    authorBio: "Jared is a qualified lawyer working in the legal industry, with a strong interest in international relations and alternative dispute resolution. He follows current affairs across Africa and globally and is based in Nairobi."
+  },
+  {
+    section: "article",
     id: 5,
     title: "BATUK: Inside Britain's Military Footprint in Kenya and the Reckoning Reshaping It",
     excerpt: "For six decades, a British military presence near Nanyuki has trained thousands of soldiers a year on Kenyan soil. That arrangement is now being tested by a parliamentary inquiry, a stalled defence treaty, and a newly adopted foreign policy doctrine centred on sovereignty and accountability.",
